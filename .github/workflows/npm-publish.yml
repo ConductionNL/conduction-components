@@ -26,6 +26,13 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
+      - run: |
+          git --version
+          git config user.name "GitHub Version patch"
+          git config user.email "<>"
+          git checkout development
+          git clean -f -n
+      - run: npm install
       - run: npm version patch
       - run: npm publish
         env:
