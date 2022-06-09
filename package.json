@@ -1,6 +1,6 @@
 {
   "name": "@conduction/components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React (Gatsby) components used within the Conduction Skeleton Application (and its implementations)",
   "main": "lib/index.js",
   "scripts": {
