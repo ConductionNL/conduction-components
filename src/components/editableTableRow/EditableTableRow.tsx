@@ -1,7 +1,6 @@
 import { TableCell, TableHeader, TableRow } from "@gemeente-denhaag/table";
 import * as styles from "./EditableTableRow.module.css";
 import * as React from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "@gemeente-denhaag/components-react";
 import { CheckedIcon, CloseIcon, EditIcon } from "@gemeente-denhaag/icons";
 import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
@@ -14,6 +13,9 @@ interface InputTypes {
 interface EditableTableRowProps {
   thead: string;
   value: string;
+  saveLabel: string;
+  cancelLabel: string;
+  editLabel: string;
   handleSave: (value: any) => void;
 }
 
@@ -21,6 +23,9 @@ export const EditableTableRow: React.FC<EditableTableRowProps & InputTypes> = ({
   thead,
   value,
   inputType,
+  editLabel,
+  cancelLabel,
+  saveLabel,
   handleSave,
 }) => {
   const [editing, setEditing] = React.useState<boolean>(false);
@@ -29,8 +34,8 @@ export const EditableTableRow: React.FC<EditableTableRowProps & InputTypes> = ({
     <TableRow>
       <TableHeader className={styles.th}>{thead}</TableHeader>
 
-      {editing && <EditingTableRow {...{ value, inputType, handleSave, setEditing }} />}
-      {!editing && <RegularTableRow {...{ value, setEditing }} />}
+      {editing && <EditingTableRow {...{ value, inputType, handleSave, setEditing, saveLabel, cancelLabel }} />}
+      {!editing && <RegularTableRow {...{ value, setEditing, editLabel }} />}
     </TableRow>
   );
 };
@@ -39,14 +44,13 @@ export const EditableTableRow: React.FC<EditableTableRowProps & InputTypes> = ({
  * Specific rows based on editing (Regular: not editing & Editing: editing)
  */
 
-interface SpecificRowsProps {
+interface RegularTableRowProps {
   value: string;
+  editLabel: string;
   setEditing: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const RegularTableRow: React.FC<SpecificRowsProps> = ({ value, setEditing }) => {
-  const { t } = useTranslation();
-
+const RegularTableRow: React.FC<RegularTableRowProps> = ({ value, editLabel, setEditing }) => {
   return (
     <>
       <TableCell>{value}</TableCell>
@@ -54,7 +58,7 @@ const RegularTableRow: React.FC<SpecificRowsProps> = ({ value, setEditing }) => 
       <TableCell>
         <div className={styles.editButton} onClick={() => setEditing(true)}>
           <Link icon={<EditIcon />} iconAlign="start">
-            {t("Edit")}
+            {editLabel}
           </Link>
         </div>
       </TableCell>
@@ -63,17 +67,21 @@ const RegularTableRow: React.FC<SpecificRowsProps> = ({ value, setEditing }) => 
 };
 
 interface EditingTableRowProps {
+  value: string;
+  setEditing: React.Dispatch<React.SetStateAction<boolean>>;
+  saveLabel: string;
+  cancelLabel: string;
   handleSave: (value: any) => void;
 }
 
-const EditingTableRow: React.FC<SpecificRowsProps & EditingTableRowProps & InputTypes> = ({
+const EditingTableRow: React.FC<EditingTableRowProps & InputTypes> = ({
   value,
   setEditing,
   handleSave,
   inputType,
+  saveLabel,
+  cancelLabel,
 }) => {
-  const { t } = useTranslation();
-
   const {
     register,
     handleSubmit,
@@ -94,13 +102,13 @@ const EditingTableRow: React.FC<SpecificRowsProps & EditingTableRowProps & Input
           <div className={styles.editButtonsContainer}>
             <button type="submit" className={styles.submit}>
               <Link icon={<CheckedIcon />} iconAlign="start">
-                {t("Save")}
+                {saveLabel}
               </Link>
             </button>
 
             <div onClick={() => setEditing(false)}>
               <Link icon={<CloseIcon />} iconAlign="start" className={styles.cancel}>
-                {t("Cancel")}
+                {cancelLabel}
               </Link>
             </div>
           </div>
