@@ -1,7 +1,13 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
-import { IInputProps, IReactHookFormProps } from "./types";
+import { IReactHookFormProps } from "./types";
+
+export interface IInputProps {
+  name: string;
+  disabled?: boolean;
+  defaultValue?: string;
+}
 
 export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   disabled,
