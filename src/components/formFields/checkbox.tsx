@@ -1,5 +1,10 @@
 import { FormControlLabel } from "@gemeente-denhaag/components-react";
-import { ICheckboxProps, IReactHookFormProps } from "./types";
+import { IReactHookFormProps } from "./types";
+
+export interface ICheckboxProps {
+  label: string;
+  name: string;
+}
 
 export const InputCheckbox: React.FC<ICheckboxProps & IReactHookFormProps> = ({
   name,
