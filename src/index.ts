@@ -23,6 +23,7 @@ import { MetaIcon } from "./components/metaIcon/MetaIcon";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { StatusSteps } from "./components/statusSteps/StatusSteps";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
+import { Tag } from "./components/tag/Tag";
 
 export {
   DownloadCard,
@@ -48,4 +49,5 @@ export {
   StatusSteps,
   PrimaryTopNav,
   SecondaryTopNav,
+  Tag,
 };
