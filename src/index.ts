@@ -2,6 +2,7 @@ import { DownloadCard, HorizontalImageCard, ImageAndDetailsCard, RichContentCard
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
+import { SelectMultiple, SelectSingle, ISelectValue } from "./components/formFields/select/select";
 import {
   InputText,
   InputPassword,
@@ -19,6 +20,9 @@ import { StatusSteps } from "./components/statusSteps/StatusSteps";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
 
 export {
+  SelectMultiple,
+  SelectSingle,
+  ISelectValue,
   DownloadCard,
   HorizontalImageCard,
   ImageAndDetailsCard,
