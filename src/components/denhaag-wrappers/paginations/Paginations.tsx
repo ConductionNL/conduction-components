@@ -41,6 +41,7 @@ export const Paginations: React.FC<PaginationsProps> = ({ pages, previousPageHre
 interface PreviousPageProps {
   href: string;
 }
+
 const PreviousPage: React.FC<PreviousPageProps> = ({ href }) => (
   <Link
     aria-label="Previous page"
@@ -68,6 +69,7 @@ const PreviousPage: React.FC<PreviousPageProps> = ({ href }) => (
 interface NextPageProps {
   href: string;
 }
+
 const NextPage: React.FC<NextPageProps> = ({ href }) => (
   <Link
     aria-label="Next page"
