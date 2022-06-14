@@ -2,7 +2,7 @@ import * as React from "react";
 import * as styles from "./select.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import ReactSelect from "react-select";
-import { IReactHookFormProps } from "./../types";
+import { IReactHookFormProps } from "../types";
 
 export interface ISelectValue {
   label: string;
@@ -17,7 +17,7 @@ interface ISelectProps {
   disabled?: boolean;
 }
 
-export const SelectMultiple: React.FC<ISelectProps & ISelectProps & IReactHookFormProps> = ({
+export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
   name,
   options,
   errors,
@@ -44,7 +44,7 @@ export const SelectMultiple: React.FC<ISelectProps & ISelectProps & IReactHookFo
   );
 };
 
-export const SelectSingle: React.FC<ISelectProps & ISelectProps & IReactHookFormProps> = ({
+export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
   name,
   options,
   errors,
