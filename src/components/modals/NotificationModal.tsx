@@ -36,13 +36,20 @@ export const NotificationModal: React.FC<ModalProps> = ({
 }) => {
   const [fadeOut, setFadeOut] = React.useState<boolean>(true);
 
+  const animationDurationToken = getComputedStyle(document.documentElement).getPropertyValue(
+    "--conduction-notification-animation-duration",
+  );
+
+  const animationDurationString = animationDurationToken.replace(/\D/g, "");
+  const animationDuration = parseInt(animationDurationString);
+
   const handleClick = (clickFunction?: () => any) => {
     setFadeOut(!setFadeOut);
     clickFunction && clickFunction();
     setTimeout(() => {
       hide();
       setFadeOut(true);
-    }, 200);
+    }, animationDuration);
   };
 
   const modal = (

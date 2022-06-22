@@ -28,7 +28,7 @@
 }
 
 .cssanimation {
-  animation-duration: 200ms;
+  animation-duration: var(--conduction-notification-animation-duration);
   animation-fill-mode: both;
 }
 
