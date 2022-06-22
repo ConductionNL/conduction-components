@@ -24,6 +24,7 @@ import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { StatusSteps } from "./components/statusSteps/StatusSteps";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
 import { Tag } from "./components/tag/Tag";
+import { toggleNotificationModal, NotificationModal } from "./components/modals/NotificationModal";
 
 export {
   DownloadCard,
@@ -50,4 +51,6 @@ export {
   PrimaryTopNav,
   SecondaryTopNav,
   Tag,
+  NotificationModal,
+  toggleNotificationModal,
 };
