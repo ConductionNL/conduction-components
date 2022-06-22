@@ -10,6 +10,7 @@ export interface ModalProps {
   description: string;
   isShown: boolean;
   hide: () => void;
+  layoutClassName: string;
   primaryButton: {
     label: string;
     handleClick(): any;
@@ -21,7 +22,6 @@ export interface ModalProps {
     label: string;
     link: string;
   };
-  layoutClassName?: string;
 }
 
 export const NotificationModal: React.FC<ModalProps> = ({
@@ -54,13 +54,7 @@ export const NotificationModal: React.FC<ModalProps> = ({
   };
 
   const modal = (
-    <div
-      className={clsx(
-        styles.cssanimation,
-        fadeOut ? styles.fadeInBottom : styles.fadeOutBottom,
-        layoutClassName ? [layoutClassName && layoutClassName] : styles.defaultContainer,
-      )}
-    >
+    <div className={clsx(styles.cssanimation, fadeOut ? styles.fadeInBottom : styles.fadeOutBottom, layoutClassName)}>
       <div className={styles.modal}>
         <Heading3>{title}</Heading3>
         <div>
