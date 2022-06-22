@@ -22,7 +22,7 @@ import { AuthenticatedLogo, UnauthenticatedLogo } from "./components/logo/Logo";
 import { MetaIcon } from "./components/metaIcon/MetaIcon";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { StatusSteps } from "./components/statusSteps/StatusSteps";
-import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
+import { PrimaryTopNav, SecondaryTopNav, ITopNavItem } from "./components/topNav/TopNav";
 import { Tag } from "./components/tag/Tag";
 
 export {
@@ -42,6 +42,7 @@ export {
   Textarea,
   InputCheckbox,
   ImageDivider,
+  ITopNavItem,
   AuthenticatedLogo,
   UnauthenticatedLogo,
   MetaIcon,
