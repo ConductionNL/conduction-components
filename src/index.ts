@@ -1,7 +1,6 @@
 import { DownloadCard, HorizontalImageCard, ImageAndDetailsCard, RichContentCard } from "./components/card";
 import { Container } from "./components/container/Container";
-import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
-import {Paginations} from "./components/denhaag-wrappers/paginations/Paginations"
+import { Breadcrumbs, Pagination } from "./components/denhaag-wrappers";
 import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
 import {
   InputText,
@@ -41,6 +40,6 @@ export {
   PrivateRoute,
   StatusSteps,
   PrimaryTopNav,
-  Paginations,
+  Pagination,
   SecondaryTopNav,
 };
