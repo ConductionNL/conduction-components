@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./NotificationModal.module.css";
 import ReactDOM from "react-dom";
-import { Button, Heading3, Link, Paragraph, StylesProvider } from "@gemeente-denhaag/components-react";
+import { Button, Heading3, Link, Paragraph } from "@gemeente-denhaag/components-react";
 import clsx from "clsx";
 import { CloseIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
 
@@ -36,10 +36,11 @@ export const NotificationModal: React.FC<ModalProps> = ({
 }) => {
   const [fadeOut, setFadeOut] = React.useState<boolean>(true);
 
+  const stylesContainer = document.getElementById("stylesContainer") as HTMLElement;
+
   const animationDurationToken = getComputedStyle(document.documentElement).getPropertyValue(
     "--conduction-notification-animation-duration",
   );
-
   const animationDurationString = animationDurationToken.replace(/\D/g, "");
   const animationDuration = parseInt(animationDurationString);
 
@@ -53,42 +54,40 @@ export const NotificationModal: React.FC<ModalProps> = ({
   };
 
   const modal = (
-    <StylesProvider>
-      <div
-        className={clsx(
-          styles.cssanimation,
-          fadeOut ? styles.fadeInBottom : styles.fadeOutBottom,
-          layoutClassName ? [layoutClassName && layoutClassName] : styles.defaultContainer,
-        )}
-      >
-        <div className={styles.modal}>
-          <Heading3>{title}</Heading3>
-          <div>
-            <Paragraph>
-              {description} {infoLink ? <Link href={infoLink.link}>{infoLink.label}</Link> : <></>}
-            </Paragraph>
-          </div>
-          <div className={styles.buttons}>
-            {closeButton ? (
-              <div onClick={() => handleClick()}>
-                <Link icon={<CloseIcon />} iconAlign="start">
-                  {closeButton.label}
-                </Link>
-              </div>
-            ) : (
-              <></>
-            )}
+    <div
+      className={clsx(
+        styles.cssanimation,
+        fadeOut ? styles.fadeInBottom : styles.fadeOutBottom,
+        layoutClassName ? [layoutClassName && layoutClassName] : styles.defaultContainer,
+      )}
+    >
+      <div className={styles.modal}>
+        <Heading3>{title}</Heading3>
+        <div>
+          <Paragraph>
+            {description} {infoLink ? <Link href={infoLink.link}>{infoLink.label}</Link> : <></>}
+          </Paragraph>
+        </div>
+        <div className={styles.buttons}>
+          {closeButton ? (
+            <div onClick={() => handleClick()}>
+              <Link icon={<CloseIcon />} iconAlign="start">
+                {closeButton.label}
+              </Link>
+            </div>
+          ) : (
+            <></>
+          )}
 
-            <Button icon={<ArrowRightIcon />} onClick={() => handleClick(primaryButton.handleClick)}>
-              {primaryButton.label}
-            </Button>
-          </div>
+          <Button icon={<ArrowRightIcon />} onClick={() => handleClick(primaryButton.handleClick)}>
+            {primaryButton.label}
+          </Button>
         </div>
       </div>
-    </StylesProvider>
+    </div>
   );
 
-  return isShown ? ReactDOM.createPortal(modal, document.body) : null;
+  return isShown ? ReactDOM.createPortal(modal, stylesContainer) : null;
 };
 
 export const toggleNotificationModal = () => {
