@@ -7,7 +7,7 @@
   margin: unset;
   display: flex;
   padding-inline-start: unset;
-  align-items: center;
+  justify-content:center;
 }
 
 .li {
@@ -16,10 +16,10 @@
 
 .li > a {
   display: block;
-  padding-inline-start: var(--nlportal-space-inline-lg);
-  padding-inline-end: var(--nlportal-space-inline-lg);
-  padding-block-start: var(--nlportal-space-inline-lg);
-  padding-block-end: var(--nlportal-space-inline-lg);
+  padding-inline-start: var(--conduction-space-inline-lg);
+  padding-inline-end: var(--conduction-space-inline-lg);
+  padding-block-start: var(--conduction-space-inline-lg);
+  padding-block-end: var(--conduction-space-inline-lg);
 }
 
 .li > .link,
