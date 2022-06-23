@@ -1,6 +1,6 @@
 import * as React from "react";
-import { TextArea } from "@gemeente-denhaag/textarea";
 import { IReactHookFormProps } from "./types";
+import { TextArea } from "@gemeente-denhaag/textarea";
 
 export interface ITextAreaProps {
   name: string;

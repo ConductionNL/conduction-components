@@ -1,8 +1,10 @@
 import * as React from "react";
 import * as styles from "./select.module.css";
-import { Control, Controller, FieldValues } from "react-hook-form";
-import ReactSelect from "react-select";
 import { IReactHookFormProps } from "../types";
+import ReactSelect from "react-select";
+import { Control, Controller, FieldValues } from "react-hook-form";
+
+
 
 interface ISelectProps {
   control: Control<FieldValues, any>;

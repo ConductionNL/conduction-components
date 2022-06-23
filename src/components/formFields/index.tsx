@@ -1,9 +1,10 @@
 import { InputText, InputPassword, InputEmail, InputDate, InputNumber } from "./input";
 import { Textarea } from "./textarea";
-import { InputCheckbox } from "./checkbox";
-import { SelectMultiple, SelectSingle, ISelectValue } from "./select/select";
+import { InputCheckbox, InputRadio } from "./checkbox";
+import { SelectMultiple, SelectSingle } from "./select/select";
 
 export {
+  InputRadio,
   InputText,
   InputPassword,
   InputEmail,
@@ -13,5 +14,4 @@ export {
   Textarea,
   SelectMultiple,
   SelectSingle,
-  ISelectValue,
 };
