@@ -4,14 +4,9 @@ import { Control, Controller, FieldValues } from "react-hook-form";
 import ReactSelect from "react-select";
 import { IReactHookFormProps } from "../types";
 
-export interface ISelectValue {
-  label: string;
-  value: string;
-}
-
 interface ISelectProps {
   control: Control<FieldValues, any>;
-  options: ISelectValue[];
+  options: { label: string; value: string }[];
   name: string;
   defaultValue?: any;
   disabled?: boolean;

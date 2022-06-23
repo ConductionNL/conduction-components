@@ -12,7 +12,6 @@ import {
   InputCheckbox,
   SelectSingle,
   SelectMultiple,
-  ISelectValue,
 } from "./components/formFields";
 import { ImageDivider } from "./components/imageDivider/ImageDivider";
 import { AuthenticatedLogo, UnauthenticatedLogo } from "./components/logo/Logo";
@@ -24,7 +23,6 @@ import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
 export {
   SelectSingle,
   SelectMultiple,
-  ISelectValue,
   DownloadCard,
   HorizontalImageCard,
   ImageAndDetailsCard,
