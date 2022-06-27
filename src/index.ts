@@ -1,4 +1,10 @@
-import { DownloadCard, HorizontalImageCard, ImageAndDetailsCard, RichContentCard } from "./components/card";
+import {
+  DownloadCard,
+  HorizontalImageCard,
+  ImageAndDetailsCard,
+  RichContentCard,
+  DetailsCard,
+} from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
@@ -19,6 +25,7 @@ import { MetaIcon } from "./components/metaIcon/MetaIcon";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { StatusSteps } from "./components/statusSteps/StatusSteps";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
+import { Tag } from "./components/tag/Tag";
 
 export {
   SelectSingle,
@@ -27,6 +34,7 @@ export {
   HorizontalImageCard,
   ImageAndDetailsCard,
   RichContentCard,
+  DetailsCard,
   Container,
   Breadcrumbs,
   EditableTableRow,
@@ -45,4 +53,5 @@ export {
   StatusSteps,
   PrimaryTopNav,
   SecondaryTopNav,
+  Tag,
 };
