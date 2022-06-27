@@ -25,6 +25,13 @@ import { StatusSteps } from "./components/statusSteps/StatusSteps";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
 import { Tag } from "./components/tag/Tag";
 
+import {
+  NotificationPopUpController,
+  NotificationPopUp as _NotificationPopUp,
+} from "./components/notificationPopUp/NotificationPopUp";
+
+const NotificationPopUp = { controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
+
 export {
   DownloadCard,
   HorizontalImageCard,
@@ -50,4 +57,5 @@ export {
   PrimaryTopNav,
   SecondaryTopNav,
   Tag,
+  NotificationPopUp,
 };

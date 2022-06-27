@@ -1,0 +1,56 @@
+:export {
+  animationDuration: 200ms;
+}
+
+.modal {
+  animation-fill-mode: both;
+  background: var(--denhaag-color-warmgrey-1);
+  padding-inline-start: var(--nlportal-space-inline-lg);
+  padding-inline-end: var(--nlportal-space-inline-lg);
+  padding-block-start: var(--nlportal-space-block-lg);
+  padding-block-end: var(--nlportal-space-block-lg);
+  box-shadow: var(--conduction-notification-box-shadow);
+  border-radius: var(--nlportal-document-border-radius);
+}
+
+.modal > *:not(:last-child) {
+  margin-block-end: var(--nlportal-space-block-md);
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.buttons > *:not(:last-child) {
+  margin-inline-end: var(--nlportal-space-inline-md);
+}
+
+.visible {
+  animation-name: fadeInBottom;
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal:not(.visible) {
+  animation-name: fadeOutBottom;
+}
+
+@keyframes fadeOutBottom {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
