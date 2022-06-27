@@ -1,22 +1,71 @@
-.ul {
-  display: flex;
+:root {
+  --conduction-top-nav-space-inline-lg: 1.25rem;
+
+  --conduction-top-nav-color-primary: #ffffff;
+  --conduction-top-nav-background-color-primary: #0b71a1;
+  --conduction-top-nav-background-color-primary-hover: rgba(255, 255, 255, 0.2);
+
+  --conduction-top-nav-font-size-secondary: 16px;
+  --conduction-top-nav-color-secondary: #ffffff;
+  --conduction-top-nav-background-color-secondary: #084f70;
+  --conduction-top-nav-background-color-secondary-hover: rgba(0, 0, 0, 0.2);
 }
 
-.ul > * {
-  flex: 1;
+/*
+ * Global
+*/
+.primary:hover,
+.secondary:hover {
+  cursor: pointer;
+}
+
+.ul {
+  margin: unset;
+  display: flex;
+  padding-inline-start: unset;
+  align-items: center;
 }
 
 .li {
   list-style-type: none;
-  padding-block-start: var(--conduction-navbar-padding);
-  padding-block-end: var(--conduction-navbar-padding);
+  display: block;
+  padding-inline-start: var(--conduction-top-nav-space-inline-lg);
+  padding-inline-end: var(--conduction-top-nav-space-inline-lg);
+  padding-block-start: var(--conduction-top-nav-space-inline-lg);
+  padding-block-end: var(--conduction-top-nav-space-inline-lg);
 }
 
-.li > * {
-  text-decoration: none;
-  color: var(--conduction-navbar-color);
-}
-
+/* 
+ * Primary Top Navigation
+*/
 .primary {
-  font-weight: bold;
+  font-weight: 500;
+  width: fit-content;
+  background-color: var(--conduction-top-nav-background-color-primary);
+}
+
+.primary .link {
+  color: var(--conduction-top-nav-color-primary);
+}
+
+.primary .li:hover {
+  background-color: var(--conduction-top-nav-background-color-primary-hover);
+}
+
+/* 
+ * Secondary Top Navigation
+*/
+.secondary {
+  font-weight: 100;
+  width: fit-content;
+  font-size: var(--conduction-top-nav-font-size-secondary);
+  background-color: var(--conduction-top-nav-background-color-secondary);
+}
+
+.secondary .link {
+  color: var(--conduction-top-nav-color-secondary);
+}
+
+.secondary .li:hover {
+  background-color: var(--conduction-top-nav-background-color-secondary-hover);
 }
