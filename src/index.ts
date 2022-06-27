@@ -30,7 +30,7 @@ import {
   NotificationPopUp as _NotificationPopUp,
 } from "./components/notificationPopUp/NotificationPopUp";
 
-const NotificationPopUp = { Controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
+const NotificationPopUp = { controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
 
 export {
   DownloadCard,
