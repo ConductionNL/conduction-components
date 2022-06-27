@@ -19,6 +19,11 @@
 /*
  * Global
 */
+.primary:hover,
+.secondary:hover {
+  cursor: pointer;
+}
+
 .ul {
   margin: unset;
   display: flex;
