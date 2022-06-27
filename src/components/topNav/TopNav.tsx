@@ -14,7 +14,7 @@ export const PrimaryTopNav: React.FC<TopNavProps> = ({ items, layoutClassName })
       <nav className={styles.primary}>
         <ul className={styles.ul}>
           {items.map(({ label, icon, handleClick }, idx) => (
-            <li className={styles.li} key={idx} onClick={() => handleClick()}>
+            <li className={styles.li} key={idx} onClick={handleClick}>
               <Link className={styles.link} icon={icon} iconAlign="start">
                 {label}
               </Link>
@@ -32,7 +32,7 @@ export const SecondaryTopNav: React.FC<TopNavProps> = ({ items, layoutClassName 
       <nav>
         <ul className={styles.ul}>
           {items.map(({ label, icon, handleClick }, idx) => (
-            <li className={styles.li} key={idx} onClick={() => handleClick}>
+            <li className={styles.li} key={idx} onClick={handleClick}>
               <Link className={styles.link} icon={icon} iconAlign="start">
                 {label}
               </Link>
