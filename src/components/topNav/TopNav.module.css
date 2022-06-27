@@ -2,18 +2,13 @@
   --conduction-top-nav-space-inline-lg: 1.25rem;
 
   --conduction-top-nav-color-primary: #ffffff;
-  --conduction-top-nav-background-color-primary: #084f70;
-  --conduction-top-nav-background-color-primary-hover: rgba(0, 0, 0, 0.2);
+  --conduction-top-nav-background-color-primary: #0b71a1;
+  --conduction-top-nav-background-color-primary-hover: rgba(255, 255, 255, 0.2);
 
   --conduction-top-nav-font-size-secondary: 16px;
   --conduction-top-nav-color-secondary: #ffffff;
-  --conduction-top-nav-background-color-secondary: #0b71a1;
-  --conduction-top-nav-background-color-secondary-hover: rgba(
-    255,
-    255,
-    255,
-    0.2
-  );
+  --conduction-top-nav-background-color-secondary: #084f70;
+  --conduction-top-nav-background-color-secondary-hover: rgba(0, 0, 0, 0.2);
 }
 
 /*
