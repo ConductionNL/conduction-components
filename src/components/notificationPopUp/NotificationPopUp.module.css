@@ -1,4 +1,9 @@
+:export {
+  animationDuration: 200ms;
+}
+
 .modal {
+  animation-fill-mode: both;
   background: var(--denhaag-color-warmgrey-1);
   padding-inline-start: var(--nlportal-space-inline-lg);
   padding-inline-end: var(--nlportal-space-inline-lg);
@@ -22,12 +27,7 @@
   margin-inline-end: var(--nlportal-space-inline-md);
 }
 
-.cssanimation {
-  animation-duration: var(--conduction-notification-animation-duration);
-  animation-fill-mode: both;
-}
-
-.fadeInBottom {
+.visible {
   animation-name: fadeInBottom;
 }
 
@@ -41,7 +41,7 @@
   }
 }
 
-.fadeOutBottom {
+.modal:not(.visible) {
   animation-name: fadeOutBottom;
 }
 
