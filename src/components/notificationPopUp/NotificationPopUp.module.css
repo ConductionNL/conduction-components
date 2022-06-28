@@ -1,8 +1,4 @@
 :root {
-  --conduction-notification-popup-width-s: 300px;
-  --conduction-notification-popup-width-default: 500px;
-  --conduction-notification-popup-width-lg: 800px;
-  --conduction-notification-popup-width-xl: 1140px;
   --conduction-notification-popup-box-shadow: 0px 0px 6px 6px rgb(0 0 0 / 15%);
 }
 
