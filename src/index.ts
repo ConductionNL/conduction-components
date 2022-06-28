@@ -16,6 +16,8 @@ import {
   InputNumber,
   Textarea,
   InputCheckbox,
+  SelectMultiple,
+  SelectSingle,
 } from "./components/formFields";
 import { ImageDivider } from "./components/imageDivider/ImageDivider";
 import { AuthenticatedLogo, UnauthenticatedLogo } from "./components/logo/Logo";
@@ -48,6 +50,8 @@ export {
   InputNumber,
   Textarea,
   InputCheckbox,
+  SelectMultiple,
+  SelectSingle,
   ImageDivider,
   AuthenticatedLogo,
   UnauthenticatedLogo,
