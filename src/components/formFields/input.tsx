@@ -92,3 +92,23 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
     invalid={errors[name]}
   />
 );
+
+interface IInputFileProps {
+  accept?: string;
+}
+
+export const InputFile: React.FC<IInputFileProps & IInputProps & IReactHookFormProps> = ({
+  disabled,
+  name,
+  accept,
+  defaultValue,
+  validation,
+  register,
+}) => (
+  <input
+    className="denhaag-textfield__input"
+    type="file"
+    {...{ defaultValue, disabled, accept }}
+    {...register(name, { ...validation })}
+  />
+);
