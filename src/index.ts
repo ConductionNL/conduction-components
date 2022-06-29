@@ -16,6 +16,7 @@ import {
   InputNumber,
   Textarea,
   InputCheckbox,
+  InputRadio,
   SelectMultiple,
   SelectSingle,
 } from "./components/formFields";
@@ -35,6 +36,7 @@ import {
 const NotificationPopUp = { controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
 
 export {
+  InputRadio,
   DownloadCard,
   HorizontalImageCard,
   ImageAndDetailsCard,
