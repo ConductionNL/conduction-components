@@ -8,7 +8,7 @@ import { Tag } from "../../tag/Tag";
 
 interface DetailsCardProps {
   title: string;
-  introduction: string;
+  introduction?: string;
   link: {
     href: string;
     label: string;
