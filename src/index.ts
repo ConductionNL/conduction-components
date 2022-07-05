@@ -18,6 +18,7 @@ import {
   Textarea,
   InputCheckbox,
   InputRadio,
+  InputFile,
   SelectMultiple,
   SelectSingle,
 } from "./components/formFields";
@@ -52,6 +53,7 @@ export {
   InputEmail,
   InputDate,
   InputNumber,
+  InputFile,
   Textarea,
   InputCheckbox,
   SelectMultiple,
