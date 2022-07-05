@@ -4,6 +4,7 @@ import {
   ImageAndDetailsCard,
   RichContentCard,
   DetailsCard,
+  InfoCard,
 } from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
@@ -42,6 +43,7 @@ export {
   ImageAndDetailsCard,
   RichContentCard,
   DetailsCard,
+  InfoCard,
   Container,
   Breadcrumbs,
   EditableTableRow,
