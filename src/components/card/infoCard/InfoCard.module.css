@@ -1,0 +1,37 @@
+:root {
+  --conduction-info-card-background-color: #f2f2f2;
+  --conduction-info-card-border-radius: 3px;
+  --conduction-info-card-title-weight: bold;
+  --conduction-info-card-title-font-size: 24px;
+  --conduction-info-card-title-color: #000000;
+  --conduction-info-card-content-color: #000000;
+  --conduction-info-card-padding: 16px;
+  --conduction-info-card-content-margin: 8px;
+}
+
+.container {
+  background-color: var(--conduction-info-card-background-color);
+  border-radius: var(--conduction-info-card-border-radius);
+  padding-inline-start: var(--conduction-info-card-padding);
+  padding-inline-end: var(--conduction-info-card-padding);
+  padding-block-start: var(--conduction-info-card-padding);
+  padding-block-end: var(--conduction-info-card-padding);
+}
+
+.container > * {
+  display: block;
+}
+
+.container > *:not(:last-child) {
+  margin-block-end: var(--conduction-info-card-content-margin);
+}
+
+.container > .title {
+  font-weight: var(--conduction-info-card-title-weight);
+  font-size: var(--conduction-info-card-title-font-size);
+  color: var(--conduction-info-card-title-color);
+}
+
+.content {
+  color: var(--conduction-info-card-content-color);
+}
