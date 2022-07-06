@@ -1,0 +1,22 @@
+:root {
+  --condution-container-max-width: 1024px;
+  --conduction-quote-border-width: 6px;
+  --conduction-quote-color: #f5f5f5;
+}
+
+.container {
+  width: 95%;
+  margin-inline: auto;
+  max-width: var(--condution-container-max-width);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.virticalBorder {
+  border-left: var(--conduction-quote-border-width) solid
+    var(--conduction-quote-color);
+  overflow: auto;
+}
