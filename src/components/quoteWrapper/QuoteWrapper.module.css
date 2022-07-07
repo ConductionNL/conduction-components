@@ -1,22 +1,12 @@
 :root {
-  --condution-container-max-width: 1024px;
-  --conduction-quote-border-width: 6px;
-  --conduction-quote-color: #f5f5f5;
+  --conduction-quote-border-width: 12px;
+  --conduction-quote-border-color: #f5f5f5;
+  --conduction-quote-padding-inline: 24px;
 }
 
 .container {
-  width: 95%;
-  margin-inline: auto;
-  max-width: var(--condution-container-max-width);
-}
-
-.content {
-  display: flex;
-  justify-content: space-between;
-}
-
-.virticalBorder {
-  border-left: var(--conduction-quote-border-width) solid
-    var(--conduction-quote-color);
-  overflow: auto;
+  border-left-width: var(--conduction-quote-border-width);
+  border-left-style: solid;
+  border-left-color: var(--conduction-quote-border-color);
+  padding-inline-start: var(--conduction-quote-padding-inline);
 }
