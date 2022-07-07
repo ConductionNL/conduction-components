@@ -29,13 +29,12 @@ import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { StatusSteps } from "./components/statusSteps/StatusSteps";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
 import { Tag } from "./components/tag/Tag";
-
 import {
   NotificationPopUpController,
   NotificationPopUp as _NotificationPopUp,
 } from "./components/notificationPopUp/NotificationPopUp";
-
 const NotificationPopUp = { controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
+import { QuoteWrapper } from "./components/quoteWrapper/QuoteWrapper";
 
 export {
   InputRadio,
@@ -68,4 +67,5 @@ export {
   SecondaryTopNav,
   Tag,
   NotificationPopUp,
+  QuoteWrapper,
 };
