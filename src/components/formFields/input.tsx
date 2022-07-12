@@ -7,6 +7,7 @@ export interface IInputProps {
   name: string;
   disabled?: boolean;
   defaultValue?: string;
+  placeholder?: string;
 }
 
 export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
@@ -14,12 +15,14 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   name,
   validation,
   register,
+  placeholder,
   errors,
 }) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
   return (
     <TextField
+      placeholder={placeholder}
       type={showPassword ? "text" : "password"}
       {...{ disabled }}
       {...register(name, { ...validation })}
@@ -35,9 +38,11 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  placeholder,
   errors,
 }) => (
   <TextField
+    placeholder={placeholder}
     type="text"
     {...{ defaultValue, disabled }}
     {...register(name, { ...validation })}
@@ -51,9 +56,11 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  placeholder,
   errors,
 }) => (
   <TextField
+    placeholder={placeholder}
     type="email"
     {...{ defaultValue, disabled }}
     {...register(name, { ...validation })}
@@ -67,9 +74,11 @@ export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  placeholder,
   errors,
 }) => (
   <TextField
+    placeholder={placeholder}
     type="date"
     {...{ defaultValue, disabled }}
     {...register(name, { ...validation })}
@@ -83,9 +92,11 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  placeholder,
   errors,
 }) => (
   <TextField
+    placeholder={placeholder}
     type="number"
     {...{ defaultValue, disabled }}
     {...register(name, { ...validation })}
