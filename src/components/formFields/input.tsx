@@ -56,15 +56,15 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  icon,
   placeholder,
   errors,
 }) => (
   <TextField
     type="email"
-    {...{ defaultValue, disabled, placeholder }}
+    {...{ defaultValue, disabled, placeholder, icon }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
-    icon={<EmailIcon />}
   />
 );
 
