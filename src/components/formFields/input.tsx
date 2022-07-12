@@ -22,9 +22,8 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
 
   return (
     <TextField
-      placeholder={placeholder}
       type={showPassword ? "text" : "password"}
-      {...{ disabled }}
+      {...{ disabled, placeholder }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
       icon={<span onClick={() => setShowPassword(!showPassword)}>{showPassword ? <HideIcon /> : <ShowIcon />}</span>}
@@ -42,9 +41,8 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
 }) => (
   <TextField
-    placeholder={placeholder}
     type="text"
-    {...{ defaultValue, disabled }}
+    {...{ defaultValue, disabled, placeholder }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
@@ -60,9 +58,8 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
 }) => (
   <TextField
-    placeholder={placeholder}
     type="email"
-    {...{ defaultValue, disabled }}
+    {...{ defaultValue, disabled, placeholder }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
@@ -74,11 +71,9 @@ export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
-  placeholder,
   errors,
 }) => (
   <TextField
-    placeholder={placeholder}
     type="date"
     {...{ defaultValue, disabled }}
     {...register(name, { ...validation })}
@@ -96,9 +91,8 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
 }) => (
   <TextField
-    placeholder={placeholder}
     type="number"
-    {...{ defaultValue, disabled }}
+    {...{ defaultValue, disabled, placeholder }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
