@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
-import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
+import { ShowIcon, HideIcon, EmailIcon, CalendarIcon } from "@gemeente-denhaag/icons";
 import { IReactHookFormProps } from "./types";
 
 export interface IInputProps {
@@ -9,7 +9,6 @@ export interface IInputProps {
   defaultValue?: string;
   icon?: JSX.Element;
   placeholder?: string;
-
 }
 
 export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
@@ -17,7 +16,6 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   name,
   validation,
   register,
-  icon,
   placeholder,
   errors,
 }) => {
@@ -26,7 +24,7 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   return (
     <TextField
       type={showPassword ? "text" : "password"}
-      {...{ disabled, placeholder, icon }}
+      {...{ disabled, placeholder }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
       icon={<span onClick={() => setShowPassword(!showPassword)}>{showPassword ? <HideIcon /> : <ShowIcon />}</span>}
@@ -58,15 +56,15 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
-  icon,
   placeholder,
   errors,
 }) => (
   <TextField
     type="email"
-    {...{ defaultValue, disabled, placeholder, icon }}
+    {...{ defaultValue, disabled, placeholder }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
+    icon={<EmailIcon />}
   />
 );
 
@@ -76,12 +74,11 @@ export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
-  icon,
   errors,
 }) => (
   <TextField
     type="date"
-    {...{ defaultValue, disabled, icon }}
+    {...{ defaultValue, disabled }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
