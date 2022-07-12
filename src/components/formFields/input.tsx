@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
-import { ShowIcon, HideIcon, EmailIcon, CalendarIcon } from "@gemeente-denhaag/icons";
+import { ShowIcon, HideIcon, EmailIcon } from "@gemeente-denhaag/icons";
 import { IReactHookFormProps } from "./types";
 
 export interface IInputProps {
