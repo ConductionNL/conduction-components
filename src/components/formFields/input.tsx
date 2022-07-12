@@ -7,6 +7,7 @@ export interface IInputProps {
   name: string;
   disabled?: boolean;
   defaultValue?: string;
+  icon?: JSX.Element;
 }
 
 export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
@@ -14,6 +15,7 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   name,
   validation,
   register,
+  icon,
   errors,
 }) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
@@ -21,7 +23,7 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   return (
     <TextField
       type={showPassword ? "text" : "password"}
-      {...{ disabled }}
+      {...{ disabled, icon }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
       icon={<span onClick={() => setShowPassword(!showPassword)}>{showPassword ? <HideIcon /> : <ShowIcon />}</span>}
@@ -35,11 +37,12 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  icon,
   errors,
 }) => (
   <TextField
     type="text"
-    {...{ defaultValue, disabled }}
+    {...{ defaultValue, disabled, icon }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
@@ -51,11 +54,12 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  icon,
   errors,
 }) => (
   <TextField
     type="email"
-    {...{ defaultValue, disabled }}
+    {...{ defaultValue, disabled, icon }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
@@ -67,11 +71,12 @@ export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  icon,
   errors,
 }) => (
   <TextField
     type="date"
-    {...{ defaultValue, disabled }}
+    {...{ defaultValue, disabled, icon }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
@@ -83,11 +88,12 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   defaultValue,
   validation,
   register,
+  icon,
   errors,
 }) => (
   <TextField
     type="number"
-    {...{ defaultValue, disabled }}
+    {...{ defaultValue, disabled, icon }}
     {...register(name, { ...validation })}
     invalid={errors[name]}
   />
