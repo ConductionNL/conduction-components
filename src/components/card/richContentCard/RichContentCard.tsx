@@ -39,8 +39,8 @@ export const RichContentCard: React.FC<RichContentCardProps> = ({
       </div>
 
       <div className={styles.labelsWithIcon}>
-        {labelsWithIcon.map(({ label, icon }) => (
-          <LabelWithIcon {...{ label, icon }} />
+        {labelsWithIcon.map(({ label, icon }, idx) => (
+          <LabelWithIcon key={idx} {...{ label, icon }} />
         ))}
       </div>
 
@@ -53,8 +53,8 @@ export const RichContentCard: React.FC<RichContentCardProps> = ({
       {contentLinks && (
         <div className={styles.contentLinks}>
           <Divider />
-          {contentLinks.map(({ title, subTitle, href }) => (
-            <ContentLink {...{ title, subTitle, href }} />
+          {contentLinks.map(({ title, subTitle, href }, idx) => (
+            <ContentLink key={idx} {...{ title, subTitle, href }} />
           ))}
         </div>
       )}
