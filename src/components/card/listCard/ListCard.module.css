@@ -1,0 +1,17 @@
+:root {
+  --conduction-space-inline-lg: 1rem;
+  --conduction-top-nav-font-size: 14px;
+}
+
+.container {
+  padding: var(--conduction-space-inline-lg);
+  background-color: var(--denhaag-color-grey-1);
+}
+
+.title {
+  font-weight: bold;
+}
+
+.link {
+  font-size: var(--conduction-top-nav-font-size );
+}

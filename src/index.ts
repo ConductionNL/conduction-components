@@ -5,6 +5,7 @@ import {
   RichContentCard,
   DetailsCard,
   InfoCard,
+  ListCard,
 } from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
@@ -37,6 +38,7 @@ const NotificationPopUp = { controller: NotificationPopUpController, Notificatio
 import { QuoteWrapper } from "./components/quoteWrapper/QuoteWrapper";
 
 export {
+  ListCard,
   InputRadio,
   DownloadCard,
   HorizontalImageCard,
