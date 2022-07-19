@@ -7,7 +7,7 @@ import {
   InfoCard,
 } from "./components/card";
 import { Container } from "./components/container/Container";
-import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
+import { Breadcrumbs, Pagination } from "./components/denhaag-wrappers";
 import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
 import {
   InputText,
@@ -64,6 +64,7 @@ export {
   PrivateRoute,
   StatusSteps,
   PrimaryTopNav,
+  Pagination,
   SecondaryTopNav,
   Tag,
   NotificationPopUp,
