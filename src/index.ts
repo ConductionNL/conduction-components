@@ -6,6 +6,7 @@ import {
   DetailsCard,
   InfoCard,
 } from "./components/card";
+import { VideoPlayer } from "./components/videoPlayer/VideoPlayer";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
@@ -67,6 +68,7 @@ export {
   PrimaryTopNav,
   SecondaryTopNav,
   Tag,
+  VideoPlayer,
   NotificationPopUp,
   QuoteWrapper,
   Pagination,
