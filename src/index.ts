@@ -6,6 +6,7 @@ import {
   DetailsCard,
   InfoCard,
 } from "./components/card";
+import { Slider } from "./components/slider/Slider";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
@@ -66,6 +67,7 @@ export {
   PrimaryTopNav,
   SecondaryTopNav,
   Tag,
+  Slider,
   NotificationPopUp,
   QuoteWrapper,
 };
