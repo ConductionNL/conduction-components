@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as styles from "./ListCard.module.css";
-import clsx from "clsx";
 import { Link } from "@gemeente-denhaag/components-react";
+import clsx from "clsx";
+
 
 interface ListCardProps {
   title: string;
