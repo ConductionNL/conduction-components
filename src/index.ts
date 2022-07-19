@@ -5,6 +5,7 @@ import {
   RichContentCard,
   DetailsCard,
   InfoCard,
+  ListCard,
 } from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
@@ -38,6 +39,7 @@ import { QuoteWrapper } from "./components/quoteWrapper/QuoteWrapper";
 import { Pagination } from "./components/denhaag-wrappers/pagination/Pagination";
 
 export {
+  ListCard,
   InputRadio,
   DownloadCard,
   HorizontalImageCard,
