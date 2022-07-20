@@ -6,6 +6,7 @@ import {
   DetailsCard,
   InfoCard,
 } from "./components/card";
+import {Accordion} from "./components/accordion/Accordion"
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
@@ -62,6 +63,7 @@ export {
   AuthenticatedLogo,
   UnauthenticatedLogo,
   MetaIcon,
+  Accordion,
   PrivateRoute,
   StatusSteps,
   PrimaryTopNav,
