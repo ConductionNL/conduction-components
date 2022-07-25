@@ -22,6 +22,11 @@
   padding-block-start: var(--nlportal-space-block-lg);
   padding-block-end: var(--nlportal-space-block-lg);
   border: var(--nlportal-document-border, 1px solid);
+  height: calc(
+    100% - var(--conduction-image-and-details-card-image-height) -
+      var(--nlportal-space-block-lg) - var(--nlportal-space-block-lg) - 2px
+  ); /* height = 100% - imageHeight - padding - border */
+  margin-block-start: auto;
 }
 
 .content > *:not(:last-child) {
