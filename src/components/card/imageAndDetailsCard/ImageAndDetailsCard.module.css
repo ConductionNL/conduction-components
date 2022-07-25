@@ -26,7 +26,6 @@
     100% - var(--conduction-image-and-details-card-image-height) -
       var(--nlportal-space-block-lg) - var(--nlportal-space-block-lg) - 2px
   ); /* height = 100% - imageHeight - padding - border */
-  margin-block-start: auto;
 }
 
 .content > *:not(:last-child) {
@@ -56,4 +55,5 @@
 .link {
   display: flex;
   justify-content: flex-end;
+  margin-block-start: auto;
 }
