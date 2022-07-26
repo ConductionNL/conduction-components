@@ -1,20 +1,12 @@
 :root {
   --conduction-top-nav-space-inline-lg: 1.25rem;
 
-  --conduction-top-nav-color-primary: #ffffff;
-  --conduction-top-nav-background-color-primary: #0b71a1;
-  --conduction-top-nav-background-color-primary-hover: rgba(255, 255, 255, 0.2);
-
   --conduction-top-nav-font-size-secondary: 16px;
   --conduction-top-nav-color-secondary: #ffffff;
   --conduction-top-nav-background-color-secondary: #084f70;
   --conduction-top-nav-background-color-secondary-hover: rgba(0, 0, 0, 0.2);
 }
 
-/*
- * Global
-*/
-.primary:hover,
 .secondary:hover {
   cursor: pointer;
 }
@@ -35,26 +27,6 @@
   padding-block-end: var(--conduction-top-nav-space-inline-lg);
 }
 
-/* 
- * Primary Top Navigation
-*/
-.primary {
-  font-weight: 500;
-  width: fit-content;
-  background-color: var(--conduction-top-nav-background-color-primary);
-}
-
-.primary .link {
-  color: var(--conduction-top-nav-color-primary);
-}
-
-.primary .li:hover {
-  background-color: var(--conduction-top-nav-background-color-primary-hover);
-}
-
-/* 
- * Secondary Top Navigation
-*/
 .secondary {
   font-weight: 100;
   width: fit-content;

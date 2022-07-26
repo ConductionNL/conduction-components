@@ -1,0 +1,59 @@
+:root {
+  --conduction-top-nav-space-inline-lg: 1.25rem;
+
+  --conduction-top-nav-color-primary: #ffffff;
+  --conduction-top-nav-background-color-primary: #0b71a1;
+  --conduction-top-nav-background-color-primary-hover: rgba(255, 255, 255, 0.2);
+}
+
+.primary:hover {
+  cursor: pointer;
+}
+
+.ul {
+  margin: unset;
+  display: flex;
+  padding-inline-start: unset;
+  align-items: center;
+}
+
+.li {
+  list-style-type: none;
+  display: block;
+  position: relative;
+}
+
+.primary {
+  font-weight: 500;
+  width: fit-content;
+  background-color: var(--conduction-top-nav-background-color-primary);
+}
+
+.primary .link {
+  display: block;
+  color: var(--conduction-top-nav-color-primary);
+  padding-inline-start: var(--conduction-top-nav-space-inline-lg);
+  padding-inline-end: var(--conduction-top-nav-space-inline-lg);
+  padding-block-start: var(--conduction-top-nav-space-inline-lg);
+  padding-block-end: var(--conduction-top-nav-space-inline-lg);
+}
+
+.primary .li:hover {
+  background-color: var(--conduction-top-nav-background-color-primary-hover);
+}
+
+.primary .li:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  left: 0;
+  padding: 0;
+  width: 100%;
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  background-color: var(--conduction-top-nav-background-color-primary);
+  border-bottom-right-radius: var(--nlportal-border-radius);
+  border-bottom-left-radius: var(--nlportal-border-radius);
+}
