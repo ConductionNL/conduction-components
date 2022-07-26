@@ -44,6 +44,7 @@
 
 .primary .li:hover .dropdown {
   display: block;
+  z-index: 1;
 }
 
 .dropdown {
