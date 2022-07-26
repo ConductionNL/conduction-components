@@ -27,7 +27,7 @@ import { AuthenticatedLogo, UnauthenticatedLogo } from "./components/logo/Logo";
 import { MetaIcon } from "./components/metaIcon/MetaIcon";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { StatusSteps } from "./components/statusSteps/StatusSteps";
-import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav/TopNav";
+import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav";
 import { Tag } from "./components/tag/Tag";
 import {
   NotificationPopUpController,
