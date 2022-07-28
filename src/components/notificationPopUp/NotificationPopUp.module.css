@@ -1,5 +1,6 @@
 :root {
-  --conduction-notification-popup-box-shadow: 0px 0px 6px 6px rgb(0 0 0 / 15%);
+  --conduction-notification-pop-up-box-shadow: 0px 0px 6px 6px rgb(0 0 0 / 15%);
+  --conduction-notification-pop-up-border: 1px solid var(--skeleton-color-grey-2);
 }
 
 :export {
@@ -8,17 +9,17 @@
 
 .modal {
   animation-fill-mode: both;
-  background: var(--denhaag-color-warmgrey-1);
-  padding-inline-start: var(--nlportal-space-inline-lg);
-  padding-inline-end: var(--nlportal-space-inline-lg);
-  padding-block-start: var(--nlportal-space-block-lg);
-  padding-block-end: var(--nlportal-space-block-lg);
-  box-shadow: var(--conduction-notification-popup-box-shadow);
-  border-radius: var(--nlportal-document-border-radius);
+  background: var(--skeleton-color-grey-1);
+  padding-inline-start: var(--skeleton-size-lg);
+  padding-inline-end: var(--skeleton-size-lg);
+  padding-block-start: var(--skeleton-size-lg);
+  padding-block-end: var(--skeleton-size-lg);
+  border-radius: var(--skeleton-border-radius-md);
+  box-shadow: var(--conduction-notification-pop-up-box-shadow);
 }
 
 .modal > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-md);
+  margin-block-end: var(--skeleton-size-md);
 }
 
 .buttons {
@@ -28,7 +29,7 @@
 }
 
 .buttons > *:not(:last-child) {
-  margin-inline-end: var(--nlportal-space-inline-md);
+  margin-inline-end: var(--skeleton-size-md);
 }
 
 .visible {
