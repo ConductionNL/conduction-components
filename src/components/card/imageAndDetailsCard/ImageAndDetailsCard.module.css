@@ -1,7 +1,14 @@
+:root {
+  --conduction-image-and-details-card-image-height: 275px;
+  --conduction-image-and-details-card-title-font-weight: bold;
+  --conduction-image-and-details-card-introduction-lines-clamp: 3;
+  --conduction-image-and-details-card-border: 1px solid var(--skeleton-color-grey-2);
+}
+
 .container {
   cursor: pointer;
   overflow: hidden;
-  border-radius: var(--nlportal-document-border-radius);
+  border-radius: var(--skeleton-border-radius-md);
 }
 
 .image {
@@ -17,38 +24,35 @@
 .content {
   display: flex;
   flex-direction: column;
-  padding-inline-start: var(--nlportal-space-inline-lg);
-  padding-inline-end: var(--nlportal-space-inline-lg);
-  padding-block-start: var(--nlportal-space-block-lg);
-  padding-block-end: var(--nlportal-space-block-lg);
-  border: var(--nlportal-document-border, 1px solid);
+  padding-inline-start: var(--skeleton-size-md);
+  padding-inline-end: var(--skeleton-size-md);
+  padding-block-start: var(--skeleton-size-md);
+  padding-block-end: var(--skeleton-size-md);
+  border: var(--conduction-image-and-details-card-border);
   height: calc(
-    100% - var(--conduction-image-and-details-card-image-height) -
-      var(--nlportal-space-block-lg) - var(--nlportal-space-block-lg) - 2px
+    100% - var(--conduction-image-and-details-card-image-height) - var(--skeleton-size-md) - var(--skeleton-size-md) - 2px
   ); /* height = 100% - imageHeight - padding - border */
 }
 
 .content > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-md);
+  margin-block-end: var(--skeleton-size-md);
 }
 
 .title {
-  font-size: var(--denhaag-typography-scale-xl-font-size);
-  font-weight: var(--conduction-image-and-details-card-title-font-weight);
+  font-size: var(--skeleton-font-size-xl);
+  font-weight: var(--skeleton-font-weight-bold);
 }
 
 .subHeader {
-  color: var(--denhaag-color-grey-3);
-  font-size: var(--denhaag-typography-scale-s-font-size);
+  color: var(--skeleton-color-grey-3);
+  font-size: var(--skeleton-font-size-sm);
 }
 
 .introduction {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: var(
-    --conduction-image-and-details-card-introduction-lines-clamp
-  );
+  -webkit-line-clamp: var(--conduction-image-and-details-card-introduction-lines-clamp);
   -webkit-box-orient: vertical;
 }
 
