@@ -1,3 +1,8 @@
+:root {
+  --conduction-meta-icon-icon-size: var(--skeleton-size-lg);
+  --conduction-meta-icon-icon-color: var(--skeleton-color-secondary-4);
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -5,13 +10,20 @@
 }
 
 .container > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-xs);
+  margin-block-end: var(--skeleton-size-xs);
 }
 
 .icon {
-  color: var(--nlportal-meta-icon-color);
+  color: var(--conduction-meta-icon-icon-color);
+  height: var(--conduction-meta-icon-icon-size);
+  width: var(--conduction-meta-icon-icon-size);
+}
+
+.icon > svg {
+  height: 100%;
+  width: 100%;
 }
 
 .value {
-  font-weight: var(--nlportal-meta-icon-font-weight-bold);
+  font-weight: var(--skeleton-font-weight-bold);
 }
