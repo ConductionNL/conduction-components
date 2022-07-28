@@ -1,26 +1,34 @@
+:root {
+  --conduction-horizontal-image-card-image-size: 52px;
+}
+
 .container {
   display: flex;
   align-items: center;
   cursor: pointer;
-  background-color: var(--denhaag-color-grey-1);
-  border-radius: var(--nlportal-border-radius);
+  background-color: var(--skeleton-color-grey-1);
+  border-radius: var(--skeleton-border-radius-md);
 }
 
 .link {
   display: flex;
   flex-direction: column;
+  padding-block-start: var(--skeleton-size-lg);
+  padding-block-end: var(--skeleton-size-lg);
+  padding-inline-end: var(--skeleton-size-lg);
 }
 
 .imageOrIconContainer > :first-child {
-  width: var(--conduction-horizontal-image-card-icon-size);
-  height: var(--conduction-horizontal-image-card-icon-size);
+  width: var(--conduction-horizontal-image-card-image-size);
+  height: var(--conduction-horizontal-image-card-image-size);
 
-  padding-inline-start: var(--nlportal-space-inline-md);
-  padding-inline-end: var(--nlportal-space-inline-md);
-  padding-block-start: var(--nlportal-space-block-md);
-  padding-block-end: var(--nlportal-space-block-md);
+  padding-inline-start: var(--skeleton-size-md);
+  padding-inline-end: var(--skeleton-size-md);
+  padding-block-start: var(--skeleton-size-md);
+  padding-block-end: var(--skeleton-size-md);
 }
 
 .title {
-  font-size: var(--conduction-horizontal-image-card-font-size);
+  font-weight: var(--skeleton-font-weight-bold);
+  font-size: var(--skeleton-font-size-xl);
 }
