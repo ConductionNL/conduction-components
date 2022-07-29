@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from "./SecondaryTopnav.module.css";
+import * as styles from "./SecondaryTopNav.module.css";
 import { Link } from "@gemeente-denhaag/components-react";
 import clsx from "clsx";
 
