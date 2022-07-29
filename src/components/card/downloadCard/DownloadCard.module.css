@@ -1,10 +1,14 @@
+:root {
+  --conduction-download-card-border: 1px solid var(--skeleton-color-grey-2);
+}
+
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: var(--nlportal-document-border, 1px solid);
-  border-radius: var(--nlportal-document-border-radius);
-  padding-inline-end: var(--nlportal-space-inline-md);
+  border: var(--conduction-download-card-border);
+  border-radius: var(--skeleton-border-radius-md);
+  padding-inline-end: var(--skeleton-size-sm);
 }
 
 .content {
@@ -13,11 +17,11 @@
 }
 
 .content > *:not(:last-child) {
-  margin-inline-end: var(--nlportal-space-inline-md);
+  margin-inline-end: var(--skeleton-size-sm);
 }
 
 .icon {
-  padding-inline: var(--nlportal-space-inline-md);
-  padding-block: var(--nlportal-space-block-md);
-  background-color: var(--nlportal-document-icon-background-color);
+  padding-inline: var(--skeleton-size-sm);
+  padding-block: var(--skeleton-size-sm);
+  background-color: var(--skeleton-color-grey-1);
 }

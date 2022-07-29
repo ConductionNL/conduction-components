@@ -1,44 +1,47 @@
+:root {
+  --conduction-details-card-border: 1px solid var(--skeleton-color-grey-2);
+  --conduction-details-card-introduction-lines-clamp: 3;
+}
+
 .container {
   cursor: pointer;
   overflow: hidden;
-  border-radius: var(--nlportal-document-border-radius);
+  border-radius: var(--skeleton-border-radius-md);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  padding-inline-start: var(--nlportal-space-inline-lg);
-  padding-inline-end: var(--nlportal-space-inline-lg);
-  padding-block-start: var(--nlportal-space-block-lg);
-  padding-block-end: var(--nlportal-space-block-lg);
-  border: var(--nlportal-document-border, 1px solid);
+  padding-inline-start: var(--skeleton-size-md);
+  padding-inline-end: var(--skeleton-size-md);
+  padding-block-start: var(--skeleton-size-md);
+  padding-block-end: var(--skeleton-size-md);
+  border: var(--conduction-details-card-border);
 }
 
 .content > *:not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-md);
+  margin-block-end: var(--skeleton-size-md);
 }
 
 .title {
-  font-size: var(--denhaag-typography-scale-xl-font-size);
-  font-weight: var(--conduction-image-and-details-card-title-font-weight);
+  font-size: var(--skeleton-font-size-xl);
+  font-weight: var(--skeleton-font-weight-bold);
 }
 
 .subHeader {
-  color: var(--denhaag-color-grey-3);
-  font-size: var(--denhaag-typography-scale-s-font-size);
+  color: var(--skeleton-color-grey-3);
+  font-size: var(--skeleton-font-size-sm);
 }
 
 .tags > *:not(:last-child) {
-  margin-inline-end: var(--nlportal-space-inline-md);
+  margin-inline-end: var(--skeleton-size-sm);
 }
 
 .introduction {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: var(
-    --conduction-image-and-details-card-introduction-lines-clamp
-  );
+  -webkit-line-clamp: var(--conduction-details-card-introduction-lines-clamp);
   -webkit-box-orient: vertical;
 }
 

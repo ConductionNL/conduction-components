@@ -1,9 +1,9 @@
 :root {
-  --conduction-top-nav-space-inline-lg: 1.25rem;
-
-  --conduction-top-nav-color-primary: #ffffff;
-  --conduction-top-nav-background-color-primary: #0b71a1;
-  --conduction-top-nav-background-color-primary-hover: rgba(255, 255, 255, 0.2);
+  --conduction-primary-top-nav-item-padding: var(--skeleton-size-md);
+  --conduction-primary-top-nav-color: var(--skeleton-color-white);
+  --conduction-primary-top-nav-background-color: var(--skeleton-color-secondary-3);
+  --conduction-primary-top-nav-background-color-hover: var(--skeleton-color-secondary-5);
+  --conduction-primary-top-nav-dropdown-border-radius: var(--skeleton-border-radius-md);
 }
 
 .primary:hover {
@@ -26,20 +26,20 @@
 .primary {
   font-weight: 500;
   width: fit-content;
-  background-color: var(--conduction-top-nav-background-color-primary);
+  background-color: var(--conduction-primary-top-nav-background-color);
 }
 
 .primary .link {
   display: block;
-  color: var(--conduction-top-nav-color-primary);
-  padding-inline-start: var(--conduction-top-nav-space-inline-lg);
-  padding-inline-end: var(--conduction-top-nav-space-inline-lg);
-  padding-block-start: var(--conduction-top-nav-space-inline-lg);
-  padding-block-end: var(--conduction-top-nav-space-inline-lg);
+  color: var(--conduction-primary-top-nav-color);
+  padding-inline-start: var(--conduction-primary-top-nav-item-padding);
+  padding-inline-end: var(--conduction-primary-top-nav-item-padding);
+  padding-block-start: var(--conduction-primary-top-nav-item-padding);
+  padding-block-end: var(--conduction-primary-top-nav-item-padding);
 }
 
 .primary .li:hover {
-  background-color: var(--conduction-top-nav-background-color-primary-hover);
+  background-color: var(--conduction-primary-top-nav-background-color-hover);
 }
 
 .primary .li:hover .dropdown {
@@ -54,7 +54,7 @@
   display: none;
   position: absolute;
   list-style-type: none;
-  background-color: var(--conduction-top-nav-background-color-primary);
-  border-bottom-right-radius: var(--nlportal-border-radius);
-  border-bottom-left-radius: var(--nlportal-border-radius);
+  background-color: var(--conduction-primary-top-nav-background-color);
+  border-bottom-right-radius: var(--conduction-primary-top-nav-dropdown-border-radius);
+  border-bottom-left-radius: var(--conduction-primary-top-nav-dropdown-border-radius);
 }

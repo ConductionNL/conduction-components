@@ -1,49 +1,15 @@
-.select > div {
-  background-color: var(
-    --utrecht-textbox-background-color,
-    var(--utrecht-form-input-background-color)
-  );
-  border-width: var(
-    --utrecht-textbox-border-width,
-    var(--utrecht-form-input-border-width)
-  );
-  border-bottom-width: var(
-    --utrecht-textbox-border-bottom-width,
-    var(--utrecht-textbox-border-width, var(--utrecht-form-input-border-width))
-  );
-  border-color: var(
-    --utrecht-textbox-border-color,
-    var(--utrecht-form-input-border-color)
-  );
-  border-radius: var(
-    --utrecht-textbox-border-radius,
-    var(--utrecht-form-input-border-radius, 0)
-  );
-  border-style: solid;
-  box-sizing: border-box;
-  color: var(--utrecht-textbox-color, var(--utrecht-form-input-color));
-  font-family: var(
-    --utrecht-textbox-font-family,
-    var(--utrecht-form-input-font-family)
-  );
-  font-size: var(
-    --utrecht-textbox-font-size,
-    var(--utrecht-form-input-font-size, 1em)
-  );
-  max-inline-size: var(
-    --utrecht-textbox-max-inline-size,
-    var(--utrecht-form-input-max-inline-size)
-  );
-
-  padding-block-start: 6.5px;
-  padding-block-end: 6.5px;
+:root {
+  --conduction-input-select-border: 1px solid var(--skeleton-color-grey-3);
+  --conduction-input-select-border-focus: 2px dashed var(--skeleton-color-grey-5);
 }
 
-.select > div:hover {
-  border-color: var(
-    --utrecht-textbox-border-color,
-    var(--utrecht-form-input-border-color)
-  );
+.select > div {
+  background-color: var(--skeleton-color-white);
+  border: var(--conduction-input-select-border);
+  border-radius: var(--skeleton-border-radius-md);
+  box-sizing: border-box;
+  padding-block-start: var(--skeleton-size-xs);
+  padding-block-end: var(--skeleton-size-xs);
 }
 
 .select > div:focus-within {
@@ -51,15 +17,19 @@
   box-shadow: none;
 }
 
+.select > div:hover {
+  border-color: var(--skeleton-color-grey-3);
+}
+
 .select > div:focus-within::after {
-  pointer-events: none;
-  border: var(--denhaag-focus-border);
-  border-radius: var(--denhaag-border-radius);
-  bottom: -3px;
   content: "";
   display: block;
-  left: -3px;
   position: absolute;
-  right: -3px;
-  top: -3px;
+  pointer-events: none;
+  bottom: calc(var(--skeleton-size-2xs) * -1);
+  left: calc(var(--skeleton-size-2xs) * -1);
+  right: calc(var(--skeleton-size-2xs) * -1);
+  top: calc(var(--skeleton-size-2xs) * -1);
+  border: var(--conduction-input-select-border-focus);
+  border-radius: var(--skeleton-border-radius-md);
 }

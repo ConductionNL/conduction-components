@@ -3,16 +3,16 @@
 }
 
 .cancel {
-  color: var(--denhaag-color-grey-3) !important;
+  color: var(--skeleton-color-grey-3) !important;
 }
 
 .editButtonsContainer {
   display: flex;
-  margin-block-start: var(--nlportal-space-block-xs);
+  margin-block-start: var(--skeleton-size-xs);
 }
 
 .editButtonsContainer > *:not(:last-child) {
-  margin-inline-end: var(--nlportal-space-inline-md);
+  margin-inline-end: var(--skeleton-size-md);
 }
 
 .submit {

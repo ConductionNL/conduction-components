@@ -1,9 +1,20 @@
+:root {
+  --conduction-tag-font-size: var(--skeleton-font-size-sm);
+  --conduction-tag-color: var(--skeleton-black);
+  --conduction-tag-backgrond-color: var(--skeleton-color-grey-1);
+  --conduction-tag-border-radius: var(--skeleton-border-radius-md);
+  --conduction-tag-padding: var(--skeleton-size-xs);
+}
+
 .tag {
+  display: inline-block;
+  width: fit-content;
   font-size: var(--conduction-tag-font-size);
-  background-color: var(--denhaag-color-grey-1);
-  border-radius: var(--nlportal-document-border-radius);
-  padding-inline-start: var(--nlportal-space-inline-xs);
-  padding-inline-end: var(--nlportal-space-inline-xs);
-  padding-block-start: var(--nlportal-space-block-xs);
-  padding-block-end: var(--nlportal-space-block-xs);
+  color: var(--conduction-tag-color);
+  background-color: var(--conduction-tag-backgrond-color);
+  border-radius: var(--conduction-tag-border-radius);
+  padding-inline-start: var(--conduction-tag-padding);
+  padding-inline-end: var(--conduction-tag-padding);
+  padding-block-start: var(--conduction-tag-padding);
+  padding-block-end: var(--conduction-tag-padding);
 }

@@ -1,21 +1,25 @@
+:root {
+  --conduction-rich-content-card-border: 1px solid var(--skeleton-color-grey-2);
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  border: var(--nlportal-document-border, 1px solid);
-  border-radius: var(--nlportal-border-radius);
+  border: var(--conduction-rich-content-card-border);
+  border-radius: var(--skeleton-border-radius-md);
 
-  padding-inline-start: var(--nlportal-space-inline-md);
-  padding-inline-end: var(--nlportal-space-inline-md);
-  padding-block-start: var(--nlportal-space-block-md);
-  padding-block-end: var(--nlportal-space-block-xl);
+  padding-inline-start: var(--skeleton-size-md);
+  padding-inline-end: var(--skeleton-size-md);
+  padding-block-start: var(--skeleton-size-md);
+  padding-block-end: var(--skeleton-size-md);
 }
 
 .container > *:not(.link):not(:last-child) {
-  margin-block-end: var(--nlportal-space-block-md);
+  margin-block-end: var(--skeleton-size-md);
 }
 
 .link {
-  margin-block-end: var(--nlportal-space-block-xs);
+  margin-block-end: var(--skeleton-size-xs);
 }
 
 .link > :first-child {
@@ -28,39 +32,39 @@
 }
 
 .labelsWithIcon > *:not(:last-child) {
-  margin-inline-end: var(--nlportal-space-block-md);
+  margin-inline-end: var(--skeleton-size-md);
 }
 
 .tags > *:not(:last-child) {
-  margin-inline-end: var(--nlportal-space-inline-md);
+  margin-inline-end: var(--skeleton-size-md);
 }
 
 .contentLinks > *:not(:last-child):not(hr) {
-  margin-block-end: var(--nlportal-space-block-xs);
+  margin-block-end: var(--skeleton-size-xs);
 }
 
 /* Component: LabelWithIcon */
 .labelWithIcon {
   display: flex;
   align-items: center;
-  color: var(--denhaag-color-grey-3);
+  color: var(--skeleton-color-grey-3);
 }
 
 .labelWithIcon > .labelWithIcon_icon > svg {
-  height: var(--conduction-rich-card-label-with-icon-icon-size);
-  width: var(--conduction-rich-card-label-with-icon-icon-size);
-  margin-inline-end: var(--nlportal-space-inline-xs);
+  height: var(--skeleton-size-sm);
+  width: var(--skeleton-size-sm);
+  margin-inline-end: var(--skeleton-size-xs);
 }
 
 .labelWithIcon > .labelWithIcon_label {
-  font-size: var(--conduction-rich-card-label-with-icon-label-size);
+  font-size: var(--skeleton-size-sm);
 }
 
 /* Content Link */
 .contentLink {
   display: flex;
-  padding-block-start: var(--nlportal-space-block-xs);
-  padding-block-end: var(--nlportal-space-block-xs);
+  padding-block-start: var(--skeleton-size-xs);
+  padding-block-end: var(--skeleton-size-xs);
   text-decoration: none !important;
 }
 
