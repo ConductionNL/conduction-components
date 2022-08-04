@@ -1,34 +1,51 @@
 :root {
+  --conduction-horizontal-image-card-background-color: var(--skeleton-color-grey-1);
+  --conduction-horizontal-image-card-border-radius: var(--skeleton-border-radius-md);
   --conduction-horizontal-image-card-image-size: 52px;
+  --conduction-horizontal-image-card-link-padding-inline-end: var(--skeleton-size-lg);
+  --conduction-horizontal-image-card-link-padding-block-start: var(--skeleton-size-lg);
+  --conduction-horizontal-image-card-link-padding-block-end: var(--skeleton-size-lg);
+  --conduction-horizontal-image-card-icon-padding-inline-start: var(--skeleton-size-md);
+  --conduction-horizontal-image-card-icon-padding-inline-end: var(--skeleton-size-md);
+  --conduction-horizontal-image-card-icon-padding-block-start: var(--skeleton-size-md);
+  --conduction-horizontal-image-card-icon-padding-block-end: var(--skeleton-size-md);
+  --conduction-horizontal-image-card-title-font-size: var(--skeleton-font-size-xl);
+  --conduction-horizontal-image-card-title-font-weight: var(--skeleton-font-weight-bold);
+  --conduction-horizontal-image-card-color: var(--skeleton-color-black);
 }
 
 .container {
+  color: var(--conduction-horizontal-image-card-color);
   display: flex;
   align-items: center;
   cursor: pointer;
-  background-color: var(--skeleton-color-grey-1);
-  border-radius: var(--skeleton-border-radius-md);
+  background-color: var(--conduction-horizontal-image-card-background-color);
+  border-radius: var(--conduction-horizontal-image-card-border-radius);
 }
 
-.link {
+.linkContainer {
   display: flex;
   flex-direction: column;
-  padding-block-start: var(--skeleton-size-lg);
-  padding-block-end: var(--skeleton-size-lg);
-  padding-inline-end: var(--skeleton-size-lg);
+  padding-block-start: var(--conduction-horizontal-image-card-link-padding-block-start);
+  padding-block-end: var(--conduction-horizontal-image-card-link-padding-block-end);
+  padding-inline-end: var(--conduction-horizontal-image-card-link-padding-inline-end);
+}
+
+.link > * {
+  color: var(--conduction-horizontal-image-card-color);
 }
 
 .imageOrIconContainer > :first-child {
   width: var(--conduction-horizontal-image-card-image-size);
   height: var(--conduction-horizontal-image-card-image-size);
 
-  padding-inline-start: var(--skeleton-size-md);
-  padding-inline-end: var(--skeleton-size-md);
-  padding-block-start: var(--skeleton-size-md);
-  padding-block-end: var(--skeleton-size-md);
+  padding-inline-start: var(--conduction-horizontal-image-card-icon-padding-inline-start);
+  padding-inline-end: var(--conduction-horizontal-image-card-icon-padding-inline-end);
+  padding-block-start: var(--conduction-horizontal-image-card-icon-padding-block-start);
+  padding-block-end: var(--conduction-horizontal-image-card-icon-padding-block-end);
 }
 
 .title {
-  font-weight: var(--skeleton-font-weight-bold);
-  font-size: var(--skeleton-font-size-xl);
+  font-weight: var(--conduction-horizontal-image-card-title-font-weight);
+  font-size: var(--conduction-horizontal-image-card-title-font-size);
 }

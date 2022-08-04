@@ -26,9 +26,9 @@ export const HorizontalImageCard: React.FC<HorizontalImageCardProps> = ({
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
       <div className={styles.imageOrIconContainer}>{iconOrImage}</div>
-      <div className={styles.link}>
+      <div className={styles.linkContainer}>
         <div className={styles.title}>{title}</div>
-        <Link icon={external ? <ExternalLinkIcon /> : <ArrowRightIcon />} iconAlign="start">
+        <Link className={styles.link} icon={external ? <ExternalLinkIcon /> : <ArrowRightIcon />} iconAlign="start">
           {link.label}
         </Link>
       </div>
