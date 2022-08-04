@@ -1,21 +1,31 @@
 :root {
   --conduction-details-card-border: 1px solid var(--skeleton-color-grey-2);
   --conduction-details-card-introduction-lines-clamp: 3;
+  --conduction-details-card-border-radius: var(--skeleton-border-radius-md);
+  --conduction-details-card-content-padding-inline-start: var(--skeleton-size-md);
+  --conduction-details-card-content-padding-inline-end: var(--skeleton-size-md);
+  --conduction-details-card-content-padding-block-start: var(--skeleton-size-md);
+  --conduction-details-card-content-padding-block-end: var(--skeleton-size-md);
+  --conduction-details-card-title-font-size: var(--skeleton-font-size-xl);
+  --conduction-details-card-title-font-weight: var(--skeleton-font-weight-bold);
+  --conduction-details-card-sub-header-font-size: var(--skeleton-font-size-sm);
+  --conduction-details-card-sub-header-color: var(--skeleton-color-grey-3);
+  --conduction-details-card-tags-spacing: var(--skeleton-size-sm);
 }
 
 .container {
   cursor: pointer;
   overflow: hidden;
-  border-radius: var(--skeleton-border-radius-md);
+  border-radius: var(--conduction-details-card-border-radius);
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  padding-inline-start: var(--skeleton-size-md);
-  padding-inline-end: var(--skeleton-size-md);
-  padding-block-start: var(--skeleton-size-md);
-  padding-block-end: var(--skeleton-size-md);
+  padding-inline-start: var(--conduction-details-card-content-padding-inline-start);
+  padding-inline-end: var(--conduction-details-card-content-padding-inline-end);
+  padding-block-start: var(--conduction-details-card-content-padding-block-start);
+  padding-block-end: var(--conduction-details-card-content-padding-block-end);
   border: var(--conduction-details-card-border);
 }
 
@@ -24,17 +34,17 @@
 }
 
 .title {
-  font-size: var(--skeleton-font-size-xl);
-  font-weight: var(--skeleton-font-weight-bold);
+  font-size: var(--conduction-details-card-title-font-size);
+  font-weight: var(--conduction-details-card-title-font-weight);
 }
 
 .subHeader {
-  color: var(--skeleton-color-grey-3);
-  font-size: var(--skeleton-font-size-sm);
+  color: var(--conduction-details-card-sub-header-color);
+  font-size: var(--conduction-details-card-sub-header-font-size);
 }
 
 .tags > *:not(:last-child) {
-  margin-inline-end: var(--skeleton-size-sm);
+  margin-inline-end: var(--conduction-details-card-tags-spacing);
 }
 
 .introduction {
