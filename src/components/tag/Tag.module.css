@@ -4,6 +4,7 @@
   --conduction-tag-backgrond-color: var(--skeleton-color-grey-1);
   --conduction-tag-border-radius: var(--skeleton-border-radius-md);
   --conduction-tag-padding: var(--skeleton-size-xs);
+  --conduction-tag-margin: var(--skeleton-size-2xs);
 }
 
 .tag {
@@ -17,4 +18,8 @@
   padding-inline-end: var(--conduction-tag-padding);
   padding-block-start: var(--conduction-tag-padding);
   padding-block-end: var(--conduction-tag-padding);
+}
+
+.tag > *:not(:last-child) {
+  margin-inline-end: var(--conduction-tag-margin);
 }
