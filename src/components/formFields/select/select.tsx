@@ -10,6 +10,7 @@ interface ISelectProps {
   name: string;
   defaultValue?: any;
   disabled?: boolean;
+  isClearable?: boolean;
 }
 
 export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
@@ -45,13 +46,17 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
   errors,
   control,
   validation,
+  isClearable,
+  defaultValue,
 }) => {
   return (
     <Controller
       {...{ control, name }}
       rules={validation}
       render={({ field: { onChange, value } }) => {
-        return <ReactSelect className={styles.select} {...{ options, onChange, value, errors }} isClearable />;
+        return (
+          <ReactSelect className={styles.select} {...{ options, onChange, value, errors, isClearable, defaultValue }} />
+        );
       }}
     />
   );
