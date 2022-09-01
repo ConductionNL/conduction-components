@@ -1,9 +1,9 @@
 :root {
-  --condution-container-max-width: 1024px;
+  --conduction-container-max-width: 1024px;
 }
 
 .container {
   width: 100%;
   margin-inline: auto;
-  max-width: var(--condution-container-max-width);
+  max-width: var(--conduction-container-max-width);
 }
