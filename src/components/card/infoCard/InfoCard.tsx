@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import * as React from "react";
 import * as styles from "./InfoCard.module.css";
+import clsx from "clsx";
 
 interface InfoCardProps {
   title: string;
