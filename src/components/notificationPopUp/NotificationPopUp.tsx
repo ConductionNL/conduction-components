@@ -12,10 +12,13 @@ export interface NotificationPopUpProps {
   hide: () => void;
   primaryButton: {
     label: string;
+    icon?: JSX.Element;
     handleClick: () => any;
   };
   secondaryButton?: {
     label: string;
+    icon?: JSX.Element;
+
     handleClick: () => any;
   };
   layoutClassName?: string;
@@ -54,12 +57,22 @@ export const NotificationPopUp: React.FC<NotificationPopUpProps> = ({
         <div className={styles.buttons}>
           {secondaryButton && (
             <div onClick={() => handleClick(secondaryButton.handleClick)}>
-              <Link icon={<CloseIcon />} iconAlign="start">
-                {secondaryButton.label}
-              </Link>
+              {secondaryButton.icon && (
+                <Link icon={secondaryButton.icon} iconAlign="start">
+                  {secondaryButton.label}
+                </Link>
+              )}
+              {!secondaryButton.icon && (
+                <Link icon={<CloseIcon />} iconAlign="start">
+                  {secondaryButton.label}
+                </Link>
+              )}
             </div>
           )}
-          <Button icon={<ArrowRightIcon />} onClick={() => handleClick(primaryButton.handleClick)}>
+          <Button
+            icon={primaryButton.icon ? primaryButton.icon : <ArrowRightIcon />}
+            onClick={() => handleClick(primaryButton.handleClick)}
+          >
             {primaryButton.label}
           </Button>
         </div>
