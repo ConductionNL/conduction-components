@@ -10,9 +10,17 @@ interface DownloadCardProps {
   sizeKb: string;
   downloadLabel: string;
   layoutClassName?: string;
+  handleClick: () => any;
 }
 
-export const DownloadCard: React.FC<DownloadCardProps> = ({ icon, label, sizeKb, layoutClassName, downloadLabel }) => {
+export const DownloadCard: React.FC<DownloadCardProps> = ({
+  icon,
+  label,
+  sizeKb,
+  layoutClassName,
+  downloadLabel,
+  handleClick,
+}) => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <div className={styles.content}>
@@ -22,10 +30,11 @@ export const DownloadCard: React.FC<DownloadCardProps> = ({ icon, label, sizeKb,
           {label} ({sizeKb}kb)
         </div>
       </div>
-
-      <Link icon={<DownloadIcon />} iconAlign="start">
-        {downloadLabel}
-      </Link>
+      <div onClick={() => handleClick()}>
+        <Link icon={<DownloadIcon />} iconAlign="start">
+          {downloadLabel}
+        </Link>
+      </div>
     </div>
   );
 };

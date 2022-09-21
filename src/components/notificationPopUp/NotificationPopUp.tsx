@@ -57,16 +57,9 @@ export const NotificationPopUp: React.FC<NotificationPopUpProps> = ({
         <div className={styles.buttons}>
           {secondaryButton && (
             <div onClick={() => handleClick(secondaryButton.handleClick)}>
-              {secondaryButton.icon && (
-                <Link icon={secondaryButton.icon} iconAlign="start">
-                  {secondaryButton.label}
-                </Link>
-              )}
-              {!secondaryButton.icon && (
-                <Link icon={<CloseIcon />} iconAlign="start">
-                  {secondaryButton.label}
-                </Link>
-              )}
+              <Link icon={secondaryButton.icon ? secondaryButton.icon : <CloseIcon />} iconAlign="start">
+                {secondaryButton.label}
+              </Link>
             </div>
           )}
           <Button
