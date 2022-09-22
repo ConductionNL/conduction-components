@@ -30,7 +30,7 @@ export const DownloadCard: React.FC<DownloadCardProps> = ({
           {label} ({sizeKb}kb)
         </div>
       </div>
-      <div onClick={() => handleClick()}>
+      <div onClick={handleClick}>
         <Link icon={<DownloadIcon />} iconAlign="start">
           {downloadLabel}
         </Link>
