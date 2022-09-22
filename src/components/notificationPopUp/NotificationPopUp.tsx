@@ -18,7 +18,6 @@ export interface NotificationPopUpProps {
   secondaryButton?: {
     label: string;
     icon?: JSX.Element;
-
     handleClick: () => any;
   };
   layoutClassName?: string;
