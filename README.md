@@ -4,6 +4,10 @@
 
 - **Version 2**
 
+  - 2.0.6: 
+    - added clickFunction, layoutClassName and renamed tag to label in the Tag component;
+    - edited DetailsCard to accommodate changes made to Tag component;
+    - edited RichContentCard to accommodate changes made to Tag component;
   - 2.0.5: wrong camelcase in npm publish/build fix;
   - 2.0.4: added layoutClassName to InfoCard;
   - 2.0.3: Bugfix: --conduction-container typo removed;

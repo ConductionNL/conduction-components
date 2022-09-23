@@ -23,3 +23,7 @@
 .tag > *:not(:last-child) {
   margin-inline-end: var(--conduction-tag-margin);
 }
+
+.clickable :hover {
+  cursor: pointer;
+}
