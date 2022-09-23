@@ -4,7 +4,7 @@
   --conduction-tag-background-color: var(--skeleton-color-grey-1);
   --conduction-tag-border-radius: var(--skeleton-border-radius-md);
   --conduction-tag-padding: var(--skeleton-size-xs);
-  --conduction-tag-margin: var(--skeleton-size-2xs);
+  --conduction-tag-child-margin-inline: var(--skeleton-size-2xs);
 }
 
 .tag {
@@ -21,7 +21,7 @@
 }
 
 .tag > *:not(:last-child) {
-  margin-inline-end: var(--conduction-tag-margin);
+  margin-inline-end: var(--conduction-tag-child-margin-inline);
 }
 
 .clickable :hover {
