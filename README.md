@@ -4,6 +4,9 @@
 
 - **Version 2**
 
+  - 2.0.6:
+    - Added optional icon with default icon to the primary and secondary button in NotificationPopUp
+    - Added a handleClick function to the DownloadCard;
   - 2.0.5: wrong camelcase in npm publish/build fix;
   - 2.0.4: added layoutClassName to InfoCard;
   - 2.0.3: Bugfix: --conduction-container typo removed;
