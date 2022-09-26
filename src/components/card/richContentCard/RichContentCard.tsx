@@ -46,7 +46,7 @@ export const RichContentCard: React.FC<RichContentCardProps> = ({
 
       <div className={styles.tags}>
         {tags.map((tag, idx) => (
-          <Tag key={idx} {...{ tag }} />
+          <Tag key={idx} label={tag} />
         ))}
       </div>
 

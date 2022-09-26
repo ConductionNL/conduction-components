@@ -38,7 +38,7 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
         {tags && (
           <div className={styles.tags}>
             {tags.map((tag, idx) => (
-              <Tag key={idx} {...{ tag }} />
+              <Tag key={idx} label={tag} />
             ))}
           </div>
         )}
