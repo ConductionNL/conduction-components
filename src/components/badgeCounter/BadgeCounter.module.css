@@ -3,16 +3,16 @@
 }
 
 .badge {
-  height: var(--web-app-badge-counter-height);
-  width: var(--web-app-badge-counter-width);
+  height: var(--skeleton-size-md);
+  width: var(--skeleton-size-md);
   border-radius: 50%;
-  font-size: var(--web-app-badge-counter-font-size);
+  font-size: var(--skeleton-font-size-xs);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--web-app-badge-counter-background-color);
-  color: var(--web-app-badge-counter-color);
+  background-color: var(--skeleton-color-grey-1);
+  color: var(--skeleton-color-black);
 }
 .maxNumber {
-  font-size: var(--web-app-font-size-2xs);
+  font-size: var(--skeleton-font-size-2xs);
 }
