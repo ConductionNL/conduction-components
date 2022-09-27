@@ -1,6 +1,6 @@
 .code {
-  margin-block: var(--web-app-size-sm);
-  background-color: var(--web-app-code-block-background-color);
-  border-radius: var(--web-app-size-2xs);
-  padding: var(--web-app-size-lg);
+  margin-block: var(--skeleton-size-sm);
+  background-color: var(--skeleton-color-grey-1);
+  border-radius: var(--skeleton-size-2xs);
+  padding: var(--skeleton-size-lg);
 }
