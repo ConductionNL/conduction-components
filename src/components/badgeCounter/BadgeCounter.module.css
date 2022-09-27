@@ -4,7 +4,7 @@
   --conduction-badge-counter-height: var(--skeleton-size-md);
   --conduction-badge-counter-width: var(--skeleton-size-md);
   --conduction-badge-counter-font-size: var(--skeleton-font-size-xs);
-  --conduction-badge-counter-max-number-font-size: var(--skeleton-font-size-xs);
+  --conduction-badge-counter-max-number-font-size: var(--skeleton-font-size-2xs);
 }
 
 .content {
@@ -23,5 +23,5 @@
   color: var(--conduction-badge-counter-color);
 }
 .maxNumber {
-  font-size: var(--conduction-font-size-2xs);
+  font-size: var(--conduction-badge-counter-max-number-font-size);
 }
