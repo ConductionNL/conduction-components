@@ -5,6 +5,7 @@
   --conduction-secondary-top-nav-background-color: var(--skeleton-color-secondary-5);
   --conduction-secondary-top-nav-background-color-hover: var(--skeleton-color-secondary-3);
   --conduction-secondary-top-nav-font-weight: var(--skeleton-font-weight-light);
+  --conduction-secondary-top-nav-color-active: hsla(0, 0%, 0%, 0.1);
 }
 
 .secondary:hover {
@@ -25,6 +26,10 @@
   padding-inline-end: var(--conduction-secondary-top-nav-item-padding);
   padding-block-start: var(--conduction-secondary-top-nav-item-padding);
   padding-block-end: var(--conduction-secondary-top-nav-item-padding);
+}
+
+.current {
+  background-color: var(--conduction-secondary-top-nav-color-active);
 }
 
 .secondary {
