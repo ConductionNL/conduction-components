@@ -7,6 +7,7 @@
   - 2.0.7: 
     - Added new BadgeCounter component.
     - Added CodeBlock component.
+	- added ToolTip component.
   - 2.0.6: 
     - Added optional icon with default icon to the primary and secondary button in NotificationPopUp
     - Added a handleClick function to the DownloadCard;
