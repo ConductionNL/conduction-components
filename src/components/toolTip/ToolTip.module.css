@@ -45,5 +45,5 @@
 }
 .top::before {
   top: 100%;
-  border-top-color: var(--conduction-color-blac);
+  border-top-color: var(--conduction-color-black);
 }
