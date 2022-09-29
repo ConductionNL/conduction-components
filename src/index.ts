@@ -36,6 +36,8 @@ import {
 const NotificationPopUp = { controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
 import { QuoteWrapper } from "./components/quoteWrapper/QuoteWrapper";
 import { Pagination } from "./components/denhaag-wrappers/pagination/Pagination";
+import { BadgeCounter } from "./components/badgeCounter/BadgeCounter";
+import { CodeBlock } from "./components/codeBlock/CodeBlock";
 
 export {
   InputRadio,
@@ -70,4 +72,6 @@ export {
   NotificationPopUp,
   QuoteWrapper,
   Pagination,
+  BadgeCounter,
+  CodeBlock,
 };

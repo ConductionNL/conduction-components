@@ -1,0 +1,27 @@
+:root {
+  --conduction-badge-counter-color: hsl(0 0% 0%);
+  --conduction-badge-counter-background-color: var(--skeleton-color-grey-1);
+  --conduction-badge-counter-height: var(--skeleton-size-md);
+  --conduction-badge-counter-width: var(--skeleton-size-md);
+  --conduction-badge-counter-font-size: var(--skeleton-font-size-xs);
+  --conduction-badge-counter-max-number-font-size: var(--skeleton-font-size-2xs);
+}
+
+.content {
+  display: flex;
+}
+
+.badge {
+  height: var(--conduction-badge-counter-height);
+  width: var(--conduction-badge-counter-width);
+  border-radius: 50%;
+  font-size: var(--conduction-badge-counter-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--conduction-badge-counter-background-color);
+  color: var(--conduction-badge-counter-color);
+}
+.maxNumber {
+  font-size: var(--conduction-badge-counter-max-number-font-size);
+}

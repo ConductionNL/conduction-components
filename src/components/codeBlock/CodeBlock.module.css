@@ -1,0 +1,6 @@
+.code {
+  margin-block: var(--skeleton-size-sm);
+  background-color: var(--skeleton-color-grey-1);
+  border-radius: var(--skeleton-size-2xs);
+  padding: var(--skeleton-size-lg);
+}
