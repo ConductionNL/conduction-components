@@ -11,7 +11,7 @@ interface ITopNavItem {
   subItems?: {
     label: string;
     icon?: JSX.Element;
-	current?: boolean;
+    current?: boolean;
     handleClick?: () => any;
   }[];
 }

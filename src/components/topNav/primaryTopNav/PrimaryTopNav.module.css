@@ -1,19 +1,10 @@
 :root {
   --conduction-primary-top-nav-item-padding: var(--skeleton-size-md);
   --conduction-primary-top-nav-color: var(--skeleton-color-white);
-  --conduction-primary-top-nav-background-color: var(
-    --skeleton-color-secondary-3
-  );
+  --conduction-primary-top-nav-background-color: var(--skeleton-color-secondary-3);
   --conduction-primary-top-nav-background-color-hover: rgba(255, 255, 255, 0.2);
-  --conduction-primary-top-nav-dropdown-border-radius: var(
-    --skeleton-border-radius-md
-  );
-  --conduction-primary-top-nav-background-color-active: rgba(
-    255,
-    255,
-    255,
-    0.2
-  );
+  --conduction-primary-top-nav-dropdown-border-radius: var(--skeleton-border-radius-md);
+  --conduction-primary-top-nav-background-color-active: rgba(255, 255, 255, 0.2);
 }
 
 .primary {
@@ -69,10 +60,6 @@
   position: absolute;
   list-style-type: none;
   background-color: var(--conduction-primary-top-nav-background-color);
-  border-bottom-right-radius: var(
-    --conduction-primary-top-nav-dropdown-border-radius
-  );
-  border-bottom-left-radius: var(
-    --conduction-primary-top-nav-dropdown-border-radius
-  );
+  border-bottom-right-radius: var(--conduction-primary-top-nav-dropdown-border-radius);
+  border-bottom-left-radius: var(--conduction-primary-top-nav-dropdown-border-radius);
 }

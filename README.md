@@ -5,8 +5,8 @@
 - **Version 2**
 
   - 2.0.8:
-    - added active status to primary topnav
-    - added active status to secondary topnav
+    - added active status to PrimaryTopNav
+    - added active status to SecondaryTopNav
   - 2.0.7:
     - Added new BadgeCounter component.
     - Added CodeBlock component.
