@@ -4,10 +4,13 @@
 
 - **Version 2**
 
-  - 2.0.7: 
+  - 2.0.8:
+    - added active status to PrimaryTopNav
+    - added active status to SecondaryTopNav
+  - 2.0.7:
     - Added new BadgeCounter component.
     - Added CodeBlock component.
-  - 2.0.6: 
+  - 2.0.6:
     - Added optional icon with default icon to the primary and secondary button in NotificationPopUp
     - Added a handleClick function to the DownloadCard;
     - Added clickFunction, layoutClassName and renamed tag to label in the Tag component;
