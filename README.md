@@ -4,7 +4,7 @@
 
 - **Version 2**
 
-  - 2.0.8: added ToolTip component.
+  - 2.0.8: added new Tooltip component using React-tooltip.
   - 2.0.7: 
     - Added new BadgeCounter component.
     - Added CodeBlock component.
