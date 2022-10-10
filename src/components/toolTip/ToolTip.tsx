@@ -5,8 +5,8 @@ import * as styles from "./ToolTip.module.css";
 
 interface ToolTipProps {
   children: React.ReactNode;
-  layoutClassName?: string;
   tooltip: string;
+  layoutClassName?: string;
 }
 
 export const ToolTip: React.FC<ToolTipProps> = ({ children, layoutClassName, tooltip }) => {
