@@ -38,6 +38,7 @@ import { QuoteWrapper } from "./components/quoteWrapper/QuoteWrapper";
 import { Pagination } from "./components/denhaag-wrappers/pagination/Pagination";
 import { BadgeCounter } from "./components/badgeCounter/BadgeCounter";
 import { CodeBlock } from "./components/codeBlock/CodeBlock";
+import { ToolTip } from "./components/toolTip/ToolTip";
 
 export {
   InputRadio,
@@ -74,4 +75,5 @@ export {
   Pagination,
   BadgeCounter,
   CodeBlock,
+  ToolTip,
 };

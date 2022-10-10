@@ -4,7 +4,8 @@
 
 - **Version 2**
 
-  - 2.0.8:
+  - 2.0.8: 
+    - added new Tooltip component using React-tooltip.
     - added active status to PrimaryTopNav
     - added active status to SecondaryTopNav
   - 2.0.7:
