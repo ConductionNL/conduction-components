@@ -4,6 +4,8 @@
 
 - **Version 2**
 
+  - 2.0.11:
+    - Added disabled state to SelectSingle component;
   - 2.0.10:
     - Added InputFloat (.00 decimals) component;
   - 2.0.9:
