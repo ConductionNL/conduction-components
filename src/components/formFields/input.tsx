@@ -102,6 +102,25 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   />
 );
 
+export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
+  disabled,
+  name,
+  defaultValue,
+  validation,
+  register,
+  icon,
+  placeholder,
+  errors,
+}) => (
+  <TextField
+    type="number"
+    step=".01"
+    {...{ disabled, placeholder, icon, defaultValue }}
+    {...register(name, { ...validation })}
+    invalid={errors[name]}
+  />
+);
+
 interface IInputFileProps {
   accept?: string;
 }
