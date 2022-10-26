@@ -4,10 +4,14 @@
 
 - **Version 2**
 
-  - 2.0.8: 
-    - added new Tooltip component using React-tooltip.
-    - added active status to PrimaryTopNav
-    - added active status to SecondaryTopNav
+  - 2.0.9:
+    - Added optional defaultChecked to InputCheckbox;
+    - Added CreateKeyValue input;
+    - Added CreateSelect input.
+  - 2.0.8:
+    - Added new Tooltip component using React-tooltip.
+    - Added active status to PrimaryTopNav
+    - Added active status to SecondaryTopNav
   - 2.0.7:
     - Added new BadgeCounter component.
     - Added CodeBlock component.
