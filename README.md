@@ -4,6 +4,8 @@
 
 - **Version 2**
 
+  - 2.0.10:
+    - Added InputFloat (.00 decimals) component;
   - 2.0.9:
     - Added optional defaultChecked to InputCheckbox;
     - Added CreateKeyValue input;
