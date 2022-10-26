@@ -76,6 +76,7 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
   validation,
   isClearable,
   defaultValue,
+  disabled,
 }) => {
   return (
     <Controller
@@ -83,7 +84,11 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
-          <ReactSelect className={styles.select} {...{ options, onChange, value, errors, isClearable, defaultValue }} />
+          <ReactSelect
+            className={styles.select}
+            isDisabled={disabled}
+            {...{ options, onChange, value, errors, isClearable, defaultValue }}
+          />
         );
       }}
     />
