@@ -13,7 +13,6 @@
   font-size: var(--conduction-tag-font-size);
   color: var(--conduction-tag-color);
   background-color: var(--conduction-tag-background-color);
-  border-radius: var(--conduction-tag-border-radius);
   padding-inline-start: var(--conduction-tag-padding);
   padding-inline-end: var(--conduction-tag-padding);
   padding-block-start: var(--conduction-tag-padding);
