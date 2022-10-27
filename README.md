@@ -4,22 +4,23 @@
 
 - **Version 2**
 
+  - 2.0.13: removed round borders of tag.
   - 2.0.11 & 2.0.12:
-    - Added disabled state to SelectSingle component;
+    - Added disabled state to SelectSingle component.
   - 2.0.10:
-    - Added InputFloat (.00 decimals) component;
+    - Added InputFloat (.00 decimals) component.
   - 2.0.9:
-    - Added optional defaultChecked to InputCheckbox;
-    - Added CreateKeyValue input;
+    - Added optional defaultChecked to InputCheckbox.
+    - Added CreateKeyValue input.
     - Added CreateSelect input.
   - 2.0.8:
     - Added new Tooltip component using React-tooltip.
-    - Added active status to PrimaryTopNav
-    - Added active status to SecondaryTopNav
+    - Added active status to PrimaryTopNav.
+    - Added active status to SecondaryTopNav.
   - 2.0.7:
     - Added new BadgeCounter component.
     - Added CodeBlock component.
-  - 2.0.6: 
+  - 2.0.6:
     - Added optional icon with default icon to the primary and secondary button in NotificationPopUp.
     - Added a handleClick function to the DownloadCard.
     - Added clickFunction, layoutClassName and renamed tag to label in the Tag component.
@@ -34,4 +35,4 @@
 
 - **Version 1**
 
-  - No changelog available
+  - No changelog available.
