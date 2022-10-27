@@ -57,6 +57,7 @@ export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
       render={({ field: { onChange, value } }) => {
         return (
           <CreatableSelect
+            placeholder="Select existing or create new entries"
             className={styles.select}
             isMulti
             isDisabled={disabled}
