@@ -6,10 +6,12 @@ import clsx from "clsx";
 interface ITopNavItem {
   label: string;
   icon?: JSX.Element;
+  current?: boolean;
   handleClick?: () => any;
   subItems?: {
     label: string;
     icon?: JSX.Element;
+    current?: boolean;
     handleClick?: () => any;
   }[];
 }
@@ -24,8 +26,8 @@ export const PrimaryTopNav: React.FC<TopNavProps> = ({ items, layoutClassName })
     <div className={clsx(styles.primary, layoutClassName && layoutClassName)}>
       <nav className={styles.primary}>
         <ul className={styles.ul}>
-          {items.map(({ label, icon, handleClick, subItems }, idx) => (
-            <li className={styles.li} key={idx}>
+          {items.map(({ label, icon, current, handleClick, subItems }, idx) => (
+            <li className={clsx(styles.li, current && styles.current)} key={idx}>
               <div onClick={handleClick}>
                 <Link className={styles.link} icon={icon} iconAlign="start">
                   {label}
@@ -34,8 +36,8 @@ export const PrimaryTopNav: React.FC<TopNavProps> = ({ items, layoutClassName })
 
               {subItems && (
                 <ul className={styles.dropdown}>
-                  {subItems.map(({ label, icon, handleClick }, idx) => (
-                    <li key={idx} className={styles.li} onClick={handleClick}>
+                  {subItems.map(({ label, icon, current, handleClick }, idx) => (
+                    <li key={idx} className={clsx(styles.li, current && styles.current)} onClick={handleClick}>
                       <Link className={styles.link} icon={icon} iconAlign="start">
                         {label}
                       </Link>

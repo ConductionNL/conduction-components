@@ -2,8 +2,15 @@
   --conduction-primary-top-nav-item-padding: var(--skeleton-size-md);
   --conduction-primary-top-nav-color: var(--skeleton-color-white);
   --conduction-primary-top-nav-background-color: var(--skeleton-color-secondary-3);
-  --conduction-primary-top-nav-background-color-hover: var(--skeleton-color-secondary-5);
+  --conduction-primary-top-nav-background-color-hover: rgba(255, 255, 255, 0.2);
   --conduction-primary-top-nav-dropdown-border-radius: var(--skeleton-border-radius-md);
+  --conduction-primary-top-nav-background-color-active: rgba(255, 255, 255, 0.2);
+}
+
+.primary {
+  font-weight: 500;
+  width: fit-content;
+  background-color: var(--conduction-primary-top-nav-background-color);
 }
 
 .primary:hover {
@@ -23,10 +30,12 @@
   position: relative;
 }
 
-.primary {
-  font-weight: 500;
-  width: fit-content;
-  background-color: var(--conduction-primary-top-nav-background-color);
+.li:hover {
+  background-color: var(--conduction-primary-top-nav-background-color-hover);
+}
+
+.current {
+  background-color: var(--conduction-primary-top-nav-background-color-active);
 }
 
 .primary .link {
@@ -36,10 +45,6 @@
   padding-inline-end: var(--conduction-primary-top-nav-item-padding);
   padding-block-start: var(--conduction-primary-top-nav-item-padding);
   padding-block-end: var(--conduction-primary-top-nav-item-padding);
-}
-
-.primary .li:hover {
-  background-color: var(--conduction-primary-top-nav-background-color-hover);
 }
 
 .primary .li:hover .dropdown {

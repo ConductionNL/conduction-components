@@ -4,8 +4,19 @@
 
 - **Version 2**
 
-  - 2.0.8: removed round borders of tag.
-  - 2.0.7: 
+  - 2.0.11 & 2.0.12:
+    - Added disabled state to SelectSingle component;
+  - 2.0.10:
+    - Added InputFloat (.00 decimals) component;
+  - 2.0.9:
+    - Added optional defaultChecked to InputCheckbox;
+    - Added CreateKeyValue input;
+    - Added CreateSelect input.
+  - 2.0.8:
+    - Added new Tooltip component using React-tooltip.
+    - Added active status to PrimaryTopNav
+    - Added active status to SecondaryTopNav
+  - 2.0.7:
     - Added new BadgeCounter component.
     - Added CodeBlock component.
   - 2.0.6: 
