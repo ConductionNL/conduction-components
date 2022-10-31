@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/ConductionNL/conduction-components#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@gemeente-denhaag/components-react": "^0.1.1-alpha.143",
     "@gemeente-denhaag/design-tokens-components": "^0.2.3-alpha.178",
     "@gemeente-denhaag/form-field": "^0.1.1-alpha.67",
