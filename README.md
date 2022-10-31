@@ -4,6 +4,7 @@
 
 - **Version 2**
 
+  - 2.0.15: Added mobile support to PrimaryTopNav;
   - 2.0.14: Refactored SelectCreate placeholder text.
   - 2.0.13: removed round borders of tag.
   - 2.0.11 & 2.0.12:
