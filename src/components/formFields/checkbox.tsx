@@ -5,6 +5,7 @@ export interface ICheckboxProps {
   label: string;
   name: string;
   defaultChecked?: boolean;
+  disabled?: boolean;
 }
 
 export const InputCheckbox: React.FC<ICheckboxProps & IReactHookFormProps> = ({
@@ -13,9 +14,10 @@ export const InputCheckbox: React.FC<ICheckboxProps & IReactHookFormProps> = ({
   register,
   label,
   defaultChecked,
+  disabled,
 }) => (
   <FormControlLabel
-    input={<input type="checkbox" {...{ defaultChecked }} {...register(name, { ...validation })} />}
+    input={<input type="checkbox" {...{ defaultChecked, disabled }} {...register(name, { ...validation })} />}
     {...{ label }}
   />
 );
