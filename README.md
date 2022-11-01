@@ -4,7 +4,7 @@
 
 - **Version 2**
 
-  - 2.0.17: Refactor PrimaryTopNav styling.
+  - 2.0.17 & 2.0.18: Refactor PrimaryTopNav styling.
   - 2.0.16: Remove styling warnings.
   - 2.0.15: Added mobile support to PrimaryTopNav.
   - 2.0.14: Refactored SelectCreate placeholder text.

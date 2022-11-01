@@ -119,10 +119,6 @@
     position: absolute;
   }
 
-  .dropdown > li {
-    padding-inline-start: 0;
-  }
-
   .menuToggleContainer {
     display: none;
   }
