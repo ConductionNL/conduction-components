@@ -62,6 +62,10 @@
   list-style-type: none;
   display: block;
   position: relative;
+  padding-inline-start: var(--conduction-primary-top-nav-item-padding);
+  padding-inline-end: var(--conduction-primary-top-nav-item-padding);
+  padding-block-start: var(--conduction-primary-top-nav-item-padding);
+  padding-block-end: var(--conduction-primary-top-nav-item-padding);
 }
 
 .li:hover {
@@ -75,10 +79,6 @@
 .primary .link {
   display: block;
   color: var(--conduction-primary-top-nav-color);
-  padding-inline-start: var(--conduction-primary-top-nav-item-padding);
-  padding-inline-end: var(--conduction-primary-top-nav-item-padding);
-  padding-block-start: var(--conduction-primary-top-nav-item-padding);
-  padding-block-end: var(--conduction-primary-top-nav-item-padding);
 }
 
 .primary .li:hover .dropdown {
