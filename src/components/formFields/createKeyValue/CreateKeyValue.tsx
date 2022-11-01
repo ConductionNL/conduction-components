@@ -83,7 +83,7 @@ const KeyValueComponent: React.FC<CreateKeyValueComponentProps> = ({ defaultValu
           </TableHead>
           <TableBody>
             {keyValues.map((keyValue, idx) => (
-              <TableRow className={styles.row} key={`${keyValue}${idx}`}>
+              <TableRow key={`${keyValue}${idx}`}>
                 <TableCell>{keyValue.key}</TableCell>
                 <TableCell>{keyValue.value}</TableCell>
                 <TableCell className={styles.tdDelete}>

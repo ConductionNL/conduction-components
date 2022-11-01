@@ -20,13 +20,13 @@
   justify-content: space-between;
 }
 
-.menuToggleContainer > button {
+.menuToggleContainer > .menuToggle {
   all: unset;
   font-size: var(--conduction-primary-top-nav-toggle-icon-size);
   padding: var(--conduction-primary-top-nav-mobile-logo-padding);
 }
 
-.menuToggleContainer > button:hover {
+.menuToggleContainer > .menuToggle:hover {
   cursor: pointer;
 }
 
