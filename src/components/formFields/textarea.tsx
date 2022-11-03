@@ -14,4 +14,4 @@ export const Textarea: React.FC<ITextAreaProps & IReactHookFormProps> = ({
   register,
   errors,
   disabled,
-}) => <TextArea {...(register(name, { ...validation }), { disabled })} invalid={errors[name]} />;
+}) => <TextArea {...register(name, { ...validation })} {...{ disabled }} invalid={errors[name]} />;
