@@ -4,6 +4,7 @@
 
 - **Version 2**
 
+  - 2.0.21: Add InputDateTime component.
   - 2.0.20: Bugfix Textarea component to include correct field validation.
   - 2.0.19: Add disabled state to Textarea and InputCheckbox components.
   - 2.0.17 & 2.0.18: Refactor PrimaryTopNav styling.
