@@ -113,7 +113,7 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   <TextField
     type="number"
     {...{ defaultValue, disabled, placeholder, icon }}
-    {...register(name, { ...validation })}
+    {...register(name, { ...validation, valueAsNumber: true })}
     invalid={errors[name]}
   />
 );
@@ -132,7 +132,7 @@ export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
     type="number"
     step=".01"
     {...{ disabled, placeholder, icon, defaultValue }}
-    {...register(name, { ...validation })}
+    {...register(name, { ...validation, valueAsNumber: true })}
     invalid={errors[name]}
   />
 );
