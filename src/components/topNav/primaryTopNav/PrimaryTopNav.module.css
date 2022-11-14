@@ -5,6 +5,7 @@
   --conduction-primary-top-nav-background-color-hover: rgba(255, 255, 255, 0.2);
   --conduction-primary-top-nav-dropdown-border-radius: var(--skeleton-border-radius-md);
   --conduction-primary-top-nav-background-color-active: rgba(255, 255, 255, 0.2);
+  --conduction-primary-top-nav-box-shadow-active: inset 0 -4px black;
   --conduction-primary-top-nav-toggle-icon-size: 24px;
   --conduction-primary-top-nav-mobile-logo-padding: 18px;
 }
@@ -74,6 +75,7 @@
 
 .current {
   background-color: var(--conduction-primary-top-nav-background-color-active);
+  box-shadow: var(--conduction-primary-top-nav-box-shadow-active);
 }
 
 .primary .link {
