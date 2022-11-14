@@ -4,6 +4,7 @@
 
 - **Version 2**
 
+  - 2.0.24: Bugfix: @conduction not showing
   - 2.0.23: 
     - Added optional boxshadow to PrimaryTopNav.
     - Added maxLength to both TopNavs and added a gap to the icon and label of a TopNav item.
