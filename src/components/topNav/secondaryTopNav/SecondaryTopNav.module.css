@@ -34,7 +34,7 @@
 }
 
 .current {
-  background-color: var(--conduction-secondary-top-nav-background-color-active);
+  background-color: var(--conduction-secondary-top-nav-color-active);
   box-shadow: var(--conduction-secondary-top-nav-box-shadow-active);
 }
 
