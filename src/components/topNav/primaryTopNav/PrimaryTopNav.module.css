@@ -7,6 +7,7 @@
   --conduction-primary-top-nav-background-color-active: rgba(255, 255, 255, 0.2);
   --conduction-primary-top-nav-toggle-icon-size: 24px;
   --conduction-primary-top-nav-mobile-logo-padding: 18px;
+  --conduction-primary-top-nav-item-icon-margin: var(--skeleton-size-2x);
 }
 
 .container {
@@ -99,6 +100,17 @@
 
 .dropdown > li {
   padding-inline-start: var(--web-app-size-md);
+}
+
+.label {
+  overflow: hidden;
+  max-width: 37ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.label > :not(:last-child) {
+  margin-inline-end: var(--conduction-primary-top-nav-item-icon-margin);
 }
 
 @media only screen and (min-width: 992px) {

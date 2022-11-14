@@ -50,7 +50,7 @@ export const PrimaryTopNav: React.FC<TopNavProps> = ({ items, mobileLogo, layout
           {items.map(({ label, icon, current, handleClick, subItems }, idx) => (
             <li className={clsx(styles.li, current && styles.current)} key={idx}>
               <div onClick={() => handleItemClick(handleClick)}>
-                <Link className={styles.link} icon={icon} iconAlign="start">
+                <Link className={clsx(styles.link, styles.label)} icon={icon} iconAlign="start">
                   {label}
                 </Link>
               </div>
@@ -63,7 +63,7 @@ export const PrimaryTopNav: React.FC<TopNavProps> = ({ items, mobileLogo, layout
                       className={clsx(styles.li, current && styles.current)}
                       onClick={() => handleItemClick(handleClick)}
                     >
-                      <Link className={styles.link} icon={icon} iconAlign="start">
+                      <Link className={clsx(styles.link, styles.label)} icon={icon} iconAlign="start">
                         {label}
                       </Link>
                     </li>
