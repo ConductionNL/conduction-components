@@ -6,6 +6,7 @@
   --conduction-secondary-top-nav-background-color-hover: rgba(0, 0, 0, 0.1);
   --conduction-secondary-top-nav-font-weight: var(--skeleton-font-weight-light);
   --conduction-secondary-top-nav-color-active: rgba(0, 0, 0, 0.1);
+  --conduction-secondary-top-nav-box-shadow-active: inset 0 -4px black;
 }
 
 .secondary:hover {
@@ -34,6 +35,7 @@
 
 .current {
   background-color: var(--conduction-secondary-top-nav-color-active);
+  box-shadow: var(--conduction-secondary-top-nav-box-shadow-active);
 }
 
 .secondary {

@@ -4,6 +4,7 @@
 
 - **Version 2**
 
+  - 2.0.23: Added optional boxshadow to PrimaryTopNav.
   - 2.0.22: Refactor InputNumber and InputFloat to return number type.
   - 2.0.21: Add InputDateTime component.
   - 2.0.20: Bugfix Textarea component to include correct field validation.
