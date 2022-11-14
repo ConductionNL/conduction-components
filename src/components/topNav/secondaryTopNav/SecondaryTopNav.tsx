@@ -15,7 +15,7 @@ export const SecondaryTopNav: React.FC<TopNavProps> = ({ items, layoutClassName 
         <ul className={styles.ul}>
           {items.map(({ label, icon, current, handleClick }, idx) => (
             <li className={clsx(styles.li, current && styles.current)} key={idx} onClick={handleClick}>
-              <Link className={styles.link} icon={icon} iconAlign="start">
+              <Link className={clsx(styles.link, styles.label)} icon={icon} iconAlign="start">
                 {label}
               </Link>
             </li>
