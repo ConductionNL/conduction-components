@@ -4,9 +4,11 @@
 
 - **Version 2**
 
-  - 2.0.25: PrimaryTopNav will always show subItems on mobile
+  - 2.0.25: 
+    - PrimaryTopNav will always show subItems on mobile
+    - Added InputURL component
   - 2.0.24: Bugfix: @conduction not showing
-  - 2.0.23: 
+  - 2.0.23:
     - Added optional boxshadow to PrimaryTopNav.
     - Added maxLength to both TopNavs and added a gap to the icon and label of a TopNav item.
   - 2.0.22: Refactor InputNumber and InputFloat to return number type.

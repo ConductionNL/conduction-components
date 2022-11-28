@@ -1,4 +1,13 @@
-import { InputText, InputPassword, InputEmail, InputDate, InputDateTime, InputNumber, InputFile } from "./input";
+import {
+  InputText,
+  InputPassword,
+  InputEmail,
+  InputURL,
+  InputDate,
+  InputDateTime,
+  InputNumber,
+  InputFile,
+} from "./input";
 import { Textarea } from "./textarea";
 import { InputCheckbox } from "./checkbox";
 import { InputRadio } from "./radio";
@@ -10,6 +19,7 @@ export {
   InputText,
   InputPassword,
   InputEmail,
+  InputURL,
   InputDate,
   InputDateTime,
   InputNumber,
