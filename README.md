@@ -4,7 +4,7 @@
 
 - **Version 2**
 
-  - 2.0.27: Cleanup
+  - 2.0.27 & 2.0.28: Cleanup
   - 2.0.26: Added Select element error states
   - 2.0.25: Added InputURL component;
   - 2.0.24: Bugfix: @conduction not showing
