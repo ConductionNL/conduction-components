@@ -87,7 +87,7 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
       render={({ field: { onChange, value } }) => {
         return (
           <ReactSelect
-            className={clsx(styles.select, styles.abcdefg, errors[name] && styles.error)}
+            className={clsx(styles.select, errors[name] && styles.error)}
             isDisabled={disabled}
             {...{ options, onChange, value, errors, isClearable, defaultValue }}
           />
