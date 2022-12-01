@@ -4,6 +4,7 @@
 
 - **Version 2**
 
+  - 2.0.26: Added Select element error states
   - 2.0.25: Added InputURL component;
   - 2.0.24: Bugfix: @conduction not showing
   - 2.0.23:
