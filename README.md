@@ -4,9 +4,12 @@
 
 - **Version 2**
 
-  - 2.0.25: 
+  - 2.0.29: 
     - PrimaryTopNav will always show subItems on mobile
     - Added InputURL component
+  - 2.0.27 & 2.0.28: Cleanup
+  - 2.0.26: Added Select element error states
+  - 2.0.25: Added InputURL component;
   - 2.0.24: Bugfix: @conduction not showing
   - 2.0.23:
     - Added optional boxshadow to PrimaryTopNav.

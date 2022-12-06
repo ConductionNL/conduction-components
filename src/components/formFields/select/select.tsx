@@ -4,6 +4,7 @@ import { Control, Controller, FieldValues } from "react-hook-form";
 import ReactSelect from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { IReactHookFormProps } from "../types";
+import clsx from "clsx";
 
 interface ISelectProps {
   control: Control<FieldValues, any>;
@@ -30,7 +31,7 @@ export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
       render={({ field: { onChange, value } }) => {
         return (
           <ReactSelect
-            className={styles.select}
+            className={clsx(styles.select, errors[name] && styles.error)}
             isMulti
             isDisabled={disabled}
             {...{ options, value, onChange, errors, defaultValue }}
@@ -58,7 +59,7 @@ export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
         return (
           <CreatableSelect
             placeholder="Select existing or create new entries"
-            className={styles.select}
+            className={clsx(styles.select, errors[name] && styles.error)}
             isMulti
             isDisabled={disabled}
             {...{ options, value, onChange, errors, defaultValue }}
@@ -86,7 +87,7 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
       render={({ field: { onChange, value } }) => {
         return (
           <ReactSelect
-            className={styles.select}
+            className={clsx(styles.select, errors[name] && styles.error)}
             isDisabled={disabled}
             {...{ options, onChange, value, errors, isClearable, defaultValue }}
           />
