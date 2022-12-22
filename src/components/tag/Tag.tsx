@@ -8,9 +8,7 @@ interface TagProps {
   label: string;
   icon?: JSX.Element;
   onClick?: () => any;
-  remove?: {
-    onClick: () => any;
-  };
+  remove?: () => any;
   layoutClassName?: string;
 }
 
@@ -29,7 +27,7 @@ export const Tag: React.FC<TagProps> = ({ label, icon, onClick, remove, layoutCl
       <span>{label}</span>
     </div>
     {remove && (
-      <div className={clsx(styles.tag, styles.removeTag)} onClick={remove.onClick}>
+      <div className={clsx(styles.tag, styles.removeTag)} onClick={remove}>
         <span className={styles.removeIcon}>
           <FontAwesomeIcon icon={faXmark} />
         </span>

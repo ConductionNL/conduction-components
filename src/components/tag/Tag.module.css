@@ -5,7 +5,6 @@
   --conduction-tag-border-radius: var(--skeleton-border-radius-md);
   --conduction-tag-padding: var(--skeleton-size-xs);
   --conduction-tag-icon-margin-inline-end: var(--skeleton-size-2xs);
-  --conduction-tag-remove-margin-inline-start: var(--skeleton-size-xs);
   --conduction-tag-remove-background-color: #ffbdad;
   --conduction-tag-remove-text-color: #e44f2a;
 }
