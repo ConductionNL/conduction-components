@@ -6,6 +6,8 @@
   --conduction-tag-padding: var(--skeleton-size-xs);
   --conduction-tag-icon-margin-inline-end: var(--skeleton-size-2xs);
   --conduction-tag-remove-margin-inline-start: var(--skeleton-size-xs);
+  --conduction-tag-remove-background-color: #ffbdad;
+  --conduction-tag-remove-text-color: #e44f2a;
 }
 
 .tag {
@@ -38,6 +40,6 @@
 
 .removeTag:hover {
   cursor: pointer;
-  background-color: #ffbdad;
-  color: #e44f2a;
+  background-color: var(--conduction-tag-remove-background-color);
+  color: var(--conduction-tag-remove-text-color);
 }
