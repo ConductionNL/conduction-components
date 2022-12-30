@@ -4,6 +4,10 @@
 
 - **Version 2**
 
+  - 2.0.30:
+    - Selects now have an z-index.
+    - Checkboxes now automatically have an id wich is a camelCase of "checkbox" plus the label, "checkboxLabel".
+    - Removed styles warning on tag.
   - 2.0.29:
     - Added remove option to tags.
     - SelectSingle now removes selected option if filter deselect it.

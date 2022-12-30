@@ -17,7 +17,14 @@ export const InputCheckbox: React.FC<ICheckboxProps & IReactHookFormProps> = ({
   disabled,
 }) => (
   <FormControlLabel
-    input={<input type="checkbox" {...{ defaultChecked, disabled }} {...register(name, { ...validation })} />}
+    input={
+      <input
+        type="checkbox"
+        id={`checkbox${name}`}
+        {...{ defaultChecked, disabled }}
+        {...register(name, { ...validation })}
+      />
+    }
     {...{ label }}
   />
 );
