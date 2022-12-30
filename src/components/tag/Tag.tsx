@@ -28,7 +28,7 @@ export const Tag: React.FC<TagProps> = ({ label, icon, onClick, remove, layoutCl
     </div>
     {remove && (
       <div className={clsx(styles.tag, styles.removeTag)} onClick={remove}>
-        <span className={styles.removeIcon}>
+        <span>
           <FontAwesomeIcon icon={faXmark} />
         </span>
       </div>

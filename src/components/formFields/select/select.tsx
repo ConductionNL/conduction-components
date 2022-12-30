@@ -35,6 +35,8 @@ export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
             isMulti
             isDisabled={disabled}
             {...{ options, value, onChange, errors, defaultValue }}
+            menuPortalTarget={document.body}
+            styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
           />
         );
       }}
@@ -63,6 +65,8 @@ export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
             isMulti
             isDisabled={disabled}
             {...{ options, value, onChange, errors, defaultValue }}
+            menuPortalTarget={document.body}
+            styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
           />
         );
       }}
@@ -91,6 +95,8 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
             className={clsx(styles.select, errors[name] && styles.error)}
             isDisabled={disabled}
             {...{ options, onChange, errors, isClearable, defaultValue }}
+            menuPortalTarget={document.body}
+            styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
           />
         );
       }}
