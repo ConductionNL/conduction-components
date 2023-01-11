@@ -4,13 +4,19 @@
 
 - **Version 2**
 
-  - 2.0.29: 
+  - 2.0.30:
+    - Selects now have an z-index.
+    - Checkboxes now automatically have an id wich is a camelCase of "checkbox" plus the label, "checkboxLabel".
+    - Removed styles warning on tag.
+  - 2.0.29:
+    - Added remove option to tags.
+    - SelectSingle now removes selected option if filter deselect it.
     - PrimaryTopNav will always show subItems on mobile
     - Added InputURL component
   - 2.0.27 & 2.0.28: Cleanup
-  - 2.0.26: Added Select element error states
-  - 2.0.25: Added InputURL component;
-  - 2.0.24: Bugfix: @conduction not showing
+  - 2.0.26: Added Select element error states.
+  - 2.0.25: Added InputURL component.
+  - 2.0.24: Bugfix: @conduction not showing.
   - 2.0.23:
     - Added optional boxshadow to PrimaryTopNav.
     - Added maxLength to both TopNavs and added a gap to the icon and label of a TopNav item.

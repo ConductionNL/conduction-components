@@ -4,7 +4,9 @@
   --conduction-tag-background-color: var(--skeleton-color-grey-1);
   --conduction-tag-border-radius: var(--skeleton-border-radius-md);
   --conduction-tag-padding: var(--skeleton-size-xs);
-  --conduction-tag-child-margin-inline: var(--skeleton-size-2xs);
+  --conduction-tag-icon-margin-inline-end: var(--skeleton-size-2xs);
+  --conduction-tag-remove-background-color: #ffbdad;
+  --conduction-tag-remove-text-color: #e44f2a;
 }
 
 .tag {
@@ -20,9 +22,23 @@
 }
 
 .tag > *:not(:last-child) {
-  margin-inline-end: var(--conduction-tag-child-margin-inline);
+  margin-inline-end: var(--conduction-tag-icon-margin-inline-end);
 }
 
 .clickable :hover {
   cursor: pointer;
+}
+
+.remove {
+  padding-inline-end: 4px;
+}
+
+.tagContainer {
+  display: flex;
+}
+
+.removeTag:hover {
+  cursor: pointer;
+  background-color: var(--conduction-tag-remove-background-color);
+  color: var(--conduction-tag-remove-text-color);
 }
