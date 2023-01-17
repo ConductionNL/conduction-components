@@ -4,6 +4,8 @@
 
 - **Version 2**
 
+  - 2.0.31:
+    - PrimaryTopNav clickbox now includes padding of nav items.
   - 2.0.30:
     - Selects now have an z-index.
     - Checkboxes now automatically have an id wich is a camelCase of "checkbox" plus the label, "checkboxLabel".

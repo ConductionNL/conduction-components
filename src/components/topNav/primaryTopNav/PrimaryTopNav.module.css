@@ -81,6 +81,7 @@
 
 .primary .link {
   display: block;
+  text-decoration: none;
   color: var(--conduction-primary-top-nav-color);
 }
 

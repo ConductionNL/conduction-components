@@ -48,12 +48,14 @@ export const PrimaryTopNav: React.FC<TopNavProps> = ({ items, mobileLogo, layout
       <nav className={clsx(styles.primary, isOpen && styles.isOpen)}>
         <ul className={styles.ul}>
           {items.map(({ label, icon, current, handleClick, subItems }, idx) => (
-            <li className={clsx(styles.li, current && styles.current)} key={idx}>
-              <div onClick={() => handleItemClick(handleClick)}>
-                <Link className={clsx(styles.link, styles.label)} icon={icon} iconAlign="start">
-                  {label}
-                </Link>
-              </div>
+            <li
+              onClick={() => handleItemClick(handleClick)}
+              className={clsx(styles.li, current && styles.current)}
+              key={idx}
+            >
+              <Link className={clsx(styles.link, styles.label)} icon={icon} iconAlign="start">
+                {label}
+              </Link>
 
               {subItems && (
                 <ul className={styles.dropdown}>
