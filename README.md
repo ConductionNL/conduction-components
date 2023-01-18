@@ -4,6 +4,7 @@
 
 - **Version 2**
 
+  - 2.0.32: PrimaryTopNav sub items doesn't overlap main navbar anymore
   - 2.0.31:
     - PrimaryTopNav clickbox now includes padding of nav items.
   - 2.0.30:
