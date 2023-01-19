@@ -4,6 +4,8 @@
 
 - **Version 2**
 
+  - 2.0.32:
+    - SelectSingle update to include defaultValue in react-hook-form controller.
   - 2.0.31:
     - PrimaryTopNav clickbox now includes padding of nav items.
   - 2.0.30:
