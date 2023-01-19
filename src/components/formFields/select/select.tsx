@@ -86,15 +86,15 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
 }) => {
   return (
     <Controller
-      {...{ control, name }}
+      {...{ control, name, defaultValue }}
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
           <ReactSelect
-            value={value || ""}
+            value={value ?? ""}
             className={clsx(styles.select, errors[name] && styles.error)}
             isDisabled={disabled}
-            {...{ options, onChange, errors, isClearable, defaultValue }}
+            {...{ options, onChange, errors, isClearable }}
             menuPortalTarget={document.body}
             styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
           />
