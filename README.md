@@ -4,6 +4,7 @@
 
 - **Version 2**
 
+  - 2.0.33: PrimaryTopNav sub items doesn't overlap main navbar anymore
   - 2.0.32:
     - SelectSingle update to include defaultValue in react-hook-form controller.
   - 2.0.31:
