@@ -26,15 +26,16 @@ export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
 }) => {
   return (
     <Controller
-      {...{ control, name }}
+      {...{ control, name, defaultValue }}
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
           <ReactSelect
+            value={value ?? ""}
             className={clsx(styles.select, errors[name] && styles.error)}
             isMulti
             isDisabled={disabled}
-            {...{ options, value, onChange, errors, defaultValue }}
+            {...{ options, onChange, errors }}
             menuPortalTarget={document.body}
             styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
           />
@@ -55,16 +56,17 @@ export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
 }) => {
   return (
     <Controller
-      {...{ control, name }}
+      {...{ control, name, defaultValue }}
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
           <CreatableSelect
+            value={value ?? ""}
             placeholder="Select existing or create new entries"
             className={clsx(styles.select, errors[name] && styles.error)}
             isMulti
             isDisabled={disabled}
-            {...{ options, value, onChange, errors, defaultValue }}
+            {...{ options, onChange, errors }}
             menuPortalTarget={document.body}
             styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
           />
