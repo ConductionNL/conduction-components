@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.1: Deploy issues.
   - 2.1.0: InputDate now includes Den Haag InputDate component, requiring react-hook-form controls.
 
 - **Version 2**
