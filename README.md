@@ -2,9 +2,9 @@
 
 ## Changelog
 
-- **Version 3**
+- **Version 2.1 (breaking changes from 2.0.x)**
 
-  - 3.0.0: InputDate now includes Den Haag InputDate component, requiring react-hook-form controls.
+  - 2.1.0: InputDate now includes Den Haag InputDate component, requiring react-hook-form controls.
 
 - **Version 2**
 
