@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
  * Export KeyValue input component (wrapped in FormFieldGroup)
  */
 interface CreateKeyValueProps {
+  name: string;
   control: Control<FieldValues, any>;
   defaultValue?: IKeyValue[];
 }
@@ -19,7 +20,7 @@ export interface IKeyValue {
   value: string;
 }
 
-export const CreateKeyValue: React.FC<CreateKeyValueProps & IInputProps & IReactHookFormProps> = ({
+export const CreateKeyValue: React.FC<CreateKeyValueProps & IReactHookFormProps> = ({
   name,
   errors,
   control,

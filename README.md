@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.4: Remove IInputProps from CreateKeyValue to undo duplicate defaultValue prop
   - 2.1.3: Export IKeyValue from CreateKeyValue component.
   - 2.1.2: REVERT 2.1.1 and 2.1.0.
   - 2.1.1: Deploy issues.
