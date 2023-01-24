@@ -12,7 +12,7 @@ import { Textarea } from "./textarea";
 import { InputCheckbox } from "./checkbox";
 import { InputRadio } from "./radio";
 import { SelectSingle, SelectMultiple, SelectCreate } from "./select/select";
-import { CreateKeyValue } from "./createKeyValue/CreateKeyValue";
+import { CreateKeyValue, IKeyValue } from "./createKeyValue/CreateKeyValue";
 
 export {
   InputRadio,
@@ -30,4 +30,5 @@ export {
   SelectMultiple,
   SelectCreate,
   CreateKeyValue,
+  IKeyValue,
 };

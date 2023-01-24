@@ -14,7 +14,7 @@ interface CreateKeyValueProps {
   defaultValue?: IKeyValue[];
 }
 
-interface IKeyValue {
+export interface IKeyValue {
   key: string;
   value: string;
 }
