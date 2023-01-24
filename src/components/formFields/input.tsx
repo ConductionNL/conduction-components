@@ -1,7 +1,8 @@
 import * as React from "react";
-import { TextField } from "@gemeente-denhaag/components-react";
+import { Datepicker, TextField } from "@gemeente-denhaag/components-react";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
 import { IReactHookFormProps } from "./types";
+import { Control, FieldValues, Controller } from "react-hook-form";
 
 export interface IInputProps {
   name: string;
@@ -9,6 +10,7 @@ export interface IInputProps {
   defaultValue?: string;
   icon?: JSX.Element;
   placeholder?: string;
+  control?: Control<FieldValues, any>;
 }
 
 export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
@@ -91,14 +93,15 @@ export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
   name,
   defaultValue,
   validation,
-  register,
   errors,
+  control,
 }) => (
-  <TextField
-    type="date"
-    {...{ defaultValue, disabled }}
-    {...register(name, { ...validation })}
-    invalid={errors[name]}
+  <Controller
+    {...{ control, name, defaultValue }}
+    rules={validation}
+    render={({ field: { onChange, value } }) => {
+      return <Datepicker {...{ value, onChange, disabled }} error={!!errors[name]} />;
+    }}
   />
 );
 
