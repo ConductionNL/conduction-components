@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.7: Add disabled placholders to all Select elements.
   - 2.1.6: Add disabled state to CreateKeyValue component
   - 2.1.4 & 2.1.5: Remove IInputProps from CreateKeyValue to undo duplicate defaultValue prop
   - 2.1.3: Export IKeyValue from CreateKeyValue component.
