@@ -2,8 +2,25 @@
 
 ## Changelog
 
+- **Version 2.1 (breaking changes from 2.0.x)**
+
+  - 2.1.8: PrimaryTopNav will always show subItems on mobile
+  - 2.1.7: Add disabled placholders to all Select elements.
+  - 2.1.6: Add disabled state to CreateKeyValue component
+  - 2.1.4 & 2.1.5: Remove IInputProps from CreateKeyValue to undo duplicate defaultValue prop
+  - 2.1.3: Export IKeyValue from CreateKeyValue component.
+  - 2.1.2: REVERT 2.1.1 and 2.1.0.
+  - 2.1.1: Deploy issues.
+  - 2.1.0: InputDate now includes Den Haag InputDate component, requiring react-hook-form controls.
+
 - **Version 2**
 
+  - 2.0.34: SelectMultiple and SelectCreate update to include defaultValue in react-hook-form controller.
+  - 2.0.33: PrimaryTopNav sub items doesn't overlap main navbar anymore
+  - 2.0.32:
+    - SelectSingle update to include defaultValue in react-hook-form controller.
+  - 2.0.31:
+    - PrimaryTopNav clickbox now includes padding of nav items.
   - 2.0.30:
     - Selects now have an z-index.
     - Checkboxes now automatically have an id wich is a camelCase of "checkbox" plus the label, "checkboxLabel".
@@ -11,7 +28,6 @@
   - 2.0.29:
     - Added remove option to tags.
     - SelectSingle now removes selected option if filter deselect it.
-    - PrimaryTopNav will always show subItems on mobile
     - Added InputURL component
   - 2.0.27 & 2.0.28: Cleanup
   - 2.0.26: Added Select element error states.

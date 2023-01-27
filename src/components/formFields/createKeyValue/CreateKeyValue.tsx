@@ -10,28 +10,31 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
  * Export KeyValue input component (wrapped in FormFieldGroup)
  */
 interface CreateKeyValueProps {
+  name: string;
   control: Control<FieldValues, any>;
   defaultValue?: IKeyValue[];
+  disabled?: boolean;
 }
 
-interface IKeyValue {
+export interface IKeyValue {
   key: string;
   value: string;
 }
 
-export const CreateKeyValue: React.FC<CreateKeyValueProps & IInputProps & IReactHookFormProps> = ({
+export const CreateKeyValue: React.FC<CreateKeyValueProps & IReactHookFormProps> = ({
   name,
   errors,
   control,
   validation,
   defaultValue,
+  disabled,
 }) => {
   return (
     <Controller
       {...{ control, name, errors }}
       rules={validation}
       render={({ field: { onChange } }) => {
-        return <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors }} />;
+        return <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled }} />;
       }}
     />
   );
@@ -43,9 +46,10 @@ export const CreateKeyValue: React.FC<CreateKeyValueProps & IInputProps & IReact
 interface CreateKeyValueComponentProps {
   defaultValue?: IKeyValue[];
   handleChange: (...event: any[]) => void;
+  disabled?: boolean;
 }
 
-const KeyValueComponent: React.FC<CreateKeyValueComponentProps> = ({ defaultValue, handleChange }) => {
+const KeyValueComponent: React.FC<CreateKeyValueComponentProps> = ({ defaultValue, handleChange, disabled }) => {
   const [currentKey, setCurrentKey] = React.useState<string>("");
   const [currentValue, setCurrentValue] = React.useState<string>("");
   const [keyValues, setKeyValues] = React.useState<IKeyValue[]>(defaultValue ?? []);
@@ -105,6 +109,7 @@ const KeyValueComponent: React.FC<CreateKeyValueComponentProps> = ({ defaultValu
           ref={currentKeyRef}
           className="denhaag-textfield__input"
           onChange={(e) => setCurrentKey(e.target.value)}
+          {...{ disabled }}
         />
 
         <input
@@ -114,9 +119,10 @@ const KeyValueComponent: React.FC<CreateKeyValueComponentProps> = ({ defaultValu
           ref={currentValueRef}
           className="denhaag-textfield__input"
           onChange={(e) => setCurrentValue(e.target.value)}
+          {...{ disabled }}
         />
 
-        <Button onClick={handleCreate} disabled={!currentKey || !currentValue}>
+        <Button onClick={handleCreate} disabled={!currentKey || !currentValue || disabled}>
           Add
         </Button>
       </div>

@@ -91,8 +91,8 @@ export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
   name,
   defaultValue,
   validation,
-  register,
   errors,
+  register,
 }) => (
   <TextField
     type="date"

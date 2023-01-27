@@ -26,17 +26,19 @@ export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
 }) => {
   return (
     <Controller
-      {...{ control, name }}
+      {...{ control, name, defaultValue }}
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
           <ReactSelect
+            value={value ?? ""}
             className={clsx(styles.select, errors[name] && styles.error)}
             isMulti
             isDisabled={disabled}
-            {...{ options, value, onChange, errors, defaultValue }}
+            {...{ options, onChange, errors }}
             menuPortalTarget={document.body}
             styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+            placeholder={disabled ? "Disabled..." : "Select one or more options..."}
           />
         );
       }}
@@ -55,16 +57,17 @@ export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
 }) => {
   return (
     <Controller
-      {...{ control, name }}
+      {...{ control, name, defaultValue }}
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
           <CreatableSelect
-            placeholder="Select existing or create new entries"
+            value={value ?? ""}
+            placeholder={disabled ? "Disabled..." : "Select or create one or multiple options..."}
             className={clsx(styles.select, errors[name] && styles.error)}
             isMulti
             isDisabled={disabled}
-            {...{ options, value, onChange, errors, defaultValue }}
+            {...{ options, onChange, errors }}
             menuPortalTarget={document.body}
             styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
           />
@@ -86,17 +89,18 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
 }) => {
   return (
     <Controller
-      {...{ control, name }}
+      {...{ control, name, defaultValue }}
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
           <ReactSelect
-            value={value || ""}
+            value={value ?? ""}
             className={clsx(styles.select, errors[name] && styles.error)}
             isDisabled={disabled}
-            {...{ options, onChange, errors, isClearable, defaultValue }}
+            {...{ options, onChange, errors, isClearable }}
             menuPortalTarget={document.body}
             styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+            placeholder={disabled ? "Disabled..." : "Select an option..."}
           />
         );
       }}

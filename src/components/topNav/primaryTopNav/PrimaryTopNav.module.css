@@ -81,6 +81,7 @@
 
 .primary .link {
   display: block;
+  text-decoration: none;
   color: var(--conduction-primary-top-nav-color);
 }
 
@@ -91,6 +92,7 @@
 
 .dropdown {
   left: 0;
+  top: 100%;
   padding: 0;
   width: 100%;
   display: block;
