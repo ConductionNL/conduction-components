@@ -58,6 +58,8 @@
   margin: unset;
   padding-inline-start: unset;
   align-items: center;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
 
 .li {
@@ -95,7 +97,7 @@
   top: 100%;
   padding: 0;
   width: 100%;
-  display: none;
+  display: block;
   list-style-type: none;
   background-color: var(--conduction-primary-top-nav-background-color);
   border-bottom-right-radius: var(--conduction-primary-top-nav-dropdown-border-radius);
@@ -133,6 +135,7 @@
 
   .dropdown {
     position: absolute;
+    display: none;
   }
 
   .menuToggleContainer {
