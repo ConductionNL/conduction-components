@@ -28,7 +28,6 @@
   - 2.0.29:
     - Added remove option to tags.
     - SelectSingle now removes selected option if filter deselect it.
-    - Added InputURL component
   - 2.0.27 & 2.0.28: Cleanup
   - 2.0.26: Added Select element error states.
   - 2.0.25: Added InputURL component.
