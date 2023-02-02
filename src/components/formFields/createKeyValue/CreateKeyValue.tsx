@@ -91,7 +91,10 @@ const KeyValueComponent: React.FC<CreateKeyValueComponentProps> = ({ defaultValu
                 <TableCell>{keyValue.key}</TableCell>
                 <TableCell>{keyValue.value}</TableCell>
                 <TableCell className={styles.tdDelete}>
-                  <Button onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}>
+                  <Button
+                    {...{ disabled }}
+                    onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
+                  >
                     Delete
                   </Button>
                 </TableCell>
