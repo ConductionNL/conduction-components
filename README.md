@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.12: Added ToolTip max-width and break-word
   - 2.1.11: Added CreateKeyValue component disabled state on delete buttons
   - 2.1.10: PrimaryTopNav overflow scroll removed from desktop
   - 2.1.8 & 2.1.9: PrimaryTopNav will always show subItems on mobile

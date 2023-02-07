@@ -16,7 +16,7 @@ export const ToolTip: React.FC<ToolTipProps> = ({ children, layoutClassName, too
         {children}
       </div>
 
-      <ReactTooltip place={"top"} type={"dark"} effect={"solid"} />
+      <ReactTooltip place={"top"} type={"dark"} effect={"solid"} className={styles.tooltip} />
     </div>
   );
 };
