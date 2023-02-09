@@ -1,7 +1,8 @@
 import * as React from "react";
 import { TextField } from "@gemeente-denhaag/components-react";
-import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
 import { IReactHookFormProps } from "./types";
+import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export interface IInputProps {
   name: string;
@@ -27,7 +28,11 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
       {...{ disabled, placeholder }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
-      icon={<span onClick={() => setShowPassword(!showPassword)}>{showPassword ? <HideIcon /> : <ShowIcon />}</span>}
+      icon={
+        <span onClick={() => setShowPassword(!showPassword)}>
+          {showPassword ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
+        </span>
+      }
     />
   );
 };

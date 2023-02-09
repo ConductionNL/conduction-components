@@ -51,7 +51,7 @@ const CrumbItem: React.FC<CrumbItemProps> = ({ pathname, crumbLabel, idx }) => (
         fill="none"
         focusable="false"
         height="1em"
-        shape-rendering="auto"
+        shapeRendering="auto"
         viewBox="0 0 24 24"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
