@@ -9,7 +9,7 @@ import {
   InputFile,
 } from "./input";
 import { Textarea } from "./textarea";
-import { InputCheckbox } from "./checkbox";
+import { InputCheckbox } from "./checkbox/checkbox";
 import { InputRadio } from "./radio";
 import { SelectSingle, SelectMultiple, SelectCreate } from "./select/select";
 import { CreateKeyValue, IKeyValue } from "./createKeyValue/CreateKeyValue";

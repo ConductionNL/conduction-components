@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.14: Refactor checkbox to remove svg errors
   - 2.1.13: Refactor components to remove svg errors (e.g. shape-rendering => shapeRendering)
   - 2.1.12: Added ToolTip max-width and break-word
   - 2.1.11: Added CreateKeyValue component disabled state on delete buttons
