@@ -91,38 +91,6 @@ export const InputURL: React.FC<IInputProps & IReactHookFormProps> = ({
   />
 );
 
-export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
-  disabled,
-  name,
-  defaultValue,
-  validation,
-  errors,
-  register,
-}) => (
-  <TextField
-    type="date"
-    {...{ defaultValue, disabled }}
-    {...register(name, { ...validation })}
-    invalid={errors[name]}
-  />
-);
-
-export const InputDateTime: React.FC<IInputProps & IReactHookFormProps> = ({
-  disabled,
-  name,
-  defaultValue,
-  validation,
-  register,
-  errors,
-}) => (
-  <TextField
-    type="datetime-local"
-    {...{ defaultValue, disabled }}
-    {...register(name, { ...validation })}
-    invalid={errors[name]}
-  />
-);
-
 export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   disabled,
   name,
