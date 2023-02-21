@@ -20,6 +20,7 @@ export interface NotificationPopUpProps {
     label: string;
     icon?: JSX.Element;
     handleClick: () => any;
+    layoutClassName?: string;
   };
   layoutClassName?: string;
 }
@@ -58,7 +59,7 @@ export const NotificationPopUp: React.FC<NotificationPopUpProps> = ({
 
         <div className={styles.buttons}>
           {secondaryButton && (
-            <div onClick={() => handleClick(secondaryButton.handleClick)}>
+            <div onClick={() => handleClick(secondaryButton.handleClick)} className={secondaryButton.layoutClassName}>
               <Link icon={secondaryButton.icon ?? <CloseIcon />} iconAlign="start">
                 {secondaryButton.label}
               </Link>

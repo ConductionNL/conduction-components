@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.17: Refactor to NotificationPopUp to include layoutClassName.
   - 2.1.16: Refactor ToolTip layoutClassName placement.
   - 2.1.15: Add InputDate component based on react-datepicker.
   - 2.1.14: Refactor checkbox to remove svg errors
