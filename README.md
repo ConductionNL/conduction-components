@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.19: Refactor Tooltip layout.
   - 2.1.18: Add default value to Textarea component.
   - 2.1.17: Refactor to NotificationPopUp to include layoutClassName.
   - 2.1.16: Refactor ToolTip layoutClassName placement.
