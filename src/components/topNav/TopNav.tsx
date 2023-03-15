@@ -13,7 +13,7 @@ interface TopNavItemsProps {
   items: ITopNavItem[];
 }
 
-export const PrimaryTopNav: React.FC<TopNavItemsProps> = ({ items }) => {
+export const PrimaryTopNav = ({ items }: TopNavItemsProps) => {
   return (
     <nav className={styles.primary}>
       <ul className={styles.ul}>
@@ -29,7 +29,7 @@ export const PrimaryTopNav: React.FC<TopNavItemsProps> = ({ items }) => {
   );
 };
 
-export const SecondaryTopNav: React.FC<TopNavItemsProps> = ({ items }) => {
+export const SecondaryTopNav = ({ items }: TopNavItemsProps) => {
   return (
     <nav>
       <ul className={styles.ul}>

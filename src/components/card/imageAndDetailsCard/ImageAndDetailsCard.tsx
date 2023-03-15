@@ -17,14 +17,14 @@ interface ImageAndDetailsCardProps {
   layoutClassName?: string;
 }
 
-export const ImageAndDetailsCard: React.FC<ImageAndDetailsCardProps> = ({
+export const ImageAndDetailsCard = ({
   image,
   title,
   subHeader,
   introduction,
   link,
   layoutClassName,
-}) => {
+}: ImageAndDetailsCardProps) => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
       <div className={styles.image}>{image}</div>

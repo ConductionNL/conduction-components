@@ -16,13 +16,13 @@ interface HorizontalImageCardProps {
   external?: boolean;
 }
 
-export const HorizontalImageCard: React.FC<HorizontalImageCardProps> = ({
+export const HorizontalImageCard = ({
   title,
   layoutClassName,
   external,
   link,
   iconOrImage,
-}) => {
+}: HorizontalImageCardProps) => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
       <div className={styles.imageOrIconContainer}>{iconOrImage}</div>

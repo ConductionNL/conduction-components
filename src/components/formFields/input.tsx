@@ -9,13 +9,7 @@ export interface IInputProps {
   defaultValue?: string;
 }
 
-export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
-  disabled,
-  name,
-  validation,
-  register,
-  errors,
-}) => {
+export const InputPassword = ({ disabled, name, validation, register, errors }: IInputProps & IReactHookFormProps) => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
   return (
@@ -29,14 +23,14 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   );
 };
 
-export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
+export const InputText = ({
   disabled,
   name,
   defaultValue,
   validation,
   register,
   errors,
-}) => (
+}: IInputProps & IReactHookFormProps) => (
   <TextField
     type="text"
     {...{ defaultValue, disabled }}
@@ -45,14 +39,14 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   />
 );
 
-export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
+export const InputEmail = ({
   disabled,
   name,
   defaultValue,
   validation,
   register,
   errors,
-}) => (
+}: IInputProps & IReactHookFormProps) => (
   <TextField
     type="email"
     {...{ defaultValue, disabled }}
@@ -61,14 +55,14 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   />
 );
 
-export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
+export const InputDate = ({
   disabled,
   name,
   defaultValue,
   validation,
   register,
   errors,
-}) => (
+}: IInputProps & IReactHookFormProps) => (
   <TextField
     type="date"
     {...{ defaultValue, disabled }}
@@ -77,14 +71,14 @@ export const InputDate: React.FC<IInputProps & IReactHookFormProps> = ({
   />
 );
 
-export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
+export const InputNumber = ({
   disabled,
   name,
   defaultValue,
   validation,
   register,
   errors,
-}) => (
+}: IInputProps & IReactHookFormProps) => (
   <TextField
     type="number"
     {...{ defaultValue, disabled }}

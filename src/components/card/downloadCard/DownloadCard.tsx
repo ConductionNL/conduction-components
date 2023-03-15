@@ -12,7 +12,7 @@ interface DownloadCardProps {
   layoutClassName?: string;
 }
 
-export const DownloadCard: React.FC<DownloadCardProps> = ({ icon, label, sizeKb, layoutClassName, downloadLabel }) => {
+export const DownloadCard = ({ icon, label, sizeKb, layoutClassName, downloadLabel }: DownloadCardProps) => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <div className={styles.content}>

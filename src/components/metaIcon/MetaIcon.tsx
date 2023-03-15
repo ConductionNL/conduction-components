@@ -7,7 +7,7 @@ export interface MetaIconProps {
   value: string;
 }
 
-export const MetaIcon: React.FC<MetaIconProps> = ({ icon, label, value }) => (
+export const MetaIcon = ({ icon, label, value }: MetaIconProps) => (
   <div className={styles.container}>
     <span className={styles.icon}>{icon}</span>
 

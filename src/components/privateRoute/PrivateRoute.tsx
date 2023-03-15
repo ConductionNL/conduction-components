@@ -5,7 +5,7 @@ interface PrivateRouteProps {
   isLoggedIn?: boolean;
 }
 
-export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, isLoggedIn }) => {
+export const PrivateRoute = ({ children, isLoggedIn }: React.PropsWithChildren<PrivateRouteProps>) => {
   const [authenticated, setAuthenticated] = React.useState<boolean>(false);
 
   React.useEffect(() => {

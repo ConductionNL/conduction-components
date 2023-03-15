@@ -6,9 +6,6 @@ export interface ICheckboxProps {
   name: string;
 }
 
-export const InputCheckbox: React.FC<ICheckboxProps & IReactHookFormProps> = ({
-  name,
-  validation,
-  register,
-  label,
-}) => <FormControlLabel input={<input type="checkbox" {...register(name, { ...validation })} />} {...{ label }} />;
+export const InputCheckbox = ({ name, validation, register, label }: ICheckboxProps & IReactHookFormProps) => (
+  <FormControlLabel input={<input type="checkbox" {...register(name, { ...validation })} />} {...{ label }} />
+);
