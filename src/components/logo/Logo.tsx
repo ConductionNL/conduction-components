@@ -8,7 +8,7 @@ interface LogoProps {
   href?: string;
 }
 
-export const AuthenticatedLogo = ({ layoutClassName, href }: LogoProps) => {
+export const AuthenticatedLogo = ({ layoutClassName, href }: LogoProps): JSX.Element => {
   return (
     <Link className={styles.logoContainer} to={href ?? "#"}>
       <div className={clsx(styles.authenticatedLogo, styles.logo, layoutClassName)} />
@@ -16,7 +16,7 @@ export const AuthenticatedLogo = ({ layoutClassName, href }: LogoProps) => {
   );
 };
 
-export const UnauthenticatedLogo = ({ layoutClassName, href }: LogoProps) => {
+export const UnauthenticatedLogo = ({ layoutClassName, href }: LogoProps): JSX.Element => {
   return (
     <Link className={styles.logoContainer} to={href ?? "#"}>
       <div className={clsx(styles.unauthenticatedLogo, styles.logo, layoutClassName)} />

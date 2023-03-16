@@ -8,6 +8,6 @@ export interface ITextAreaProps {
   defaultValue?: string;
 }
 
-export const Textarea = ({ name, validation, register, errors }: ITextAreaProps & IReactHookFormProps) => (
+export const Textarea = ({ name, validation, register, errors }: ITextAreaProps & IReactHookFormProps): JSX.Element => (
   <TextArea {...register(name, { ...validation })} invalid={errors[name]} />
 );

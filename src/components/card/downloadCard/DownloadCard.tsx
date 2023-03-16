@@ -12,7 +12,13 @@ interface DownloadCardProps {
   layoutClassName?: string;
 }
 
-export const DownloadCard = ({ icon, label, sizeKb, layoutClassName, downloadLabel }: DownloadCardProps) => {
+export const DownloadCard = ({
+  icon,
+  label,
+  sizeKb,
+  layoutClassName,
+  downloadLabel,
+}: DownloadCardProps): JSX.Element => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <div className={styles.content}>

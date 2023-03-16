@@ -24,7 +24,7 @@ export const ImageAndDetailsCard = ({
   introduction,
   link,
   layoutClassName,
-}: ImageAndDetailsCardProps) => {
+}: ImageAndDetailsCardProps): JSX.Element => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
       <div className={styles.image}>{image}</div>

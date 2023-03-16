@@ -7,7 +7,7 @@ export interface MetaIconProps {
   value: string;
 }
 
-export const MetaIcon = ({ icon, label, value }: MetaIconProps) => (
+export const MetaIcon = ({ icon, label, value }: MetaIconProps): JSX.Element => (
   <div className={styles.container}>
     <span className={styles.icon}>{icon}</span>
 

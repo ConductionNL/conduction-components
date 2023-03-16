@@ -13,7 +13,7 @@ interface TopNavItemsProps {
   items: ITopNavItem[];
 }
 
-export const PrimaryTopNav = ({ items }: TopNavItemsProps) => {
+export const PrimaryTopNav = ({ items }: TopNavItemsProps): JSX.Element => {
   return (
     <nav className={styles.primary}>
       <ul className={styles.ul}>
@@ -29,7 +29,7 @@ export const PrimaryTopNav = ({ items }: TopNavItemsProps) => {
   );
 };
 
-export const SecondaryTopNav = ({ items }: TopNavItemsProps) => {
+export const SecondaryTopNav = ({ items }: TopNavItemsProps): JSX.Element => {
   return (
     <nav>
       <ul className={styles.ul}>

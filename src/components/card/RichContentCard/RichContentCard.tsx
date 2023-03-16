@@ -22,7 +22,13 @@ export interface RichContentCardProps {
   linkIsExternal?: boolean;
 }
 
-export const RichContentCard = ({ link, labelsWithIcon, tags, contentLinks, linkIsExternal }: RichContentCardProps) => {
+export const RichContentCard = ({
+  link,
+  labelsWithIcon,
+  tags,
+  contentLinks,
+  linkIsExternal,
+}: RichContentCardProps): JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.link} onClick={() => navigate(link.href)}>
@@ -60,7 +66,7 @@ interface LabelWithIconProps {
   icon: JSX.Element;
 }
 
-const LabelWithIcon = ({ label, icon }: LabelWithIconProps) => {
+const LabelWithIcon = ({ label, icon }: LabelWithIconProps): JSX.Element => {
   return (
     <div className={styles.labelWithIcon}>
       <span className={styles.labelWithIcon_icon}>{icon}</span>
@@ -73,7 +79,7 @@ interface TagProps {
   tag: string;
 }
 
-const Tag = ({ tag }: TagProps) => {
+const Tag = ({ tag }: TagProps): JSX.Element => {
   return <span className={styles.tag}>{tag}</span>;
 };
 
@@ -83,7 +89,7 @@ interface ContentLinkProps {
   href: string;
 }
 
-const ContentLink = ({ title, subTitle, href }: ContentLinkProps) => {
+const ContentLink = ({ title, subTitle, href }: ContentLinkProps): JSX.Element => {
   return (
     <Link className={styles.contentLink}>
       <div className={styles.contentLink_content}>

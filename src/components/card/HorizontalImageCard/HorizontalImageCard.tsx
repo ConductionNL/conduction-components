@@ -22,7 +22,7 @@ export const HorizontalImageCard = ({
   external,
   link,
   iconOrImage,
-}: HorizontalImageCardProps) => {
+}: HorizontalImageCardProps): JSX.Element => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
       <div className={styles.imageOrIconContainer}>{iconOrImage}</div>

@@ -27,7 +27,7 @@ export const EditableTableRow = ({
   cancelLabel,
   saveLabel,
   handleSave,
-}: EditableTableRowProps & InputTypes) => {
+}: EditableTableRowProps & InputTypes): JSX.Element => {
   const [editing, setEditing] = React.useState<boolean>(false);
 
   return (
@@ -50,7 +50,7 @@ interface RegularTableRowProps {
   setEditing: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const RegularTableRow = ({ value, editLabel, setEditing }: RegularTableRowProps) => {
+const RegularTableRow = ({ value, editLabel, setEditing }: RegularTableRowProps): JSX.Element => {
   return (
     <>
       <TableCell>{value}</TableCell>
@@ -81,7 +81,7 @@ const EditingTableRow = ({
   inputType,
   saveLabel,
   cancelLabel,
-}: EditingTableRowProps & InputTypes) => {
+}: EditingTableRowProps & InputTypes): JSX.Element => {
   const {
     register,
     handleSubmit,
@@ -128,7 +128,7 @@ interface FormFieldProps {
   };
 }
 
-const FormField = ({ inputType, value, register, errors }: FormFieldProps & InputTypes) => {
+const FormField = ({ inputType, value, register, errors }: FormFieldProps & InputTypes): JSX.Element => {
   switch (inputType) {
     case "email":
       return <InputEmail defaultValue={value} {...{ register, errors }} name="value" validation={{ required: true }} />;

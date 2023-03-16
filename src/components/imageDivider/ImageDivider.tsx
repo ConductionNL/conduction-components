@@ -7,6 +7,6 @@ interface ImageDividerProps {
   layoutClassName: string;
 }
 
-export const ImageDivider = ({ image, layoutClassName }: ImageDividerProps) => {
+export const ImageDivider = ({ image, layoutClassName }: ImageDividerProps): JSX.Element => {
   return <img src={image} className={clsx(styles.divider, layoutClassName)} />;
 };

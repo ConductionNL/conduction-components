@@ -9,7 +9,13 @@ export interface IInputProps {
   defaultValue?: string;
 }
 
-export const InputPassword = ({ disabled, name, validation, register, errors }: IInputProps & IReactHookFormProps) => {
+export const InputPassword = ({
+  disabled,
+  name,
+  validation,
+  register,
+  errors,
+}: IInputProps & IReactHookFormProps): JSX.Element => {
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
 
   return (
@@ -30,7 +36,7 @@ export const InputText = ({
   validation,
   register,
   errors,
-}: IInputProps & IReactHookFormProps) => (
+}: IInputProps & IReactHookFormProps): JSX.Element => (
   <TextField
     type="text"
     {...{ defaultValue, disabled }}
@@ -46,7 +52,7 @@ export const InputEmail = ({
   validation,
   register,
   errors,
-}: IInputProps & IReactHookFormProps) => (
+}: IInputProps & IReactHookFormProps): JSX.Element => (
   <TextField
     type="email"
     {...{ defaultValue, disabled }}
@@ -62,7 +68,7 @@ export const InputDate = ({
   validation,
   register,
   errors,
-}: IInputProps & IReactHookFormProps) => (
+}: IInputProps & IReactHookFormProps): JSX.Element => (
   <TextField
     type="date"
     {...{ defaultValue, disabled }}
@@ -78,7 +84,7 @@ export const InputNumber = ({
   validation,
   register,
   errors,
-}: IInputProps & IReactHookFormProps) => (
+}: IInputProps & IReactHookFormProps): JSX.Element => (
   <TextField
     type="number"
     {...{ defaultValue, disabled }}

@@ -17,7 +17,7 @@ interface BreadcrumbsProps {
   }[];
 }
 
-export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps) => {
+export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps): JSX.Element => {
   return (
     <nav aria-label="Breadcrumb" className="denhaag-breadcrumb">
       <ol className="denhaag-breadcrumb__list" itemScope itemType="https://schema.org/BreadcrumbList">
@@ -39,7 +39,7 @@ interface CrumbItemProps {
   idx: number;
 }
 
-const CrumbItem = ({ pathname, crumbLabel, idx }: CrumbItemProps) => (
+const CrumbItem = ({ pathname, crumbLabel, idx }: CrumbItemProps): JSX.Element => (
   <li className="denhaag-breadcrumb__item" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
     <Link className="denhaag-breadcrumb__link" to={pathname} itemProp="item">
       <span className="denhaag-breadcrumb__text" itemProp="name">
@@ -66,7 +66,7 @@ const CrumbItem = ({ pathname, crumbLabel, idx }: CrumbItemProps) => (
   </li>
 );
 
-const LastCrumbItem = ({ pathname, crumbLabel, idx }: CrumbItemProps) => (
+const LastCrumbItem = ({ pathname, crumbLabel, idx }: CrumbItemProps): JSX.Element => (
   <li
     aria-current="page"
     className="denhaag-breadcrumb__item"
