@@ -18,14 +18,14 @@ interface DetailsCardProps {
   layoutClassName?: string;
 }
 
-export const DetailsCard: React.FC<DetailsCardProps> = ({
+export const DetailsCard = ({
   title,
   subHeader,
   introduction,
   link,
   tags,
   layoutClassName,
-}) => {
+}: DetailsCardProps): JSX.Element => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
       <div className={styles.content}>

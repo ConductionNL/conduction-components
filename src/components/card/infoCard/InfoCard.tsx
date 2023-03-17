@@ -8,7 +8,7 @@ interface InfoCardProps {
   layoutClassName?: string;
 }
 
-export const InfoCard: React.FC<InfoCardProps> = ({ title, content, layoutClassName }) => {
+export const InfoCard = ({ title, content, layoutClassName }: InfoCardProps): JSX.Element => {
   return (
     <div className={clsx([layoutClassName && layoutClassName], styles.container)}>
       <span className={styles.title}>{title}</span>

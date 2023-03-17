@@ -23,13 +23,13 @@ export interface RichContentCardProps {
   linkIsExternal?: boolean;
 }
 
-export const RichContentCard: React.FC<RichContentCardProps> = ({
+export const RichContentCard = ({
   link,
   labelsWithIcon,
   tags,
   contentLinks,
   linkIsExternal,
-}) => {
+}: RichContentCardProps): JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.link} onClick={() => navigate(link.href)}>
@@ -67,7 +67,7 @@ interface LabelWithIconProps {
   icon: JSX.Element;
 }
 
-const LabelWithIcon: React.FC<LabelWithIconProps> = ({ label, icon }) => {
+const LabelWithIcon = ({ label, icon }: LabelWithIconProps): JSX.Element => {
   return (
     <div className={styles.labelWithIcon}>
       <span className={styles.labelWithIcon_icon}>{icon}</span>
@@ -82,7 +82,7 @@ interface ContentLinkProps {
   href: string;
 }
 
-const ContentLink: React.FC<ContentLinkProps> = ({ title, subTitle, href }) => {
+const ContentLink = ({ title, subTitle, href }: ContentLinkProps): JSX.Element => {
   return (
     <Link className={styles.contentLink}>
       <div className={styles.contentLink_content}>

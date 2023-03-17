@@ -13,14 +13,14 @@ interface DownloadCardProps {
   handleClick: () => any;
 }
 
-export const DownloadCard: React.FC<DownloadCardProps> = ({
+export const DownloadCard = ({
   icon,
   label,
   sizeKb,
   layoutClassName,
   downloadLabel,
   handleClick,
-}) => {
+}: DownloadCardProps): JSX.Element => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <div className={styles.content}>
