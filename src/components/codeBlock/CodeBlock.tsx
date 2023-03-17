@@ -5,4 +5,4 @@ interface CodeBlockProps {
   codeBlock: string | JSX.Element;
 }
 
-export const CodeBlock: React.FC<CodeBlockProps> = ({ codeBlock }) => <div className={styles.code}>{codeBlock}</div>;
+export const CodeBlock = ({ codeBlock }: CodeBlockProps): JSX.Element => <div className={styles.code}>{codeBlock}</div>;
