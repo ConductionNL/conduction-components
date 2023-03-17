@@ -8,11 +8,13 @@ export interface ITextAreaProps {
   defaultValue?: string;
 }
 
-export const Textarea: React.FC<ITextAreaProps & IReactHookFormProps> = ({
+export const Textarea = ({
   name,
   validation,
   register,
   errors,
   disabled,
   defaultValue,
-}) => <TextArea {...register(name, { ...validation })} {...{ disabled, defaultValue }} invalid={errors[name]} />;
+}: ITextAreaProps & IReactHookFormProps): JSX.Element => (
+  <TextArea {...register(name, { ...validation })} {...{ disabled, defaultValue }} invalid={errors[name]} />
+);

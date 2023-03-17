@@ -21,14 +21,14 @@ export interface IKeyValue {
   value: string;
 }
 
-export const CreateKeyValue: React.FC<CreateKeyValueProps & IReactHookFormProps> = ({
+export const CreateKeyValue = ({
   name,
   errors,
   control,
   validation,
   defaultValue,
   disabled,
-}) => {
+}: CreateKeyValueProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name, errors }}
@@ -49,7 +49,7 @@ interface CreateKeyValueComponentProps {
   disabled?: boolean;
 }
 
-const KeyValueComponent: React.FC<CreateKeyValueComponentProps> = ({ defaultValue, handleChange, disabled }) => {
+const KeyValueComponent = ({ defaultValue, handleChange, disabled }: CreateKeyValueComponentProps): JSX.Element => {
   const [currentKey, setCurrentKey] = React.useState<string>("");
   const [currentValue, setCurrentValue] = React.useState<string>("");
   const [keyValues, setKeyValues] = React.useState<IKeyValue[]>(defaultValue ?? []);

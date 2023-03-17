@@ -12,13 +12,13 @@ interface IDateProps {
   disabled?: boolean;
 }
 
-export const InputDate: React.FC<IDateProps & IReactHookFormProps> = ({
+export const InputDate = ({
   name,
   errors,
   control,
   validation,
   disabled,
-}) => {
+}: IDateProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name }}
