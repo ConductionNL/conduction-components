@@ -12,7 +12,7 @@ interface TagProps {
   layoutClassName?: string;
 }
 
-export const Tag: React.FC<TagProps> = ({ label, icon, onClick, remove, layoutClassName }) => (
+export const Tag = ({ label, icon, onClick, remove, layoutClassName }: TagProps): JSX.Element => (
   <div className={remove && styles.tagContainer}>
     <div
       className={clsx(

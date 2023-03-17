@@ -25,7 +25,7 @@ interface StatusStepsProps {
   steps: IStatusStep[];
 }
 
-export const StatusSteps: React.FC<StatusStepsProps> = ({ steps }) => {
+export const StatusSteps = ({ steps }: StatusStepsProps): JSX.Element => {
   return (
     <StepList>
       {steps.map(({ title, checked, current, expanded, subSteps }, idx) => (

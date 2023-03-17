@@ -6,7 +6,11 @@ interface QuoteWrapperProps {
   borderWidth?: string;
 }
 
-export const QuoteWrapper: React.FC<QuoteWrapperProps> = ({ children, borderColor, borderWidth }) => {
+export const QuoteWrapper = ({
+  children,
+  borderColor,
+  borderWidth,
+}: React.PropsWithChildren<QuoteWrapperProps>): JSX.Element => {
   return (
     <div style={{ borderLeftColor: borderColor, borderLeftWidth: borderWidth }} className={styles.container}>
       {children}

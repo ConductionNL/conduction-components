@@ -8,7 +8,7 @@ interface TopNavProps {
   layoutClassName?: string;
 }
 
-export const SecondaryTopNav: React.FC<TopNavProps> = ({ items, layoutClassName }) => {
+export const SecondaryTopNav = ({ items, layoutClassName }: TopNavProps): JSX.Element => {
   return (
     <div className={clsx(styles.secondary, layoutClassName && layoutClassName)}>
       <nav>

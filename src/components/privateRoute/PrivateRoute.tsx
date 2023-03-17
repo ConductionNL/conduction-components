@@ -5,7 +5,7 @@ interface PrivateRouteProps {
   authenticated: boolean;
 }
 
-export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, authenticated }) => {
+export const PrivateRoute = ({ children, authenticated }: React.PropsWithChildren<PrivateRouteProps>): JSX.Element => {
   const [_authenticated, setAuthenticated] = React.useState<boolean>(false);
 
   React.useEffect(() => {
