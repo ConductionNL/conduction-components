@@ -24,7 +24,7 @@ export interface TopNavProps {
   layoutClassName?: string;
 }
 
-export const PrimaryTopNav: React.FC<TopNavProps> = ({ items, mobileLogo, layoutClassName }) => {
+export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProps): JSX.Element => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   const handleItemClick = (handleClick?: () => any) => {

@@ -10,7 +10,7 @@ interface ToolTipProps {
   layoutClassName?: string;
 }
 
-export const ToolTip: React.FC<ToolTipProps> = ({ children, layoutClassName, tooltip }) => {
+export const ToolTip = ({ children, layoutClassName, tooltip }: React.PropsWithChildren<ToolTipProps>): JSX.Element => {
   return (
     <div className={clsx(styles.wrapper, layoutClassName && layoutClassName)}>
       <div data-tip={tooltip}>{children}</div>

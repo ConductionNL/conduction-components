@@ -7,13 +7,13 @@ interface IRadioProps {
   value: string;
 }
 
-export const InputRadio: React.FC<IRadioProps & IReactHookFormProps> = ({
+export const InputRadio = ({
   name,
   validation,
   register,
   label,
   value,
-}) => (
+}: IRadioProps & IReactHookFormProps): JSX.Element => (
   <FormControlLabel
     input={<input type="radio" {...{ value }} {...register(name, { ...validation })} />}
     {...{ label }}

@@ -8,7 +8,7 @@ interface PaginationProps {
   setPage: (page: number) => any;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({ pages, currentPage, setPage }) => {
+export const Pagination = ({ pages, currentPage, setPage }: PaginationProps): JSX.Element => {
   return (
     <nav className="denhaag-pagination">
       <PreviousButton previousPage={currentPage > 1 ? currentPage - 1 : undefined} {...{ setPage }} />
@@ -30,7 +30,7 @@ interface LinkProps {
   current?: boolean;
 }
 
-const Link: React.FC<LinkProps> = ({ page, current, setPage }) => {
+const Link = ({ page, current, setPage }: LinkProps): JSX.Element => {
   return (
     <a
       aria-current={current && "page"}
@@ -48,7 +48,7 @@ interface PreviousButtonProps {
   previousPage?: number;
 }
 
-const PreviousButton: React.FC<PreviousButtonProps> = ({ previousPage, setPage }) => {
+const PreviousButton = ({ previousPage, setPage }: PreviousButtonProps): JSX.Element => {
   return (
     <a
       aria-label="Previous page"
@@ -82,7 +82,7 @@ interface NextButtonProps {
   nextPage?: number;
 }
 
-const NextButton: React.FC<NextButtonProps> = ({ nextPage, setPage }) => {
+const NextButton = ({ nextPage, setPage }: NextButtonProps): JSX.Element => {
   return (
     <a
       aria-label="Next page"

@@ -25,7 +25,7 @@ export interface NotificationPopUpProps {
   layoutClassName?: string;
 }
 
-export const NotificationPopUp: React.FC<NotificationPopUpProps> = ({
+export const NotificationPopUp = ({
   title,
   description,
   isVisible,
@@ -33,7 +33,7 @@ export const NotificationPopUp: React.FC<NotificationPopUpProps> = ({
   primaryButton,
   secondaryButton,
   layoutClassName,
-}) => {
+}: NotificationPopUpProps): JSX.Element | null => {
   const [animationVisible, setAnimationVisible] = React.useState<boolean>(true);
 
   const animationDuration = parseInt(styles.animationDuration, 10);

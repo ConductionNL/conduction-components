@@ -8,7 +8,11 @@ interface BadgeCounterProps {
   layoutClassName?: string;
 }
 
-export const BadgeCounter: React.FC<BadgeCounterProps> = ({ number, children, layoutClassName }) => (
+export const BadgeCounter = ({
+  number,
+  children,
+  layoutClassName,
+}: React.PropsWithChildren<BadgeCounterProps>): JSX.Element => (
   <div className={styles.content}>
     {children}
     <span className={clsx([layoutClassName && layoutClassName], styles.badge)}>{number}</span>

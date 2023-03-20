@@ -8,14 +8,14 @@ export interface ICheckboxProps {
   disabled?: boolean;
 }
 
-export const InputCheckbox: React.FC<ICheckboxProps & IReactHookFormProps> = ({
+export const InputCheckbox = ({
   name,
   validation,
   register,
   label,
   defaultChecked,
   disabled,
-}) => (
+}: ICheckboxProps & IReactHookFormProps): JSX.Element => (
   <div className={styles.container}>
     <input
       type="checkbox"

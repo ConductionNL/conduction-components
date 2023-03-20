@@ -6,6 +6,6 @@ interface ContainerProps {
   layoutClassName?: string;
 }
 
-export const Container: React.FC<ContainerProps> = ({ children, layoutClassName }) => (
+export const Container = ({ children, layoutClassName }: React.PropsWithChildren<ContainerProps>): JSX.Element => (
   <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>{children}</div>
 );

@@ -15,7 +15,7 @@ interface ISelectProps {
   isClearable?: boolean;
 }
 
-export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
+export const SelectMultiple = ({
   name,
   options,
   errors,
@@ -23,7 +23,7 @@ export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
   validation,
   defaultValue,
   disabled,
-}) => {
+}: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -46,7 +46,7 @@ export const SelectMultiple: React.FC<ISelectProps & IReactHookFormProps> = ({
   );
 };
 
-export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
+export const SelectCreate = ({
   name,
   options,
   errors,
@@ -54,7 +54,7 @@ export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
   validation,
   defaultValue,
   disabled,
-}) => {
+}: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -77,7 +77,7 @@ export const SelectCreate: React.FC<ISelectProps & IReactHookFormProps> = ({
   );
 };
 
-export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
+export const SelectSingle = ({
   name,
   options,
   errors,
@@ -86,7 +86,7 @@ export const SelectSingle: React.FC<ISelectProps & IReactHookFormProps> = ({
   isClearable,
   defaultValue,
   disabled,
-}) => {
+}: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name, defaultValue }}
