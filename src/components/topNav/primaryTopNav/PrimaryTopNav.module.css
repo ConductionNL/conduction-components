@@ -87,6 +87,10 @@
   color: var(--conduction-primary-top-nav-color);
 }
 
+.primary .link:hover {
+  color: var(--conduction-primary-top-nav-color-hover);
+}
+
 .primary .li:hover .dropdown {
   display: block;
   z-index: 1;
