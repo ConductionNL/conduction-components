@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.25: Add new design tokens for topnav dropdown
   - 2.1.24: Add new design tokens for topnav dropdown
   - 2.1.23: Added optional error messages to CreateKeyValue and unused classname removed warning.
   - 2.1.22: Added optional error messages to textarea, select and input fields.
