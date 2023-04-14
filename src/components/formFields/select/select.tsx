@@ -1,3 +1,4 @@
+import * as React from "react";
 import * as styles from "./select.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import ReactSelect from "react-select";
@@ -10,6 +11,7 @@ interface ISelectProps {
   control: Control<FieldValues, any>;
   options: { label: string; value: string }[];
   name: string;
+  id?: string;
   defaultValue?: any;
   disabled?: boolean;
   isClearable?: boolean;
@@ -17,6 +19,7 @@ interface ISelectProps {
 }
 
 export const SelectMultiple = ({
+  id,
   name,
   options,
   errors,
@@ -34,6 +37,7 @@ export const SelectMultiple = ({
         return (
           <>
             <ReactSelect
+              inputId={id}
               value={value ?? ""}
               className={clsx(styles.select, errors[name] && styles.error)}
               isMulti
@@ -52,6 +56,7 @@ export const SelectMultiple = ({
 };
 
 export const SelectCreate = ({
+  id,
   name,
   options,
   errors,
@@ -69,6 +74,7 @@ export const SelectCreate = ({
         return (
           <>
             <CreatableSelect
+              inputId={id}
               value={value ?? ""}
               placeholder={disabled ? "Disabled..." : "Select or create one or multiple options..."}
               className={clsx(styles.select, errors[name] && styles.error)}
@@ -87,6 +93,7 @@ export const SelectCreate = ({
 };
 
 export const SelectSingle = ({
+  id,
   name,
   options,
   errors,
@@ -105,6 +112,7 @@ export const SelectSingle = ({
         return (
           <>
             <ReactSelect
+              inputId={id}
               value={value ?? ""}
               className={clsx(styles.select, errors[name] && styles.error)}
               isDisabled={disabled}
