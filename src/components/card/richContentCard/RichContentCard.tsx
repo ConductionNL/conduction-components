@@ -1,4 +1,5 @@
-import { Divider, Link } from "@gemeente-denhaag/components-react";
+import { Divider } from "@gemeente-denhaag/divider";
+import { Link } from "@gemeente-denhaag/link";
 import { navigate } from "gatsby";
 import * as React from "react";
 import * as styles from "./RichContentCard.module.css";

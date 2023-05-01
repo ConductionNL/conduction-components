@@ -1,5 +1,5 @@
 import * as React from "react";
-import { TextField } from "@gemeente-denhaag/components-react";
+import { TextField } from "@gemeente-denhaag/textfield";
 import { IReactHookFormProps } from "./types";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

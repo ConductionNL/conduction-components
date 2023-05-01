@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./DownloadCard.module.css";
 import { DownloadIcon } from "@gemeente-denhaag/icons";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import clsx from "clsx";
 
 interface DownloadCardProps {
