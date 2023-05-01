@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as styles from "./HorizontalImageCard.module.css";
 import clsx from "clsx";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import { navigate } from "gatsby";
 import { ExternalLinkIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
 export const HorizontalImageCard = ({ title, layoutClassName, external, link, iconOrImage, }) => {

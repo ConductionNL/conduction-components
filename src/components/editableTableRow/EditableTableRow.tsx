@@ -1,7 +1,7 @@
 import { TableCell, TableHeader, TableRow } from "@gemeente-denhaag/table";
 import * as styles from "./EditableTableRow.module.css";
 import * as React from "react";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import { CheckedIcon, CloseIcon, EditIcon } from "@gemeente-denhaag/icons";
 import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
 import { InputEmail, InputText } from "../formFields";

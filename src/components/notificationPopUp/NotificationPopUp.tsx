@@ -1,7 +1,10 @@
 import * as React from "react";
 import * as styles from "./NotificationPopUp.module.css";
 import ReactDOM from "react-dom";
-import { Button, Heading3, Link, Paragraph, StylesProvider } from "@gemeente-denhaag/components-react";
+import { Button } from "@gemeente-denhaag/button";
+import { Heading3, Paragraph } from "@gemeente-denhaag/typography";
+import { Link } from "@gemeente-denhaag/link";
+import { StylesProvider } from "@gemeente-denhaag/stylesprovider";
 import clsx from "clsx";
 import { CloseIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
 

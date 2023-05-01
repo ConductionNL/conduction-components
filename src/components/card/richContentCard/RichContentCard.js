@@ -1,5 +1,6 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { Divider, Link } from "@gemeente-denhaag/components-react";
+import { Divider } from "@gemeente-denhaag/divider";
+import { Link } from "@gemeente-denhaag/link";
 import { navigate } from "gatsby";
 import * as styles from "./RichContentCard.module.css";
 import { ExternalLinkIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";

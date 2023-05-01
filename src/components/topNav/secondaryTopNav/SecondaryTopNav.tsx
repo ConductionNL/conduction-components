@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from "./SecondaryTopNav.module.css";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import clsx from "clsx";
 
 interface TopNavProps {

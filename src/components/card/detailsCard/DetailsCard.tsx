@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./DetailsCard.module.css";
 import clsx from "clsx";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import { navigate } from "gatsby";
 import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { Tag } from "../../tag/Tag";
