@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+- 2.1.21: Added optional copy button to CreateKeyValue.
 - 2.1.20: Updated react.fc code and github actions added.
 - 2.1.19: Refactor Tooltip layout.
 - 2.1.18: Add default value to Textarea component.
