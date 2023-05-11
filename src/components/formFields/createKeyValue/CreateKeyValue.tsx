@@ -14,6 +14,7 @@ interface CreateKeyValueProps {
   control: Control<FieldValues, any>;
   defaultValue?: IKeyValue[];
   disabled?: boolean;
+  copyValue?: boolean;
 }
 
 export interface IKeyValue {
@@ -28,13 +29,14 @@ export const CreateKeyValue = ({
   validation,
   defaultValue,
   disabled,
+  copyValue,
 }: CreateKeyValueProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name, errors }}
       rules={validation}
       render={({ field: { onChange } }) => {
-        return <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled }} />;
+        return <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled, copyValue }} />;
       }}
     />
   );
@@ -47,9 +49,15 @@ interface CreateKeyValueComponentProps {
   defaultValue?: IKeyValue[];
   handleChange: (...event: any[]) => void;
   disabled?: boolean;
+  copyValue?: boolean;
 }
 
-const KeyValueComponent = ({ defaultValue, handleChange, disabled }: CreateKeyValueComponentProps): JSX.Element => {
+const KeyValueComponent = ({
+  defaultValue,
+  handleChange,
+  disabled,
+  copyValue,
+}: CreateKeyValueComponentProps): JSX.Element => {
   const [currentKey, setCurrentKey] = React.useState<string>("");
   const [currentValue, setCurrentValue] = React.useState<string>("");
   const [keyValues, setKeyValues] = React.useState<IKeyValue[]>(defaultValue ?? []);
@@ -90,13 +98,21 @@ const KeyValueComponent = ({ defaultValue, handleChange, disabled }: CreateKeyVa
               <TableRow key={`${keyValue}${idx}`}>
                 <TableCell>{keyValue.key}</TableCell>
                 <TableCell>{keyValue.value}</TableCell>
-                <TableCell className={styles.tdDelete}>
-                  <Button
-                    {...{ disabled }}
-                    onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
-                  >
-                    Delete
-                  </Button>
+                <TableCell>
+                  <div className={styles.buttonsContainer}>
+                    {copyValue && (
+                      <Button {...{ disabled }} onClick={() => navigator.clipboard.writeText(keyValue.value)}>
+                        Copy
+                      </Button>
+                    )}
+                    <Button
+                      {...{ disabled }}
+                      onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
+                      className={styles.deleteButton}
+                    >
+                      Delete
+                    </Button>
+                  </div>
                 </TableCell>
               </TableRow>
             ))}

@@ -19,9 +19,9 @@
   padding-block: var(--skeleton-size-md);
 }
 
-.tdDelete {
+.buttonsContainer {
   display: flex;
-  justify-content: flex-end;
+  gap: var(--skeleton-size-xs);
 }
 
 .form {
