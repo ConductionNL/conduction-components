@@ -61,6 +61,7 @@ const KeyValueComponent = ({
   const [currentKey, setCurrentKey] = React.useState<string>("");
   const [currentValue, setCurrentValue] = React.useState<string>("");
   const [keyValues, setKeyValues] = React.useState<IKeyValue[]>(defaultValue ?? []);
+  const [showCopiedMessage, setShowCopiedMessage] = React.useState<string[]>([]);
 
   const currentKeyRef = React.useRef(null);
   const currentValueRef = React.useRef(null);
@@ -72,6 +73,14 @@ const KeyValueComponent = ({
     setCurrentValue("");
 
     setKeyValues([...keyValues, keyValue]);
+  };
+
+  const handleCopyToClipboard = (value: string, id: number) => {
+    navigator.clipboard.writeText(value);
+    setShowCopiedMessage({ ...showCopiedMessage, [id]: "Copied!" });
+    setTimeout(() => {
+      setShowCopiedMessage({ ...showCopiedMessage, [id]: "Copy" });
+    }, 800);
   };
 
   React.useEffect(() => {
@@ -95,14 +104,18 @@ const KeyValueComponent = ({
           </TableHead>
           <TableBody>
             {keyValues.map((keyValue, idx) => (
-              <TableRow key={`${keyValue}${idx}`}>
+              <TableRow key={`${keyValue.key}${keyValue.value}${idx}`}>
                 <TableCell>{keyValue.key}</TableCell>
                 <TableCell>{keyValue.value}</TableCell>
                 <TableCell>
                   <div className={styles.buttonsContainer}>
                     {copyValue && (
-                      <Button {...{ disabled }} onClick={() => navigator.clipboard.writeText(keyValue.value)}>
-                        Copy
+                      <Button
+                        id={`${idx}`}
+                        {...{ disabled }}
+                        onClick={() => handleCopyToClipboard(keyValue.value, idx)}
+                      >
+                        {showCopiedMessage[idx] ?? "Copy"}
                       </Button>
                     )}
                     <Button

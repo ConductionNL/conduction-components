@@ -22,6 +22,7 @@
 .buttonsContainer {
   display: flex;
   gap: var(--skeleton-size-xs);
+  justify-content: flex-end;
 }
 
 .form {
