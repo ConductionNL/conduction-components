@@ -2,9 +2,12 @@ import * as React from "react";
 import * as styles from "./CreateKeyValue.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
-import { IInputProps } from "../input";
 import { Button } from "@gemeente-denhaag/components-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@gemeente-denhaag/table";
+import { ToolTip } from "../../toolTip/ToolTip";
+import clsx from "clsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Export KeyValue input component (wrapped in FormFieldGroup)
@@ -14,7 +17,10 @@ interface CreateKeyValueProps {
   control: Control<FieldValues, any>;
   defaultValue?: IKeyValue[];
   disabled?: boolean;
-  copyValue?: boolean;
+  copyValue?: {
+    canCopy: boolean;
+    onCopied?: () => any;
+  };
 }
 
 export interface IKeyValue {
@@ -46,10 +52,13 @@ export const CreateKeyValue = ({
  * Internal KeyValueComponent (contains all required logic)
  */
 interface CreateKeyValueComponentProps {
-  defaultValue?: IKeyValue[];
   handleChange: (...event: any[]) => void;
+  defaultValue?: IKeyValue[];
   disabled?: boolean;
-  copyValue?: boolean;
+  copyValue?: {
+    canCopy: boolean;
+    onCopied?: () => any;
+  };
 }
 
 const KeyValueComponent = ({
@@ -61,7 +70,7 @@ const KeyValueComponent = ({
   const [currentKey, setCurrentKey] = React.useState<string>("");
   const [currentValue, setCurrentValue] = React.useState<string>("");
   const [keyValues, setKeyValues] = React.useState<IKeyValue[]>(defaultValue ?? []);
-  const [showCopiedMessage, setShowCopiedMessage] = React.useState<string[]>([]);
+  const [currentCopyIdx, setCurrentCopyIdx] = React.useState<number>();
 
   const currentKeyRef = React.useRef(null);
   const currentValueRef = React.useRef(null);
@@ -77,10 +86,8 @@ const KeyValueComponent = ({
 
   const handleCopyToClipboard = (value: string, id: number) => {
     navigator.clipboard.writeText(value);
-    setShowCopiedMessage({ ...showCopiedMessage, [id]: "Copied!" });
-    setTimeout(() => {
-      setShowCopiedMessage({ ...showCopiedMessage, [id]: "Copy" });
-    }, 800);
+    setCurrentCopyIdx(id);
+    copyValue?.onCopied && copyValue.onCopied();
   };
 
   React.useEffect(() => {
@@ -110,21 +117,27 @@ const KeyValueComponent = ({
                 <TableCell>
                   <div className={styles.buttonsContainer}>
                     {copyValue && (
-                      <Button
-                        id={`${idx}`}
-                        {...{ disabled }}
-                        onClick={() => handleCopyToClipboard(keyValue.value, idx)}
-                      >
-                        {showCopiedMessage[idx] ?? "Copy"}
-                      </Button>
+                      <ToolTip tooltip="Copy value">
+                        <Button
+                          id={`${idx}`}
+                          {...{ disabled }}
+                          className={styles.copyButton}
+                          onClick={() => handleCopyToClipboard(keyValue.value, idx)}
+                          variant={currentCopyIdx === idx ? "secondary-action" : "primary-action"}
+                        >
+                          <FontAwesomeIcon icon={faCopy} />
+                        </Button>
+                      </ToolTip>
                     )}
-                    <Button
-                      {...{ disabled }}
-                      onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
-                      className={styles.deleteButton}
-                    >
-                      Delete
-                    </Button>
+                    <ToolTip tooltip="Delete value">
+                      <Button
+                        {...{ disabled }}
+                        onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
+                        className={clsx(styles.deleteButton)}
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </Button>
+                    </ToolTip>
                   </div>
                 </TableCell>
               </TableRow>
