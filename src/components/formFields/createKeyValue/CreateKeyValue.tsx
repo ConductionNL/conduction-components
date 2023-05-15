@@ -119,7 +119,6 @@ const KeyValueComponent = ({
                     {copyValue && (
                       <ToolTip tooltip="Copy value">
                         <Button
-                          id={`${idx}`}
                           {...{ disabled }}
                           className={styles.copyButton}
                           onClick={() => handleCopyToClipboard(keyValue.value, idx)}
