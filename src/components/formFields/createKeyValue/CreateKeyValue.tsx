@@ -2,9 +2,12 @@ import * as React from "react";
 import * as styles from "./CreateKeyValue.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
-import { IInputProps } from "../input";
 import { Button } from "@gemeente-denhaag/components-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@gemeente-denhaag/table";
+import { ToolTip } from "../../toolTip/ToolTip";
+import clsx from "clsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Export KeyValue input component (wrapped in FormFieldGroup)
@@ -14,6 +17,10 @@ interface CreateKeyValueProps {
   control: Control<FieldValues, any>;
   defaultValue?: IKeyValue[];
   disabled?: boolean;
+  copyValue?: {
+    canCopy: boolean;
+    onCopied?: () => any;
+  };
 }
 
 export interface IKeyValue {
@@ -28,13 +35,14 @@ export const CreateKeyValue = ({
   validation,
   defaultValue,
   disabled,
+  copyValue,
 }: CreateKeyValueProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name, errors }}
       rules={validation}
       render={({ field: { onChange } }) => {
-        return <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled }} />;
+        return <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled, copyValue }} />;
       }}
     />
   );
@@ -44,15 +52,25 @@ export const CreateKeyValue = ({
  * Internal KeyValueComponent (contains all required logic)
  */
 interface CreateKeyValueComponentProps {
-  defaultValue?: IKeyValue[];
   handleChange: (...event: any[]) => void;
+  defaultValue?: IKeyValue[];
   disabled?: boolean;
+  copyValue?: {
+    canCopy: boolean;
+    onCopied?: () => any;
+  };
 }
 
-const KeyValueComponent = ({ defaultValue, handleChange, disabled }: CreateKeyValueComponentProps): JSX.Element => {
+const KeyValueComponent = ({
+  defaultValue,
+  handleChange,
+  disabled,
+  copyValue,
+}: CreateKeyValueComponentProps): JSX.Element => {
   const [currentKey, setCurrentKey] = React.useState<string>("");
   const [currentValue, setCurrentValue] = React.useState<string>("");
   const [keyValues, setKeyValues] = React.useState<IKeyValue[]>(defaultValue ?? []);
+  const [currentCopyIdx, setCurrentCopyIdx] = React.useState<number>();
 
   const currentKeyRef = React.useRef(null);
   const currentValueRef = React.useRef(null);
@@ -64,6 +82,12 @@ const KeyValueComponent = ({ defaultValue, handleChange, disabled }: CreateKeyVa
     setCurrentValue("");
 
     setKeyValues([...keyValues, keyValue]);
+  };
+
+  const handleCopyToClipboard = (value: string, id: number) => {
+    navigator.clipboard.writeText(value);
+    setCurrentCopyIdx(id);
+    copyValue?.onCopied && copyValue.onCopied();
   };
 
   React.useEffect(() => {
@@ -87,16 +111,33 @@ const KeyValueComponent = ({ defaultValue, handleChange, disabled }: CreateKeyVa
           </TableHead>
           <TableBody>
             {keyValues.map((keyValue, idx) => (
-              <TableRow key={`${keyValue}${idx}`}>
+              <TableRow key={`${keyValue.key}${keyValue.value}${idx}`}>
                 <TableCell>{keyValue.key}</TableCell>
                 <TableCell>{keyValue.value}</TableCell>
-                <TableCell className={styles.tdDelete}>
-                  <Button
-                    {...{ disabled }}
-                    onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
-                  >
-                    Delete
-                  </Button>
+                <TableCell>
+                  <div className={styles.buttonsContainer}>
+                    {copyValue && (
+                      <ToolTip tooltip="Copy value">
+                        <Button
+                          {...{ disabled }}
+                          className={styles.copyButton}
+                          onClick={() => handleCopyToClipboard(keyValue.value, idx)}
+                          variant={currentCopyIdx === idx ? "secondary-action" : "primary-action"}
+                        >
+                          <FontAwesomeIcon icon={faCopy} />
+                        </Button>
+                      </ToolTip>
+                    )}
+                    <ToolTip tooltip="Delete value">
+                      <Button
+                        {...{ disabled }}
+                        onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
+                        className={clsx(styles.deleteButton)}
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </Button>
+                    </ToolTip>
+                  </div>
                 </TableCell>
               </TableRow>
             ))}

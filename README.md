@@ -4,30 +4,31 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
-- 2.1.20: Updated react.fc code and github actions added.
-- 2.1.19: Refactor Tooltip layout.
-- 2.1.18: Add default value to Textarea component.
-- 2.1.17: Refactor to NotificationPopUp to include layoutClassName.
-- 2.1.16: Refactor ToolTip layoutClassName placement.
-- 2.1.15: Add InputDate component based on react-datepicker.
-- 2.1.14: Refactor checkbox to remove svg errors
-- 2.1.13: Refactor components to remove svg errors (e.g. shape-rendering => shapeRendering)
-- 2.1.12: Added ToolTip max-width and break-word
-- 2.1.11: Added CreateKeyValue component disabled state on delete buttons
-- 2.1.10: PrimaryTopNav overflow scroll removed from desktop
-- 2.1.8 & 2.1.9: PrimaryTopNav will always show subItems on mobile
-- 2.1.7: Add disabled placholders to all Select elements.
-- 2.1.6: Add disabled state to CreateKeyValue component
-- 2.1.4 & 2.1.5: Remove IInputProps from CreateKeyValue to undo duplicate defaultValue prop
-- 2.1.3: Export IKeyValue from CreateKeyValue component.
-- 2.1.2: REVERT 2.1.1 and 2.1.0.
-- 2.1.1: Deploy issues.
-- 2.1.0: InputDate now includes Den Haag InputDate component, requiring react-hook-form controls.
+  - 2.1.21: Added optional copy button and refactored delete button in CreateKeyValue.
+  - 2.1.20: Updated react.fc code and github actions added.
+  - 2.1.19: Refactor Tooltip layout.
+  - 2.1.18: Add default value to Textarea component.
+  - 2.1.17: Refactor to NotificationPopUp to include layoutClassName.
+  - 2.1.16: Refactor ToolTip layoutClassName placement.
+  - 2.1.15: Add InputDate component based on react-datepicker.
+  - 2.1.14: Refactor checkbox to remove svg errors.
+  - 2.1.13: Refactor components to remove svg errors (e.g. shape-rendering => shapeRendering).
+  - 2.1.12: Added ToolTip max-width and break-word.
+  - 2.1.11: Added CreateKeyValue component disabled state on delete buttons.
+  - 2.1.10: PrimaryTopNav overflow scroll removed from desktop.
+  - 2.1.8 & 2.1.9: PrimaryTopNav will always show subItems on mobile.
+  - 2.1.7: Add disabled placholders to all Select elements.
+  - 2.1.6: Add disabled state to CreateKeyValue component
+  - 2.1.4 & 2.1.5: Remove IInputProps from CreateKeyValue to undo duplicate defaultValue prop.
+  - 2.1.3: Export IKeyValue from CreateKeyValue component.
+  - 2.1.2: REVERT 2.1.1 and 2.1.0.
+  - 2.1.1: Deploy issues.
+  - 2.1.0: InputDate now includes Den Haag InputDate component, requiring react-hook-form controls.
 
 - **Version 2**
 
   - 2.0.34: SelectMultiple and SelectCreate update to include defaultValue in react-hook-form controller.
-  - 2.0.33: PrimaryTopNav sub items doesn't overlap main navbar anymore
+  - 2.0.33: PrimaryTopNav sub items doesn't overlap main navbar anymore.
   - 2.0.32:
     - SelectSingle update to include defaultValue in react-hook-form controller.
   - 2.0.31:
@@ -39,7 +40,7 @@
   - 2.0.29:
     - Added remove option to tags.
     - SelectSingle now removes selected option if filter deselect it.
-  - 2.0.27 & 2.0.28: Cleanup
+  - 2.0.27 & 2.0.28: Cleanup.
   - 2.0.26: Added Select element error states.
   - 2.0.25: Added InputURL component.
   - 2.0.24: Bugfix: @conduction not showing.
