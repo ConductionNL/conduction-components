@@ -1,5 +1,7 @@
 :root {
   --conduction-create-key-value-table-row-border: 1px solid var(--skeleton-color-grey-1);
+  --conduction-delete-button-background-color: var(--skeleton-color-red-3);
+  --conduction-delete-button-background-hover-color: var(--skeleton-color-red-4);
 }
 
 .keyValue {
@@ -19,9 +21,20 @@
   padding-block: var(--skeleton-size-md);
 }
 
-.tdDelete {
+.buttonsContainer {
   display: flex;
+  gap: var(--skeleton-size-xs);
   justify-content: flex-end;
+}
+
+.deleteButton {
+  white-space: nowrap;
+  background-color: var(--conduction-delete-button-background-color) !important;
+}
+
+.deleteButton:hover {
+  white-space: nowrap;
+  background-color: var(--conduction-delete-button-background-hover-color) !important;
 }
 
 .form {
