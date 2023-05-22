@@ -38,7 +38,7 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
           </span>
         }
       />
-      {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+      {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
     </>
   );
 };
@@ -61,7 +61,7 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
       {...register(name, { ...validation })}
       invalid={errors[name]}
     />
-    {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+    {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
   </>
 );
 
@@ -84,7 +84,7 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
       {...register(name, { ...validation })}
       invalid={errors[name]}
     />
-    {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+    {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
   </>
 );
 
@@ -106,7 +106,7 @@ export const InputURL: React.FC<IInputProps & IReactHookFormProps> = ({
       {...register(name, { ...validation })}
       invalid={errors[name]}
     />
-    {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+    {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
   </>
 );
 
@@ -128,7 +128,7 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
       {...register(name, { ...validation, valueAsNumber: true })}
       invalid={errors[name]}
     />
-    {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+    {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
   </>
 );
 
@@ -151,7 +151,7 @@ export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
       {...register(name, { ...validation, valueAsNumber: true })}
       invalid={errors[name]}
     />
-    {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+    {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
   </>
 );
 

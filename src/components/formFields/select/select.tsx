@@ -43,7 +43,7 @@ export const SelectMultiple = ({
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
               placeholder={disabled ? "Disabled..." : "Select one or more options..."}
             />
-            {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+            {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
           </>
         );
       }}
@@ -78,7 +78,7 @@ export const SelectCreate = ({
               menuPortalTarget={document.body}
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
             />
-            {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+            {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
           </>
         );
       }}
@@ -113,7 +113,7 @@ export const SelectSingle = ({
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
               placeholder={disabled ? "Disabled..." : "Select an option..."}
             />
-            {!hideErrorMessage && errors && <ErrorMessage message={errors[name]?.message} />}
+            {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
           </>
         );
       }}
