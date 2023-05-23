@@ -20,6 +20,6 @@ export const Textarea = ({
 }: ITextAreaProps & IReactHookFormProps): JSX.Element => (
   <>
     <TextArea {...register(name, { ...validation })} {...{ disabled, defaultValue }} invalid={errors[name]} />
-    {!hideErrorMessage && <ErrorMessage message={errors[name]?.message} />}
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
