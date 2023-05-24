@@ -1,10 +1,10 @@
-import * as React from "react";
 import * as styles from "./select.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import ReactSelect from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { IReactHookFormProps } from "../types";
 import clsx from "clsx";
+import { ErrorMessage } from "../errorMessage/ErrorMessage";
 
 interface ISelectProps {
   control: Control<FieldValues, any>;
@@ -13,6 +13,7 @@ interface ISelectProps {
   defaultValue?: any;
   disabled?: boolean;
   isClearable?: boolean;
+  hideErrorMessage?: boolean;
 }
 
 export const SelectMultiple = ({
@@ -23,6 +24,7 @@ export const SelectMultiple = ({
   validation,
   defaultValue,
   disabled,
+  hideErrorMessage,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -30,16 +32,19 @@ export const SelectMultiple = ({
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
-          <ReactSelect
-            value={value ?? ""}
-            className={clsx(styles.select, errors[name] && styles.error)}
-            isMulti
-            isDisabled={disabled}
-            {...{ options, onChange, errors }}
-            menuPortalTarget={document.body}
-            styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
-            placeholder={disabled ? "Disabled..." : "Select one or more options..."}
-          />
+          <>
+            <ReactSelect
+              value={value ?? ""}
+              className={clsx(styles.select, errors[name] && styles.error)}
+              isMulti
+              isDisabled={disabled}
+              {...{ options, onChange, errors }}
+              menuPortalTarget={document.body}
+              styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+              placeholder={disabled ? "Disabled..." : "Select one or more options..."}
+            />
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+          </>
         );
       }}
     />
@@ -54,6 +59,7 @@ export const SelectCreate = ({
   validation,
   defaultValue,
   disabled,
+  hideErrorMessage,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -61,16 +67,19 @@ export const SelectCreate = ({
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
-          <CreatableSelect
-            value={value ?? ""}
-            placeholder={disabled ? "Disabled..." : "Select or create one or multiple options..."}
-            className={clsx(styles.select, errors[name] && styles.error)}
-            isMulti
-            isDisabled={disabled}
-            {...{ options, onChange, errors }}
-            menuPortalTarget={document.body}
-            styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
-          />
+          <>
+            <CreatableSelect
+              value={value ?? ""}
+              placeholder={disabled ? "Disabled..." : "Select or create one or multiple options..."}
+              className={clsx(styles.select, errors[name] && styles.error)}
+              isMulti
+              isDisabled={disabled}
+              {...{ options, onChange, errors }}
+              menuPortalTarget={document.body}
+              styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+            />
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+          </>
         );
       }}
     />
@@ -86,6 +95,7 @@ export const SelectSingle = ({
   isClearable,
   defaultValue,
   disabled,
+  hideErrorMessage,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -93,15 +103,18 @@ export const SelectSingle = ({
       rules={validation}
       render={({ field: { onChange, value } }) => {
         return (
-          <ReactSelect
-            value={value ?? ""}
-            className={clsx(styles.select, errors[name] && styles.error)}
-            isDisabled={disabled}
-            {...{ options, onChange, errors, isClearable }}
-            menuPortalTarget={document.body}
-            styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
-            placeholder={disabled ? "Disabled..." : "Select an option..."}
-          />
+          <>
+            <ReactSelect
+              value={value ?? ""}
+              className={clsx(styles.select, errors[name] && styles.error)}
+              isDisabled={disabled}
+              {...{ options, onChange, errors, isClearable }}
+              menuPortalTarget={document.body}
+              styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+              placeholder={disabled ? "Disabled..." : "Select an option..."}
+            />
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+          </>
         );
       }}
     />

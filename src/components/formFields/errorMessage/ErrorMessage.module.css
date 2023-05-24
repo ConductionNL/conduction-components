@@ -1,0 +1,9 @@
+:root {
+  --conduction-error-message-color: var(--skeleton-color-red-3);
+  --conduction-error-message-font-size: var(--skeleton-font-size-sm);
+}
+
+.message {
+  color: var(--conduction-error-message-color);
+  font-size: var(--conduction-error-message-font-size);
+}
