@@ -8,6 +8,7 @@ import { ToolTip } from "../../toolTip/ToolTip";
 import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { ErrorMessage } from "../errorMessage/ErrorMessage";
 
 /**
  * Export KeyValue input component (wrapped in FormFieldGroup)
@@ -21,6 +22,7 @@ interface CreateKeyValueProps {
     canCopy: boolean;
     onCopied?: () => any;
   };
+  hideErrorMessage?: boolean;
 }
 
 export interface IKeyValue {
@@ -36,13 +38,19 @@ export const CreateKeyValue = ({
   defaultValue,
   disabled,
   copyValue,
+  hideErrorMessage,
 }: CreateKeyValueProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
       {...{ control, name, errors }}
       rules={validation}
       render={({ field: { onChange } }) => {
-        return <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled, copyValue }} />;
+        return (
+          <>
+            <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled, copyValue }} />
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+          </>
+        );
       }}
     />
   );
@@ -120,7 +128,6 @@ const KeyValueComponent = ({
                       <ToolTip tooltip="Copy value">
                         <Button
                           {...{ disabled }}
-                          className={styles.copyButton}
                           onClick={() => handleCopyToClipboard(keyValue.value, idx)}
                           variant={currentCopyIdx === idx ? "secondary-action" : "primary-action"}
                         >
