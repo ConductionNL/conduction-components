@@ -87,6 +87,10 @@
   color: var(--conduction-primary-top-nav-color);
 }
 
+.primary .li:hover .link {
+  color: var(--conduction-primary-top-nav-color-hover);
+}
+
 .primary .li:hover .dropdown {
   display: block;
   z-index: 1;
@@ -99,9 +103,17 @@
   width: 100%;
   display: block;
   list-style-type: none;
-  background-color: var(--conduction-primary-top-nav-background-color);
+  background-color: var(--conduction-primary-top-nav-dropdown-background-color);
   border-bottom-right-radius: var(--conduction-primary-top-nav-dropdown-border-radius);
   border-bottom-left-radius: var(--conduction-primary-top-nav-dropdown-border-radius);
+}
+
+.primary .dropdown .li .link {
+  color: var(--conduction-primary-top-nav-dropdown-color);
+}
+
+.dropdown .li:hover {
+  background: var(--conduction-primary-top-nav-dropdown-background-color-hover);
 }
 
 .dropdown > li {
