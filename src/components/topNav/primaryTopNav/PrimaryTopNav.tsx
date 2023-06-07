@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./PrimaryTopNav.module.css";
 import clsx from "clsx";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 

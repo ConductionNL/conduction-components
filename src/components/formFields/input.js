@@ -1,6 +1,6 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import * as React from "react";
-import { TextField } from "@gemeente-denhaag/components-react";
+import { TextField } from "@gemeente-denhaag/textfield";
 import { ShowIcon, HideIcon } from "@gemeente-denhaag/icons";
 export const InputPassword = ({ disabled, name, validation, register, errors, }) => {
     const [showPassword, setShowPassword] = React.useState(false);

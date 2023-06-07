@@ -1,4 +1,4 @@
-import { FormControlLabel } from "@gemeente-denhaag/components-react";
+import { FormControlLabel } from "@gemeente-denhaag/formcontrollabel";
 import { IReactHookFormProps } from "./types";
 
 interface IRadioProps {
