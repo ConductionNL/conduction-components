@@ -4,7 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
-  - 2.1.27: TimeFormat in DatePicker is no consistant with DateFormat.
+  - 2.1.27: TimeFormat in DatePicker is now consistant with DateFormat.
   - 2.1.26: Avoid dependency on `@gemeente-denhaag/components-react`, only depend on components we actually use.
   - 2.1.25: Added id prop to select component.
   - 2.1.24: Add new design tokens for topnav dropdown.
