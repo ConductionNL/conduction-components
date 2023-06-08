@@ -30,6 +30,7 @@ export const InputDate = ({
             className="denhaag-datepicker__input"
             onChange={(date) => onChange(date)}
             dateFormat="d-MM-yyyy HH:mm"
+            timeFormat="HH:mm"
             selected={value}
             timeIntervals={1}
             showTimeSelect
