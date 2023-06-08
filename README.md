@@ -4,9 +4,10 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.27: TimeFormat in DatePicker is now consistant with DateFormat.
   - 2.1.26: Avoid dependency on `@gemeente-denhaag/components-react`, only depend on components we actually use.
-  - 2.1.25: Added id prop to select component
-  - 2.1.24: Add new design tokens for topnav dropdown
+  - 2.1.25: Added id prop to select component.
+  - 2.1.24: Add new design tokens for topnav dropdown.
   - 2.1.23: Added optional error messages to CreateKeyValue and unused classname removed warning.
   - 2.1.22: Added optional error messages to textarea, select and input fields.
   - 2.1.21: Added optional copy button and refactored delete button in CreateKeyValue.
@@ -34,10 +35,8 @@
 
   - 2.0.34: SelectMultiple and SelectCreate update to include defaultValue in react-hook-form controller.
   - 2.0.33: PrimaryTopNav sub items doesn't overlap main navbar anymore.
-  - 2.0.32:
-    - SelectSingle update to include defaultValue in react-hook-form controller.
-  - 2.0.31:
-    - PrimaryTopNav clickbox now includes padding of nav items.
+  - 2.0.32: SelectSingle update to include defaultValue in react-hook-form controller.
+  - 2.0.31: PrimaryTopNav clickbox now includes padding of nav items.
   - 2.0.30:
     - Selects now have an z-index.
     - Checkboxes now automatically have an id wich is a camelCase of "checkbox" plus the label, "checkboxLabel".
@@ -61,10 +60,8 @@
   - 2.0.15: Added mobile support to PrimaryTopNav.
   - 2.0.14: Refactored SelectCreate placeholder text.
   - 2.0.13: removed round borders of tag.
-  - 2.0.11 & 2.0.12:
-    - Added disabled state to SelectSingle component.
-  - 2.0.10:
-    - Added InputFloat (.00 decimals) component.
+  - 2.0.11 & 2.0.12: Added disabled state to SelectSingle component.
+  - 2.0.10: Added InputFloat (.00 decimals) component.
   - 2.0.9:
     - Added optional defaultChecked to InputCheckbox.
     - Added CreateKeyValue input.
