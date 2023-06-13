@@ -9,6 +9,8 @@
   --conduction-primary-top-nav-toggle-icon-size: 24px;
   --conduction-primary-top-nav-mobile-logo-padding: 18px;
   --conduction-primary-top-nav-item-icon-margin: var(--skeleton-size-2x);
+  --conduction-primary-top-nav-dropdown-background-color: var(--skeleton-color-white);
+  --conduction-primary-top-nav-dropdown-background-color-hover: var(--skeleton-color-grey-1);
 }
 
 .container {
@@ -110,6 +112,10 @@
 
 .primary .dropdown .li .link {
   color: var(--conduction-primary-top-nav-dropdown-color);
+}
+
+.primary .dropdown .li:hover .link {
+  color: var(--conduction-primary-top-nav-dropdown-color-hover);
 }
 
 .dropdown .li:hover {
