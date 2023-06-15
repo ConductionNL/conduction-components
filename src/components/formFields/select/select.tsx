@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./select.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
-import ReactSelect from "react-select";
+import ReactSelect, { MenuPlacement } from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { IReactHookFormProps } from "../types";
 import clsx from "clsx";
@@ -16,6 +16,7 @@ interface ISelectProps {
   disabled?: boolean;
   isClearable?: boolean;
   hideErrorMessage?: boolean;
+  menuPlacement?: MenuPlacement;
 }
 
 export const SelectMultiple = ({
@@ -28,6 +29,7 @@ export const SelectMultiple = ({
   defaultValue,
   disabled,
   hideErrorMessage,
+  menuPlacement,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -44,6 +46,7 @@ export const SelectMultiple = ({
               isDisabled={disabled}
               {...{ options, onChange, errors }}
               menuPortalTarget={document.body}
+              menuPlacement={menuPlacement}
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
               placeholder={disabled ? "Disabled..." : "Select one or more options..."}
             />
@@ -65,6 +68,7 @@ export const SelectCreate = ({
   defaultValue,
   disabled,
   hideErrorMessage,
+  menuPlacement,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -82,6 +86,7 @@ export const SelectCreate = ({
               isDisabled={disabled}
               {...{ options, onChange, errors }}
               menuPortalTarget={document.body}
+              menuPlacement={menuPlacement}
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
@@ -103,6 +108,7 @@ export const SelectSingle = ({
   defaultValue,
   disabled,
   hideErrorMessage,
+  menuPlacement,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -118,6 +124,7 @@ export const SelectSingle = ({
               isDisabled={disabled}
               {...{ options, onChange, errors, isClearable }}
               menuPortalTarget={document.body}
+              menuPlacement={menuPlacement}
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
               placeholder={disabled ? "Disabled..." : "Select an option..."}
             />
