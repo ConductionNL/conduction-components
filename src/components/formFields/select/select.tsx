@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./select.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
-import ReactSelect from "react-select";
+import ReactSelect, { MenuPlacement } from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { IReactHookFormProps } from "../types";
 import clsx from "clsx";
@@ -16,7 +16,7 @@ interface ISelectProps {
   disabled?: boolean;
   isClearable?: boolean;
   hideErrorMessage?: boolean;
-  menuPlacement?: "auto" | "bottom" | "top";
+  menuPlacement?: MenuPlacement;
 }
 
 export const SelectMultiple = ({
