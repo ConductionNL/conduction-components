@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as styles from "./ImageAndDetailsCard.module.css";
 import clsx from "clsx";
-import { Link } from "@gemeente-denhaag/link";
+import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
-import { ArrowRightIcon } from "@gemeente-denhaag/icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ImageAndDetailsCardProps {
   title: string;
@@ -39,8 +40,8 @@ export const ImageAndDetailsCard = ({
         <div className={styles.introduction}>{introduction}</div>
 
         <div className={styles.link}>
-          <Link icon={<ArrowRightIcon />} iconAlign="start">
-            {link.label}
+          <Link onClick={() => navigate(link.href)}>
+            <FontAwesomeIcon className={styles.icon} icon={faArrowRight} /> {link.label}
           </Link>
         </div>
       </div>

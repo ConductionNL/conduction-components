@@ -1,10 +1,11 @@
 import * as React from "react";
 import * as styles from "./DetailsCard.module.css";
+import { Link } from "@utrecht/component-library-react/dist/css-module";
 import clsx from "clsx";
-import { Link } from "@gemeente-denhaag/link";
 import { navigate } from "gatsby";
-import { ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { Tag } from "../../tag/Tag";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 interface DetailsCardProps {
   title: string;
@@ -46,8 +47,8 @@ export const DetailsCard = ({
         <div className={styles.introduction}>{introduction}</div>
 
         <div className={styles.link}>
-          <Link icon={<ArrowRightIcon />} iconAlign="start">
-            {link.label}
+          <Link onClick={() => navigate(link.href)}>
+            <FontAwesomeIcon className={styles.icon} icon={faArrowRight} /> {link.label}
           </Link>
         </div>
       </div>

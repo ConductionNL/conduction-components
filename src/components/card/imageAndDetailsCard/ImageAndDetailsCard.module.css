@@ -3,6 +3,7 @@
   --conduction-image-and-details-card-title-font-weight: bold;
   --conduction-image-and-details-card-introduction-lines-clamp: 3;
   --conduction-image-and-details-card-border: 1px solid var(--skeleton-color-grey-2);
+  --conduction-image-and-details-icon-gap: 8px;
 }
 
 .container {
@@ -60,4 +61,8 @@
   display: flex;
   justify-content: flex-end;
   margin-block-start: auto;
+}
+
+.icon {
+  margin-inline-end: var(--conduction-image-and-details-icon-gap);
 }
