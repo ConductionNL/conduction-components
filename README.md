@@ -4,7 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
-  - 2.1.31: Removed Den Haag link from DetailsCard and ImageAndDetailsCard, to remove the shapeRendering warning
+  - 2.1.31: Removed Den Haag implementations which hold shapeRendering warnings.
   - 2.1.29/2.1.30: Added optional menuPlacement to all select elements.
   - 2.1.28: Fixed PrimaryTopNav dropdown token and added new features for dropdown.
   - 2.1.27: TimeFormat in DatePicker is now consistant with DateFormat.

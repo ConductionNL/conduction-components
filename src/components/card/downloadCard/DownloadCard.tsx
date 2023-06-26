@@ -1,8 +1,9 @@
 import * as React from "react";
 import * as styles from "./DownloadCard.module.css";
-import { DownloadIcon } from "@gemeente-denhaag/icons";
-import { Link } from "@gemeente-denhaag/link";
+import { Link } from "@utrecht/component-library-react/dist/css-module";
 import clsx from "clsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 interface DownloadCardProps {
   icon: JSX.Element;
@@ -30,11 +31,10 @@ export const DownloadCard = ({
           {label} ({sizeKb}kb)
         </div>
       </div>
-      <div onClick={handleClick}>
-        <Link icon={<DownloadIcon />} iconAlign="start">
-          {downloadLabel}
-        </Link>
-      </div>
+
+      <Link onClick={handleClick}>
+        <FontAwesomeIcon className={styles.icon} icon={faDownload} /> {downloadLabel}
+      </Link>
     </div>
   );
 };

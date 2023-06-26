@@ -1,5 +1,7 @@
 :root {
   --conduction-download-card-border: 1px solid var(--skeleton-color-grey-2);
+  --conduction-download-card-icon-gap: 8px;
+  --conduction-download-card-padding: 14px;
 }
 
 .container {
@@ -8,7 +10,7 @@
   justify-content: space-between;
   border: var(--conduction-download-card-border);
   border-radius: var(--skeleton-border-radius-md);
-  padding-inline-end: var(--skeleton-size-sm);
+  padding: var(--conduction-download-card-padding);
 }
 
 .content {
@@ -21,7 +23,5 @@
 }
 
 .icon {
-  padding-inline: var(--skeleton-size-sm);
-  padding-block: var(--skeleton-size-sm);
-  background-color: var(--skeleton-color-grey-1);
+  margin-inline-end: var(--conduction-download-card-icon-gap);
 }
