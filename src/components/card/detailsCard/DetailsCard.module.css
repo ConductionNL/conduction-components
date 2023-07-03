@@ -1,6 +1,7 @@
 :root {
   --conduction-details-card-border: 1px solid var(--skeleton-color-grey-2);
   --conduction-details-card-introduction-lines-clamp: 3;
+  --conduction-details-card-icon-gap: 8px;
 }
 
 .container {
@@ -48,4 +49,8 @@
 .link {
   display: flex;
   justify-content: flex-end;
+}
+
+.icon {
+  margin-inline-end: var(--conduction-details-card-icon-gap);
 }
