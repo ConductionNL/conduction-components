@@ -26,7 +26,6 @@ import { ImageDivider } from "./components/imageDivider/ImageDivider";
 import { AuthenticatedLogo, UnauthenticatedLogo } from "./components/logo/Logo";
 import { MetaIcon } from "./components/metaIcon/MetaIcon";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
-import { StatusSteps } from "./components/statusSteps/StatusSteps";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav";
 import { Tag } from "./components/tag/Tag";
 import {
@@ -66,7 +65,6 @@ export {
   UnauthenticatedLogo,
   MetaIcon,
   PrivateRoute,
-  StatusSteps,
   PrimaryTopNav,
   SecondaryTopNav,
   Tag,

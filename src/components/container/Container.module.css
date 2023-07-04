@@ -1,9 +1,12 @@
 :root {
   --conduction-container-max-width: 1024px;
+  --conduction-container-padding-inline: unset;
 }
 
 .container {
   width: 100%;
   margin-inline: auto;
+  box-sizing: border-box;
+  padding-inline: var(--conduction-container-padding-inline);
   max-width: var(--conduction-container-max-width);
 }

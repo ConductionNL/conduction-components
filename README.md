@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.32: Add inline-padding to container, remove redundant (breaking and unused) components, up React version.
   - 2.1.31: Removed Den Haag implementations which hold shapeRendering warnings.
   - 2.1.29/2.1.30: Added optional menuPlacement to all select elements.
   - 2.1.28: Fixed PrimaryTopNav dropdown token and added new features for dropdown.
