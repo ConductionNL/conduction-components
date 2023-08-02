@@ -17,6 +17,7 @@ interface ISelectProps {
   isClearable?: boolean;
   hideErrorMessage?: boolean;
   menuPlacement?: MenuPlacement;
+  placeholder?: string;
 }
 
 export const SelectMultiple = ({
@@ -30,6 +31,7 @@ export const SelectMultiple = ({
   disabled,
   hideErrorMessage,
   menuPlacement,
+  placeholder,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -48,7 +50,7 @@ export const SelectMultiple = ({
               menuPortalTarget={document.body}
               menuPlacement={menuPlacement}
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
-              placeholder={disabled ? "Disabled..." : "Select one or more options..."}
+              placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
           </>
@@ -69,6 +71,7 @@ export const SelectCreate = ({
   disabled,
   hideErrorMessage,
   menuPlacement,
+  placeholder,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -80,7 +83,7 @@ export const SelectCreate = ({
             <CreatableSelect
               inputId={id}
               value={value ?? ""}
-              placeholder={disabled ? "Disabled..." : "Select or create one or multiple options..."}
+              placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
               className={clsx(styles.select, errors[name] && styles.error)}
               isMulti
               isDisabled={disabled}
@@ -109,6 +112,7 @@ export const SelectSingle = ({
   disabled,
   hideErrorMessage,
   menuPlacement,
+  placeholder,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   return (
     <Controller
@@ -126,7 +130,7 @@ export const SelectSingle = ({
               menuPortalTarget={document.body}
               menuPlacement={menuPlacement}
               styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
-              placeholder={disabled ? "Disabled..." : "Select an option..."}
+              placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
           </>
