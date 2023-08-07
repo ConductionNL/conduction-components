@@ -1,8 +1,6 @@
 import * as React from "react";
-import { TextField } from "@gemeente-denhaag/textfield";
+import { Textbox } from "@utrecht/component-library-react/dist/css-module";
 import { IReactHookFormProps } from "./types";
-import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ErrorMessage } from "./errorMessage/ErrorMessage";
 
 export interface IInputProps {
@@ -23,20 +21,13 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
   hideErrorMessage,
 }) => {
-  const [showPassword, setShowPassword] = React.useState<boolean>(false);
-
   return (
     <>
-      <TextField
-        type={showPassword ? "text" : "password"}
+      <Textbox
+        type="password"
         {...{ disabled, placeholder }}
         {...register(name, { ...validation })}
         invalid={errors[name]}
-        icon={
-          <span onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />}
-          </span>
-        }
       />
       {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
     </>
@@ -55,7 +46,7 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   hideErrorMessage,
 }) => (
   <>
-    <TextField
+    <Textbox
       type="text"
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
@@ -77,7 +68,7 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   hideErrorMessage,
 }) => (
   <>
-    <TextField
+    <Textbox
       type="email"
       required={!!validation?.required}
       {...{ defaultValue, disabled, placeholder, icon }}
@@ -100,7 +91,7 @@ export const InputURL: React.FC<IInputProps & IReactHookFormProps> = ({
   hideErrorMessage,
 }) => (
   <>
-    <TextField
+    <Textbox
       type="url"
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
@@ -122,7 +113,7 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   hideErrorMessage,
 }) => (
   <>
-    <TextField
+    <Textbox
       type="number"
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation, valueAsNumber: true })}
@@ -144,7 +135,7 @@ export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
   hideErrorMessage,
 }) => (
   <>
-    <TextField
+    <Textbox
       type="number"
       step=".01"
       {...{ disabled, placeholder, icon, defaultValue }}
@@ -168,7 +159,7 @@ export const InputFile: React.FC<IInputFileProps & IInputProps & IReactHookFormP
   register,
 }) => (
   <input
-    className="denhaag-textfield__input"
+    className="denhaag-Textbox__input"
     type="file"
     {...{ defaultValue, disabled, accept }}
     {...register(name, { ...validation })}
