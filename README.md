@@ -6,7 +6,6 @@
 
   - 2.1.34: Refactor Den Haag textbox and textarea to Utrecht; add Single Select design tokens.
   - 2.1.33: Added optional placeholder to all select elements.
-  - 2.1.33: Added optional placeholder to all select elements.
   - 2.1.32: Add inline-padding to container, remove redundant (breaking and unused) components, up React version.
   - 2.1.31: Removed Den Haag implementations which hold shapeRendering warnings.
   - 2.1.29/2.1.30: Added optional menuPlacement to all select elements.
