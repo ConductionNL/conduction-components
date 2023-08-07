@@ -1,6 +1,6 @@
-import { TextArea } from "@gemeente-denhaag/textarea";
 import { IReactHookFormProps } from "./types";
 import { ErrorMessage } from "./errorMessage/ErrorMessage";
+import { Textarea as UtrechtTextarea } from "@utrecht/component-library-react/dist/css-module";
 
 export interface ITextAreaProps {
   name: string;
@@ -19,7 +19,7 @@ export const Textarea = ({
   hideErrorMessage,
 }: ITextAreaProps & IReactHookFormProps): JSX.Element => (
   <>
-    <TextArea {...register(name, { ...validation })} {...{ disabled, defaultValue }} invalid={errors[name]} />
+    <UtrechtTextarea {...register(name, { ...validation })} {...{ disabled, defaultValue }} invalid={errors[name]} />
     {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
