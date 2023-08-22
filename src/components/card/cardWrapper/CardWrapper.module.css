@@ -5,7 +5,6 @@
   --conduction-card-padding-block-end: 18px;
   --conduction-card-background-color: #ffffff;
   --conduction-card-border-radius: 16px;
-  --conduction-card-max-width: 300px;
 }
 
 .container {
@@ -15,8 +14,6 @@
   padding-inline-end: var(--conduction-card-padding-inline-end);
   padding-block-start: var(--conduction-card-padding-block-start);
   padding-block-end: var(--conduction-card-padding-block-end);
-  max-width: var(--conduction-card-max-width);
-  max-height: var(--conduction-card-max-height);
 
   background-color: var(--conduction-card-background-color);
   border-radius: var(--conduction-card-border-radius);
