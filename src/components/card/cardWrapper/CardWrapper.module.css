@@ -7,6 +7,10 @@
   --conduction-card-wrapper-color: #000000;
   --conduction-card-wrapper-border-radius: 16px;
 
+  --conduction-card-wrapper-border-radius: 16px;
+  /* --conduction-card-wrapper-border-width: unset; */
+  /* --conduction-card-wrapper-border-style: unset; */
+  /* --conduction-card-wrapper-border-color: unset; */
   /* --conduction-card-wrapper-background-color-hover: unset; */
 }
 
@@ -18,9 +22,10 @@
 
   color: var(--conduction-card-wrapper-color);
   background-color: var(--conduction-card-wrapper-background-color);
+
   border-radius: var(--conduction-card-wrapper-border-radius);
   border-width: var(--conduction-card-wrapper-border-width);
-  border: var(--conduction-card-wrapper-border, (var(--conduction-card-wrapper-border-width, --conduction-card-wrapper-border-style, --conduction-card-wrapper-border-color)));
+  border: var(--conduction-card-wrapper-border-width) var(--conduction-card-wrapper-border-style) var(--conduction-card-wrapper-border-color);
 }
 
 .container:hover {
