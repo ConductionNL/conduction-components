@@ -1,26 +1,27 @@
 :root {
-  --conduction-card-padding-inline-start: 18px;
-  --conduction-card-padding-inline-end: 18px;
-  --conduction-card-padding-block-start: 18px;
-  --conduction-card-padding-block-end: 18px;
-  --conduction-card-background-color: #ffffff;
-  --conduction-card-border-radius: 16px;
+  --conduction-card-wrapper-padding-inline-start: 18px;
+  --conduction-card-wrapper-padding-inline-end: 18px;
+  --conduction-card-wrapper-padding-block-start: 18px;
+  --conduction-card-wrapper-padding-block-end: 18px;
+  --conduction-card-wrapper-background-color: #ffffff;
+  --conduction-card-wrapper-border-radius: 16px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  padding-inline-start: var(--conduction-card-padding-inline-start);
-  padding-inline-end: var(--conduction-card-padding-inline-end);
-  padding-block-start: var(--conduction-card-padding-block-start);
-  padding-block-end: var(--conduction-card-padding-block-end);
+  padding-inline-start: var(--conduction-card-wrapper-padding-inline-start);
+  padding-inline-end: var(--conduction-card-wrapper-padding-inline-end);
+  padding-block-start: var(--conduction-card-wrapper-padding-block-start);
+  padding-block-end: var(--conduction-card-wrapper-padding-block-end);
 
-  background-color: var(--conduction-card-background-color);
-  border-radius: var(--conduction-card-border-radius);
-  border-width: var(--conduction-card-border-width);
+  background-color: var(--conduction-card-wrapper-background-color);
+  border-radius: var(--conduction-card-wrapper-border-radius);
+  border-width: var(--conduction-card-wrapper-border-width);
+  border: var(--conduction-card-wrapper-border, (var(--conduction-card-wrapper-border-width, --conduction-card-wrapper-border-style, --conduction-card-wrapper-border-color)));
 }
 
 .container:hover {
-  background-color: var(--conduction-card-hover-background-color, var(--conduction-card-background-color));
+  background-color: var(--conduction-card-wrapper-hover-background-color, var(--conduction-card-wrapper-background-color));
   cursor: pointer;
 }

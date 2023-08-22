@@ -3,19 +3,11 @@ import * as styles from "./CardWrapper.module.css";
 import { HTMLAttributes } from "react";
 import clsx from "clsx";
 
-interface CardWrapperProps {
-  children: React.ReactNode;
-}
+export const CardWrapper = (props: React.HTMLAttributes<HTMLDivElement>): JSX.Element => {
 
-export const CardWrapper = ({
-  children,
-  onClick,
-  id,
-  className,
-}: CardWrapperProps & React.HTMLAttributes<HTMLDivElement>): JSX.Element => {
   return (
-    <div className={clsx(styles.container, className && className)} {...{ onClick, id }}>
-      {children}
+    <div className={clsx(styles.container, props.className && props.className)} {...props}>
+      {props.children}
     </div>
   );
 };
