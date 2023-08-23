@@ -1,0 +1,12 @@
+:root {
+  --conduction-quote-wrapper-border-width: var(--skeleton-size-sm);
+  --conduction-quote-wrapper-border-color: var(--skeleton-color-grey-1);
+  --conduction-quote-wrapper-padding-inline: var(--skeleton-size-lg);
+}
+
+.container {
+  border-left-width: var(--conduction-quote-wrapper-border-width);
+  border-left-style: solid;
+  border-left-color: var(--conduction-quote-wrapper-border-color);
+  padding-inline-start: var(--conduction-quote-wrapper-padding-inline);
+}

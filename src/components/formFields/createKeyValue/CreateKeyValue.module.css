@@ -1,0 +1,56 @@
+:root {
+  --conduction-create-key-value-table-row-border: 1px solid var(--skeleton-color-grey-1);
+  --conduction-delete-button-background-color: var(--skeleton-color-red-3);
+  --conduction-delete-button-background-hover-color: var(--skeleton-color-red-4);
+}
+
+.keyValue {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table td,
+.table th {
+  text-align: left;
+  padding-inline: 0;
+  padding-block: var(--skeleton-size-md);
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: var(--skeleton-size-xs);
+  justify-content: flex-end;
+}
+
+.deleteButton {
+  white-space: nowrap;
+  background-color: var(--conduction-delete-button-background-color) !important;
+}
+
+.deleteButton:hover {
+  white-space: nowrap;
+  background-color: var(--conduction-delete-button-background-hover-color) !important;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+}
+
+.form > *:not(:last-child) {
+  margin-right: 10px;
+}
+
+.form > input {
+  flex: 5;
+}
+
+.form > button {
+  flex: 2;
+  max-width: fit-content;
+}

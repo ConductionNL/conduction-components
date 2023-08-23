@@ -16,8 +16,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm test
 
   publish-npm:
     needs: build
@@ -28,7 +26,14 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: |
+          git --version
+          git config user.name "GitHub Version patch"
+          git config user.email "<>"
+          git checkout development
+          git clean -f -n
+      - run: npm install
+      - run: npm version patch
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

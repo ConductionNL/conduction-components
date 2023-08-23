@@ -1,0 +1,56 @@
+:root {
+  --conduction-details-card-border: 1px solid var(--skeleton-color-grey-2);
+  --conduction-details-card-introduction-lines-clamp: 3;
+  --conduction-details-card-icon-gap: 8px;
+}
+
+.container {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--skeleton-border-radius-md);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: var(--skeleton-size-md);
+  padding-inline-end: var(--skeleton-size-md);
+  padding-block-start: var(--skeleton-size-md);
+  padding-block-end: var(--skeleton-size-md);
+  border: var(--conduction-details-card-border);
+}
+
+.content > *:not(:last-child) {
+  margin-block-end: var(--skeleton-size-md);
+}
+
+.title {
+  font-size: var(--skeleton-font-size-xl);
+  font-weight: var(--skeleton-font-weight-bold);
+}
+
+.subHeader {
+  color: var(--skeleton-color-grey-3);
+  font-size: var(--skeleton-font-size-sm);
+}
+
+.tags > *:not(:last-child) {
+  margin-inline-end: var(--skeleton-size-sm);
+}
+
+.introduction {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--conduction-details-card-introduction-lines-clamp);
+  -webkit-box-orient: vertical;
+}
+
+.link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  margin-inline-end: var(--conduction-details-card-icon-gap);
+}

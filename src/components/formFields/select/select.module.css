@@ -1,0 +1,43 @@
+:root {
+  --conduction-input-select-padding-block-start: var(--skeleton-size-xs);
+  --conduction-input-select-padding-block-end: var(--skeleton-size-xs);
+  --conduction-input-select-border-radius: var(--skeleton-border-radius-md);
+  --conduction-input-select-background-color: var(--skeleton-color-white);
+  --conduction-input-select-border: 1px solid var(--skeleton-color-grey-3);
+  --conduction-input-select-border-focus: 2px dashed var(--skeleton-color-grey-5);
+  --conduction-input-select-invalid-border-color: var(
+    --utrecht-textbox-invalid-border-color,
+    var(--utrecht-form-input-invalid-border-color, var(--utrecht-textbox-border-color, var(--utrecht-form-input-border-color)))
+  );
+}
+
+.select > div {
+  background-color: var(--conduction-input-select-background-color);
+  border: var(--conduction-input-select-border);
+  border-radius: var(--conduction-input-select-border-radius);
+  box-sizing: border-box;
+  padding-block-start: var(--conduction-input-select-padding-block-start);
+  padding-block-end: var(--conduction-input-select-padding-block-end);
+}
+
+.select.error > div {
+  border-color: var(--conduction-input-select-invalid-border-color);
+}
+
+.select .select > div:focus-within {
+  outline: none;
+  box-shadow: none;
+}
+
+.select > div:focus-within::after {
+  content: "";
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  bottom: calc(var(--skeleton-size-2xs) * -1);
+  left: calc(var(--skeleton-size-2xs) * -1);
+  right: calc(var(--skeleton-size-2xs) * -1);
+  top: calc(var(--skeleton-size-2xs) * -1);
+  border: var(--conduction-input-select-border-focus);
+  border-radius: var(--conduction-input-select-border-radius);
+}

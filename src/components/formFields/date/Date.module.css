@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+}
+
+.calendar {
+  display: flex;
+}
+
+.calendar > div::before,
+.calendar > div::after {
+  display: none;
+}

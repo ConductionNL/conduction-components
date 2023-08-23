@@ -17,7 +17,7 @@ interface BreadcrumbsProps {
   }[];
 }
 
-export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ crumbs }) => {
+export const Breadcrumbs = ({ crumbs }: BreadcrumbsProps): JSX.Element => {
   return (
     <nav aria-label="Breadcrumb" className="denhaag-breadcrumb">
       <ol className="denhaag-breadcrumb__list" itemScope itemType="https://schema.org/BreadcrumbList">
@@ -39,7 +39,7 @@ interface CrumbItemProps {
   idx: number;
 }
 
-const CrumbItem: React.FC<CrumbItemProps> = ({ pathname, crumbLabel, idx }) => (
+const CrumbItem = ({ pathname, crumbLabel, idx }: CrumbItemProps): JSX.Element => (
   <li className="denhaag-breadcrumb__item" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
     <Link className="denhaag-breadcrumb__link" to={pathname} itemProp="item">
       <span className="denhaag-breadcrumb__text" itemProp="name">
@@ -51,7 +51,7 @@ const CrumbItem: React.FC<CrumbItemProps> = ({ pathname, crumbLabel, idx }) => (
         fill="none"
         focusable="false"
         height="1em"
-        shape-rendering="auto"
+        shapeRendering="auto"
         viewBox="0 0 24 24"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ const CrumbItem: React.FC<CrumbItemProps> = ({ pathname, crumbLabel, idx }) => (
   </li>
 );
 
-const LastCrumbItem: React.FC<CrumbItemProps> = ({ pathname, crumbLabel, idx }) => (
+const LastCrumbItem = ({ pathname, crumbLabel, idx }: CrumbItemProps): JSX.Element => (
   <li
     aria-current="page"
     className="denhaag-breadcrumb__item"

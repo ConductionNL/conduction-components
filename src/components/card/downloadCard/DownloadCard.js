@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import * as styles from "./DownloadCard.module.css";
 import { DownloadIcon } from "@gemeente-denhaag/icons";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 export const DownloadCard = ({ icon, label, sizeKb, layoutClassName }) => {

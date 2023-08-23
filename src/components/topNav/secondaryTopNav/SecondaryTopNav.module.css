@@ -1,0 +1,63 @@
+:root {
+  --conduction-secondary-top-nav-item-padding: var(--skeleton-size-md);
+  --conduction-secondary-top-nav-font-size: var(--skeleton-font-size-md);
+  --conduction-secondary-top-nav-color: var(--skeleton-color-white);
+  --conduction-secondary-top-nav-background-color: var(--skeleton-color-secondary-5);
+  --conduction-secondary-top-nav-background-color-hover: rgba(0, 0, 0, 0.1);
+  --conduction-secondary-top-nav-font-weight: var(--skeleton-font-weight-light);
+  --conduction-secondary-top-nav-color-active: rgba(0, 0, 0, 0.1);
+  --conduction-secondary-top-nav-box-shadow-active: inset 0 -4px black;
+  --conduction-secondary-top-nav-item-icon-margin: var(--skeleton-size-2x);
+}
+
+.secondary:hover {
+  cursor: pointer;
+}
+
+.ul {
+  margin: unset;
+  display: flex;
+  padding-inline-start: unset;
+  align-items: center;
+}
+
+.li {
+  list-style-type: none;
+  display: block;
+  padding-inline-start: var(--conduction-secondary-top-nav-item-padding);
+  padding-inline-end: var(--conduction-secondary-top-nav-item-padding);
+  padding-block-start: var(--conduction-secondary-top-nav-item-padding);
+  padding-block-end: var(--conduction-secondary-top-nav-item-padding);
+}
+
+.li:hover {
+  background-color: var(--conduction-secondary-top-nav-background-color-hover);
+}
+
+.current {
+  background-color: var(--conduction-secondary-top-nav-color-active);
+  box-shadow: var(--conduction-secondary-top-nav-box-shadow-active);
+}
+
+.secondary {
+  font-weight: var(--conduction-secondary-top-nav-font-weight);
+  width: fit-content;
+  font-size: var(--conduction-secondary-top-nav-font-size);
+  background-color: var(--conduction-secondary-top-nav-background-color);
+}
+
+.secondary .link {
+  color: var(--conduction-secondary-top-nav-color);
+  display: block;
+}
+
+.label {
+  overflow: hidden;
+  max-width: 37ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.label > :not(:last-child) {
+  margin-inline-end: var(--conduction-secondary-top-nav-item-icon-margin);
+}

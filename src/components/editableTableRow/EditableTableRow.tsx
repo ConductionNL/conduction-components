@@ -1,7 +1,7 @@
 import { TableCell, TableHeader, TableRow } from "@gemeente-denhaag/table";
 import * as styles from "./EditableTableRow.module.css";
 import * as React from "react";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@gemeente-denhaag/link";
 import { CheckedIcon, CloseIcon, EditIcon } from "@gemeente-denhaag/icons";
 import { FieldValues, useForm, UseFormRegister } from "react-hook-form";
 import { InputEmail, InputText } from "../formFields";
@@ -19,7 +19,7 @@ interface EditableTableRowProps {
   handleSave: (value: any) => void;
 }
 
-export const EditableTableRow: React.FC<EditableTableRowProps & InputTypes> = ({
+export const EditableTableRow = ({
   thead,
   value,
   inputType,
@@ -27,7 +27,7 @@ export const EditableTableRow: React.FC<EditableTableRowProps & InputTypes> = ({
   cancelLabel,
   saveLabel,
   handleSave,
-}) => {
+}: EditableTableRowProps & InputTypes): JSX.Element => {
   const [editing, setEditing] = React.useState<boolean>(false);
 
   return (
@@ -50,7 +50,7 @@ interface RegularTableRowProps {
   setEditing: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const RegularTableRow: React.FC<RegularTableRowProps> = ({ value, editLabel, setEditing }) => {
+const RegularTableRow = ({ value, editLabel, setEditing }: RegularTableRowProps): JSX.Element => {
   return (
     <>
       <TableCell>{value}</TableCell>
@@ -74,14 +74,14 @@ interface EditingTableRowProps {
   handleSave: (value: any) => void;
 }
 
-const EditingTableRow: React.FC<EditingTableRowProps & InputTypes> = ({
+const EditingTableRow = ({
   value,
   setEditing,
   handleSave,
   inputType,
   saveLabel,
   cancelLabel,
-}) => {
+}: EditingTableRowProps & InputTypes): JSX.Element => {
   const {
     register,
     handleSubmit,
@@ -128,7 +128,7 @@ interface FormFieldProps {
   };
 }
 
-const FormField: React.FC<FormFieldProps & InputTypes> = ({ inputType, value, register, errors }) => {
+const FormField = ({ inputType, value, register, errors }: FormFieldProps & InputTypes): JSX.Element => {
   switch (inputType) {
     case "email":
       return <InputEmail defaultValue={value} {...{ register, errors }} name="value" validation={{ required: true }} />;

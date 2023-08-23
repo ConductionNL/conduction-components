@@ -1,0 +1,17 @@
+:root {
+  --conduction-tooltip-max-width: 500px;
+}
+
+.wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip {
+  max-width: var(--conduction-tooltip-max-width);
+  word-break: break-word;
+}
+
+.tooltip::before {
+  all: unset !important;
+}

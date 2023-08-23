@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as styles from "./ImageAndDetailsCard.module.css";
 import clsx from "clsx";
-import { Link } from "@gemeente-denhaag/components-react";
+import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
-import { ArrowRightIcon } from "@gemeente-denhaag/icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface ImageAndDetailsCardProps {
   title: string;
@@ -17,14 +18,14 @@ interface ImageAndDetailsCardProps {
   layoutClassName?: string;
 }
 
-export const ImageAndDetailsCard: React.FC<ImageAndDetailsCardProps> = ({
+export const ImageAndDetailsCard = ({
   image,
   title,
   subHeader,
   introduction,
   link,
   layoutClassName,
-}) => {
+}: ImageAndDetailsCardProps): JSX.Element => {
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])} onClick={() => navigate(link.href)}>
       <div className={styles.image}>{image}</div>
@@ -39,8 +40,8 @@ export const ImageAndDetailsCard: React.FC<ImageAndDetailsCardProps> = ({
         <div className={styles.introduction}>{introduction}</div>
 
         <div className={styles.link}>
-          <Link icon={<ArrowRightIcon />} iconAlign="start">
-            {link.label}
+          <Link onClick={() => navigate(link.href)}>
+            <FontAwesomeIcon className={styles.icon} icon={faArrowRight} /> {link.label}
           </Link>
         </div>
       </div>
