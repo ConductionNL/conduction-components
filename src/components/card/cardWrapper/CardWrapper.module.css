@@ -1,17 +1,15 @@
 :root {
-  --conduction-card-wrapper-padding-inline-start: 18px;
-  --conduction-card-wrapper-padding-inline-end: 18px;
-  --conduction-card-wrapper-padding-block-start: 18px;
-  --conduction-card-wrapper-padding-block-end: 18px;
   --conduction-card-wrapper-background-color: #ffffff;
-  --conduction-card-wrapper-color: #000000;
-  --conduction-card-wrapper-border-radius: 16px;
-
-  --conduction-card-wrapper-border-radius: 16px;
+  /* --conduction-card-wrapper-border-color: unset; */
   /* --conduction-card-wrapper-border-width: unset; */
   /* --conduction-card-wrapper-border-style: unset; */
-  /* --conduction-card-wrapper-border-color: unset; */
+  --conduction-card-wrapper-border-radius: 16px;
+  --conduction-card-wrapper-color: #000000;
   /* --conduction-card-wrapper-background-color-hover: unset; */
+  --conduction-card-wrapper-padding-inline-end: 18px;
+  --conduction-card-wrapper-padding-inline-start: 18px;
+  --conduction-card-wrapper-padding-block-end: 18px;
+  --conduction-card-wrapper-padding-block-start: 18px;
 }
 
 .container {
