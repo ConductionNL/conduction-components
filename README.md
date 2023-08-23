@@ -4,10 +4,10 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
-  - 2.1.35: Added CardWrapper.
-  - 2.1.35:
+  - 2.1.36:
     - Updated CardWrapper.
     - Added CardHeader.
+  - 2.1.35: Added CardWrapper.
   - 2.1.34: Refactor Den Haag textbox and textarea to Utrecht; add Single Select design tokens.
   - 2.1.33: Added optional placeholder to all select elements.
   - 2.1.32: Add inline-padding to container, remove redundant (breaking and unused) components, up React version.
