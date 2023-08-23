@@ -1,0 +1,36 @@
+:root {
+  /* --conduction-card-header-border-bottom-width: unset;
+  --conduction-card-header-border-bottom-style: unset;
+  --conduction-card-header-border-bottom-color: unset; */
+  /* --conduction-card-header-hover-border-bottom-width: unset; */
+  /* --conduction-card-header-hover-border-bottom-style: unset; */
+  /* --conduction-card-header-hover-border-bottom-color: unset; */
+  --conduction-card-header-title-color: #000000;
+  --conduction-card-header-date-color: #000000;
+  --conduction-card-header-date-font-size: 16px;
+  --conduction-card-header-date-font-weight: 100;
+  --conduction-card-header-date-margin-block-end: 8px;
+}
+
+.container {
+  border-bottom-width: var(--conduction-card-header-border-bottom-width);
+  border-bottom-style: var(--conduction-card-header-border-bottom-style);
+  border-bottom-color: var(--conduction-card-header-border-bottom-color);
+}
+
+.container:hover {
+  border-bottom-width: var(--conduction-card-header-hover-border-bottom-width);
+  border-bottom-style: var(--conduction-card-header-hover-border-bottom-style);
+  border-bottom-color: var(--conduction-card-header-hover-border-bottom-color);
+}
+
+.title > * {
+  color: var(--conduction-card-header-title-color) !important;
+}
+
+.date {
+  color: var(--conduction-card-header-date-color);
+  font-size: var(--conduction-card-header-date-font-size);
+  font-weight: var(--conduction-card-header-date-font-weight);
+  margin-block-end: var(--conduction-card-header-date-margin-block-end);
+}
