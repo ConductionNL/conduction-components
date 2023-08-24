@@ -9,6 +9,16 @@
     --utrecht-textbox-invalid-border-color,
     var(--utrecht-form-input-invalid-border-color, var(--utrecht-textbox-border-color, var(--utrecht-form-input-border-color)))
   );
+
+  --conduction-input-select-list-option-font-family: "Noto Sans", Arial, sans-serif;
+  /* --conduction-input-select-list-option-background-color: unset; */
+
+  /* --conduction-input-select-list-option-hover-background-color: unset; */
+  /* --conduction-input-select-list-option-hover-color: unset; */
+  /* --conduction-input-select-list-option-font-family: unset; */
+
+  --conduction-input-select-placeholder-font-family: "Noto Sans", Arial, sans-serif;
+  --conduction-input-select-placeholder-color: #757575;
 }
 
 .select > div {

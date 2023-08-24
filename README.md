@@ -4,6 +4,7 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.37: Added more design-tokens to all select options.
   - 2.1.36:
     - Updated CardWrapper.
     - Added CardHeader.
