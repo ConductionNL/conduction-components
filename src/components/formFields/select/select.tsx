@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./select.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
-import ReactSelect, { MenuPlacement } from "react-select";
+import ReactSelect, { MenuPlacement, StylesConfig } from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { IReactHookFormProps } from "../types";
 import clsx from "clsx";
@@ -19,6 +19,46 @@ interface ISelectProps {
   menuPlacement?: MenuPlacement;
   placeholder?: string;
 }
+
+const selectStyles: StylesConfig = {
+  menuPortal: (base) => ({ ...base, zIndex: 100 }),
+  option: (base) => ({
+    ...base,
+    fontFamily: `var(--conduction-input-select-list-option-font-family, ${base.fontFamily})`,
+    backgroundColor: `var(--conduction-input-select-list-option-background-color, ${base.backgroundColor}) `,
+
+    "&:hover": {
+      backgroundColor: `var(--conduction-input-select-list-option-hover-background-color, ${base.backgroundColor})`,
+      color: `var(--conduction-input-select-list-option-hover-color, ${base.color})`,
+      fontFamily: `var(--conduction-input-select-list-option-hover-font-family, var(--conduction-input-select-list-option-font-family, ${base.fontFamily}))`,
+    },
+  }),
+  placeholder: (base) => ({
+    ...base,
+    fontFamily: `var(--conduction-input-select-placeholder-font-family, var(--utrecht-form-input-placeholder-font-family, ${base.fontFamily}))`,
+    color: `var(--conduction-input-select-placeholder-color, var(--utrecht-form-input-placeholder-color, ${base.color}) )`,
+  }),
+};
+
+const selectMultiStyles: StylesConfig = {
+  menuPortal: (base) => ({ ...base, zIndex: 100 }),
+  option: (base) => ({
+    ...base,
+    fontFamily: `var(--conduction-input-select-list-option-font-family, ${base.fontFamily})`,
+    backgroundColor: `var(--conduction-input-select-list-option-background-color, ${base.backgroundColor}) `,
+
+    "&:hover": {
+      backgroundColor: `var(--conduction-input-select-list-option-hover-background-color, ${base.backgroundColor})`,
+      color: `var(--conduction-input-select-list-option-hover-color, ${base.color})`,
+      fontFamily: `var(--conduction-input-select-list-option-hover-font-family, var(--conduction-input-select-list-option-font-family, ${base.fontFamily}))`,
+    },
+  }),
+  placeholder: (base) => ({
+    ...base,
+    fontFamily: `var(--conduction-input-select-placeholder-font-family, var(--utrecht-form-input-placeholder-font-family, ${base.fontFamily}))`,
+    color: `var(--conduction-input-select-placeholder-color, var(--utrecht-form-input-placeholder-color, ${base.color}) )`,
+  }),
+};
 
 export const SelectMultiple = ({
   id,
@@ -49,7 +89,7 @@ export const SelectMultiple = ({
               {...{ options, onChange, errors }}
               menuPortalTarget={document.body}
               menuPlacement={menuPlacement}
-              styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+              styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
@@ -90,7 +130,7 @@ export const SelectCreate = ({
               {...{ options, onChange, errors }}
               menuPortalTarget={document.body}
               menuPlacement={menuPlacement}
-              styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+              styles={selectStyles}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
           </>
@@ -129,7 +169,7 @@ export const SelectSingle = ({
               {...{ options, onChange, errors, isClearable }}
               menuPortalTarget={document.body}
               menuPlacement={menuPlacement}
-              styles={{ menuPortal: (base) => ({ ...base, zIndex: 100 }) }}
+              styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
