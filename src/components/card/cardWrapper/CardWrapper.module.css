@@ -1,0 +1,32 @@
+:root {
+  --conduction-card-wrapper-background-color: #ffffff;
+  /* --conduction-card-wrapper-border-color: unset; */
+  /* --conduction-card-wrapper-border-width: unset; */
+  /* --conduction-card-wrapper-border-style: unset; */
+  --conduction-card-wrapper-border-radius: 16px;
+  --conduction-card-wrapper-color: #000000;
+  /* --conduction-card-wrapper-background-color-hover: unset; */
+  --conduction-card-wrapper-padding-inline-end: 18px;
+  --conduction-card-wrapper-padding-inline-start: 18px;
+  --conduction-card-wrapper-padding-block-end: 18px;
+  --conduction-card-wrapper-padding-block-start: 18px;
+}
+
+.container {
+  padding-inline-start: var(--conduction-card-wrapper-padding-inline-start);
+  padding-inline-end: var(--conduction-card-wrapper-padding-inline-end);
+  padding-block-start: var(--conduction-card-wrapper-padding-block-start);
+  padding-block-end: var(--conduction-card-wrapper-padding-block-end);
+
+  color: var(--conduction-card-wrapper-color);
+  background-color: var(--conduction-card-wrapper-background-color);
+
+  border-radius: var(--conduction-card-wrapper-border-radius);
+  border-width: var(--conduction-card-wrapper-border-width);
+  border: var(--conduction-card-wrapper-border-width) var(--conduction-card-wrapper-border-style) var(--conduction-card-wrapper-border-color);
+}
+
+.container:hover {
+  background-color: var(--conduction-card-wrapper-hover-background-color, var(--conduction-card-wrapper-background-color));
+  cursor: pointer;
+}
