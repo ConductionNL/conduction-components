@@ -1,0 +1,73 @@
+:root {
+  --conduction-pagination-item-gap: 8px;
+
+  --conduction-pagination-padding-inline-start: 0px;
+  --conduction-pagination-padding-inline-end: 0px;
+  --conduction-pagination-padding-block-start: 0px;
+  --conduction-pagination-padding-block-end: 0px;
+
+  --conduction-pagination-navigation-button-padding-inline-start: 4px;
+  --conduction-pagination-navigation-button-padding-inline-end: 4px;
+  --conduction-pagination-navigation-button-padding-block-start: 4px;
+  --conduction-pagination-navigation-button-padding-block-end: 4px;
+
+  --conduction-pagination-disabled-color: #000000;
+  --conduction-pagination-disabled-background-color: #fefefe;
+
+  --conduction-pagination-current-page-font-weight: bold;
+  --conduction-pagination-current-page-text-decoration: underline;
+
+  --conduction-pagination-page-hover-color: #4376fc;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+
+  gap: var(--conduction-pagination-item-gap);
+
+  padding-inline-start: var(--conudction-pagination-padding-inline-start);
+  padding-inline-end: var(--conudction-pagination-padding-inline-end);
+  padding-block-start: var(--conudction-pagination-padding-block-start);
+  padding-block-end: var(--conudction-pagination-padding-block-end);
+
+  user-select: none;
+}
+
+.container > *:hover {
+  cursor: pointer;
+  color: var(--conduction-pagination-page-hover-color);
+}
+
+.container > *.disabled:hover {
+  cursor: not-allowed;
+  color: inherit;
+}
+
+.button {
+  padding-inline-start: var(--conduction-pagination-navigation-button-padding-inline-start) !important;
+  padding-inline-end: var(--conduction-pagination-navigation-button-padding-inline-end) !important;
+  padding-block-start: var(--conduction-pagination-navigation-button-padding-block-start) !important;
+  padding-block-end: var(--conduction-pagination-navigation-button-padding-block-end) !important;
+}
+
+.disabled .button {
+  color: var(--conduction-pagination-disabled-color);
+  background-color: var(--conduction-pagination-disabled-background-color);
+  pointer-events: none;
+}
+
+.disabled .button:hover {
+  cursor: not-allowed;
+}
+
+.currentPage {
+  font-weight: var(--conduction-pagination-current-page-font-weight);
+  text-decoration: var(--conduction-pagination-current-page-text-decoration);
+}
+
+.currentPage:hover {
+  cursor: not-allowed;
+}
