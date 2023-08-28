@@ -6,8 +6,18 @@
   --conduction-pagination-padding-block-start: 0px;
   --conduction-pagination-padding-block-end: 0px;
 
-  --conduction-pagination-navigation-button-padding-inline-start: 4px;
-  --conduction-pagination-navigation-button-padding-inline-end: 4px;
+  --conduction-pagination-item-color: #000000;
+  --conduction-pagination-item-background-color: #ffffff;
+
+  --conduction-pagination-item-border-radius: 4px;
+
+  --conduction-pagination-item-padding-inline-start: 8px;
+  --conduction-pagination-item-padding-inline-end: 8px;
+  --conduction-pagination-item-padding-block-start: 8px;
+  --conduction-pagination-item-padding-block-end: 8px;
+
+  --conduction-pagination-navigation-button-padding-inline-start: 8px;
+  --conduction-pagination-navigation-button-padding-inline-end: 8px;
   --conduction-pagination-navigation-button-padding-block-start: 4px;
   --conduction-pagination-navigation-button-padding-block-end: 4px;
 
@@ -34,6 +44,18 @@
   padding-block-end: var(--conudction-pagination-padding-block-end);
 
   user-select: none;
+}
+
+.container > * {
+  color: var(--conduction-pagination-item-color);
+  background-color: var(--conduction-pagination-item-background-color);
+
+  border-radius: var(--conduction-pagination-item-border-radius);
+
+  padding-inline-start: var(--conduction-pagination-item-padding-inline-start);
+  padding-inline-end: var(--conduction-pagination-item-padding-inline-end);
+  padding-block-start: var(--conduction-pagination-item-padding-block-start);
+  padding-block-end: var(--conduction-pagination-item-padding-block-end);
 }
 
 .container > *:hover {
