@@ -7,14 +7,14 @@ import Button from "@gemeente-denhaag/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-interface PaginateProps {
+interface PaginationProps {
   totalPages: number;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   layoutClassName?: string;
 }
 
-export const Paginate: React.FC<PaginateProps> = ({ totalPages, currentPage, setCurrentPage, layoutClassName }) => {
+export const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, setCurrentPage, layoutClassName }) => {
   if (totalPages < 1) return <></>; // no pages available
 
   return (
