@@ -22,6 +22,8 @@
   --conduction-pagination-disabled-color: #000000;
   --conduction-pagination-disabled-background-color: #fefefe;
 
+  --conduction-pagination-current-page-background-color: #4376fc;
+  --conduction-pagination-current-page-color: #ffffff;
   --conduction-pagination-current-page-font-weight: bold;
   --conduction-pagination-current-page-text-decoration: unset;
 
@@ -52,15 +54,33 @@
   padding-block-end: var(--conduction-pagination-item-padding-block-end);
 }
 
-.container > li > a:hover,
-.button:hover {
-  cursor: pointer;
-  color: var(--conduction-pagination-page-hover-color);
+.button {
+  pointer-events: none;
 }
 
-.container > li > a[aria-disabled="true"] {
+.container > li.currentPage > a {
+  color: var(--conduction-pagination-current-page-color);
+  background-color: var(--conduction-pagination-current-page-background-color);
+  font-weight: var(--conduction-pagination-current-page-font-weight);
+  text-decoration: var(--conduction-pagination-current-page-text-decoration);
+}
+
+.disabled:hover,
+.currentPage:hover {
+  cursor: not-allowed;
+}
+
+.container > li.disabled > a {
   color: var(--conduction-pagination-disabled-color);
   background-color: var(--conduction-pagination-disabled-background-color);
+}
+
+.container > li:hover:not(.disabled):not(.currentPage) {
+  cursor: pointer;
+}
+
+.container > li:hover:not(.disabled):not(.currentPage) > a {
+  color: var(--conduction-pagination-page-hover-color);
 }
 
 .button {
@@ -68,9 +88,4 @@
   padding-inline-end: var(--conduction-pagination-navigation-button-padding-inline-end) !important;
   padding-block-start: var(--conduction-pagination-navigation-button-padding-block-start) !important;
   padding-block-end: var(--conduction-pagination-navigation-button-padding-block-end) !important;
-}
-
-.currentPage {
-  font-weight: var(--conduction-pagination-current-page-font-weight);
-  text-decoration: var(--conduction-pagination-current-page-text-decoration);
 }
