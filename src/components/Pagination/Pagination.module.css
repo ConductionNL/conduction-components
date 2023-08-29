@@ -1,16 +1,14 @@
 :root {
+  --conduction-pagination-container-background-color: unset;
+  --conduction-pagination-container-padding-inline-start: 0px;
+  --conduction-pagination-container-padding-inline-end: 0px;
+  --conduction-pagination-container-padding-block-start: 0px;
+  --conduction-pagination-container-padding-block-end: 0px;
+
   --conduction-pagination-item-gap: 8px;
-
-  --conduction-pagination-padding-inline-start: 0px;
-  --conduction-pagination-padding-inline-end: 0px;
-  --conduction-pagination-padding-block-start: 0px;
-  --conduction-pagination-padding-block-end: 0px;
-
   --conduction-pagination-item-color: #000000;
   --conduction-pagination-item-background-color: #ffffff;
-
   --conduction-pagination-item-border-radius: 4px;
-
   --conduction-pagination-item-padding-inline-start: 8px;
   --conduction-pagination-item-padding-inline-end: 8px;
   --conduction-pagination-item-padding-block-start: 8px;
@@ -18,14 +16,14 @@
 
   --conduction-pagination-navigation-button-padding-inline-start: 8px;
   --conduction-pagination-navigation-button-padding-inline-end: 8px;
-  --conduction-pagination-navigation-button-padding-block-start: 4px;
-  --conduction-pagination-navigation-button-padding-block-end: 4px;
+  --conduction-pagination-navigation-button-padding-block-start: 0px;
+  --conduction-pagination-navigation-button-padding-block-end: 0px;
 
   --conduction-pagination-disabled-color: #000000;
   --conduction-pagination-disabled-background-color: #fefefe;
 
   --conduction-pagination-current-page-font-weight: bold;
-  --conduction-pagination-current-page-text-decoration: underline;
+  --conduction-pagination-current-page-text-decoration: unset;
 
   --conduction-pagination-page-hover-color: #4376fc;
 }
@@ -35,37 +33,34 @@
   flex-wrap: wrap;
   align-items: center;
   list-style-type: none;
-
   gap: var(--conduction-pagination-item-gap);
-
-  padding-inline-start: var(--conudction-pagination-padding-inline-start);
-  padding-inline-end: var(--conudction-pagination-padding-inline-end);
-  padding-block-start: var(--conudction-pagination-padding-block-start);
-  padding-block-end: var(--conudction-pagination-padding-block-end);
-
+  background-color: var(--conduction-pagination-container-background-color);
+  padding-inline-start: var(--conduction-pagination-container-padding-inline-start);
+  padding-inline-end: var(--conduction-pagination-container-padding-inline-end);
+  padding-block-start: var(--conduction-pagination-container-padding-block-start);
+  padding-block-end: var(--conduction-pagination-container-padding-block-end);
   user-select: none;
 }
 
-.container > * {
+.container > li > a {
   color: var(--conduction-pagination-item-color);
   background-color: var(--conduction-pagination-item-background-color);
-
   border-radius: var(--conduction-pagination-item-border-radius);
-
   padding-inline-start: var(--conduction-pagination-item-padding-inline-start);
   padding-inline-end: var(--conduction-pagination-item-padding-inline-end);
   padding-block-start: var(--conduction-pagination-item-padding-block-start);
   padding-block-end: var(--conduction-pagination-item-padding-block-end);
 }
 
-.container > *:hover {
+.container > li > a:hover,
+.button:hover {
   cursor: pointer;
   color: var(--conduction-pagination-page-hover-color);
 }
 
-.container > *.disabled:hover {
-  cursor: not-allowed;
-  color: inherit;
+.container > li > a[aria-disabled="true"] {
+  color: var(--conduction-pagination-disabled-color);
+  background-color: var(--conduction-pagination-disabled-background-color);
 }
 
 .button {
@@ -75,21 +70,7 @@
   padding-block-end: var(--conduction-pagination-navigation-button-padding-block-end) !important;
 }
 
-.disabled .button {
-  color: var(--conduction-pagination-disabled-color);
-  background-color: var(--conduction-pagination-disabled-background-color);
-  pointer-events: none;
-}
-
-.disabled .button:hover {
-  cursor: not-allowed;
-}
-
 .currentPage {
   font-weight: var(--conduction-pagination-current-page-font-weight);
   text-decoration: var(--conduction-pagination-current-page-text-decoration);
-}
-
-.currentPage:hover {
-  cursor: not-allowed;
 }
