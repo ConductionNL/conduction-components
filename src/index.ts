@@ -34,10 +34,10 @@ import {
 } from "./components/notificationPopUp/NotificationPopUp";
 const NotificationPopUp = { controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
 import { QuoteWrapper } from "./components/quoteWrapper/QuoteWrapper";
-import { Pagination } from "./components/denhaag-wrappers/pagination/Pagination";
 import { BadgeCounter } from "./components/badgeCounter/BadgeCounter";
 import { CodeBlock } from "./components/codeBlock/CodeBlock";
 import { ToolTip } from "./components/toolTip/ToolTip";
+import { Pagination } from "./components/Pagination/Pagination";
 
 export {
   InputRadio,

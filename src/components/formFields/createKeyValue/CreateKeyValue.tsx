@@ -2,7 +2,6 @@ import * as React from "react";
 import * as styles from "./CreateKeyValue.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
-import { IInputProps } from "../input";
 import { Button } from "@gemeente-denhaag/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@gemeente-denhaag/table";
 import { ToolTip } from "../../toolTip/ToolTip";
