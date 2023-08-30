@@ -13,6 +13,9 @@
   --conduction-pagination-item-padding-inline-end: 8px;
   --conduction-pagination-item-padding-block-start: 8px;
   --conduction-pagination-item-padding-block-end: 8px;
+  --conduction-pagination-item-font-size: var(--skeleton-font-size-md);
+  --conduction-pagination-item-font-weight: var(--skeleton-font-weight-normal);
+  --conduction-pagination-item-font-family: inherit;
 
   --conduction-pagination-navigation-button-padding-inline-start: 8px;
   --conduction-pagination-navigation-button-padding-inline-end: 8px;
@@ -28,6 +31,9 @@
   --conduction-pagination-current-page-text-decoration: unset;
 
   --conduction-pagination-page-hover-color: #4376fc;
+  --conduction-pagination-page-hover-background-color: #ffffff;
+  --conduction-pagination-page-hover-text-decoration: unset;
+  --conduction-pagination-page-hover-text-decoration-thickness: 0px;
 }
 
 .container {
@@ -52,6 +58,9 @@
   padding-inline-end: var(--conduction-pagination-item-padding-inline-end);
   padding-block-start: var(--conduction-pagination-item-padding-block-start);
   padding-block-end: var(--conduction-pagination-item-padding-block-end);
+  font-size: var(--conduction-pagination-item-font-size);
+  font-weight: var(--conduction-pagination-item-font-weight);
+  font-family: var(--conduction-pagination-item-font-family);
 }
 
 .button {
@@ -81,6 +90,9 @@
 
 .container > li:hover:not(.disabled):not(.currentPage) > a {
   color: var(--conduction-pagination-page-hover-color);
+  background-color: var(--conduction-pagination-page-hover-background-color);
+  text-decoration: var(--conduction-pagination-page-hover-text-decoration);
+  text-decoration-thickness: var(--conduction-pagination-page-hover-text-decoration-thickness);
 }
 
 .button {
