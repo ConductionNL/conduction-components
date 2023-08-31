@@ -1,4 +1,3 @@
-import { Divider } from "@gemeente-denhaag/divider";
 import { Link } from "@gemeente-denhaag/link";
 import { navigate } from "gatsby";
 import * as React from "react";
@@ -53,7 +52,7 @@ export const RichContentCard = ({
 
       {contentLinks && (
         <div className={styles.contentLinks}>
-          <Divider />
+          <hr className={styles.divider} />
           {contentLinks.map(({ title, subTitle, href }, idx) => (
             <ContentLink key={idx} {...{ title, subTitle, href }} />
           ))}

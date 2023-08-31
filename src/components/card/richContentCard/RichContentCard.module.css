@@ -91,3 +91,9 @@
   font-size: var(--conduction-content-link-font-size);
   color: var(--denhaag-color-grey-3);
 }
+
+.divider {
+  width: 100%;
+  opacity: 0.5;
+  margin-block: var(--skeleton-size-lg);
+}
