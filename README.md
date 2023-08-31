@@ -5,6 +5,7 @@
 - **Version 2.2 (breaking changes from 2.1.x)**
 
   - 2.2.0:
+    - Removed Den Haag heading.
     - Removed Den Haag paragraph.
     - Removed Den Haag Table imports from CreateKeyValue component.
     - Removed EditableTableRow component.

@@ -34,7 +34,6 @@
     "@gemeente-denhaag/stylesprovider": "0.1.1-alpha.222",
     "@gemeente-denhaag/textarea": "0.1.1-alpha.95",
     "@gemeente-denhaag/textfield": "0.2.3-alpha.205",
-    "@gemeente-denhaag/typography": "0.2.3-alpha.205",
     "@utrecht/component-library-react": "^1.0.0-alpha.319",
     "clsx": "^1.1.1",
     "gatsby": "^4.11.1",
