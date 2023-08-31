@@ -12,6 +12,15 @@
 
 .table {
   border-collapse: collapse;
+  background-color: var(--utrecht-table-background-color);
+}
+
+.tableHeader > * {
+  border-block-end: var(--utrecht-table-header-border-block-end-width) solid var(--utrecht-table-header-border-block-end-color);
+}
+
+.tableHeader {
+  font-family: var(--utrecht-table-header-font-family);
 }
 
 .table td,

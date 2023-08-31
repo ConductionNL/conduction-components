@@ -8,7 +8,6 @@ import {
 } from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
-import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
 import {
   InputText,
   InputPassword,
@@ -49,7 +48,6 @@ export {
   InfoCard,
   Container,
   Breadcrumbs,
-  EditableTableRow,
   InputText,
   InputPassword,
   InputEmail,

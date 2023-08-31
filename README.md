@@ -2,10 +2,15 @@
 
 ## Changelog
 
+- **Version 2.2 (breaking changes from 2.1.x)**
+
+  - 2.2.0:
+    - Removed Den Haag Table imports from CreateKeyValue component.
+    - Removed EditableTableRow component.
+    - Removed Den Haag divider.
+
 - **Version 2.1 (breaking changes from 2.0.x)**
 
-  - 2.1.41:
-    - Removed Den Haag divider
   - 2.1.40:
     - Added border tokens to Pagination.
     - Added border-bottom tokens to CardWrapper.
