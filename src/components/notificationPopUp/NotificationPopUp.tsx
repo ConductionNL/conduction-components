@@ -2,12 +2,11 @@ import * as React from "react";
 import * as styles from "./NotificationPopUp.module.css";
 import ReactDOM from "react-dom";
 import { Button } from "@gemeente-denhaag/button";
-import { Heading3 } from "@gemeente-denhaag/typography";
 import { Link } from "@gemeente-denhaag/link";
 import { StylesProvider } from "@gemeente-denhaag/stylesprovider";
 import clsx from "clsx";
 import { CloseIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
-import { Paragraph } from "@utrecht/component-library-react";
+import { Heading3, Paragraph } from "@utrecht/component-library-react";
 
 export interface NotificationPopUpProps {
   title: string;
