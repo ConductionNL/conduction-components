@@ -1,11 +1,17 @@
 :root {
   --conduction-card-wrapper-background-color: #ffffff;
-  /* --conduction-card-wrapper-border-color: unset; */
   /* --conduction-card-wrapper-border-width: unset; */
   /* --conduction-card-wrapper-border-style: unset; */
+  /* --conduction-card-wrapper-border-color: unset; */
+  /* --conduction-card-wrapper-border-bottom-width: unset; */
+  /* --conduction-card-wrapper-border-bottom-style: unset; */
+  /* --conduction-card-wrapper-border-bottom-color: unset; */
+  /* --conduction-card-wrapper-hover-border-bottom-width: unset; */
+  /* --conduction-card-wrapper-hover-border-bottom-style: unset; */
+  /* --conduction-card-wrapper-hover-border-bottom-color: unset; */
   --conduction-card-wrapper-border-radius: 16px;
   --conduction-card-wrapper-color: #000000;
-  /* --conduction-card-wrapper-background-color-hover: unset; */
+  /* --conduction-card-wrapper-hover-background-color: unset; */
   --conduction-card-wrapper-padding-inline-end: 18px;
   --conduction-card-wrapper-padding-inline-start: 18px;
   --conduction-card-wrapper-padding-block-end: 18px;
@@ -24,9 +30,15 @@
   border-radius: var(--conduction-card-wrapper-border-radius);
   border-width: var(--conduction-card-wrapper-border-width);
   border: var(--conduction-card-wrapper-border-width) var(--conduction-card-wrapper-border-style) var(--conduction-card-wrapper-border-color);
+  border-bottom: var(--conduction-card-wrapper-border-bottom-width, var(--conduction-card-wrapper-border-width))
+    var(--conduction-card-wrapper-border-bottom-style, var(--conduction-card-wrapper-border-style))
+    var(--conduction-card-wrapper-border-bottom-color, var(--conduction-card-wrapper-border-color));
 }
 
 .container:hover {
   background-color: var(--conduction-card-wrapper-hover-background-color, var(--conduction-card-wrapper-background-color));
+  border-bottom: var(--conduction-card-wrapper-hover-border-bottom-width, var(--conduction-card-wrapper-border-width))
+    var(--conduction-card-wrapper-hover-border-bottom-style, var(--conduction-card-wrapper-border-style))
+    var(--conduction-card-wrapper-hover-border-bottom-color, var(--conduction-card-wrapper-border-color));
   cursor: pointer;
 }

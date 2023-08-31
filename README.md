@@ -4,6 +4,9 @@
 
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.40:
+    - Added border tokens to Pagination.
+    - Added border-bottom tokens to CardWrapper.
   - 2.1.39: Added more tokens to Pagination.
   - 2.1.38: Added Pagination.
   - 2.1.37: Added more design-tokens to all select options.
