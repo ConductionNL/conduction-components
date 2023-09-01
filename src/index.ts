@@ -16,7 +16,6 @@ import {
   InputNumber,
   Textarea,
   InputCheckbox,
-  InputRadio,
   InputFile,
   SelectMultiple,
   SelectSingle,
@@ -39,7 +38,6 @@ import { ToolTip } from "./components/toolTip/ToolTip";
 import { Pagination } from "./components/Pagination/Pagination";
 
 export {
-  InputRadio,
   DownloadCard,
   HorizontalImageCard,
   ImageAndDetailsCard,
