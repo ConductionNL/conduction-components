@@ -61,3 +61,7 @@
 .label > :not(:last-child) {
   margin-inline-end: var(--conduction-secondary-top-nav-item-icon-margin);
 }
+
+.link > * {
+  margin-inline-end: 8px;
+}

@@ -10,7 +10,7 @@
   border-radius: var(--skeleton-border-radius-md);
 }
 
-.link {
+.linkContainer {
   display: flex;
   flex-direction: column;
   padding-block-start: var(--skeleton-size-lg);
@@ -31,4 +31,8 @@
 .title {
   font-weight: var(--skeleton-font-weight-bold);
   font-size: var(--skeleton-font-size-xl);
+}
+
+.link > * {
+  margin-inline-end: 8px;
 }
