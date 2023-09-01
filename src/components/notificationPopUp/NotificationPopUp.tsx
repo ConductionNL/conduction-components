@@ -2,11 +2,10 @@ import * as React from "react";
 import * as styles from "./NotificationPopUp.module.css";
 import ReactDOM from "react-dom";
 import { Button } from "@gemeente-denhaag/button";
-import { Link } from "@gemeente-denhaag/link";
 import { StylesProvider } from "@gemeente-denhaag/stylesprovider";
 import clsx from "clsx";
 import { CloseIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
-import { Heading3, Paragraph } from "@utrecht/component-library-react";
+import { Heading3, Link, Paragraph } from "@utrecht/component-library-react";
 
 export interface NotificationPopUpProps {
   title: string;
@@ -63,7 +62,8 @@ export const NotificationPopUp = ({
         <div className={styles.buttons}>
           {secondaryButton && (
             <div onClick={() => handleClick(secondaryButton.handleClick)} className={secondaryButton.layoutClassName}>
-              <Link icon={secondaryButton.icon ?? <CloseIcon />} iconAlign="start">
+              <Link className={styles.link}>
+                {secondaryButton.icon ?? <CloseIcon />}
                 {secondaryButton.label}
               </Link>
             </div>

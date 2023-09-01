@@ -14,16 +14,20 @@
   padding-block-end: var(--skeleton-size-md);
 }
 
-.container > *:not(.link):not(:last-child) {
+.container > *:not(.linkContainer):not(:last-child) {
   margin-block-end: var(--skeleton-size-md);
 }
 
-.link {
+.linkContainer {
   margin-block-end: var(--skeleton-size-xs);
 }
 
-.link > :first-child {
+.linkContainer > :first-child {
   display: flex;
+}
+
+.link > * {
+  margin-inline-end: 8px;
 }
 
 .labelsWithIcon {

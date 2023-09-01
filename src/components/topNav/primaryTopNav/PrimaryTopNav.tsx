@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "./PrimaryTopNav.module.css";
 import clsx from "clsx";
-import { Link } from "@gemeente-denhaag/link";
+import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -53,7 +53,8 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProp
               className={clsx(styles.li, current && styles.current)}
               key={idx}
             >
-              <Link className={clsx(styles.link, styles.label)} icon={icon} iconAlign="start">
+              <Link className={clsx(styles.link, styles.label)}>
+                {icon}
                 {label}
               </Link>
 
@@ -65,7 +66,8 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProp
                       className={clsx(styles.li, current && styles.current)}
                       onClick={() => handleItemClick(handleClick)}
                     >
-                      <Link className={clsx(styles.link, styles.label)} icon={icon} iconAlign="start">
+                      <Link className={clsx(styles.link, styles.label)}>
+                        {icon}
                         {label}
                       </Link>
                     </li>
