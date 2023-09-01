@@ -5,6 +5,7 @@
 - **Version 2.2 (breaking changes from 2.1.x)**
 
   - 2.2.0:
+    - Removed Den Haag stylesProvider.
     - Removed Den Haag link.
     - Removed Den Haag heading.
     - Removed Den Haag paragraph.
