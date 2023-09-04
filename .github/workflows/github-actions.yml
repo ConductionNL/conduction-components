@@ -1,7 +1,10 @@
 name: Continuous Delivery
 
 on:
-  pull_request: development
+  pull_request:
+    branches:
+      - development
+      - main
 
 jobs:
   install:
