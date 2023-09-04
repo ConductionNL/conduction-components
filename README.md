@@ -4,7 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.1: Removed Den Haag icon dependencies.
+  - 2.2.1: Removed Den Haag icon dependencies and redundant RichContentCard.
   - 2.2.0:
     - Removed Den Haag designTokensComponent.
     - Removed Den Haag formControlLabel.
