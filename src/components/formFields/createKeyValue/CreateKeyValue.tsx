@@ -2,9 +2,15 @@ import * as React from "react";
 import * as styles from "./CreateKeyValue.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
-import { IInputProps } from "../input";
 import { Button } from "@gemeente-denhaag/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@gemeente-denhaag/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeaderCell,
+  TableHeader,
+  TableRow,
+} from "@utrecht/component-library-react/dist/css-module";
 import { ToolTip } from "../../toolTip/ToolTip";
 import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -111,13 +117,13 @@ const KeyValueComponent = ({
     <div className={styles.keyValue}>
       {keyValues && (
         <Table className={styles.table}>
-          <TableHead>
+          <TableHeader className={styles.tableHeader}>
             <TableRow>
-              <TableHeader>Key</TableHeader>
-              <TableHeader>Value</TableHeader>
-              <TableHeader />
+              <TableHeaderCell>Key</TableHeaderCell>
+              <TableHeaderCell>Value</TableHeaderCell>
+              <TableHeaderCell />
             </TableRow>
-          </TableHead>
+          </TableHeader>
           <TableBody>
             {keyValues.map((keyValue, idx) => (
               <TableRow key={`${keyValue.key}${keyValue.value}${idx}`}>

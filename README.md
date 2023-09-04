@@ -2,8 +2,27 @@
 
 ## Changelog
 
+- **Version 2.2 (breaking changes from 2.1.x)**
+
+  - 2.2.0:
+    - Removed Den Haag designTokensComponent.
+    - Removed Den Haag formControlLabel.
+    - Removed InputRadio component.
+    - Removed Den Haag stylesProvider.
+    - Removed Den Haag link.
+    - Removed Den Haag heading.
+    - Removed Den Haag paragraph.
+    - Removed Den Haag Table imports from CreateKeyValue component.
+    - Removed EditableTableRow component.
+    - Removed Den Haag divider.
+
 - **Version 2.1 (breaking changes from 2.0.x)**
 
+  - 2.1.40:
+    - Added border tokens to Pagination.
+    - Added border-bottom tokens to CardWrapper.
+  - 2.1.39: Added more tokens to Pagination.
+  - 2.1.38: Added Pagination.
   - 2.1.37: Added more design-tokens to all select options.
   - 2.1.36:
     - Updated CardWrapper.

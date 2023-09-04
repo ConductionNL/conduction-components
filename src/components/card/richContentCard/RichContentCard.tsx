@@ -1,8 +1,7 @@
-import { Divider } from "@gemeente-denhaag/divider";
-import { Link } from "@gemeente-denhaag/link";
-import { navigate } from "gatsby";
 import * as React from "react";
 import * as styles from "./RichContentCard.module.css";
+import { Link } from "@utrecht/component-library-react/dist/css-module";
+import { navigate } from "gatsby";
 import { ExternalLinkIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { Tag } from "../../tag/Tag";
 
@@ -33,8 +32,9 @@ export const RichContentCard = ({
 }: RichContentCardProps): JSX.Element => {
   return (
     <div className={styles.container}>
-      <div className={styles.link} onClick={() => navigate(link.href)}>
-        <Link icon={linkIsExternal ? <ExternalLinkIcon /> : <ArrowRightIcon />} iconAlign="start">
+      <div className={styles.linkContainer} onClick={() => navigate(link.href)}>
+        <Link className={styles.link}>
+          {linkIsExternal ? <ExternalLinkIcon /> : <ArrowRightIcon />}
           {link.label}
         </Link>
       </div>
@@ -53,7 +53,7 @@ export const RichContentCard = ({
 
       {contentLinks && (
         <div className={styles.contentLinks}>
-          <Divider />
+          <hr className={styles.divider} />
           {contentLinks.map(({ title, subTitle, href }, idx) => (
             <ContentLink key={idx} {...{ title, subTitle, href }} />
           ))}

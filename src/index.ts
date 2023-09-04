@@ -8,7 +8,6 @@ import {
 } from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
-import { EditableTableRow } from "./components/editableTableRow/EditableTableRow";
 import {
   InputText,
   InputPassword,
@@ -17,7 +16,6 @@ import {
   InputNumber,
   Textarea,
   InputCheckbox,
-  InputRadio,
   InputFile,
   SelectMultiple,
   SelectSingle,
@@ -34,13 +32,12 @@ import {
 } from "./components/notificationPopUp/NotificationPopUp";
 const NotificationPopUp = { controller: NotificationPopUpController, NotificationPopUp: _NotificationPopUp };
 import { QuoteWrapper } from "./components/quoteWrapper/QuoteWrapper";
-import { Pagination } from "./components/denhaag-wrappers/pagination/Pagination";
 import { BadgeCounter } from "./components/badgeCounter/BadgeCounter";
 import { CodeBlock } from "./components/codeBlock/CodeBlock";
 import { ToolTip } from "./components/toolTip/ToolTip";
+import { Pagination } from "./components/Pagination/Pagination";
 
 export {
-  InputRadio,
   DownloadCard,
   HorizontalImageCard,
   ImageAndDetailsCard,
@@ -49,7 +46,6 @@ export {
   InfoCard,
   Container,
   Breadcrumbs,
-  EditableTableRow,
   InputText,
   InputPassword,
   InputEmail,

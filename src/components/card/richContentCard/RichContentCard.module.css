@@ -14,16 +14,20 @@
   padding-block-end: var(--skeleton-size-md);
 }
 
-.container > *:not(.link):not(:last-child) {
+.container > *:not(.linkContainer):not(:last-child) {
   margin-block-end: var(--skeleton-size-md);
 }
 
-.link {
+.linkContainer {
   margin-block-end: var(--skeleton-size-xs);
 }
 
-.link > :first-child {
+.linkContainer > :first-child {
   display: flex;
+}
+
+.link > * {
+  margin-inline-end: 8px;
 }
 
 .labelsWithIcon {
@@ -90,4 +94,10 @@
 .contentLink_subTitle {
   font-size: var(--conduction-content-link-font-size);
   color: var(--denhaag-color-grey-3);
+}
+
+.divider {
+  width: 100%;
+  opacity: 0.5;
+  margin-block: var(--skeleton-size-lg);
 }
