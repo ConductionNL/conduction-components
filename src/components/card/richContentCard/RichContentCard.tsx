@@ -2,8 +2,9 @@ import * as React from "react";
 import * as styles from "./RichContentCard.module.css";
 import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { navigate } from "gatsby";
-import { ExternalLinkIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
 import { Tag } from "../../tag/Tag";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faExternalLink } from "@fortawesome/free-solid-svg-icons";
 
 export interface RichContentCardProps {
   link: {
@@ -34,7 +35,7 @@ export const RichContentCard = ({
     <div className={styles.container}>
       <div className={styles.linkContainer} onClick={() => navigate(link.href)}>
         <Link className={styles.link}>
-          {linkIsExternal ? <ExternalLinkIcon /> : <ArrowRightIcon />}
+          <FontAwesomeIcon icon={linkIsExternal ? faExternalLink : faArrowRight} />
           {link.label}
         </Link>
       </div>
@@ -80,10 +81,9 @@ const LabelWithIcon = ({ label, icon }: LabelWithIconProps): JSX.Element => {
 interface ContentLinkProps {
   title: string;
   subTitle: string;
-  href: string;
 }
 
-const ContentLink = ({ title, subTitle, href }: ContentLinkProps): JSX.Element => {
+const ContentLink = ({ title, subTitle }: ContentLinkProps): JSX.Element => {
   return (
     <Link className={styles.contentLink}>
       <div className={styles.contentLink_content}>
@@ -92,7 +92,7 @@ const ContentLink = ({ title, subTitle, href }: ContentLinkProps): JSX.Element =
       </div>
 
       <div>
-        <ArrowRightIcon />
+        <FontAwesomeIcon icon={faArrowRight} />
       </div>
     </Link>
   );
