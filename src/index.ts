@@ -1,11 +1,4 @@
-import {
-  DownloadCard,
-  HorizontalImageCard,
-  ImageAndDetailsCard,
-  RichContentCard,
-  DetailsCard,
-  InfoCard,
-} from "./components/card";
+import { DownloadCard, HorizontalImageCard, ImageAndDetailsCard, DetailsCard, InfoCard } from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 import {
@@ -41,7 +34,6 @@ export {
   DownloadCard,
   HorizontalImageCard,
   ImageAndDetailsCard,
-  RichContentCard,
   DetailsCard,
   InfoCard,
   Container,
