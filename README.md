@@ -10,6 +10,7 @@
     - Removed Den Haag SideNav dependencies.
     - Removed Den Haag Textarea dependencies.
     - Removed Den Haag Process Steps dependencies.
+    - Removed Den Haag Form Field dependencies.
   - 2.2.1: Removed Den Haag icon dependencies and redundant RichContentCard.
   - 2.2.0:
     - Removed Den Haag designTokensComponent.
