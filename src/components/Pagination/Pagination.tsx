@@ -3,7 +3,7 @@ import * as styles from "./Pagination.module.css";
 import clsx from "clsx";
 
 import ReactPaginate from "react-paginate";
-import Button from "@gemeente-denhaag/button";
+import { Button } from "@utrecht/component-library-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -29,6 +29,8 @@ export const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage,
       disableInitialCallback
       marginPagesDisplayed={2}
       breakLabel="..."
+      nextClassName={styles.next}
+      previousClassName={styles.previous}
       nextLabel={
         <Button className={styles.button}>
           <FontAwesomeIcon icon={faChevronRight} />

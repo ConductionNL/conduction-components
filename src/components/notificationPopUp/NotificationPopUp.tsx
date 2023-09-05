@@ -1,9 +1,8 @@
 import * as React from "react";
 import * as styles from "./NotificationPopUp.module.css";
 import ReactDOM from "react-dom";
-import { Button } from "@gemeente-denhaag/button";
 import clsx from "clsx";
-import { Heading3, Link, Paragraph } from "@utrecht/component-library-react";
+import { Heading3, Link, Paragraph, Button } from "@utrecht/component-library-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faClose } from "@fortawesome/free-solid-svg-icons";
 
@@ -69,10 +68,10 @@ export const NotificationPopUp = ({
         )}
 
         <Button
-          icon={primaryButton.icon ?? <FontAwesomeIcon icon={faArrowRight} />}
           onClick={() => handleClick(primaryButton.handleClick)}
-          className={primaryButton.layoutClassName}
+          className={clsx(styles.button, primaryButton.layoutClassName)}
         >
+          {primaryButton.icon ?? <FontAwesomeIcon icon={faArrowRight} />}
           {primaryButton.label}
         </Button>
       </div>

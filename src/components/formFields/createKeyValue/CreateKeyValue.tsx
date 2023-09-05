@@ -2,7 +2,6 @@ import * as React from "react";
 import * as styles from "./CreateKeyValue.module.css";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
-import { Button } from "@gemeente-denhaag/button";
 import {
   Table,
   TableBody,
@@ -10,6 +9,8 @@ import {
   TableHeaderCell,
   TableHeader,
   TableRow,
+  Textbox,
+  Button,
 } from "@utrecht/component-library-react/dist/css-module";
 import { ToolTip } from "../../toolTip/ToolTip";
 import clsx from "clsx";
@@ -136,7 +137,7 @@ const KeyValueComponent = ({
                         <Button
                           {...{ disabled }}
                           onClick={() => handleCopyToClipboard(keyValue.value, idx)}
-                          variant={currentCopyIdx === idx ? "secondary-action" : "primary-action"}
+                          appearance={currentCopyIdx === idx ? "secondary-action-button" : "primary-action-button"}
                         >
                           <FontAwesomeIcon icon={faCopy} />
                         </Button>
@@ -160,22 +161,20 @@ const KeyValueComponent = ({
       )}
 
       <div className={styles.form}>
-        <input
+        <Textbox
           type="text"
           placeholder="Key"
           value={currentKey}
           ref={currentKeyRef}
-          className="denhaag-textfield__input"
           onChange={(e) => setCurrentKey(e.target.value)}
           {...{ disabled }}
         />
 
-        <input
+        <Textbox
           type="text"
           placeholder="Value"
           value={currentValue}
           ref={currentValueRef}
-          className="denhaag-textfield__input"
           onChange={(e) => setCurrentValue(e.target.value)}
           {...{ disabled }}
         />
