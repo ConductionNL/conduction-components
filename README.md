@@ -4,9 +4,12 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.4: Removed Den Haag SideNav dependencies.
-  - 2.2.3: Removed Den Haag Textarea dependencies.
-  - 2.2.2: Removed Den Haag Textfield dependencies.
+  - 2.2.2:
+    - Removed Den Haag Textfield dependencies.
+    - Removed Den Haag SideNav dependencies.
+    - Removed Den Haag SideNav dependencies.
+    - Removed Den Haag Textarea dependencies.
+    - Removed Den Haag Process Steps dependencies.
   - 2.2.1: Removed Den Haag icon dependencies and redundant RichContentCard.
   - 2.2.0:
     - Removed Den Haag designTokensComponent.
