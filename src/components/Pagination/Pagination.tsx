@@ -29,6 +29,8 @@ export const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage,
       disableInitialCallback
       marginPagesDisplayed={2}
       breakLabel="..."
+      nextClassName={styles.next}
+      previousClassName={styles.previous}
       nextLabel={
         <Button className={styles.button}>
           <FontAwesomeIcon icon={faChevronRight} />

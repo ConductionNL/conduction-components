@@ -59,7 +59,7 @@
   user-select: none;
 }
 
-.container > li > a {
+.container > li:not(.previous):not(.next) > a {
   color: var(--conduction-pagination-item-color);
   background-color: var(--conduction-pagination-item-background-color);
   border-radius: var(--conduction-pagination-item-border-radius);
@@ -99,7 +99,7 @@
   cursor: pointer;
 }
 
-.container > li:hover:not(.disabled):not(.currentPage) > a {
+.container > li:hover:not(.disabled):not(.currentPage):not(.next):not(.previous) > a {
   color: var(--conduction-pagination-page-hover-color);
   background-color: var(--conduction-pagination-page-hover-background-color);
   text-decoration: var(--conduction-pagination-page-hover-text-decoration);
