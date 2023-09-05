@@ -10,6 +10,7 @@ import {
   TableHeaderCell,
   TableHeader,
   TableRow,
+  Textbox,
 } from "@utrecht/component-library-react/dist/css-module";
 import { ToolTip } from "../../toolTip/ToolTip";
 import clsx from "clsx";
@@ -160,22 +161,20 @@ const KeyValueComponent = ({
       )}
 
       <div className={styles.form}>
-        <input
+        <Textbox
           type="text"
           placeholder="Key"
           value={currentKey}
           ref={currentKeyRef}
-          className="denhaag-textfield__input"
           onChange={(e) => setCurrentKey(e.target.value)}
           {...{ disabled }}
         />
 
-        <input
+        <Textbox
           type="text"
           placeholder="Value"
           value={currentValue}
           ref={currentValueRef}
-          className="denhaag-textfield__input"
           onChange={(e) => setCurrentValue(e.target.value)}
           {...{ disabled }}
         />
