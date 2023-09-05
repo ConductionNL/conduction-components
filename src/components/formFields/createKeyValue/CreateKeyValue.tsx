@@ -137,7 +137,7 @@ const KeyValueComponent = ({
                         <Button
                           {...{ disabled }}
                           onClick={() => handleCopyToClipboard(keyValue.value, idx)}
-                          appearance={currentCopyIdx === idx ? "secondary-action" : "primary-action"}
+                          appearance={currentCopyIdx === idx ? "secondary-action-button" : "primary-action-button"}
                         >
                           <FontAwesomeIcon icon={faCopy} />
                         </Button>
