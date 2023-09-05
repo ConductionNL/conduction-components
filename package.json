@@ -23,7 +23,6 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@gemeente-denhaag/button": "0.2.3-alpha.205",
     "@utrecht/component-library-react": "^1.0.0-alpha.319",
     "clsx": "^1.1.1",
     "gatsby": "^4.11.1",

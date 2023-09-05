@@ -32,6 +32,11 @@
   margin-inline-end: var(--skeleton-size-md);
 }
 
+.button {
+  display: flex;
+  gap: 8px;
+}
+
 .visible {
   animation-name: fadeInBottom;
 }

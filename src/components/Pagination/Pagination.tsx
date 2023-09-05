@@ -3,7 +3,7 @@ import * as styles from "./Pagination.module.css";
 import clsx from "clsx";
 
 import ReactPaginate from "react-paginate";
-import Button from "@gemeente-denhaag/button";
+import { Button } from "@utrecht/component-library-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
