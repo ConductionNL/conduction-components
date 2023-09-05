@@ -7,7 +7,6 @@
   - 2.2.2:
     - Removed Den Haag Textfield dependencies.
     - Removed Den Haag SideNav dependencies.
-    - Removed Den Haag SideNav dependencies.
     - Removed Den Haag Textarea dependencies.
     - Removed Den Haag Process Steps dependencies.
     - Removed Den Haag Form Field dependencies.
