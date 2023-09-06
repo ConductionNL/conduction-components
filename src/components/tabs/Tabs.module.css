@@ -1,0 +1,102 @@
+:root {
+  --conduction-tab-list-padding-inline-start: 0px;
+  --conduction-tab-list-border-bottom-width: var(--skeleton-size-3xs);
+  --conduction-tab-list-border-bottom-style: solid;
+  --conduction-tab-list-border-bottom-color: #d1d1d1;
+
+  --conduction-tab-padding-block-start: var(--skeleton-size-xs);
+  --conduction-tab-padding-block-end: var(--skeleton-size-xs);
+  --conduction-tab-padding-inline-start: var(--skeleton-size-sm);
+  --conduction-tab-padding-inline-end: var(--skeleton-size-sm);
+  --conduction-tab-font-size: var(--skeleton-font-size-sm: );
+  --conduction-tab-font-weight: var(--skeleton-font-weight-normal);
+  --conduction-tab-font-family: "Noto Sans", Arial, sans-serif;
+  --conduction-tab-max-width: unset;
+  --conduction-tab-min-width: 160px;
+  --conduction-tab-min-height: 61px;
+  /* --conduction-tab-letter-spacing: 0.02857em; */
+  /* --conduction-tab-text-transform: uppercase; */
+  --conduction-tab-color: #4a4a4a;
+
+  --conduction-tab-selected-color: #4a4a4a;
+  --conduction-tab-selected-border-bottom-width: var(--skeleton-size-3xs);
+  --conduction-tab-selected-border-bottom-style: solid;
+  --conduction-tab-selected-border-bottom-color: #4376fc;
+  --conduction-tab-selected-font-weight: var(--skeleton-font-weight-bold);
+
+  --conduction-tab-panel-padding-block-start: var(--skeleton-size-lg);
+  --conduction-tab-panel-padding-block-end: var(--skeleton-size-lg);
+  --conduction-tab-panel-padding-inline-start: var(--skeleton-size-lg);
+  --conduction-tab-panel-padding-inline-end: var(--skeleton-size-lg);
+
+  --conduction-tab-badge-margin-inline-start: var(--skeleton-size-xs);
+}
+
+.tabList {
+  padding-inline-start: var(--conduction-tab-list-padding-inline-start);
+  border-bottom-width: var(--conduction-tab-list-border-bottom-width);
+  border-bottom-style: var(--conduction-tab-list-border-bottom-style);
+  border-bottom-color: var(--conduction-tab-list-border-bottom-color);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+  bottom: -2px;
+
+  color: var(--conduction-tab-color);
+  padding-block-start: var(--conduction-tab-padding-block-start);
+  padding-block-end: var(--conduction-tab-padding-block-end);
+  padding-inline-start: var(--conduction-tab-padding-inline-start);
+  padding-inline-end: var(--conduction-tab-padding-inline-end);
+  font-size: var(--conduction-tab-font-size);
+  font-weight: var(--conduction-tab-font-weight);
+  font-family: var(--conduction-tab-font-family);
+  max-width: var(--conduction-tab-max-width);
+  min-width: var(--conduction-tab-min-width);
+  min-height: var(--conduction-tab-min-height);
+  letter-spacing: var(--conduction-tab-letter-spacing);
+  text-transform: var(--conduction-tab-text-transform);
+
+  border-bottom-width: var(--conduction-tab-list-border-bottom-width);
+  border-bottom-style: var(--conduction-tab-list-border-bottom-style);
+  border-bottom-color: var(--conduction-tab-list-border-bottom-color);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--conduction-tab-selected-color);
+  border-bottom-width: var(--conduction-tab-selected-border-bottom-width);
+  border-bottom-style: var(--conduction-tab-selected-border-bottom-style);
+  border-bottom-color: var(--conduction-tab-selected-border-bottom-color);
+  font-weight: var(--conduction-tab-selected-font-weight);
+}
+
+.tabs [class*="react-tabs__tab-panel--selected"] {
+  padding-block-start: var(--conduction-tab-panel-padding-block-start);
+  padding-block-end: var(--conduction-tab-panel-padding-block-end);
+  padding-inline-start: var(--conduction-tab-panel-padding-inline-start);
+  padding-inline-end: var(--conduction-tab-panel-padding-inline-end);
+}
+
+.badge {
+  margin-inline-start: var(--conduction-tab-badge-margin-inline-start);
+  background-color: var(--utrecht-badge-counter-background-color, var(--utrecht-badge-background-color, #000));
+  border-radius: var(--utrecht-badge-counter-border-radius, var(--utrecht-badge-border-radius, 0.5ch));
+  color: var(--utrecht-badge-counter-color, var(--utrecht-badge-color, #fff));
+  display: inline-block;
+  font-family: var(--utrecht-document-font-family, sans-serif);
+  font-style: var(--utrecht-badge-counter-font-style, normal);
+  font-weight: var(--utrecht-badge-counter-font-weight, var(--utrecht-badge-font-weight, bold));
+  padding-block-end: var(--utrecht-badge-counter-padding-block, var(--utrecht-badge-padding-block, 0.5ex));
+  padding-block-start: var(--utrecht-badge-counter-padding-block, var(--utrecht-badge-padding-block, 0.5ex));
+  padding-inline-end: var(--utrecht-badge-counter-padding-inline, var(--utrecht-badge-padding-inline, 0.5ch));
+  padding-inline-start: var(--utrecht-badge-counter-padding-inline, var(--utrecht-badge-padding-inline, 0.5ch));
+  text-decoration: none;
+}
