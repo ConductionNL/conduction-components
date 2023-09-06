@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.3: Added Tabs component.
   - 2.2.2:
     - Removed Den Haag Textfield dependencies.
     - Removed Den Haag SideNav dependencies.
