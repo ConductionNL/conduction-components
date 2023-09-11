@@ -1,13 +1,19 @@
 :root {
-  --conduction-tab-list-padding-inline-start: 0px;
-  --conduction-tab-list-border-bottom-width: var(--skeleton-size-3xs);
-  --conduction-tab-list-border-bottom-style: solid;
-  --conduction-tab-list-border-bottom-color: #d1d1d1;
-
+  --conduction-tab-background-color: #ffffff;
+  --conduction-tab-color: #4a4a4a;
+  /* --conduction-tab-border-width: 0px; */
+  /* --conduction-tab-border-style: solid; */
+  /* --conduction-tab-border-color: #ffffff; */
+  /* --conduction-tab-border-bottom: 0px; */
+  /* --conduction-tab-border-bottom-width: var(--skeleton-size-3xs); */
+  /* --conduction-tab-border-bottom-style: solid; */
+  /* --conduction-tab-border-bottom-color: #d1d1d1; */
+  --conduction-tab-bottom: -2px;
   --conduction-tab-padding-block-start: var(--skeleton-size-xs);
   --conduction-tab-padding-block-end: var(--skeleton-size-xs);
   --conduction-tab-padding-inline-start: var(--skeleton-size-sm);
   --conduction-tab-padding-inline-end: var(--skeleton-size-sm);
+  /* --conduction-tab-margin-inline-end: var(--skeleton-size-xs); */
   --conduction-tab-font-size: var(--skeleton-font-size-sm: );
   --conduction-tab-font-weight: var(--skeleton-font-weight-normal);
   --conduction-tab-font-family: "Noto Sans", Arial, sans-serif;
@@ -16,27 +22,45 @@
   --conduction-tab-min-height: 61px;
   /* --conduction-tab-letter-spacing: 0.02857em; */
   /* --conduction-tab-text-transform: uppercase; */
-  --conduction-tab-color: #4a4a4a;
 
+  --conduction-tab-selected-background-color: #ffffff;
   --conduction-tab-selected-color: #4a4a4a;
+  /* --conduction-tab-selected-box-shadow: 0px 1px 0px 1px #ffffff; */
+  /* --conduction-tab-selected-border-width: 0px; */
+  /* --conduction-tab-selected-border-style: solid; */
+  /* --conduction-tab-selected-border-color: #ffffff; */
+  /* --conduction-tab-selected-border-bottom: 0; */
   --conduction-tab-selected-border-bottom-width: var(--skeleton-size-3xs);
   --conduction-tab-selected-border-bottom-style: solid;
   --conduction-tab-selected-border-bottom-color: #4376fc;
   --conduction-tab-selected-font-weight: var(--skeleton-font-weight-bold);
+  --conduction-tab-selected-font-family: "Noto Sans", Arial, sans-serif;
+  /* --conduction-tab-selected-hover-background-color: #ffffff; */
+  /* --conduction-tab-selected-hover-color: #4a4a4a; */
+  /* --conduction-tab-selected-hover-text-decoration: underline; */
 
+  /* --conduction-tab-hover-background-color: #ffffff; */
+  /* --conduction-tab-hover-color: #4a4a4a; */
+  /* --conduction-tab-hover-text-decoration: underline; */
+
+  --conduction-tab-list-padding-inline-start: 0px;
+  --conduction-tab-list-margin-block-end: 16px;
+  --conduction-tab-list-border-bottom-width: var(--skeleton-size-3xs);
+  --conduction-tab-list-border-bottom-style: solid;
+  --conduction-tab-list-border-bottom-color: #d1d1d1;
+
+  /* --conduction-tab-panel-background-color: #ffffff; */
   --conduction-tab-panel-padding-block-start: var(--skeleton-size-lg);
   --conduction-tab-panel-padding-block-end: var(--skeleton-size-lg);
   --conduction-tab-panel-padding-inline-start: var(--skeleton-size-lg);
   --conduction-tab-panel-padding-inline-end: var(--skeleton-size-lg);
+  /* --conduction-tab-panel-border-width: 0px; */
+  /* --conduction-tab-panel-border-style: solid; */
+  /* --conduction-tab-panel-border-color: #ffffff; */
+  /* --conduction-tab-panel-border-top: 0; */
 
   --conduction-tab-badge-margin-inline-start: var(--skeleton-size-xs);
-}
-
-.tabList {
-  padding-inline-start: var(--conduction-tab-list-padding-inline-start);
-  border-bottom-width: var(--conduction-tab-list-border-bottom-width);
-  border-bottom-style: var(--conduction-tab-list-border-bottom-style);
-  border-bottom-color: var(--conduction-tab-list-border-bottom-color);
+  /* --conduction-tab-badge-bottom: 0px; */
 }
 
 .tab {
@@ -49,13 +73,22 @@
   box-sizing: border-box;
   text-align: center;
   white-space: normal;
-  bottom: -2px;
 
+  background-color: var(--conduction-tab-background-color);
   color: var(--conduction-tab-color);
+  border-width: var(--conduction-tab-border-width);
+  border-style: var(--conduction-tab-border-style);
+  border-color: var(--conduction-tab-border-color);
+  border-bottom: var(--conduction-tab-border-bottom);
+  border-bottom-width: var(--conduction-tab-border-bottom-width);
+  border-bottom-style: var(--conduction-tab-border-bottom-style);
+  border-bottom-color: var(--conduction-tab-border-bottom-color);
+  bottom: var(--conduction-tab-bottom);
   padding-block-start: var(--conduction-tab-padding-block-start);
   padding-block-end: var(--conduction-tab-padding-block-end);
   padding-inline-start: var(--conduction-tab-padding-inline-start);
   padding-inline-end: var(--conduction-tab-padding-inline-end);
+  margin-inline-end: var(--conduction-tab-margin-inline-end);
   font-size: var(--conduction-tab-font-size);
   font-weight: var(--conduction-tab-font-weight);
   font-family: var(--conduction-tab-font-family);
@@ -64,39 +97,62 @@
   min-height: var(--conduction-tab-min-height);
   letter-spacing: var(--conduction-tab-letter-spacing);
   text-transform: var(--conduction-tab-text-transform);
+}
 
+.tabBadge {
+  bottom: calc(var(--conduction-tab-bottom, 0px) + var(--conduction-tab-badge-bottom, 0px));
+}
+
+/* TabSelected */
+.tab[aria-selected="true"] {
+  background-color: var(--conduction-tab-selected-background-color);
+  color: var(--conduction-tab-selected-color);
+  box-shadow: var(--conduction-tab-selected-box-shadow);
+  border-width: var(--conduction-tab-selected-border-width);
+  border-style: var(--conduction-tab-selected-border-style);
+  border-color: var(--conduction-tab-selected-border-color);
+  border-bottom: var(--conduction-tab-selected-border-bottom);
+  border-bottom-width: var(--conduction-tab-selected-border-bottom-width);
+  border-bottom-style: var(--conduction-tab-selected-border-bottom-style);
+  border-bottom-color: var(--conduction-tab-selected-border-bottom-color);
+  font-weight: var(--conduction-tab-selected-font-weight);
+  font-family: var(--conduction-tab-selected-font-family);
+}
+
+.tab[aria-selected="true"]:hover {
+  background-color: var(--conduction-tab-selected-hover-background-color);
+  color: var(--conduction-tab-selected-hover-color);
+  text-decoration: var(--conduction-tab-selected-hover-text-decoration);
+}
+.tab:hover {
+  background-color: var(--conduction-tab-hover-background-color);
+  color: var(--conduction-tab-hover-color);
+  text-decoration: var(--conduction-tab-hover-text-decoration);
+}
+
+.tabList {
+  padding-inline-start: var(--conduction-tab-list-padding-inline-start);
+  margin-block-end: var(--conduction-tab-list-margin-block-end);
   border-bottom-width: var(--conduction-tab-list-border-bottom-width);
   border-bottom-style: var(--conduction-tab-list-border-bottom-style);
   border-bottom-color: var(--conduction-tab-list-border-bottom-color);
 }
 
-.tab[aria-selected="true"] {
-  color: var(--conduction-tab-selected-color);
-  border-bottom-width: var(--conduction-tab-selected-border-bottom-width);
-  border-bottom-style: var(--conduction-tab-selected-border-bottom-style);
-  border-bottom-color: var(--conduction-tab-selected-border-bottom-color);
-  font-weight: var(--conduction-tab-selected-font-weight);
-}
-
+/* TabPanel */
 .tabs [class*="react-tabs__tab-panel--selected"] {
+  background-color: var(--conduction-tab-panel-background-color);
   padding-block-start: var(--conduction-tab-panel-padding-block-start);
   padding-block-end: var(--conduction-tab-panel-padding-block-end);
   padding-inline-start: var(--conduction-tab-panel-padding-inline-start);
   padding-inline-end: var(--conduction-tab-panel-padding-inline-end);
+  border-width: var(--conduction-tab-panel-border-width);
+  border-style: var(--conduction-tab-panel-border-style);
+  border-color: var(--conduction-tab-panel-border-color);
+  border-top: var(--conduction-tab-panel-border-top);
 }
 
 .badge {
+  font-family: var(--utrecht-badge-counter-font-family) !important;
+  font-size: var(--conduction-tab-font-size) !important;
   margin-inline-start: var(--conduction-tab-badge-margin-inline-start);
-  background-color: var(--utrecht-badge-counter-background-color, var(--utrecht-badge-background-color, #000));
-  border-radius: var(--utrecht-badge-counter-border-radius, var(--utrecht-badge-border-radius, 0.5ch));
-  color: var(--utrecht-badge-counter-color, var(--utrecht-badge-color, #fff));
-  display: inline-block;
-  font-family: var(--utrecht-document-font-family, sans-serif);
-  font-style: var(--utrecht-badge-counter-font-style, normal);
-  font-weight: var(--utrecht-badge-counter-font-weight, var(--utrecht-badge-font-weight, bold));
-  padding-block-end: var(--utrecht-badge-counter-padding-block, var(--utrecht-badge-padding-block, 0.5ex));
-  padding-block-start: var(--utrecht-badge-counter-padding-block, var(--utrecht-badge-padding-block, 0.5ex));
-  padding-inline-end: var(--utrecht-badge-counter-padding-inline, var(--utrecht-badge-padding-inline, 0.5ch));
-  padding-inline-start: var(--utrecht-badge-counter-padding-inline, var(--utrecht-badge-padding-inline, 0.5ch));
-  text-decoration: none;
 }
