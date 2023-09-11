@@ -30,6 +30,7 @@ import { CodeBlock } from "./components/codeBlock/CodeBlock";
 import { ToolTip } from "./components/toolTip/ToolTip";
 import { Pagination } from "./components/Pagination/Pagination";
 import { TabContext } from "./components/tabs/Tabs";
+import { Tabs, TabList, Tab, TabPanel } from "./components/temp/Temp";
 
 export {
   DownloadCard,
@@ -64,4 +65,8 @@ export {
   CodeBlock,
   ToolTip,
   TabContext,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanel,
 };
