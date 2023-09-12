@@ -7,8 +7,11 @@ interface ToolTipProps {
 }
 
 /**
- * This ToolTip should only be implemented once, after implementing it can be used in any element, like so:
- * <AnyElement data-tooltip-id="id-that-was-passed-to-ToolTip" data-tooltip-content="Hello world!" />
+ * Implement this ToolTip only once, in a high-level wrapper.
+ * Use the ToolTip anywhere, in any element, by setting the following data props:
+ *
+ * data-tooltip-id="this-is-the-id-set-in-ToolTipProps"
+ * data-tooltip-content="Hello world!"
  */
 
 export const ToolTip: React.FC<ToolTipProps> = ({ id }) => {

@@ -1,1 +1,33 @@
-/* to-do */
+:root {
+  --conduction-tooltip-padding-inline-start: 0px;
+  --conduction-tooltip-padding-inline-end: 0px;
+  --conduction-tooltip-padding-block-start: 0px;
+  --conduction-tooltip-padding-block-end: 0px;
+
+  --conduction-tooltip-background-color: var(--skeleton-color-black);
+  --conduction-tooltip-color: var(--skeleton-color-white);
+
+  --conduction-tooltip-border-width: 0px;
+  --conduction-tooltip-border-color: unset;
+  --conduction-tooltip-border-style: unset;
+  --conduction-tooltip-border-radius: 0px;
+
+  --conduction-tooltip-opacity: 1;
+}
+
+.tooltip {
+  padding-inline-start: var(--conduction-tooltip-padding-inline-start);
+  padding-inline-end: var(--conduction-tooltip-padding-inline-end);
+  padding-block-start: var(--conduction-tooltip-padding-block-start);
+  padding-block-end: var(--conduction-tooltip-padding-block-end);
+
+  background-color: var(--conduction-tooltip-background-color) !important;
+  color: var(--conduction-tooltip-color) !important;
+
+  border-width: var(--conductino-tooltip-border-width);
+  border-color: var(--conduction-tooltip-border-color);
+  border-style: var(--conduction-tooltip-border-style);
+  border-radius: var(--conduction-tooltip-border-radius) !important;
+
+  opacity: var(--conduction-tooltip-opacity);
+}
