@@ -12,7 +12,6 @@ import {
   Textbox,
   Button,
 } from "@utrecht/component-library-react/dist/css-module";
-import { ToolTip } from "../../toolTip/ToolTip";
 import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -133,25 +132,21 @@ const KeyValueComponent = ({
                 <TableCell>
                   <div className={styles.buttonsContainer}>
                     {copyValue && (
-                      <ToolTip tooltip="Copy value">
-                        <Button
-                          {...{ disabled }}
-                          onClick={() => handleCopyToClipboard(keyValue.value, idx)}
-                          appearance={currentCopyIdx === idx ? "secondary-action-button" : "primary-action-button"}
-                        >
-                          <FontAwesomeIcon icon={faCopy} />
-                        </Button>
-                      </ToolTip>
-                    )}
-                    <ToolTip tooltip="Delete value">
                       <Button
                         {...{ disabled }}
-                        onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
-                        className={clsx(styles.deleteButton)}
+                        onClick={() => handleCopyToClipboard(keyValue.value, idx)}
+                        appearance={currentCopyIdx === idx ? "secondary-action-button" : "primary-action-button"}
                       >
-                        <FontAwesomeIcon icon={faTrash} />
+                        <FontAwesomeIcon icon={faCopy} />
                       </Button>
-                    </ToolTip>
+                    )}
+                    <Button
+                      {...{ disabled }}
+                      onClick={() => setKeyValues(keyValues.filter((_keyValue) => _keyValue !== keyValue))}
+                      className={clsx(styles.deleteButton)}
+                    >
+                      <FontAwesomeIcon icon={faTrash} />
+                    </Button>
                   </div>
                 </TableCell>
               </TableRow>
