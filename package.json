@@ -1,6 +1,6 @@
 {
   "name": "@conduction/components",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "React (Gatsby) components used within the Conduction Skeleton Application (and its implementations)",
   "main": "lib/index.js",
   "scripts": {
@@ -12,12 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/ConductionNL/conduction-components.git"
   },
-  "keywords": [
-    "React",
-    "Gatsby",
-    "Conduction",
-    "Components"
-  ],
+  "keywords": ["React", "Gatsby", "Conduction", "Components"],
   "author": "Conduction B.V.",
   "license": "ISC",
   "bugs": {
