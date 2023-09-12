@@ -18,8 +18,8 @@
   --conduction-tab-font-weight: var(--skeleton-font-weight-normal);
   --conduction-tab-font-family: "Noto Sans", Arial, sans-serif;
   --conduction-tab-max-width: unset;
-  --conduction-tab-min-width: 160px;
-  --conduction-tab-min-height: 61px;
+  --conduction-tab-min-width: 0;
+  --conduction-tab-min-height: 0;
   /* --conduction-tab-letter-spacing: 0.02857em; */
   /* --conduction-tab-text-transform: uppercase; */
 
@@ -99,10 +99,6 @@
   text-transform: var(--conduction-tab-text-transform);
 }
 
-.tabBadge {
-  bottom: calc(var(--conduction-tab-bottom, 0px) + var(--conduction-tab-badge-bottom, 0px));
-}
-
 /* TabSelected */
 .tab[aria-selected="true"] {
   background-color: var(--conduction-tab-selected-background-color);
@@ -131,6 +127,7 @@
 }
 
 .tabList {
+  display: flex;
   padding-inline-start: var(--conduction-tab-list-padding-inline-start);
   margin-block-end: var(--conduction-tab-list-margin-block-end);
   border-bottom-width: var(--conduction-tab-list-border-bottom-width);
@@ -149,10 +146,4 @@
   border-style: var(--conduction-tab-panel-border-style);
   border-color: var(--conduction-tab-panel-border-color);
   border-top: var(--conduction-tab-panel-border-top);
-}
-
-.badge {
-  font-family: var(--utrecht-badge-counter-font-family) !important;
-  font-size: var(--conduction-tab-font-size) !important;
-  margin-inline-start: var(--conduction-tab-badge-margin-inline-start);
 }

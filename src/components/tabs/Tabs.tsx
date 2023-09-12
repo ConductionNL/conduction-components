@@ -11,7 +11,6 @@ import {
   TabListProps,
   TabsProps,
 } from "react-tabs";
-import clsx from "clsx";
 
 // Tabs
 export const Tabs: ReactTabsFunctionComponent<TabsProps> = ({ children, ...otherProps }) => (
@@ -31,13 +30,9 @@ export const TabList: ReactTabsFunctionComponent<TabListProps> = ({ children, ..
 
 TabList.tabsRole = "TabList";
 
-interface RTabProps {
-  badge?: boolean;
-}
-
 // Tab
-export const Tab: ReactTabsFunctionComponent<TabProps & RTabProps> = ({ children, badge, ...otherProps }) => (
-  <RTab className={clsx(styles.tab, badge && styles.tabBadge)} {...otherProps}>
+export const Tab: ReactTabsFunctionComponent<TabProps> = ({ children, ...otherProps }) => (
+  <RTab className={styles.tab} {...otherProps}>
     {children}
   </RTab>
 );
