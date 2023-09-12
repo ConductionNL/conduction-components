@@ -5,6 +5,7 @@
 - **Version 2.2 (breaking changes from 2.1.x)**
 
   - 2.2.4: Updated Tabs component.
+  - 2.2.4: Refactor the Tooltip component to include react-tooltip version 5+.
   - 2.2.3: Added Tabs component.
   - 2.2.2:
     - Removed Den Haag Textfield dependencies.
