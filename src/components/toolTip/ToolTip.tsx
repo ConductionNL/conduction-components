@@ -1,23 +1,19 @@
-import clsx from "clsx";
-import _ from "lodash";
 import * as React from "react";
-import ReactTooltip from "react-tooltip";
 import * as styles from "./ToolTip.module.css";
+import { Tooltip } from "react-tooltip";
 
 interface ToolTipProps {
-  children: React.ReactNode;
-  tooltip: string;
-  layoutClassName?: string;
+  id: string;
 }
 
-export const ToolTip = ({ children, layoutClassName, tooltip }: React.PropsWithChildren<ToolTipProps>): JSX.Element => {
-  return (
-    <div className={clsx(styles.wrapper, layoutClassName && layoutClassName)}>
-      <div data-tip={tooltip}>{children}</div>
+/**
+ * Implement this ToolTip only once, in a high-level wrapper.
+ * Use the ToolTip anywhere, in any element, by setting the following data props:
+ *
+ * data-tooltip-id="this-is-the-id-set-in-ToolTipProps"
+ * data-tooltip-content="Hello world!"
+ */
 
-      <ReactTooltip place={"top"} type={"dark"} effect={"solid"} className={styles.tooltip} />
-    </div>
-  );
+export const ToolTip: React.FC<ToolTipProps> = ({ id }) => {
+  return <Tooltip className={styles.tooltip} {...{ id }} />;
 };
-
-export { ReactTooltip };

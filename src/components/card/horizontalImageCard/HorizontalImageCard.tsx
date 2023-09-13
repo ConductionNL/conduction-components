@@ -3,7 +3,8 @@ import * as styles from "./HorizontalImageCard.module.css";
 import clsx from "clsx";
 import { Link } from "@utrecht/component-library-react";
 import { navigate } from "gatsby";
-import { ExternalLinkIcon, ArrowRightIcon } from "@gemeente-denhaag/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faExternalLink } from "@fortawesome/free-solid-svg-icons";
 
 interface HorizontalImageCardProps {
   iconOrImage: JSX.Element;
@@ -29,7 +30,7 @@ export const HorizontalImageCard = ({
       <div className={styles.linkContainer}>
         <div className={styles.title}>{title}</div>
         <Link className={styles.link}>
-          {external ? <ExternalLinkIcon /> : <ArrowRightIcon />}
+          <FontAwesomeIcon icon={external ? faExternalLink : faArrowRight} />
           {link.label}
         </Link>
       </div>

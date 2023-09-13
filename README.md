@@ -4,6 +4,17 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.5: Updated Tabs component.
+  - 2.2.4: Refactor the Tooltip component to include react-tooltip version 5+.
+  - 2.2.3: Added Tabs component.
+  - 2.2.2:
+    - Removed Den Haag Textfield dependencies.
+    - Removed Den Haag SideNav dependencies.
+    - Removed Den Haag Textarea dependencies.
+    - Removed Den Haag Process Steps dependencies.
+    - Removed Den Haag Form Field dependencies.
+    - Removed Den Haag Button dependencies.
+  - 2.2.1: Removed Den Haag icon dependencies and redundant RichContentCard.
   - 2.2.0:
     - Removed Den Haag designTokensComponent.
     - Removed Den Haag formControlLabel.
