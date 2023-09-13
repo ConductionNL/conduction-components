@@ -56,9 +56,6 @@
   /* --conduction-tabs-tab-panel-border-style: solid; */
   /* --conduction-tabs-tab-panel-border-color: #ffffff; */
   /* --conduction-tabs-tab-panel-border-top: 0; */
-
-  --conduction-tabs-tab-badge-margin-inline-start: var(--skeleton-size-xs);
-  /* --conduction-tabs-tab-badge-bottom: 0px; */
 }
 
 .tab {
