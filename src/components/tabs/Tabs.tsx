@@ -1,37 +1,47 @@
 import * as React from "react";
 import * as styles from "./Tabs.module.css";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { BadgeCounter } from "@utrecht/component-library-react";
+import {
+  Tabs as RTabs,
+  TabList as RTabList,
+  Tab as RTab,
+  TabPanel as RTabPanel,
+  ReactTabsFunctionComponent,
+  TabProps,
+  TabPanelProps,
+  TabListProps,
+  TabsProps,
+} from "react-tabs";
 
-interface testProps {
-  tabs: ITabProps[];
-  tabContent: ITabPanelProps[];
-}
+// Tabs
+export const Tabs: ReactTabsFunctionComponent<TabsProps> = ({ children, ...otherProps }) => (
+  <RTabs className={styles.tabs} {...otherProps}>
+    {children}
+  </RTabs>
+);
 
-interface ITabProps {
-  name: string;
-  badge?: string;
-}
-interface ITabPanelProps {
-  content: JSX.Element;
-}
+Tabs.tabsRole = "Tabs";
 
-export const TabContext: React.FC<testProps> = ({ tabs, tabContent }) => {
-  return (
-    <Tabs className={styles.tabs}>
-      <TabList className={styles.tabList}>
-        {tabs.map(({ name, badge }) => (
-          <Tab className={styles.tab}>
-            <span>
-              {name}
-              {badge !== undefined && <BadgeCounter className={styles.badge}>{badge}</BadgeCounter>}
-            </span>
-          </Tab>
-        ))}
-      </TabList>
-      {tabContent.map(({ content }) => (
-        <TabPanel className={styles.tabPanel}>{content}</TabPanel>
-      ))}
-    </Tabs>
-  );
-};
+// TabList
+export const TabList: ReactTabsFunctionComponent<TabListProps> = ({ children, ...otherProps }) => (
+  <RTabList className={styles.tabList} {...otherProps}>
+    {children}
+  </RTabList>
+);
+
+TabList.tabsRole = "TabList";
+
+// Tab
+export const Tab: ReactTabsFunctionComponent<TabProps> = ({ children, ...otherProps }) => (
+  <RTab className={styles.tab} {...otherProps}>
+    {children}
+  </RTab>
+);
+
+Tab.tabsRole = "Tab";
+
+// TabPanel
+export const TabPanel: ReactTabsFunctionComponent<TabPanelProps> = ({ children, ...otherProps }) => (
+  <RTabPanel {...otherProps}>{children}</RTabPanel>
+);
+
+TabPanel.tabsRole = "TabPanel";

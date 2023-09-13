@@ -1,42 +1,61 @@
 :root {
-  --conduction-tab-list-padding-inline-start: 0px;
-  --conduction-tab-list-border-bottom-width: var(--skeleton-size-3xs);
-  --conduction-tab-list-border-bottom-style: solid;
-  --conduction-tab-list-border-bottom-color: #d1d1d1;
+  --conduction-tabs-tab-background-color: #ffffff;
+  --conduction-tabs-tab-color: #4a4a4a;
+  /* --conduction-tabs-tab-border-width: 0px; */
+  /* --conduction-tabs-tab-border-style: solid; */
+  /* --conduction-tabs-tab-border-color: #ffffff; */
+  /* --conduction-tabs-tab-border-bottom: 0px; */
+  /* --conduction-tabs-tab-border-bottom-width: var(--skeleton-size-3xs); */
+  /* --conduction-tabs-tab-border-bottom-style: solid; */
+  /* --conduction-tabs-tab-border-bottom-color: #d1d1d1; */
+  --conduction-tabs-tab-bottom: -2px;
+  --conduction-tabs-tab-padding-block-start: var(--skeleton-size-xs);
+  --conduction-tabs-tab-padding-block-end: var(--skeleton-size-xs);
+  --conduction-tabs-tab-padding-inline-start: var(--skeleton-size-sm);
+  --conduction-tabs-tab-padding-inline-end: var(--skeleton-size-sm);
+  /* --conduction-tabs-tab-margin-inline-end: var(--skeleton-size-xs); */
+  --conduction-tabs-tab-font-size: var(--skeleton-font-size-sm: );
+  --conduction-tabs-tab-font-weight: var(--skeleton-font-weight-normal);
+  --conduction-tabs-tab-font-family: "Noto Sans", Arial, sans-serif;
+  --conduction-tabs-tab-max-width: unset;
+  /* --conduction-tabs-tab-letter-spacing: 0.02857em; */
+  /* --conduction-tabs-tab-text-transform: uppercase; */
 
-  --conduction-tab-padding-block-start: var(--skeleton-size-xs);
-  --conduction-tab-padding-block-end: var(--skeleton-size-xs);
-  --conduction-tab-padding-inline-start: var(--skeleton-size-sm);
-  --conduction-tab-padding-inline-end: var(--skeleton-size-sm);
-  --conduction-tab-font-size: var(--skeleton-font-size-sm: );
-  --conduction-tab-font-weight: var(--skeleton-font-weight-normal);
-  --conduction-tab-font-family: "Noto Sans", Arial, sans-serif;
-  --conduction-tab-max-width: unset;
-  --conduction-tab-min-width: 160px;
-  --conduction-tab-min-height: 61px;
-  /* --conduction-tab-letter-spacing: 0.02857em; */
-  /* --conduction-tab-text-transform: uppercase; */
-  --conduction-tab-color: #4a4a4a;
+  --conduction-tabs-tab-selected-background-color: #ffffff;
+  --conduction-tabs-tab-selected-color: #4a4a4a;
+  /* --conduction-tabs-tab-selected-box-shadow: 0px 1px 0px 1px #ffffff; */
+  /* --conduction-tabs-tab-selected-border-width: 0px; */
+  /* --conduction-tabs-tab-selected-border-style: solid; */
+  /* --conduction-tabs-tab-selected-border-color: #ffffff; */
+  /* --conduction-tabs-tab-selected-border-bottom: 0; */
+  --conduction-tabs-tab-selected-border-bottom-width: var(--skeleton-size-3xs);
+  --conduction-tabs-tab-selected-border-bottom-style: solid;
+  --conduction-tabs-tab-selected-border-bottom-color: #4376fc;
+  --conduction-tabs-tab-selected-font-weight: var(--skeleton-font-weight-bold);
+  --conduction-tabs-tab-selected-font-family: "Noto Sans", Arial, sans-serif;
+  /* --conduction-tabs-tab-selected-hover-background-color: #ffffff; */
+  /* --conduction-tabs-tab-selected-hover-color: #4a4a4a; */
+  /* --conduction-tabs-tab-selected-hover-text-decoration: underline; */
 
-  --conduction-tab-selected-color: #4a4a4a;
-  --conduction-tab-selected-border-bottom-width: var(--skeleton-size-3xs);
-  --conduction-tab-selected-border-bottom-style: solid;
-  --conduction-tab-selected-border-bottom-color: #4376fc;
-  --conduction-tab-selected-font-weight: var(--skeleton-font-weight-bold);
+  /* --conduction-tabs-tab-hover-background-color: #ffffff; */
+  /* --conduction-tabs-tab-hover-color: #4a4a4a; */
+  /* --conduction-tabs-tab-hover-text-decoration: underline; */
 
-  --conduction-tab-panel-padding-block-start: var(--skeleton-size-lg);
-  --conduction-tab-panel-padding-block-end: var(--skeleton-size-lg);
-  --conduction-tab-panel-padding-inline-start: var(--skeleton-size-lg);
-  --conduction-tab-panel-padding-inline-end: var(--skeleton-size-lg);
+  --conduction-tabs-tab-list-padding-inline-start: 0px;
+  --conduction-tabs-tab-list-margin-block-end: 16px;
+  --conduction-tabs-tab-list-border-bottom-width: var(--skeleton-size-3xs);
+  --conduction-tabs-tab-list-border-bottom-style: solid;
+  --conduction-tabs-tab-list-border-bottom-color: #d1d1d1;
 
-  --conduction-tab-badge-margin-inline-start: var(--skeleton-size-xs);
-}
-
-.tabList {
-  padding-inline-start: var(--conduction-tab-list-padding-inline-start);
-  border-bottom-width: var(--conduction-tab-list-border-bottom-width);
-  border-bottom-style: var(--conduction-tab-list-border-bottom-style);
-  border-bottom-color: var(--conduction-tab-list-border-bottom-color);
+  /* --conduction-tabs-tab-panel-background-color: #ffffff; */
+  --conduction-tabs-tab-panel-padding-block-start: var(--skeleton-size-lg);
+  --conduction-tabs-tab-panel-padding-block-end: var(--skeleton-size-lg);
+  --conduction-tabs-tab-panel-padding-inline-start: var(--skeleton-size-lg);
+  --conduction-tabs-tab-panel-padding-inline-end: var(--skeleton-size-lg);
+  /* --conduction-tabs-tab-panel-border-width: 0px; */
+  /* --conduction-tabs-tab-panel-border-style: solid; */
+  /* --conduction-tabs-tab-panel-border-color: #ffffff; */
+  /* --conduction-tabs-tab-panel-border-top: 0; */
 }
 
 .tab {
@@ -49,54 +68,75 @@
   box-sizing: border-box;
   text-align: center;
   white-space: normal;
-  bottom: -2px;
 
-  color: var(--conduction-tab-color);
-  padding-block-start: var(--conduction-tab-padding-block-start);
-  padding-block-end: var(--conduction-tab-padding-block-end);
-  padding-inline-start: var(--conduction-tab-padding-inline-start);
-  padding-inline-end: var(--conduction-tab-padding-inline-end);
-  font-size: var(--conduction-tab-font-size);
-  font-weight: var(--conduction-tab-font-weight);
-  font-family: var(--conduction-tab-font-family);
-  max-width: var(--conduction-tab-max-width);
-  min-width: var(--conduction-tab-min-width);
-  min-height: var(--conduction-tab-min-height);
-  letter-spacing: var(--conduction-tab-letter-spacing);
-  text-transform: var(--conduction-tab-text-transform);
-
-  border-bottom-width: var(--conduction-tab-list-border-bottom-width);
-  border-bottom-style: var(--conduction-tab-list-border-bottom-style);
-  border-bottom-color: var(--conduction-tab-list-border-bottom-color);
+  background-color: var(--conduction-tabs-tab-background-color);
+  color: var(--conduction-tabs-tab-color);
+  border-width: var(--conduction-tabs-tab-border-width);
+  border-style: var(--conduction-tabs-tab-border-style);
+  border-color: var(--conduction-tabs-tab-border-color);
+  border-bottom: var(--conduction-tabs-tab-border-bottom);
+  border-bottom-width: var(--conduction-tabs-tab-border-bottom-width);
+  border-bottom-style: var(--conduction-tabs-tab-border-bottom-style);
+  border-bottom-color: var(--conduction-tabs-tab-border-bottom-color);
+  bottom: var(--conduction-tabs-tab-bottom);
+  padding-block-start: var(--conduction-tabs-tab-padding-block-start);
+  padding-block-end: var(--conduction-tabs-tab-padding-block-end);
+  padding-inline-start: var(--conduction-tabs-tab-padding-inline-start);
+  padding-inline-end: var(--conduction-tabs-tab-padding-inline-end);
+  margin-inline-end: var(--conduction-tabs-tab-margin-inline-end);
+  font-size: var(--conduction-tabs-tab-font-size);
+  font-weight: var(--conduction-tabs-tab-font-weight);
+  font-family: var(--conduction-tabs-tab-font-family);
+  min-height: var(--conduction-tabs-tab-min-height);
+  letter-spacing: var(--conduction-tabs-tab-letter-spacing);
+  text-transform: var(--conduction-tabs-tab-text-transform);
 }
 
+/* TabSelected */
 .tab[aria-selected="true"] {
-  color: var(--conduction-tab-selected-color);
-  border-bottom-width: var(--conduction-tab-selected-border-bottom-width);
-  border-bottom-style: var(--conduction-tab-selected-border-bottom-style);
-  border-bottom-color: var(--conduction-tab-selected-border-bottom-color);
-  font-weight: var(--conduction-tab-selected-font-weight);
+  background-color: var(--conduction-tabs-tab-selected-background-color);
+  color: var(--conduction-tabs-tab-selected-color);
+  box-shadow: var(--conduction-tabs-tab-selected-box-shadow);
+  border-width: var(--conduction-tabs-tab-selected-border-width);
+  border-style: var(--conduction-tabs-tab-selected-border-style);
+  border-color: var(--conduction-tabs-tab-selected-border-color);
+  border-bottom: var(--conduction-tabs-tab-selected-border-bottom);
+  border-bottom-width: var(--conduction-tabs-tab-selected-border-bottom-width);
+  border-bottom-style: var(--conduction-tabs-tab-selected-border-bottom-style);
+  border-bottom-color: var(--conduction-tabs-tab-selected-border-bottom-color);
+  font-weight: var(--conduction-tabs-tab-selected-font-weight);
+  font-family: var(--conduction-tabs-tab-selected-font-family);
 }
 
+.tab[aria-selected="true"]:hover {
+  background-color: var(--conduction-tabs-tab-selected-hover-background-color);
+  color: var(--conduction-tabs-tab-selected-hover-color);
+  text-decoration: var(--conduction-tabs-tab-selected-hover-text-decoration);
+}
+.tab:hover {
+  background-color: var(--conduction-tabs-tab-hover-background-color);
+  color: var(--conduction-tabs-tab-hover-color);
+  text-decoration: var(--conduction-tabs-tab-hover-text-decoration);
+}
+
+.tabList {
+  display: flex;
+  padding-inline-start: var(--conduction-tabs-tab-list-padding-inline-start);
+  margin-block-end: var(--conduction-tabs-tab-list-margin-block-end);
+  border-bottom-width: var(--conduction-tabs-tab-list-border-bottom-width);
+  border-bottom-style: var(--conduction-tabs-tab-list-border-bottom-style);
+  border-bottom-color: var(--conduction-tabs-tab-list-border-bottom-color);
+}
+
+/* TabPanel */
 .tabs [class*="react-tabs__tab-panel--selected"] {
-  padding-block-start: var(--conduction-tab-panel-padding-block-start);
-  padding-block-end: var(--conduction-tab-panel-padding-block-end);
-  padding-inline-start: var(--conduction-tab-panel-padding-inline-start);
-  padding-inline-end: var(--conduction-tab-panel-padding-inline-end);
-}
-
-.badge {
-  margin-inline-start: var(--conduction-tab-badge-margin-inline-start);
-  background-color: var(--utrecht-badge-counter-background-color, var(--utrecht-badge-background-color, #000));
-  border-radius: var(--utrecht-badge-counter-border-radius, var(--utrecht-badge-border-radius, 0.5ch));
-  color: var(--utrecht-badge-counter-color, var(--utrecht-badge-color, #fff));
-  display: inline-block;
-  font-family: var(--utrecht-document-font-family, sans-serif);
-  font-style: var(--utrecht-badge-counter-font-style, normal);
-  font-weight: var(--utrecht-badge-counter-font-weight, var(--utrecht-badge-font-weight, bold));
-  padding-block-end: var(--utrecht-badge-counter-padding-block, var(--utrecht-badge-padding-block, 0.5ex));
-  padding-block-start: var(--utrecht-badge-counter-padding-block, var(--utrecht-badge-padding-block, 0.5ex));
-  padding-inline-end: var(--utrecht-badge-counter-padding-inline, var(--utrecht-badge-padding-inline, 0.5ch));
-  padding-inline-start: var(--utrecht-badge-counter-padding-inline, var(--utrecht-badge-padding-inline, 0.5ch));
-  text-decoration: none;
+  background-color: var(--conduction-tabs-tab-panel-background-color);
+  padding-block-start: var(--conduction-tabs-tab-panel-padding-block-start);
+  padding-block-end: var(--conduction-tabs-tab-panel-padding-block-end);
+  padding-inline-start: var(--conduction-tabs-tab-panel-padding-inline-start);
+  padding-inline-end: var(--conduction-tabs-tab-panel-padding-inline-end);
+  border-width: var(--conduction-tabs-tab-panel-border-width);
+  border-style: var(--conduction-tabs-tab-panel-border-style);
+  border-color: var(--conduction-tabs-tab-panel-border-color);
+  border-top: var(--conduction-tabs-tab-panel-border-top);
 }
