@@ -58,31 +58,29 @@ export const TabList: ReactTabsFunctionComponent<TabListProps> = ({ children, ..
     <div className={styles.container}>
       <div onScroll={handleScroll} ref={wrapperRef} className={clsx(styles.wrapper)}>
         <div className={styles.tabListContainer}>
+          {canScrollLeft && (
+            <div
+              onClick={handleScrollLeft}
+              className={clsx(canScrollLeft && styles.scrollLeftButton, styles.tabButton)}
+            >
+              <span className={styles.scrollButton}>
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </span>
+            </div>
+          )}
           <RTabList className={styles.tabList} {...otherProps}>
-            {canScrollLeft && (
-              <RTab
-                onClick={handleScrollLeft}
-                className={clsx(canScrollLeft && styles.scrollLeftButton, styles.tabButton)}
-              >
-                <span className={styles.scrollButton}>
-                  <FontAwesomeIcon icon={faChevronLeft} />
-                </span>
-              </RTab>
-            )}
-
             {children}
-
-            {canScrollRight && (
-              <RTab
-                onClick={handleScrollRight}
-                className={clsx(canScrollRight && styles.scrollRightButton, styles.tabButton)}
-              >
-                <span className={styles.scrollButton}>
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </span>
-              </RTab>
-            )}
           </RTabList>
+          {canScrollRight && (
+            <div
+              onClick={handleScrollRight}
+              className={clsx(canScrollRight && styles.scrollRightButton, styles.tabButton)}
+            >
+              <span className={styles.scrollButton}>
+                <FontAwesomeIcon icon={faChevronRight} />
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>

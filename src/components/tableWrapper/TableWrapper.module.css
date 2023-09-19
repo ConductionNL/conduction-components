@@ -5,6 +5,9 @@
   --conduction-table-wrapper-scroll-button-padding-inline-end: 14px;
   /* --conduction-table-wrapper-scroll-button-padding-block-start: 10px; */
   /* --conduction-table-wrapper-scroll-button-padding-block-end: 10px; */
+  /* --conduction-table-wrapper-scroll-button-border-color: 1px; */
+  /* --conduction-table-wrapper-scroll-button-border-color: solid; */
+  /* --conduction-table-wrapper-scroll-button-border-color: #000000; */
 
   --conduction-table-wrapper-scroll-button-hover-background-color: #ffffff;
   --conduction-table-wrapper-scroll-button-hover-color: #4376fc;
@@ -32,6 +35,9 @@
   padding-inline-end: var(--conduction-table-wrapper-scroll-button-padding-inline-end);
   padding-block-start: var(--conduction-table-wrapper-scroll-button-padding-block-start);
   padding-block-end: var(--conduction-table-wrapper-scroll-button-padding-block-end);
+  border-width:var(--conduction-table-wrapper-scroll-button-border-width) ;
+  border-style:var(--conduction-table-wrapper-scroll-button-border-style) ;
+  border-color:var(--conduction-table-wrapper-scroll-button-border-color) ;
 }
 
 .scrollLeftButton:hover,

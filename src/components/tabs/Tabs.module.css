@@ -21,10 +21,13 @@
   /* --conduction-tabs-tab-letter-spacing: 0.02857em; */
   /* --conduction-tabs-tab-text-transform: uppercase; */
 
-  --conduction-tabs-scrollButton-background-color: #ffffff;
-  --conduction-tabs-scrollButton-color: #4a4a4a;
-  --conduction-tabs-scrollButton-hover-background-color: #ffffff;
-  --conduction-tabs-scrollButton-hover-color: #4376fc;
+  --conduction-tabs-scroll-button-background-color: #ffffff;
+  --conduction-tabs-scroll-button-color: #4a4a4a;
+  --conduction-tabs-scroll-button-hover-background-color: #ffffff;
+  --conduction-tabs-scroll-button-hover-color: #4376fc;
+  /* --conduction-tabs-scroll-button-border-width: 1px; */
+  /* --conduction-tabs-scroll-button-border-style: solid; */
+  /* --conduction-tabs-scroll-button-border-color: #4376fc; */
 
   --conduction-tabs-tab-selected-background-color: #ffffff;
   --conduction-tabs-tab-selected-color: #4a4a4a;
@@ -88,13 +91,13 @@
   padding-block-end: var(--conduction-tabs-tab-padding-block-end);
   padding-inline-start: var(--conduction-tabs-tab-padding-inline-start);
   padding-inline-end: var(--conduction-tabs-tab-padding-inline-end);
-  margin-inline-end: var(--conduction-tabs-tab-margin-inline-end);
   font-size: var(--conduction-tabs-tab-font-size);
   font-weight: var(--conduction-tabs-tab-font-weight);
   font-family: var(--conduction-tabs-tab-font-family);
   min-height: var(--conduction-tabs-tab-min-height);
   letter-spacing: var(--conduction-tabs-tab-letter-spacing);
   text-transform: var(--conduction-tabs-tab-text-transform);
+  flex-shrink: 0;
 }
 
 .tabButton {
@@ -108,14 +111,25 @@
   text-align: center;
   white-space: normal;
 
-  background-color: var(--conduction-tabs-scrollButton-background-color);
-  color: var(--conduction-tabs-tabButton-color);
+  border-width: var(
+    --conduction-tabs-scroll-button-border-width,
+    var(--conduction-tabs-tab-border-width)
+  );
+  border-style: var(
+    --conduction-tabs-scroll-button-border-style,
+    var(--conduction-tabs-tab-border-style)
+  );
+  border-color: var(
+    --conduction-tabs-scroll-button-border-color,
+    var(--conduction-tabs-tab-border-color)
+  );
+  background-color: var(--conduction-tabs-scroll-button-background-color);
+  color: var(--conduction-tabs-tab-button-color);
   bottom: var(--conduction-tabs-tab-bottom);
   padding-block-start: var(--conduction-tabs-tab-padding-block-start);
   padding-block-end: var(--conduction-tabs-tab-padding-block-end);
   padding-inline-start: var(--conduction-tabs-tab-padding-inline-start);
   padding-inline-end: var(--conduction-tabs-tab-padding-inline-end);
-  margin-inline-end: var(--conduction-tabs-tab-margin-inline-end);
   font-size: var(--conduction-tabs-tab-font-size);
   font-weight: var(--conduction-tabs-tab-font-weight);
   font-family: var(--conduction-tabs-tab-font-family);
@@ -124,9 +138,13 @@
   text-transform: var(--conduction-tabs-tab-text-transform);
 }
 
+.tabButton:hover {
+  background-color: var(--conduction-tabs-scroll-button-hover-background-color);
+  color: var(--conduction-tabs-scroll-button-hover-color);
+}
 .tabButton:hover > * {
-  background-color: var(--conduction-tabs-scrollButton-hover-background-color);
-  color: var(--conduction-tabs-scrollButton-hover-color);
+  background-color: var(--conduction-tabs-scroll-button-hover-background-color);
+  color: var(--conduction-tabs-scroll-button-hover-color);
 }
 
 .tabListContainer {
@@ -167,6 +185,10 @@
   border-bottom-width: var(--conduction-tabs-tab-list-border-bottom-width);
   border-bottom-style: var(--conduction-tabs-tab-list-border-bottom-style);
   border-bottom-color: var(--conduction-tabs-tab-list-border-bottom-color);
+  width: max-content;
+}
+.tabList :not(:last-child) {
+  margin-inline-end: var(--conduction-tabs-tab-margin-inline-end);
 }
 
 /* TabPanel */
@@ -183,8 +205,8 @@
 }
 
 .scrollButton {
-  background-color: var(--conduction-tabs-scrollButton-background-color);
-  color: var(--conduction-tabs-scrollButton-color);
+  background-color: var(--conduction-tabs-scroll-button-background-color);
+  color: var(--conduction-tabs-scroll-button-color);
 }
 
 .container {
