@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.8: Updated Tabs component to have correct border-bottom length.
   - 2.2.7: Updated TableWrapper component and updated Tabs component.
   - 2.2.6: Added TableWrapper component and updated Tabs component.
   - 2.2.5: Updated Tabs component.

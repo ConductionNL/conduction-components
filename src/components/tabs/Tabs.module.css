@@ -111,18 +111,9 @@
   text-align: center;
   white-space: normal;
 
-  border-width: var(
-    --conduction-tabs-scroll-button-border-width,
-    var(--conduction-tabs-tab-border-width)
-  );
-  border-style: var(
-    --conduction-tabs-scroll-button-border-style,
-    var(--conduction-tabs-tab-border-style)
-  );
-  border-color: var(
-    --conduction-tabs-scroll-button-border-color,
-    var(--conduction-tabs-tab-border-color)
-  );
+  border-width: var(--conduction-tabs-scroll-button-border-width, var(--conduction-tabs-tab-border-width));
+  border-style: var(--conduction-tabs-scroll-button-border-style, var(--conduction-tabs-tab-border-style));
+  border-color: var(--conduction-tabs-scroll-button-border-color, var(--conduction-tabs-tab-border-color));
   background-color: var(--conduction-tabs-scroll-button-background-color);
   color: var(--conduction-tabs-tab-button-color);
   bottom: var(--conduction-tabs-tab-bottom);
@@ -185,8 +176,19 @@
   border-bottom-width: var(--conduction-tabs-tab-list-border-bottom-width);
   border-bottom-style: var(--conduction-tabs-tab-list-border-bottom-style);
   border-bottom-color: var(--conduction-tabs-tab-list-border-bottom-color);
+  width: auto;
+}
+
+.tabListOverflow {
+  display: flex;
+  padding-inline-start: var(--conduction-tabs-tab-list-padding-inline-start);
+  margin-block-end: var(--conduction-tabs-tab-list-margin-block-end);
+  border-bottom-width: var(--conduction-tabs-tab-list-border-bottom-width);
+  border-bottom-style: var(--conduction-tabs-tab-list-border-bottom-style);
+  border-bottom-color: var(--conduction-tabs-tab-list-border-bottom-color);
   width: max-content;
 }
+
 .tabList :not(:last-child) {
   margin-inline-end: var(--conduction-tabs-tab-margin-inline-end);
 }

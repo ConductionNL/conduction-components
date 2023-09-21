@@ -68,7 +68,10 @@ export const TabList: ReactTabsFunctionComponent<TabListProps> = ({ children, ..
               </span>
             </div>
           )}
-          <RTabList className={styles.tabList} {...otherProps}>
+          <RTabList
+            className={clsx(canScrollRight || canScrollLeft ? styles.tabListOverflow : styles.tabList)}
+            {...otherProps}
+          >
             {children}
           </RTabList>
           {canScrollRight && (
