@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.9: Added CardWrapper, CardHeader, CardHeaderTitle, CardHeaderDate to index.
   - 2.2.8:
     - Updated Pagination to show current page.
     - Updated Tabs component to have correct border-bottom length.
