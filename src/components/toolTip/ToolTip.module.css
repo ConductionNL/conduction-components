@@ -13,6 +13,7 @@
   --conduction-tooltip-border-radius: 0px;
 
   --conduction-tooltip-opacity: 1;
+  --conduction-tooltip-z-index: 9999;
 }
 
 .tooltip {
@@ -30,4 +31,5 @@
   border-radius: var(--conduction-tooltip-border-radius) !important;
 
   opacity: var(--conduction-tooltip-opacity);
+  z-index: var(--conduction-tooltip-z-index);
 }

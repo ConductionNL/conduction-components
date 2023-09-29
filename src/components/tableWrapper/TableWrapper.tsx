@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import * as styles from "./TableWrapper.module.css";
-import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-interface TableWrapperProps {
-  touchScreen?: boolean;
-}
-
-export const TableWrapper: React.FC<{ children: React.ReactNode } & TableWrapperProps> = ({
-  children,
-  touchScreen,
-}) => {
+export const TableWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [canScrollRight, setCanScrollRight] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
 
@@ -42,12 +34,8 @@ export const TableWrapper: React.FC<{ children: React.ReactNode } & TableWrapper
 
   return (
     <div className={styles.container}>
-      <div
-        onScroll={handleScroll}
-        ref={wrapperRef}
-        className={clsx(touchScreen ? styles.wrapperTouchscreen : styles.wrapper)}
-      >
-        {canScrollLeft && !touchScreen && (
+      <div onScroll={handleScroll} ref={wrapperRef} className={styles.wrapper}>
+        {canScrollLeft && (
           <div onClick={handleScrollLeft} className={styles.scrollLeftButton}>
             <div className={styles.scrollButton}>
               <FontAwesomeIcon icon={faChevronLeft} />
@@ -55,7 +43,7 @@ export const TableWrapper: React.FC<{ children: React.ReactNode } & TableWrapper
           </div>
         )}
         {children}
-        {canScrollRight && !touchScreen && (
+        {canScrollRight && (
           <div onClick={handleScrollRight} className={styles.scrollRightButton}>
             <div className={styles.scrollButton}>
               <FontAwesomeIcon icon={faChevronRight} />
