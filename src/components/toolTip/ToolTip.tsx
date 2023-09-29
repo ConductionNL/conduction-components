@@ -1,9 +1,11 @@
 import * as React from "react";
 import * as styles from "./ToolTip.module.css";
 import { Tooltip } from "react-tooltip";
+import clsx from "clsx";
 
 interface ToolTipProps {
   id: string;
+  layoutClassName?: string;
 }
 
 /**
@@ -14,6 +16,6 @@ interface ToolTipProps {
  * data-tooltip-content="Hello world!"
  */
 
-export const ToolTip: React.FC<ToolTipProps> = ({ id }) => {
-  return <Tooltip className={styles.tooltip} {...{ id }} />;
+export const ToolTip: React.FC<ToolTipProps> = ({ id, layoutClassName }) => {
+  return <Tooltip className={clsx(styles.tooltip, layoutClassName, layoutClassName)} {...{ id }} />;
 };
