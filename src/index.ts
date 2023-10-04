@@ -1,4 +1,14 @@
-import { DownloadCard, HorizontalImageCard, ImageAndDetailsCard, DetailsCard, InfoCard } from "./components/card";
+import {
+  DownloadCard,
+  HorizontalImageCard,
+  ImageAndDetailsCard,
+  DetailsCard,
+  InfoCard,
+  CardWrapper,
+  CardHeader,
+  CardHeaderTitle,
+  CardHeaderDate,
+} from "./components/card";
 import { Container } from "./components/container/Container";
 import { Breadcrumbs } from "./components/denhaag-wrappers/breadcrumbs/Breadcrumbs";
 import {
@@ -30,6 +40,7 @@ import { CodeBlock } from "./components/codeBlock/CodeBlock";
 import { ToolTip } from "./components/toolTip/ToolTip";
 import { Pagination } from "./components/Pagination/Pagination";
 import { Tabs, TabList, Tab, TabPanel } from "./components/tabs/Tabs";
+import { TableWrapper } from "./components/tableWrapper/TableWrapper";
 
 export {
   DownloadCard,
@@ -63,8 +74,13 @@ export {
   BadgeCounter,
   CodeBlock,
   ToolTip,
+  CardWrapper,
+  CardHeader,
+  CardHeaderTitle,
+  CardHeaderDate,
   Tabs,
   TabList,
   Tab,
   TabPanel,
+  TableWrapper,
 };

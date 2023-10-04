@@ -4,6 +4,13 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.10: Added z-index to tooltip.
+  - 2.2.9: Added CardWrapper, CardHeader, CardHeaderTitle, CardHeaderDate to index.
+  - 2.2.8:
+    - Updated Pagination to show current page.
+    - Updated Tabs component to have correct border-bottom length.
+  - 2.2.7: Updated TableWrapper component and updated Tabs component.
+  - 2.2.6: Added TableWrapper component and updated Tabs component.
   - 2.2.5: Updated Tabs component.
   - 2.2.4: Refactor the Tooltip component to include react-tooltip version 5+.
   - 2.2.3: Added Tabs component.

@@ -21,6 +21,14 @@
   /* --conduction-tabs-tab-letter-spacing: 0.02857em; */
   /* --conduction-tabs-tab-text-transform: uppercase; */
 
+  --conduction-tabs-scroll-button-background-color: #ffffff;
+  --conduction-tabs-scroll-button-color: #4a4a4a;
+  --conduction-tabs-scroll-button-hover-background-color: #ffffff;
+  --conduction-tabs-scroll-button-hover-color: #4376fc;
+  /* --conduction-tabs-scroll-button-border-width: 1px; */
+  /* --conduction-tabs-scroll-button-border-style: solid; */
+  /* --conduction-tabs-scroll-button-border-color: #4376fc; */
+
   --conduction-tabs-tab-selected-background-color: #ffffff;
   --conduction-tabs-tab-selected-color: #4a4a4a;
   /* --conduction-tabs-tab-selected-box-shadow: 0px 1px 0px 1px #ffffff; */
@@ -83,13 +91,55 @@
   padding-block-end: var(--conduction-tabs-tab-padding-block-end);
   padding-inline-start: var(--conduction-tabs-tab-padding-inline-start);
   padding-inline-end: var(--conduction-tabs-tab-padding-inline-end);
-  margin-inline-end: var(--conduction-tabs-tab-margin-inline-end);
   font-size: var(--conduction-tabs-tab-font-size);
   font-weight: var(--conduction-tabs-tab-font-weight);
   font-family: var(--conduction-tabs-tab-font-family);
   min-height: var(--conduction-tabs-tab-min-height);
   letter-spacing: var(--conduction-tabs-tab-letter-spacing);
   text-transform: var(--conduction-tabs-tab-text-transform);
+  flex-shrink: 0;
+}
+
+.tabButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: normal;
+
+  border-width: var(--conduction-tabs-scroll-button-border-width, var(--conduction-tabs-tab-border-width));
+  border-style: var(--conduction-tabs-scroll-button-border-style, var(--conduction-tabs-tab-border-style));
+  border-color: var(--conduction-tabs-scroll-button-border-color, var(--conduction-tabs-tab-border-color));
+  background-color: var(--conduction-tabs-scroll-button-background-color);
+  color: var(--conduction-tabs-tab-button-color);
+  bottom: var(--conduction-tabs-tab-bottom);
+  padding-block-start: var(--conduction-tabs-tab-padding-block-start);
+  padding-block-end: var(--conduction-tabs-tab-padding-block-end);
+  padding-inline-start: var(--conduction-tabs-tab-padding-inline-start);
+  padding-inline-end: var(--conduction-tabs-tab-padding-inline-end);
+  font-size: var(--conduction-tabs-tab-font-size);
+  font-weight: var(--conduction-tabs-tab-font-weight);
+  font-family: var(--conduction-tabs-tab-font-family);
+  min-height: var(--conduction-tabs-tab-min-height);
+  letter-spacing: var(--conduction-tabs-tab-letter-spacing);
+  text-transform: var(--conduction-tabs-tab-text-transform);
+}
+
+.tabButton:hover {
+  background-color: var(--conduction-tabs-scroll-button-hover-background-color);
+  color: var(--conduction-tabs-scroll-button-hover-color);
+}
+.tabButton:hover > * {
+  background-color: var(--conduction-tabs-scroll-button-hover-background-color);
+  color: var(--conduction-tabs-scroll-button-hover-color);
+}
+
+.tabListContainer {
+  flex: 0 0 100%; /* Let it fill the entire space horizontally */
 }
 
 /* TabSelected */
@@ -126,6 +176,21 @@
   border-bottom-width: var(--conduction-tabs-tab-list-border-bottom-width);
   border-bottom-style: var(--conduction-tabs-tab-list-border-bottom-style);
   border-bottom-color: var(--conduction-tabs-tab-list-border-bottom-color);
+  width: auto;
+}
+
+.tabListOverflow {
+  display: flex;
+  padding-inline-start: var(--conduction-tabs-tab-list-padding-inline-start);
+  margin-block-end: var(--conduction-tabs-tab-list-margin-block-end);
+  border-bottom-width: var(--conduction-tabs-tab-list-border-bottom-width);
+  border-bottom-style: var(--conduction-tabs-tab-list-border-bottom-style);
+  border-bottom-color: var(--conduction-tabs-tab-list-border-bottom-color);
+  width: max-content;
+}
+
+.tabList :not(:last-child) {
+  margin-inline-end: var(--conduction-tabs-tab-margin-inline-end);
 }
 
 /* TabPanel */
@@ -139,4 +204,44 @@
   border-style: var(--conduction-tabs-tab-panel-border-style);
   border-color: var(--conduction-tabs-tab-panel-border-color);
   border-top: var(--conduction-tabs-tab-panel-border-top);
+}
+
+.scrollButton {
+  background-color: var(--conduction-tabs-scroll-button-background-color);
+  color: var(--conduction-tabs-scroll-button-color);
+}
+
+.container {
+  position: relative;
+}
+
+.wrapper {
+  overflow-x: scroll;
+  display: flex;
+}
+.wrapperTouchscreen {
+  overflow-x: scroll;
+}
+
+.scrollRightButton,
+.scrollLeftButton {
+  position: absolute;
+}
+
+.scrollRightButton {
+  right: 0;
+}
+
+.scrollLeftButton {
+  left: 0;
+  z-index: 1;
+}
+
+/* Hide scrollbar */
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+.wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
