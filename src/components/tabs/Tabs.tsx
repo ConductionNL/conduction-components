@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
 import * as styles from "./Tabs.module.css";
 import {
   Tabs as RTabs,
@@ -26,8 +26,8 @@ Tabs.tabsRole = "Tabs";
 
 // TabList
 export const TabList: ReactTabsFunctionComponent<TabListProps> = ({ children, ...otherProps }) => {
-  const [canScrollRight, setCanScrollRight] = useState(false);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = React.useState(false);
+  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
 
   const wrapperRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -48,7 +48,7 @@ export const TabList: ReactTabsFunctionComponent<TabListProps> = ({ children, ..
     if (wrapperRef.current) wrapperRef.current.scrollTo({ left: 0, behavior: "smooth" });
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (wrapperRef.current) {
       setCanScrollRight(wrapperRef.current.scrollWidth > wrapperRef.current.clientWidth); // initiate scroll
     }
