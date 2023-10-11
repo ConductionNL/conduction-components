@@ -76,17 +76,17 @@ export const SelectMultiple = ({
   ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   React.useEffect(() => {
-    document.querySelectorAll('[id*="live-region"]').forEach((element) => {
+    document.querySelectorAll('[id*="live-region"]').forEach((element: any) => {
+      if (element?.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
     });
-    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
-    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element) => {
+    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
@@ -135,17 +135,17 @@ export const SelectCreate = ({
   ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   React.useEffect(() => {
-    document.querySelectorAll('[id*="live-region"]').forEach((element) => {
+    document.querySelectorAll('[id*="live-region"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
     });
-    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element) => {
+    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
     });
-    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element) => {
+    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
@@ -195,17 +195,17 @@ export const SelectSingle = ({
   ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   React.useEffect(() => {
-    document.querySelectorAll('[id*="live-region"]').forEach((element) => {
+    document.querySelectorAll('[id*="live-region"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
     });
-    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element) => {
+    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
     });
-    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element) => {
+    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
