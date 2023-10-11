@@ -11,6 +11,7 @@ interface ISelectProps {
   control: Control<FieldValues, any>;
   options: { label: string; value: string }[];
   name: string;
+  ariaLabel?: string;
   id?: string;
   defaultValue?: any;
   disabled?: boolean;
@@ -72,7 +73,25 @@ export const SelectMultiple = ({
   hideErrorMessage,
   menuPlacement,
   placeholder,
+  ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  React.useEffect(() => {
+    document.querySelectorAll('[id*="live-region"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+  }, []);
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -81,6 +100,7 @@ export const SelectMultiple = ({
         return (
           <>
             <ReactSelect
+              aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
               className={clsx(styles.select, errors[name] && styles.error)}
@@ -112,7 +132,25 @@ export const SelectCreate = ({
   hideErrorMessage,
   menuPlacement,
   placeholder,
+  ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  React.useEffect(() => {
+    document.querySelectorAll('[id*="live-region"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+  }, []);
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -121,6 +159,7 @@ export const SelectCreate = ({
         return (
           <>
             <CreatableSelect
+              aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
@@ -153,7 +192,25 @@ export const SelectSingle = ({
   hideErrorMessage,
   menuPlacement,
   placeholder,
+  ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  React.useEffect(() => {
+    document.querySelectorAll('[id*="live-region"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element) => {
+      if (element.role !== "presentation") {
+        element.setAttribute("role", "presentation");
+      }
+    });
+  }, []);
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -162,6 +219,7 @@ export const SelectSingle = ({
         return (
           <>
             <ReactSelect
+              aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
               className={clsx(styles.select, errors[name] && styles.error)}
