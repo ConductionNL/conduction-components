@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.17: Fixed Pagination-button border-radius.
   - 2.2.15/2.2.16: Added more NLDS options to Pagination.
   - 2.2.13/2.2.14:
     - Updated Textarea and all Input components to allow aria-label.
