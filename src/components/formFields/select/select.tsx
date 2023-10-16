@@ -86,7 +86,7 @@ export const SelectMultiple = ({
         element.setAttribute("role", "presentation");
       }
     });
-    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element: any) => {
+    document.querySelectorAll('[class*="a11yText"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
@@ -205,7 +205,7 @@ export const SelectSingle = ({
         element.setAttribute("role", "presentation");
       }
     });
-    document.querySelectorAll('[class*="a11yText-A11yText"]').forEach((element: any) => {
+    document.querySelectorAll('[class*="a11yText"]').forEach((element: any) => {
       if (element.role !== "presentation") {
         element.setAttribute("role", "presentation");
       }
