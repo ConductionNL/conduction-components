@@ -4,6 +4,9 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.13:
+    - Updated Textarea and all Input components to allow aria-label.
+    - Updated Select components.
   - 2.2.12: Updated Select components to WCAG with aria-label and role.
   - 2.2.11: Updated Primary and Secondary topnav to NLDS.
   - 2.2.10: Added z-index to tooltip.
