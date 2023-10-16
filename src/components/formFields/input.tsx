@@ -5,7 +5,7 @@ import { ErrorMessage } from "./errorMessage/ErrorMessage";
 
 export interface IInputProps {
   name: string;
-  ariaLabel?: string;
+  ariaLabel: string;
   disabled?: boolean;
   defaultValue?: string;
   icon?: JSX.Element;
