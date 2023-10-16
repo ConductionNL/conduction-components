@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.18: Refactored select role attribute.
   - 2.2.17: Refactor Pagination to include aria labels and make aria label required on texarea, input and select components.
   - 2.2.15/2.2.16: Added more NLDS options to Pagination.
   - 2.2.13/2.2.14:
