@@ -11,10 +11,21 @@ interface PaginationProps {
   totalPages: number;
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  ariaLabels: {
+    nextPage: string;
+    previousPage: string;
+    page: string;
+  };
   layoutClassName?: string;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, setCurrentPage, layoutClassName }) => {
+export const Pagination: React.FC<PaginationProps> = ({
+  totalPages,
+  currentPage,
+  setCurrentPage,
+  ariaLabels,
+  layoutClassName,
+}) => {
   if (totalPages < 1) return <></>; // no pages available
 
   return (
@@ -31,13 +42,16 @@ export const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage,
       breakLabel="..."
       nextClassName={styles.next}
       previousClassName={styles.previous}
+      nextAriaLabel={ariaLabels.nextPage}
+      previousAriaLabel={ariaLabels.previousPage}
+      ariaLabelBuilder={(currentPage) => `${ariaLabels.page} ${currentPage}`}
       nextLabel={
-        <Button className={styles.button}>
+        <Button tabIndex={-1} className={styles.button}>
           <FontAwesomeIcon icon={faChevronRight} />
         </Button>
       }
       previousLabel={
-        <Button className={styles.button}>
+        <Button tabIndex={-1} className={styles.button}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </Button>
       }

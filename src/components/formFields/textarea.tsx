@@ -4,7 +4,7 @@ import { Textarea as UtrechtTextarea } from "@utrecht/component-library-react/di
 
 export interface ITextAreaProps {
   name: string;
-  ariaLabel?: string;
+  ariaLabel: string;
   disabled?: boolean;
   defaultValue?: string;
   hideErrorMessage?: boolean;

@@ -11,7 +11,7 @@ interface ISelectProps {
   control: Control<FieldValues, any>;
   options: { label: string; value: string }[];
   name: string;
-  ariaLabel?: string;
+  ariaLabel: string;
   id?: string;
   defaultValue?: any;
   disabled?: boolean;
