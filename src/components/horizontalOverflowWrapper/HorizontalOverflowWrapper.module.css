@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+}
+
+.wrapper {
+  overflow-x: scroll;
+}
+
+.scrollButton {
+  height: 24px;
+  top: calc(50% - 12px);
+  position: absolute;
+}
+
+.scrollButton.left {
+  left: 0;
+}
+
+.scrollButton.right {
+  right: 0;
+}
