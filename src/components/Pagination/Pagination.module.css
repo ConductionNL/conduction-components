@@ -20,13 +20,30 @@
   --conduction-pagination-item-border-style: unset;
   --conduction-pagination-item-border-color: unset;
 
+  /* --conduction-pagination-navigation-button-background-color: #4376fc; */
+  /* --conduction-pagination-navigation-button-color: #ffffff; */
+  /* --conduction-pagination-navigation-button-border-width: 1px; */
+  /* --conduction-pagination-navigation-button-border-style: solid; */
+  /* --conduction-pagination-navigation-button-border-color: #4376fc; */
+  /* --conduction-pagination-navigation-button-border-radius: 1px; */
   --conduction-pagination-navigation-button-padding-inline-start: 8px;
   --conduction-pagination-navigation-button-padding-inline-end: 8px;
   --conduction-pagination-navigation-button-padding-block-start: 0px;
   --conduction-pagination-navigation-button-padding-block-end: 0px;
 
-  --conduction-pagination-disabled-color: #d1d1d1;
-  --conduction-pagination-disabled-background-color: #fefefe;
+  --conduction-pagination-navigation-button-disabled-color: #d1d1d1;
+  --conduction-pagination-navigation-button-disabled-background-color: #fefefe;
+  /* --conduction-pagination-navigation-button-disabled-border-width: 1px; */
+  /* --conduction-pagination-navigation-button-disabled-border-style: solid; */
+  /* --conduction-pagination-navigation-button-disabled-border-color: #4376fc; */
+  /* --conduction-pagination-navigation-button-disabled-border-radius: 1px; */
+
+  --conduction-pagination-navigation-button-hover-color: #d1d1d1;
+  --conduction-pagination-navigation-button-hover-background-color: #fefefe;
+  /* --conduction-pagination-navigation-button-hover-border-width: 1px; */
+  /* --conduction-pagination-navigation-button-hover-border-style: solid; */
+  /* --conduction-pagination-navigation-button-hover-border-color: #4376fc; */
+  /* --conduction-pagination-navigation-button-hover-border-radius: 1px; */
 
   --conduction-pagination-current-page-background-color: #4376fc;
   --conduction-pagination-current-page-color: #ffffff;
@@ -97,9 +114,22 @@
   cursor: not-allowed;
 }
 
-.container > li.disabled > a {
-  color: var(--conduction-pagination-disabled-color);
-  background-color: var(--conduction-pagination-disabled-background-color);
+.container > li.disabled > a > .button {
+  color: var(--conduction-pagination-navigation-button-disabled-color) !important;
+  background-color: var(--conduction-pagination-navigation-button-disabled-background-color) !important;
+  border-width: var(--conduction-pagination-navigation-button-disabled-border-width, var(--utrecht-button-border-width));
+  border-style: var(--conduction-pagination-navigation-button-disabled-border-style, var(--utrecht-button-border-style));
+  border-color: var(--conduction-pagination-navigation-button-disabled-border-color, var(--utrecht-button-border-color));
+  border-radius: var(--conduction-pagination-navigation-button-disabled-border-radius, var(--utrecht-button-border-radius));
+}
+
+.container > li:hover:not(.disabled) > a > .button {
+  color: var(--conduction-pagination-navigation-button-hover-color) !important;
+  background-color: var(--conduction-pagination-navigation-button-hover-background-color) !important;
+  border-width: var(--conduction-pagination-navigation-button-hover-border-width, var(--utrecht-button-border-width));
+  border-style: var(--conduction-pagination-navigation-button-hover-border-style, var(--utrecht-button-border-style));
+  border-color: var(--conduction-pagination-navigation-button-hover-border-color, var(--utrecht-button-border-color));
+  border-radius: var(--conduction-pagination-navigation-button-hover-border-radius, var(--utrecht-button-border-radius));
 }
 
 .container > li:hover:not(.disabled):not(.currentPage) {
@@ -115,6 +145,12 @@
 }
 
 .button {
+  background-color: var(--conduction-pagination-navigation-button-background-color, var(--utrecht-button-background-color)) !important;
+  color: var(--conduction-pagination-navigation-button-color, var(--utrecht-button-color)) !important;
+  border-width: var(--conduction-pagination-navigation-button-border-width, var(--utrecht-button-border-width)) !important;
+  border-style: var(--conduction-pagination-navigation-button-border-style, var(--utrecht-button-border-style)) !important;
+  border-color: var(--conduction-pagination-navigation-button-border-color, var(--utrecht-button-border-color)) !important;
+  border-radius: var(--conduction-pagination-navigation-button-border-radius, var(--utrecht-button-border-radius));
   padding-inline-start: var(--conduction-pagination-navigation-button-padding-inline-start) !important;
   padding-inline-end: var(--conduction-pagination-navigation-button-padding-inline-end) !important;
   padding-block-start: var(--conduction-pagination-navigation-button-padding-block-start) !important;

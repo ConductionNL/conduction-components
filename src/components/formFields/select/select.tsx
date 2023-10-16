@@ -11,6 +11,7 @@ interface ISelectProps {
   control: Control<FieldValues, any>;
   options: { label: string; value: string }[];
   name: string;
+  ariaLabel: string;
   id?: string;
   defaultValue?: any;
   disabled?: boolean;
@@ -40,24 +41,16 @@ const selectStyles: StylesConfig = {
   }),
 };
 
-const selectMultiStyles: StylesConfig = {
-  menuPortal: (base) => ({ ...base, zIndex: 100 }),
-  option: (base) => ({
-    ...base,
-    fontFamily: `var(--conduction-input-select-list-option-font-family, ${base.fontFamily})`,
-    backgroundColor: `var(--conduction-input-select-list-option-background-color, ${base.backgroundColor}) `,
+const setAttributes = (): void => {
+  const setRoleToPresentation = (selector: string, role: string) => {
+    document.querySelectorAll(selector).forEach((element) => {
+      if (element.getAttribute("role") !== "presentation") element.setAttribute("role", role);
+    });
+  };
 
-    "&:hover": {
-      backgroundColor: `var(--conduction-input-select-list-option-hover-background-color, ${base.backgroundColor})`,
-      color: `var(--conduction-input-select-list-option-hover-color, ${base.color})`,
-      fontFamily: `var(--conduction-input-select-list-option-hover-font-family, var(--conduction-input-select-list-option-font-family, ${base.fontFamily}))`,
-    },
-  }),
-  placeholder: (base) => ({
-    ...base,
-    fontFamily: `var(--conduction-input-select-placeholder-font-family, var(--utrecht-form-input-placeholder-font-family, ${base.fontFamily}))`,
-    color: `var(--conduction-input-select-placeholder-color, var(--utrecht-form-input-placeholder-color, ${base.color}) )`,
-  }),
+  setRoleToPresentation('[id*="live-region"]', "presentation");
+  setRoleToPresentation('[class*="indicatorSeparator"]', "separator");
+  setRoleToPresentation('[class*="a11yText"]', "presentation");
 };
 
 export const SelectMultiple = ({
@@ -72,7 +65,11 @@ export const SelectMultiple = ({
   hideErrorMessage,
   menuPlacement,
   placeholder,
+  ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  React.useEffect(() => {
+    setAttributes();
+  }, []);
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -81,6 +78,7 @@ export const SelectMultiple = ({
         return (
           <>
             <ReactSelect
+              aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
               className={clsx(styles.select, errors[name] && styles.error)}
@@ -112,7 +110,11 @@ export const SelectCreate = ({
   hideErrorMessage,
   menuPlacement,
   placeholder,
+  ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  React.useEffect(() => {
+    setAttributes();
+  }, []);
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -121,6 +123,7 @@ export const SelectCreate = ({
         return (
           <>
             <CreatableSelect
+              aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
@@ -153,7 +156,11 @@ export const SelectSingle = ({
   hideErrorMessage,
   menuPlacement,
   placeholder,
+  ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  React.useEffect(() => {
+    setAttributes();
+  }, []);
   return (
     <Controller
       {...{ control, name, defaultValue }}
@@ -162,6 +169,7 @@ export const SelectSingle = ({
         return (
           <>
             <ReactSelect
+              aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
               className={clsx(styles.select, errors[name] && styles.error)}
