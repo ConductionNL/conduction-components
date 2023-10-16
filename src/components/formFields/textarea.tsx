@@ -4,7 +4,6 @@ import { Textarea as UtrechtTextarea } from "@utrecht/component-library-react/di
 
 export interface ITextAreaProps {
   name: string;
-  ariaLabel?: string;
   disabled?: boolean;
   defaultValue?: string;
   hideErrorMessage?: boolean;
@@ -18,15 +17,9 @@ export const Textarea = ({
   disabled,
   defaultValue,
   hideErrorMessage,
-  ariaLabel,
 }: ITextAreaProps & IReactHookFormProps): JSX.Element => (
   <>
-    <UtrechtTextarea
-      {...register(name, { ...validation })}
-      {...{ disabled, defaultValue }}
-      invalid={errors[name]}
-      aria-label={ariaLabel}
-    />
+    <UtrechtTextarea {...register(name, { ...validation })} {...{ disabled, defaultValue }} invalid={errors[name]} />
     {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
