@@ -5,7 +5,6 @@ import { ErrorMessage } from "./errorMessage/ErrorMessage";
 
 export interface IInputProps {
   name: string;
-  ariaLabel?: string;
   disabled?: boolean;
   defaultValue?: string;
   icon?: JSX.Element;
@@ -21,7 +20,6 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   placeholder,
   errors,
   hideErrorMessage,
-  ariaLabel,
 }) => {
   return (
     <>
@@ -30,7 +28,6 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
         {...{ disabled, placeholder }}
         {...register(name, { ...validation })}
         invalid={errors[name]}
-        aria-label={ariaLabel}
       />
       {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
     </>
@@ -47,7 +44,6 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   placeholder,
   errors,
   hideErrorMessage,
-  ariaLabel,
 }) => (
   <>
     <Textbox
@@ -55,7 +51,6 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
-      aria-label={ariaLabel}
     />
     {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
@@ -71,7 +66,6 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   placeholder,
   errors,
   hideErrorMessage,
-  ariaLabel,
 }) => (
   <>
     <Textbox
@@ -80,7 +74,6 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
-      aria-label={ariaLabel}
     />
     {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
@@ -96,7 +89,6 @@ export const InputURL: React.FC<IInputProps & IReactHookFormProps> = ({
   placeholder,
   errors,
   hideErrorMessage,
-  ariaLabel,
 }) => (
   <>
     <Textbox
@@ -104,7 +96,6 @@ export const InputURL: React.FC<IInputProps & IReactHookFormProps> = ({
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
       invalid={errors[name]}
-      aria-label={ariaLabel}
     />
     {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
@@ -120,7 +111,6 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   placeholder,
   errors,
   hideErrorMessage,
-  ariaLabel,
 }) => (
   <>
     <Textbox
@@ -128,7 +118,6 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation, valueAsNumber: true })}
       invalid={errors[name]}
-      aria-label={ariaLabel}
     />
     {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
@@ -144,7 +133,6 @@ export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
   placeholder,
   errors,
   hideErrorMessage,
-  ariaLabel,
 }) => (
   <>
     <Textbox
@@ -153,7 +141,6 @@ export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
       {...{ disabled, placeholder, icon, defaultValue }}
       {...register(name, { ...validation, valueAsNumber: true })}
       invalid={errors[name]}
-      aria-label={ariaLabel}
     />
     {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
@@ -170,13 +157,11 @@ export const InputFile: React.FC<IInputFileProps & IInputProps & IReactHookFormP
   defaultValue,
   validation,
   register,
-  ariaLabel,
 }) => (
   <input
     className="denhaag-Textbox__input"
     type="file"
     {...{ defaultValue, disabled, accept }}
     {...register(name, { ...validation })}
-    aria-label={ariaLabel}
   />
 );
