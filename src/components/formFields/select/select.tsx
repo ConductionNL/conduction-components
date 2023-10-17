@@ -183,7 +183,6 @@ export const SelectSingle = ({
         return (
           <>
             <ReactSelect
-              defaultMenuIsOpen
               aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
