@@ -7,47 +7,53 @@ interface HorizontalOverflowWrapperProps {
 }
 
 export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps> = ({ children }) => {
+  const [canScrollRight, setCanScrollRight] = React.useState<boolean>(false);
+  const [canScrollLeft, setCanScrollLeft] = React.useState<boolean>(false);
+
   const wrapperRef = React.useRef<HTMLDivElement | null>(null);
 
-  const scrollRight = () => {
+  const scrollRight = (): void => {
     wrapperRef.current?.scrollTo({
-      left: wrapperRef.current.clientWidth,
+      left: wrapperRef.current.scrollWidth,
       behavior: "smooth",
     });
   };
 
-  const scrollLeft = () => {
+  const scrollLeft = (): void => {
     wrapperRef.current?.scrollTo({
       left: 0,
       behavior: "smooth",
     });
   };
 
-  const canScrollRight = () => {
+  React.useEffect(() => {
+    checkScrollDirections(); // initiate available scroll directions
+
+    window.addEventListener("resize", checkScrollDirections);
+
+    return () => window.removeEventListener("resize", checkScrollDirections);
+  }, []);
+
+  const checkScrollDirections = (): void => {
     if (!wrapperRef.current) return;
 
-    return wrapperRef.current.scrollWidth > wrapperRef.current.clientWidth;
-  };
-
-  const canScrollLeft = () => {
-    if (!wrapperRef.current) return;
-
-    return wrapperRef.current.scrollLeft > 0;
+    setCanScrollRight(wrapperRef.current.scrollLeft + wrapperRef.current.clientWidth < wrapperRef.current.scrollWidth);
+    setCanScrollLeft(wrapperRef.current.scrollLeft > 0);
   };
 
   return (
     <div className={styles.container}>
-      <div ref={wrapperRef} className={styles.wrapper}>
+      <div ref={wrapperRef} className={styles.wrapper} onScroll={checkScrollDirections}>
         {children}
       </div>
 
-      {canScrollLeft() && (
+      {canScrollLeft && (
         <button className={clsx(styles.scrollButton, styles.left)} onClick={scrollLeft}>
           Scroll left
         </button>
       )}
 
-      {canScrollRight() && (
+      {canScrollRight && (
         <button className={clsx(styles.scrollButton, styles.right)} onClick={scrollRight}>
           Scroll right
         </button>
