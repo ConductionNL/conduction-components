@@ -41,24 +41,16 @@ const selectStyles: StylesConfig = {
   }),
 };
 
-const selectMultiStyles: StylesConfig = {
-  menuPortal: (base) => ({ ...base, zIndex: 100 }),
-  option: (base) => ({
-    ...base,
-    fontFamily: `var(--conduction-input-select-list-option-font-family, ${base.fontFamily})`,
-    backgroundColor: `var(--conduction-input-select-list-option-background-color, ${base.backgroundColor}) `,
+const setAttributes = (): void => {
+  const setRoleToPresentation = (selector: string, role: string) => {
+    document.querySelectorAll(selector).forEach((element) => {
+      if (element.getAttribute("role") !== "presentation") element.setAttribute("role", role);
+    });
+  };
 
-    "&:hover": {
-      backgroundColor: `var(--conduction-input-select-list-option-hover-background-color, ${base.backgroundColor})`,
-      color: `var(--conduction-input-select-list-option-hover-color, ${base.color})`,
-      fontFamily: `var(--conduction-input-select-list-option-hover-font-family, var(--conduction-input-select-list-option-font-family, ${base.fontFamily}))`,
-    },
-  }),
-  placeholder: (base) => ({
-    ...base,
-    fontFamily: `var(--conduction-input-select-placeholder-font-family, var(--utrecht-form-input-placeholder-font-family, ${base.fontFamily}))`,
-    color: `var(--conduction-input-select-placeholder-color, var(--utrecht-form-input-placeholder-color, ${base.color}) )`,
-  }),
+  setRoleToPresentation('[id*="live-region"]', "presentation");
+  setRoleToPresentation('[class*="indicatorSeparator"]', "separator");
+  setRoleToPresentation('[class*="a11yText"]', "presentation");
 };
 
 export const SelectMultiple = ({
@@ -76,21 +68,7 @@ export const SelectMultiple = ({
   ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   React.useEffect(() => {
-    document.querySelectorAll('[id*="live-region"]').forEach((element: any) => {
-      if (element?.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
-    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
-    document.querySelectorAll('[class*="a11yText"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
+    setAttributes();
   }, []);
   return (
     <Controller
@@ -135,21 +113,7 @@ export const SelectCreate = ({
   ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   React.useEffect(() => {
-    document.querySelectorAll('[id*="live-region"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
-    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
-    document.querySelectorAll('[class*="a11yText"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
+    setAttributes();
   }, []);
   return (
     <Controller
@@ -195,21 +159,7 @@ export const SelectSingle = ({
   ariaLabel,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
   React.useEffect(() => {
-    document.querySelectorAll('[id*="live-region"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
-    document.querySelectorAll('[class*="indicatorSeparator"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
-    document.querySelectorAll('[class*="a11yText"]').forEach((element: any) => {
-      if (element.role !== "presentation") {
-        element.setAttribute("role", "presentation");
-      }
-    });
+    setAttributes();
   }, []);
   return (
     <Controller
