@@ -40,7 +40,7 @@ import { CodeBlock } from "./components/codeBlock/CodeBlock";
 import { ToolTip } from "./components/toolTip/ToolTip";
 import { Pagination } from "./components/Pagination/Pagination";
 import { Tabs, TabList, Tab, TabPanel } from "./components/tabs/Tabs";
-import { TableWrapper } from "./components/tableWrapper/TableWrapper";
+import { HorizontalOverflowWrapper } from "./components/horizontalOverflowWrapper/HorizontalOverflowWrapper";
 
 export {
   DownloadCard,
@@ -82,5 +82,5 @@ export {
   TabList,
   Tab,
   TabPanel,
-  TableWrapper,
+  HorizontalOverflowWrapper,
 };
