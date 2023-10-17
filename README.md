@@ -4,10 +4,11 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.19: Add HorizontalOverflowWrapper component and refactor Tabs Component overflow scroll.
   - 2.2.18:
     - Refactored select role attribute.
     - Fixed Pagination-button border-radius.
+    - Added colors for Focus and Selected options in Select forms.
+    - Add HorizontalOverflowWrapper component and refactor Tabs Component overflow scroll.
   - 2.2.17: Refactor Pagination to include aria labels and make aria label required on texarea, input and select components.
   - 2.2.15/2.2.16: Added more NLDS options to Pagination.
   - 2.2.13/2.2.14:

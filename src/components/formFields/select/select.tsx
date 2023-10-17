@@ -23,10 +23,24 @@ interface ISelectProps {
 
 const selectStyles: StylesConfig = {
   menuPortal: (base) => ({ ...base, zIndex: 100 }),
-  option: (base) => ({
+  option: (base, state) => ({
     ...base,
     fontFamily: `var(--conduction-input-select-list-option-font-family, ${base.fontFamily})`,
-    backgroundColor: `var(--conduction-input-select-list-option-background-color, ${base.backgroundColor}) `,
+    backgroundColor: [
+      state.isFocused
+        ? `var(--conduction-input-select-list-option-focus-background-color, ${base.backgroundColor})`
+        : state.isSelected
+        ? `var(--conduction-input-select-list-option-selected-background-color, ${base.backgroundColor})`
+        : `var(--conduction-input-select-list-option-background-color, ${base.backgroundColor})`,
+    ],
+
+    color: [
+      state.isFocused
+        ? `var(--conduction-input-select-list-option-focus-color, ${base.color})`
+        : state.isSelected
+        ? `var(--conduction-input-select-list-option-selected-color, ${base.color})`
+        : `var(--conduction-input-select-list-option-color, ${base.color})`,
+    ],
 
     "&:hover": {
       backgroundColor: `var(--conduction-input-select-list-option-hover-background-color, ${base.backgroundColor})`,
