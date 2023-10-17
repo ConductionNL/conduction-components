@@ -41,11 +41,19 @@ export const TabList: ReactTabsFunctionComponent<TabListProps> = ({ children, ..
   };
 
   const handleScrollRight = () => {
-    if (wrapperRef.current) wrapperRef.current.scrollTo({ left: wrapperRef.current.scrollWidth, behavior: "smooth" });
+    if (wrapperRef.current)
+      wrapperRef.current.scrollTo({
+        left: wrapperRef.current.scrollLeft + wrapperRef.current.clientWidth * 0.9,
+        behavior: "smooth",
+      });
   };
 
   const handleScrollLeft = () => {
-    if (wrapperRef.current) wrapperRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    if (wrapperRef.current)
+      wrapperRef.current.scrollTo({
+        left: wrapperRef.current.scrollLeft - wrapperRef.current.clientWidth * 0.9,
+        behavior: "smooth",
+      });
   };
 
   React.useEffect(() => {

@@ -30,3 +30,12 @@
 .scrollButton.right {
   left: 100%;
 }
+
+/* Hide scrollbar */
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+.wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
