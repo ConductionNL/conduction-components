@@ -1,5 +1,16 @@
+:root {
+  --conduction-horizontal-overflow-wrapper-background-color: unset;
+  --conduction-horizontal-overflow-wrapper-buttons-top: 12px;
+
+  --conduction-horizontal-overflow-wrapper-margin-inline-start: 8px;
+  --conduction-horizontal-overflow-wrapper-margin-inline-end: 8px;
+  --conduction-horizontal-overflow-wrapper-margin-block-start: 8px;
+  --conduction-horizontal-overflow-wrapper-margin-block-end: 8px;
+}
+
 .container {
   position: relative;
+  background-color: var(--conduction-horizontal-overflow-wrapper-background-color);
 }
 
 .wrapper {
@@ -7,15 +18,15 @@
 }
 
 .scrollButton {
-  height: 24px;
-  top: calc(50% - 12px);
-  position: absolute;
-}
+  position: sticky;
+  top: var(--conduction-horizontal-overflow-wrapper-buttons-top);
 
-.scrollButton.left {
-  left: 0;
+  margin-inline-start: var(--conduction-horizontal-overflow-wrapper-margin-inline-start);
+  margin-inline-end: var(--conduction-horizontal-overflow-wrapper-margin-inline-end);
+  margin-block-start: var(--conduction-horizontal-overflow-wrapper-margin-block-start);
+  margin-block-end: var(--conduction-horizontal-overflow-wrapper-margin-block-end);
 }
 
 .scrollButton.right {
-  right: 0;
+  left: 100%;
 }

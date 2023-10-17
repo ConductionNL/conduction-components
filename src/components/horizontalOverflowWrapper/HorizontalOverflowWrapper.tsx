@@ -1,12 +1,19 @@
 import * as React from "react";
 import * as styles from "./HorizontalOverflowWrapper.module.css";
 import clsx from "clsx";
+import { Button } from "@utrecht/component-library-react/dist/css-module";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 interface HorizontalOverflowWrapperProps {
   children: React.ReactNode;
+  ariaLabels: {
+    scrollRightButton: string;
+    scrollLeftButton: string;
+  };
 }
 
-export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps> = ({ children }) => {
+export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps> = ({ children, ariaLabels }) => {
   const [canScrollRight, setCanScrollRight] = React.useState<boolean>(false);
   const [canScrollLeft, setCanScrollLeft] = React.useState<boolean>(false);
 
@@ -14,14 +21,14 @@ export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps>
 
   const scrollRight = (): void => {
     wrapperRef.current?.scrollTo({
-      left: wrapperRef.current.scrollWidth,
+      left: wrapperRef.current.scrollLeft + wrapperRef.current.clientWidth * 0.9,
       behavior: "smooth",
     });
   };
 
   const scrollLeft = (): void => {
     wrapperRef.current?.scrollTo({
-      left: 0,
+      left: wrapperRef.current.scrollLeft - wrapperRef.current.clientWidth * 0.9,
       behavior: "smooth",
     });
   };
@@ -43,21 +50,31 @@ export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps>
 
   return (
     <div className={styles.container}>
-      <div ref={wrapperRef} className={styles.wrapper} onScroll={checkScrollDirections}>
-        {children}
-      </div>
-
       {canScrollLeft && (
-        <button className={clsx(styles.scrollButton, styles.left)} onClick={scrollLeft}>
-          Scroll left
-        </button>
+        <Button
+          className={clsx(styles.scrollButton, styles.left)}
+          onClick={scrollLeft}
+          appearance="secondary-action-button"
+          aria-label={ariaLabels.scrollLeftButton}
+        >
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </Button>
       )}
 
       {canScrollRight && (
-        <button className={clsx(styles.scrollButton, styles.right)} onClick={scrollRight}>
-          Scroll right
-        </button>
+        <Button
+          className={clsx(styles.scrollButton, styles.right)}
+          onClick={scrollRight}
+          appearance="secondary-action-button"
+          aria-label={ariaLabels.scrollRightButton}
+        >
+          <FontAwesomeIcon icon={faChevronRight} />
+        </Button>
       )}
+
+      <div ref={wrapperRef} className={styles.wrapper} onScroll={checkScrollDirections}>
+        {children}
+      </div>
     </div>
   );
 };
