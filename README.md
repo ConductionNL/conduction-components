@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.19: Add HorizontalOverflowWrapper component and refactor Tabs Component overflow scroll.
   - 2.2.18:
     - Refactored select role attribute.
     - Fixed Pagination-button border-radius.
