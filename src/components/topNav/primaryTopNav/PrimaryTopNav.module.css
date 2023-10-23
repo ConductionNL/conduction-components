@@ -116,6 +116,11 @@
 }
 .primary .link {
   text-decoration: none;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+  white-space: wrap;
 }
 
 .primary .link:not(.currentLink) {
@@ -187,6 +192,11 @@
   margin-inline-end: var(--conduction-primary-top-nav-item-icon-margin);
 }
 
+.li:hover .dropdown {
+  display: block;
+  z-index: 1;
+}
+
 @media only screen and (min-width: 992px) {
   .container {
     width: fit-content;
@@ -213,11 +223,6 @@
 
   .menuToggleContainer {
     display: none;
-  }
-
-  .primary .li:hover .dropdown {
-    display: block;
-    z-index: 1;
   }
 
   .mobileLink {
