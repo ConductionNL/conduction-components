@@ -31,8 +31,23 @@ export interface TopNavProps {
 
 export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProps): JSX.Element => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isMobile, setIsMobile] = React.useState<boolean>(window.innerWidth < 992);
 
-  const screenWidth = window.innerWidth;
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 992);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleSubItemClick = (handleClick: any) => {
+    setIsOpen(false);
+
+    handleClick();
+  };
 
   return (
     <div className={clsx(styles.container, layoutClassName && layoutClassName)}>
@@ -58,15 +73,17 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProp
               >
                 {icon}
                 {label}{" "}
-                {subItems && screenWidth < 992 && (
-                  <FontAwesomeIcon className={styles.toggleIcon} icon={faChevronRight} />
-                )}
+                {subItems && isMobile && <FontAwesomeIcon className={styles.toggleIcon} icon={faChevronRight} />}
               </Link>
 
               {subItems && (
                 <ul className={styles.dropdown}>
                   {subItems.map(({ label, icon, current, handleClick }, idx) => (
-                    <li key={idx} className={clsx(styles.li, current && styles.current)} onClick={handleClick}>
+                    <li
+                      key={idx}
+                      className={clsx(styles.li, current && styles.current)}
+                      onClick={() => handleSubItemClick(handleClick)}
+                    >
                       <Link className={clsx(styles.link, styles.label, current && styles.currentLink)}>
                         {icon}
                         {label}
