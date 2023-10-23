@@ -187,6 +187,11 @@
   margin-inline-end: var(--conduction-primary-top-nav-item-icon-margin);
 }
 
+.li:hover .dropdown {
+  display: block;
+  z-index: 1;
+}
+
 @media only screen and (min-width: 992px) {
   .container {
     width: fit-content;
@@ -213,11 +218,6 @@
 
   .menuToggleContainer {
     display: none;
-  }
-
-  .primary .li:hover .dropdown {
-    display: block;
-    z-index: 1;
   }
 
   .mobileLink {

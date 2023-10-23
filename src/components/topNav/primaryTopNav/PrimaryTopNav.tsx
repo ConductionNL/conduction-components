@@ -5,18 +5,23 @@ import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-interface ITopNavItem {
+interface ITopNavItemBase {
   label: string;
   icon?: JSX.Element;
   current?: boolean;
-  handleClick?: () => any;
-  subItems?: {
-    label: string;
-    icon?: JSX.Element;
-    current?: boolean;
-    handleClick?: () => any;
-  }[];
 }
+
+interface ITopNavItemWithSubItems extends ITopNavItemBase {
+  handleClick?: never;
+  subItems: ITopNavItem[];
+}
+
+interface ITopNavItemWithoutSubItems extends ITopNavItemBase {
+  handleClick?: () => any;
+  subItems?: never;
+}
+
+export type ITopNavItem = ITopNavItemWithSubItems | ITopNavItemWithoutSubItems;
 
 export interface TopNavProps {
   items: ITopNavItem[];
@@ -26,30 +31,9 @@ export interface TopNavProps {
 
 export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProps): JSX.Element => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [subNavIsOpen, setSubNavIsOpen] = React.useState({});
-
-  const handleItemClick = (handleClick?: () => any) => {
-    if (handleClick) {
-      handleClick();
-
-      setIsOpen(false);
-    }
-  };
-
-  const handleSubItemMenu = (idx: number, value: boolean) => {
-    setSubNavIsOpen({
-      ...subNavIsOpen,
-      [idx as keyof typeof subNavIsOpen]: value,
-    });
-  };
 
   const screenWidth = window.innerWidth;
 
-  React.useEffect(() => {
-    if (screenWidth > 992) {
-      setSubNavIsOpen({});
-    }
-  }, [screenWidth]);
   return (
     <div className={clsx(styles.container, layoutClassName && layoutClassName)}>
       <div className={styles.menuToggleContainer}>
@@ -63,17 +47,7 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProp
       <nav className={clsx(styles.primary, isOpen && styles.isOpen)}>
         <ul className={styles.ul}>
           {items.map(({ label, icon, current, handleClick, subItems }, idx) => (
-            <li
-              onClick={() =>
-                !subItems
-                  ? handleItemClick(handleClick)
-                  : screenWidth > 992
-                  ? handleItemClick(handleClick)
-                  : handleSubItemMenu(idx, !subNavIsOpen[idx as keyof typeof subNavIsOpen] ?? true)
-              }
-              className={clsx(styles.li, current && styles.current)}
-              key={idx}
-            >
+            <li onClick={handleClick} className={clsx(styles.li, current && styles.current)} key={idx}>
               <Link
                 className={clsx(
                   styles.link,
@@ -85,21 +59,14 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProp
                 {icon}
                 {label}{" "}
                 {subItems && screenWidth < 992 && (
-                  <FontAwesomeIcon
-                    className={clsx(styles.toggleIcon, subNavIsOpen[idx as keyof typeof subNavIsOpen] && styles.isOpen)}
-                    icon={faChevronRight}
-                  />
+                  <FontAwesomeIcon className={styles.toggleIcon} icon={faChevronRight} />
                 )}
               </Link>
 
               {subItems && (
-                <ul className={clsx(styles.dropdown, subNavIsOpen[idx as keyof typeof subNavIsOpen] && styles.isOpen)}>
+                <ul className={styles.dropdown}>
                   {subItems.map(({ label, icon, current, handleClick }, idx) => (
-                    <li
-                      key={idx}
-                      className={clsx(styles.li, current && styles.current)}
-                      onClick={() => handleItemClick(handleClick)}
-                    >
+                    <li key={idx} className={clsx(styles.li, current && styles.current)} onClick={handleClick}>
                       <Link className={clsx(styles.link, styles.label, current && styles.currentLink)}>
                         {icon}
                         {label}
