@@ -116,6 +116,11 @@
 }
 .primary .link {
   text-decoration: none;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+  white-space: wrap;
 }
 
 .primary .link:not(.currentLink) {
