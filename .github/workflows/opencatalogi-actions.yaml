@@ -1,0 +1,21 @@
+name: My Open Catalogi Workflow
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:              
+      - name: Create or Update publiccode.yaml
+        uses: OpenCatalogi/publiccode-action@1.0.0
+      - name: Create an product page              
+        uses: OpenCatalogi/productpage-action@1.0.0
+        with:
+          nl_design_theme_classname: 'condution-theme'
