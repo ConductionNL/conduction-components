@@ -4,11 +4,42 @@ import clsx from "clsx";
 import { Link } from "@utrecht/component-library-react/dist/css-module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
 
 interface ITopNavItemBase {
   label: string;
   icon?: JSX.Element;
-  current?: boolean;
+  current?: boolean | ICurrentItemJSONFormat;
+}
+
+interface ICurrentItemJSONFormat {
+  pathname: string;
+  operator: "equals" | "includes";
+  filterCondition?: {
+    filter: string;
+    value: string;
+    isObject: boolean;
+  };
+}
+
+interface IIconJSONFormat {
+  icon?: {
+    icon: IconName;
+    prefix: IconPrefix;
+    placement: "left" | "right";
+  };
+  customIcon?: {
+    icon: string;
+    placement: "left" | "right";
+  };
+}
+
+interface IHandleClickJSONFormat {
+  link: string;
+  setFilter?: {
+    filter: string;
+    value: string;
+  };
 }
 
 interface ITopNavItemWithSubItems extends ITopNavItemBase {
@@ -17,7 +48,8 @@ interface ITopNavItemWithSubItems extends ITopNavItemBase {
 }
 
 interface ITopNavItemWithoutSubItems extends ITopNavItemBase {
-  handleClick?: () => any;
+  handleClick?: () => any | IHandleClickJSONFormat;
+  type: "readme" | "internal" | "external";
   subItems?: never;
 }
 
