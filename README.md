@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.21: Added Logo component.
   - 2.2.20: Updated primary top nav to have more types.
   - 2.2.19: Refactored primary top nav to simplify sub-items.
   - 2.2.18:
