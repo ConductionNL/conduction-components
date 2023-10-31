@@ -24,7 +24,7 @@ import {
   SelectSingle,
 } from "./components/formFields";
 import { ImageDivider } from "./components/imageDivider/ImageDivider";
-import { AuthenticatedLogo, UnauthenticatedLogo } from "./components/logo/Logo";
+import { Logo } from "./components/logo/Logo";
 import { MetaIcon } from "./components/metaIcon/MetaIcon";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav";
@@ -61,8 +61,7 @@ export {
   SelectMultiple,
   SelectSingle,
   ImageDivider,
-  AuthenticatedLogo,
-  UnauthenticatedLogo,
+  Logo,
   MetaIcon,
   PrivateRoute,
   PrimaryTopNav,

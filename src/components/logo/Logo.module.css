@@ -1,15 +1,30 @@
-.logoContainer {
-  height: 100%;
+:root {
+  --conduction-logo-inline-size-md: 220px;
+  --conduction-logo-block-size-md: 40px;
+
+  --conduction-logo-inline-size-lg: 330px;
+  --conduction-logo-block-size-lg: 60px;
+
+  --conduction-logo-background-image: url("https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png");
 }
 
-.logo {
-  background-size: 100% 100%;
+.container {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--conduction-logo-background-image);
 }
 
-.authenticatedLogo {
-  background-image: var(--conduction-authenticated-logo-background);
+.container.md {
+  inline-size: var(--conduction-logo-inline-size-md);
+  block-size: var(--conduction-logo-block-size-md);
 }
 
-.unauthenticatedLogo {
-  background-image: var(--conduction-unauthenticated-logo-background);
+.container.lg {
+  inline-size: var(--conduction-logo-inline-size-lg);
+  block-size: var(--conduction-logo-block-size-lg);
+}
+
+.container.clickable:hover {
+  cursor: pointer;
 }
