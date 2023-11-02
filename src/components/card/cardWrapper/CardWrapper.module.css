@@ -33,6 +33,7 @@
   border-bottom: var(--conduction-card-wrapper-border-bottom-width, var(--conduction-card-wrapper-border-width))
     var(--conduction-card-wrapper-border-bottom-style, var(--conduction-card-wrapper-border-style))
     var(--conduction-card-wrapper-border-bottom-color, var(--conduction-card-wrapper-border-color));
+  position: relative;
 }
 
 .container:hover {
