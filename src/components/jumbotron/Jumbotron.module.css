@@ -1,3 +1,9 @@
+.wrapper {
+  padding-block-start: 72px;
+  padding-block-end: 72px;
+  width: auto !important;
+}
+
 .backgroundImageWrapper {
   background-size: cover;
   background-position: 48% 39%;
@@ -10,10 +16,22 @@
   background-color: var(--utrecht-page-header-background-color) !important;
 }
 
-.wrapper {
-  padding-block-start: 72px;
-  padding-block-end: 72px;
-  width: auto !important;
+.imageRightContainer {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  gap: var(--utrecht-space-inline-xl);
+  align-items: center;
+}
+
+.headerSearchForm > *:not(:last-child) {
+  margin-block-end: 32px;
+}
+
+.headerSearchForm > .subHeading2 {
+  width: 100%;
+  max-width: 800px;
+  margin-block-end: 48px;
 }
 
 .card {
@@ -41,10 +59,6 @@
   width: max-content;
 }
 
-.cardDescription {
-  color: var(--conduction-card-wrapper-color) !important;
-}
-
 .cardSubTitle,
 .subTitle {
   position: relative;
@@ -54,12 +68,8 @@
   font-size: var(--utrecht-document-font-size);
 }
 
-.imageRightContainer {
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-  gap: var(--utrecht-space-inline-xl);
-  align-items: center;
+.cardDescription {
+  color: var(--conduction-card-wrapper-color) !important;
 }
 
 .image {
@@ -73,21 +83,6 @@
   color: var(--utrecht-page-header-color) !important;
 }
 
-.title {
-  margin-block-end: var(--utrecht-space-block-md);
-}
-
-.headerSearchForm > *:not(:last-child) {
-  margin-block-end: 32px;
-}
-
-.headerSearchForm > .subHeading2 {
-  width: 100%;
-  max-width: 800px;
-  margin-block-end: 48px;
-}
-
-.searchFormContainer {
-  width: 100%;
-  max-width: 650px;
+.titleSingle {
+  margin-block-end: var(--utrecht-space-block-2xs);
 }
