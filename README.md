@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.22: Updated Jumbotron component to be more customizable.
   - 2.2.21: 
     - Removed warning from HorizontalOverflowWrapper.
     - Added Jumbotron component.
