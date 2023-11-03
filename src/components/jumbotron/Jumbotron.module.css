@@ -1,0 +1,93 @@
+.backgroundImageWrapper {
+  background-size: cover;
+  background-position: 48% 39%;
+  max-width: 100%;
+  padding: 5rem 0 10rem;
+}
+
+.rightImageWrapper {
+  padding-block: 48px;
+  background-color: var(--utrecht-page-header-background-color) !important;
+}
+
+.wrapper {
+  padding-block-start: 72px;
+  padding-block-end: 72px;
+  width: auto !important;
+}
+
+.card {
+  width: fit-content;
+  padding-inline-start: 48px;
+  padding-inline-end: 48px;
+  padding-block-start: 40px;
+  padding-block-end: 40px;
+  border-bottom: var(--conduction-card-wrapper-border-width) var(--conduction-card-wrapper-border-style) var(--conduction-card-wrapper-border-color);
+}
+
+.card:hover {
+  background-color: var(--conduction-card-wrapper-background-color);
+  cursor: default;
+  border-bottom: var(--conduction-card-wrapper-border-width) var(--conduction-card-wrapper-border-style) var(--conduction-card-wrapper-border-color);
+}
+
+.cardTitle,
+.cardAndImageTitle {
+  border-block-end: var(--conduction-card-wrapper-header-border-block-end);
+  color: var(--conduction-card-header-title-color, var(--conduction-card-wrapper-color)) !important;
+}
+
+.cardAndImageTitle {
+  width: max-content;
+}
+
+.cardDescription {
+  color: var(--conduction-card-wrapper-color) !important;
+}
+
+.cardSubTitle,
+.subTitle {
+  position: relative;
+  font-style: italic;
+  display: block;
+  margin-block-end: var(--utrecht-space-block-md);
+  font-size: var(--utrecht-document-font-size);
+}
+
+.imageRightContainer {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  gap: var(--utrecht-space-inline-xl);
+  align-items: center;
+}
+
+.image {
+  width: 50% !important;
+  object-fit: contain;
+}
+
+.title,
+.description,
+.subTitle {
+  color: var(--utrecht-page-header-color) !important;
+}
+
+.title {
+  margin-block-end: var(--utrecht-space-block-md);
+}
+
+.headerSearchForm > *:not(:last-child) {
+  margin-block-end: 32px;
+}
+
+.headerSearchForm > .subHeading2 {
+  width: 100%;
+  max-width: 800px;
+  margin-block-end: 48px;
+}
+
+.searchFormContainer {
+  width: 100%;
+  max-width: 650px;
+}
