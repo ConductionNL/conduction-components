@@ -3,15 +3,15 @@ import * as styles from "./Logo.module.css";
 import clsx from "clsx";
 
 interface LogoProps {
-  size?: "md" | "lg";
+  variant?: "header" | "footer";
   onClick?: () => any;
   layoutClassName?: string;
 }
 
-export const Logo: React.FC<LogoProps> = ({ onClick, layoutClassName, size = "md" }) => {
+export const Logo: React.FC<LogoProps> = ({ onClick, layoutClassName, variant = "header" }) => {
   return (
     <div
-      className={clsx(styles.container, styles[size], [
+      className={clsx(styles.container, styles[variant], [
         onClick && styles.clickable,
         layoutClassName && layoutClassName,
       ])}

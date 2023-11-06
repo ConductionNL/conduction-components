@@ -1,28 +1,30 @@
 :root {
-  --conduction-logo-inline-size-md: 220px;
-  --conduction-logo-block-size-md: 40px;
+  --conduction-logo-inline-size-header: 220px;
+  --conduction-logo-block-size-header: 40px;
 
-  --conduction-logo-inline-size-lg: 330px;
-  --conduction-logo-block-size-lg: 60px;
+  --conduction-logo-inline-size-footer: 330px;
+  --conduction-logo-block-size-footer: 60px;
 
-  --conduction-logo-background-image: url("https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png");
+  --conduction-logo-background-image-header: url("https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png");
+  --conduction-logo-background-image-footer: url("https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png");
 }
 
 .container {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: var(--conduction-logo-background-image);
 }
 
-.container.md {
-  inline-size: var(--conduction-logo-inline-size-md);
-  block-size: var(--conduction-logo-block-size-md);
+.container.header {
+  inline-size: var(--conduction-logo-inline-size-header);
+  block-size: var(--conduction-logo-block-size-header);
+  background-image: var(--conduction-logo-background-image-header);
 }
 
-.container.lg {
-  inline-size: var(--conduction-logo-inline-size-lg);
-  block-size: var(--conduction-logo-block-size-lg);
+.container.footer {
+  inline-size: var(--conduction-logo-inline-size-footer);
+  block-size: var(--conduction-logo-block-size-footer);
+  background-image: var(--conduction-logo-background-image-footer);
 }
 
 .container.clickable:hover {
