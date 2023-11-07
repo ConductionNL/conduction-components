@@ -1,25 +1,21 @@
-import clsx from "clsx";
-import { Link } from "gatsby";
 import * as React from "react";
 import * as styles from "./Logo.module.css";
+import clsx from "clsx";
 
 interface LogoProps {
-  layoutClassName: string;
-  href?: string;
+  variant?: "header" | "footer";
+  onClick?: () => any;
+  layoutClassName?: string;
 }
 
-export const AuthenticatedLogo = ({ layoutClassName, href }: LogoProps): JSX.Element => {
+export const Logo: React.FC<LogoProps> = ({ onClick, layoutClassName, variant = "header" }) => {
   return (
-    <Link className={styles.logoContainer} to={href ?? "#"}>
-      <div className={clsx(styles.authenticatedLogo, styles.logo, layoutClassName)} />
-    </Link>
-  );
-};
-
-export const UnauthenticatedLogo = ({ layoutClassName, href }: LogoProps): JSX.Element => {
-  return (
-    <Link className={styles.logoContainer} to={href ?? "#"}>
-      <div className={clsx(styles.unauthenticatedLogo, styles.logo, layoutClassName)} />
-    </Link>
+    <div
+      className={clsx(styles.container, styles[variant], [
+        onClick && styles.clickable,
+        layoutClassName && layoutClassName,
+      ])}
+      {...{ onClick }}
+    />
   );
 };
