@@ -4,9 +4,12 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.24:
+    - Added DisplaySwitch component.
+    - Removed align hover state on card-header.
   - 2.2.23: Added Logo component.
   - 2.2.22: Updated Jumbotron component to be more customizable.
-  - 2.2.21: 
+  - 2.2.21:
     - Removed warning from HorizontalOverflowWrapper.
     - Added Jumbotron component.
     - Updated card-header to align hover states.
