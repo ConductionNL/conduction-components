@@ -1,6 +1,7 @@
 name: Mijn Open Catalogi Workflow
 
 on:
+ workflow_dispatch:
  push:
   branches:
    - main
