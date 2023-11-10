@@ -24,7 +24,7 @@ import {
   SelectSingle,
 } from "./components/formFields";
 import { ImageDivider } from "./components/imageDivider/ImageDivider";
-import { AuthenticatedLogo, UnauthenticatedLogo } from "./components/logo/Logo";
+import { Logo } from "./components/logo/Logo";
 import { MetaIcon } from "./components/metaIcon/MetaIcon";
 import { PrivateRoute } from "./components/privateRoute/PrivateRoute";
 import { PrimaryTopNav, SecondaryTopNav } from "./components/topNav";
@@ -41,6 +41,8 @@ import { ToolTip } from "./components/toolTip/ToolTip";
 import { Pagination } from "./components/Pagination/Pagination";
 import { Tabs, TabList, Tab, TabPanel } from "./components/tabs/Tabs";
 import { HorizontalOverflowWrapper } from "./components/horizontalOverflowWrapper/HorizontalOverflowWrapper";
+import { Jumbotron } from "./components/jumbotron/Jumbotron";
+import DisplaySwitch from "./components/displaySwitch/DisplaySwitch";
 
 export {
   DownloadCard,
@@ -61,8 +63,7 @@ export {
   SelectMultiple,
   SelectSingle,
   ImageDivider,
-  AuthenticatedLogo,
-  UnauthenticatedLogo,
+  Logo,
   MetaIcon,
   PrivateRoute,
   PrimaryTopNav,
@@ -83,4 +84,6 @@ export {
   Tab,
   TabPanel,
   HorizontalOverflowWrapper,
+  Jumbotron,
+  DisplaySwitch
 };

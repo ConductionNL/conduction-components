@@ -52,7 +52,7 @@ export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps>
     <div className={styles.container}>
       {canScrollLeft && (
         <Button
-          className={clsx(styles.scrollButton, styles.left)}
+          className={clsx(styles.scrollButton)}
           onClick={scrollLeft}
           appearance="secondary-action-button"
           aria-label={ariaLabels.scrollLeftButton}

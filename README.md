@@ -4,6 +4,17 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.24:
+    - Added DisplaySwitch component.
+    - Removed align hover state on card-header.
+  - 2.2.23: Added Logo component.
+  - 2.2.22: Updated Jumbotron component to be more customizable.
+  - 2.2.21:
+    - Removed warning from HorizontalOverflowWrapper.
+    - Added Jumbotron component.
+    - Updated card-header to align hover states.
+  - 2.2.20: Updated primary top nav to have more types.
+  - 2.2.19: Refactored primary top nav to simplify sub-items.
   - 2.2.18:
     - Refactored select role attribute.
     - Fixed Pagination-button border-radius.
