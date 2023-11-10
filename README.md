@@ -4,9 +4,6 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.25:
-    - Added box-shadow to CardWrapper.
-    - Added item border-radius to PrimaryTopNav.
   - 2.2.24:
     - Added DisplaySwitch component.
     - Removed align hover state on card-header.

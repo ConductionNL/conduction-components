@@ -6,7 +6,6 @@
   /* --conduction-card-wrapper-border-bottom-width: unset; */
   /* --conduction-card-wrapper-border-bottom-style: unset; */
   /* --conduction-card-wrapper-border-bottom-color: unset; */
-  /* --conduction-card-wrapper-box-shadow: unset; */
   /* --conduction-card-wrapper-hover-border-bottom-width: unset; */
   /* --conduction-card-wrapper-hover-border-bottom-style: unset; */
   /* --conduction-card-wrapper-hover-border-bottom-color: unset; */
@@ -35,7 +34,6 @@
     var(--conduction-card-wrapper-border-bottom-style, var(--conduction-card-wrapper-border-style))
     var(--conduction-card-wrapper-border-bottom-color, var(--conduction-card-wrapper-border-color));
   position: relative;
-  box-shadow: var(--conduction-card-wrapper-box-shadow);
 }
 
 .container:hover {
