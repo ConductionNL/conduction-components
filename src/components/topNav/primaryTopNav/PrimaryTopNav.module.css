@@ -6,8 +6,7 @@
 
   --conduction-primary-top-nav-item-padding: var(--skeleton-size-md);
   --conduction-primary-top-nav-item-icon-margin: var(--skeleton-size-2x);
-
-  /* --conduction-primary-top-nav- */
+  /* --conduction-primary-top-nav-item-border-radius: var(--skeleton-size-2x); */
 
   /* --conduction-primary-top-nav-current-background-color: #ffffff; */
   /* --conduction-primary-top-nav-current-color: #4376fc; */
@@ -88,6 +87,7 @@
   padding-inline-end: var(--conduction-primary-top-nav-item-padding);
   padding-block-start: var(--conduction-primary-top-nav-item-padding);
   padding-block-end: var(--conduction-primary-top-nav-item-padding);
+  border-radius: var(--conduction-primary-top-nav-item-border-radius);
 }
 
 .li:hover {
