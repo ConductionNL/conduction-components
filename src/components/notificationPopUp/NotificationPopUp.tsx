@@ -13,14 +13,15 @@ export interface NotificationPopUpProps {
   hide: () => void;
   primaryButton: {
     label: string;
-    icon?: JSX.Element;
     handleClick: () => any;
+    icon?: JSX.Element;
     layoutClassName?: string;
   };
   secondaryButton?: {
     label: string;
-    icon?: JSX.Element;
     handleClick: () => any;
+    href: string;
+    icon?: JSX.Element;
     layoutClassName?: string;
   };
   layoutClassName?: string;
@@ -59,8 +60,14 @@ export const NotificationPopUp = ({
 
       <div className={styles.buttons}>
         {secondaryButton && (
-          <div onClick={() => handleClick(secondaryButton.handleClick)} className={secondaryButton.layoutClassName}>
-            <Link className={styles.link}>
+          <div className={secondaryButton.layoutClassName}>
+            <Link
+              onClick={(e) => {
+                e.preventDefault(), handleClick(secondaryButton.handleClick);
+              }}
+              className={styles.link}
+              href={secondaryButton.href}
+            >
               {secondaryButton.icon ?? <FontAwesomeIcon icon={faClose} />}
               {secondaryButton.label}
             </Link>
