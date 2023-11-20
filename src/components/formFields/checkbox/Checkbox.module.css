@@ -48,11 +48,6 @@
   /* --conduction-input-checkbox-label-font-family: ; */
 }
 
-.container .checkbox:disabled:hover + label::before,
-.container .checkbox:disabled:checked + label::after {
-  cursor: default;
-}
-
 .checkbox {
   position: absolute;
   overflow: hidden;
