@@ -16,7 +16,7 @@ export const InputCheckbox = ({
   defaultChecked,
   disabled,
 }: ICheckboxProps & IReactHookFormProps): JSX.Element => (
-  <div className={styles.container}>
+  <div>
     <input
       type="checkbox"
       id={`checkbox${name}`}
