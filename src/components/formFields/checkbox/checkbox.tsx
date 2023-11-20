@@ -1,4 +1,4 @@
-import * as styles from "./Checkbox.module.css";
+import * as styles from "./checkbox.module.css";
 import { IReactHookFormProps } from "./../types";
 
 export interface ICheckboxProps {
@@ -22,6 +22,7 @@ export const InputCheckbox = ({
       id={`checkbox${name}`}
       {...{ defaultChecked, disabled }}
       {...register(name, { ...validation })}
+      className={styles.checkbox}
     />
     <label htmlFor={`checkbox${name}`}>{label}</label>
   </div>
