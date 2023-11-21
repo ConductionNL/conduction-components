@@ -88,14 +88,14 @@ export const SelectMultiple = ({
     <Controller
       {...{ control, name, defaultValue }}
       rules={validation}
-      render={({ field: { onChange, value } }) => {
+      render={({ field: { onChange, value }, fieldState: { error } }) => {
         return (
           <>
             <ReactSelect
               aria-label={ariaLabel}
               inputId={id}
               value={value ?? ""}
-              className={clsx(styles.select, errors[name] && styles.error)}
+              className={clsx(styles.select, error && styles.error)}
               isMulti
               isDisabled={disabled}
               {...{ options, onChange, errors }}
@@ -104,7 +104,7 @@ export const SelectMultiple = ({
               styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
             />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
           </>
         );
       }}
@@ -133,7 +133,7 @@ export const SelectCreate = ({
     <Controller
       {...{ control, name, defaultValue }}
       rules={validation}
-      render={({ field: { onChange, value } }) => {
+      render={({ field: { onChange, value }, fieldState: { error } }) => {
         return (
           <>
             <CreatableSelect
@@ -141,7 +141,7 @@ export const SelectCreate = ({
               inputId={id}
               value={value ?? ""}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
-              className={clsx(styles.select, errors[name] && styles.error)}
+              className={clsx(styles.select, error && styles.error)}
               isMulti
               isDisabled={disabled}
               {...{ options, onChange, errors }}
@@ -149,7 +149,7 @@ export const SelectCreate = ({
               menuPlacement={menuPlacement}
               styles={selectStyles}
             />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
           </>
         );
       }}
@@ -176,28 +176,30 @@ export const SelectSingle = ({
     setAttributes();
   }, []);
   return (
-    <Controller
-      {...{ control, name, defaultValue }}
-      rules={validation}
-      render={({ field: { onChange, value } }) => {
-        return (
-          <>
-            <ReactSelect
-              aria-label={ariaLabel}
-              inputId={id}
-              value={value ?? ""}
-              className={clsx(styles.select, errors[name] && styles.error)}
-              isDisabled={disabled}
-              {...{ options, onChange, errors, isClearable }}
-              menuPortalTarget={document.body}
-              menuPlacement={menuPlacement}
-              styles={selectStyles}
-              placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
-            />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
-          </>
-        );
-      }}
-    />
+    <>
+      <Controller
+        {...{ control, name, defaultValue }}
+        rules={validation}
+        render={({ field: { onChange, value }, fieldState: { error } }) => {
+          return (
+            <>
+              <ReactSelect
+                aria-label={ariaLabel}
+                inputId={id}
+                value={value ?? ""}
+                className={clsx(styles.select, error && styles.error)}
+                isDisabled={disabled}
+                {...{ options, onChange, errors, isClearable }}
+                menuPortalTarget={document.body}
+                menuPlacement={menuPlacement}
+                styles={selectStyles}
+                placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
+              />
+              {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
+            </>
+          );
+        }}
+      />
+    </>
   );
 };

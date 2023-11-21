@@ -1,11 +1,14 @@
 import * as React from "react";
+import _ from "lodash";
 import { Textbox } from "@utrecht/component-library-react/dist/css-module";
 import { IReactHookFormProps } from "./types";
 import { ErrorMessage } from "./errorMessage/ErrorMessage";
+import { Control, Controller, FieldValues } from "react-hook-form";
 
 export interface IInputProps {
   name: string;
   ariaLabel: string;
+  control: Control<FieldValues, any>;
   disabled?: boolean;
   defaultValue?: string;
   icon?: JSX.Element;
@@ -22,17 +25,28 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
   hideErrorMessage,
   ariaLabel,
+  control,
 }) => {
   return (
     <>
-      <Textbox
-        type="password"
-        {...{ disabled, placeholder }}
-        {...register(name, { ...validation })}
-        invalid={errors[name]}
-        aria-label={ariaLabel}
+      <Controller
+        {...{ control, name, errors }}
+        rules={validation}
+        render={({ fieldState: { error } }) => {
+          return (
+            <>
+              <Textbox
+                type="password"
+                {...{ disabled, placeholder }}
+                {...register(name, { ...validation })}
+                invalid={!_.isEmpty(error)}
+                aria-label={ariaLabel}
+              />
+              {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
+            </>
+          );
+        }}
       />
-      {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
     </>
   );
 };
@@ -48,16 +62,27 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
   hideErrorMessage,
   ariaLabel,
+  control,
 }) => (
   <>
-    <Textbox
-      type="text"
-      {...{ defaultValue, disabled, placeholder, icon }}
-      {...register(name, { ...validation })}
-      invalid={errors[name]}
-      aria-label={ariaLabel}
+    <Controller
+      {...{ control, name, errors }}
+      rules={validation}
+      render={({ fieldState: { error } }) => {
+        return (
+          <>
+            <Textbox
+              type="text"
+              {...{ defaultValue, disabled, placeholder, icon }}
+              {...register(name, { ...validation })}
+              invalid={!_.isEmpty(error)}
+              aria-label={ariaLabel}
+            />
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
+          </>
+        );
+      }}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -72,17 +97,28 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
   hideErrorMessage,
   ariaLabel,
+  control,
 }) => (
   <>
-    <Textbox
-      type="email"
-      required={!!validation?.required}
-      {...{ defaultValue, disabled, placeholder, icon }}
-      {...register(name, { ...validation })}
-      invalid={errors[name]}
-      aria-label={ariaLabel}
+    <Controller
+      {...{ control, name, errors }}
+      rules={validation}
+      render={({ fieldState: { error } }) => {
+        return (
+          <>
+            <Textbox
+              type="email"
+              required={!!validation?.required}
+              {...{ defaultValue, disabled, placeholder, icon }}
+              {...register(name, { ...validation })}
+              invalid={!_.isEmpty(error)}
+              aria-label={ariaLabel}
+            />
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
+          </>
+        );
+      }}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -97,16 +133,27 @@ export const InputURL: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
   hideErrorMessage,
   ariaLabel,
+  control,
 }) => (
   <>
-    <Textbox
-      type="url"
-      {...{ defaultValue, disabled, placeholder, icon }}
-      {...register(name, { ...validation })}
-      invalid={errors[name]}
-      aria-label={ariaLabel}
+    <Controller
+      {...{ control, name, errors }}
+      rules={validation}
+      render={({ fieldState: { error } }) => {
+        return (
+          <>
+            <Textbox
+              type="url"
+              {...{ defaultValue, disabled, placeholder, icon }}
+              {...register(name, { ...validation })}
+              invalid={!_.isEmpty(error)}
+              aria-label={ariaLabel}
+            />
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
+          </>
+        );
+      }}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -121,16 +168,27 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
   hideErrorMessage,
   ariaLabel,
+  control,
 }) => (
   <>
-    <Textbox
-      type="number"
-      {...{ defaultValue, disabled, placeholder, icon }}
-      {...register(name, { ...validation, valueAsNumber: true })}
-      invalid={errors[name]}
-      aria-label={ariaLabel}
+    <Controller
+      {...{ control, name, errors }}
+      rules={validation}
+      render={({ fieldState: { error } }) => {
+        return (
+          <>
+            <Textbox
+              type="number"
+              {...{ defaultValue, disabled, placeholder, icon }}
+              {...register(name, { ...{ validation }, valueAsNumber: true })}
+              invalid={!_.isEmpty(error)}
+              aria-label={ariaLabel}
+            />
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
+          </>
+        );
+      }}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -145,17 +203,28 @@ export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
   errors,
   hideErrorMessage,
   ariaLabel,
+  control,
 }) => (
   <>
-    <Textbox
-      type="number"
-      step=".01"
-      {...{ disabled, placeholder, icon, defaultValue }}
-      {...register(name, { ...validation, valueAsNumber: true })}
-      invalid={errors[name]}
-      aria-label={ariaLabel}
+    <Controller
+      {...{ control, name, errors }}
+      rules={validation}
+      render={({ fieldState: { error } }) => {
+        return (
+          <>
+            <Textbox
+              type="number"
+              step=".01"
+              {...{ disabled, placeholder, icon, defaultValue }}
+              {...register(name, { ...{ validation }, valueAsNumber: true })}
+              invalid={!_.isEmpty(error)}
+              aria-label={ariaLabel}
+            />
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
+          </>
+        );
+      }}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 

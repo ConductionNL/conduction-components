@@ -51,11 +51,11 @@ export const CreateKeyValue = ({
     <Controller
       {...{ control, name, errors }}
       rules={validation}
-      render={({ field: { onChange } }) => {
+      render={({ field: { onChange }, fieldState: { error } }) => {
         return (
           <>
             <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled, copyValue }} />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
           </>
         );
       }}
