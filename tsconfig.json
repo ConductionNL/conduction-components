@@ -3,7 +3,10 @@
     "declaration": true,
     "outDir": "./lib",
     "target": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
     "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "node",
