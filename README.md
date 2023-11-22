@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.30: renamed checkbox.module.css.
   - 2.2.29: updated build script to reslove css errors.
   - 2.2.27/2.2.28:
     - Updated dependencies to latest versions.
