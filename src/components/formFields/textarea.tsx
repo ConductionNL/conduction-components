@@ -1,8 +1,8 @@
+import _ from "lodash";
 import { IReactHookFormProps } from "./types";
 import { ErrorMessage } from "./errorMessage/ErrorMessage";
 import { Textarea as UtrechtTextarea } from "@utrecht/component-library-react/dist/css-module";
-import _ from "lodash";
-import { Control, Controller, FieldValues } from "react-hook-form";
+import { Control, FieldValues } from "react-hook-form";
 
 export interface ITextAreaProps {
   name: string;
@@ -25,22 +25,12 @@ export const Textarea = ({
   control,
 }: ITextAreaProps & IReactHookFormProps): JSX.Element => (
   <>
-    <Controller
-      {...{ control, name, errors }}
-      rules={validation}
-      render={({ fieldState: { error } }) => {
-        return (
-          <>
-            <UtrechtTextarea
-              {...register(name, { ...validation })}
-              {...{ disabled, defaultValue }}
-              invalid={!_.isEmpty(error)}
-              aria-label={ariaLabel}
-            />
-            {error && !hideErrorMessage && <ErrorMessage message={error.message ?? "Error loading error message"} />}
-          </>
-        );
-      }}
+    <UtrechtTextarea
+      {...register(name, { ...validation })}
+      {...{ disabled, defaultValue }}
+      invalid={!!errors[name]}
+      aria-label={ariaLabel}
     />
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
   </>
 );
