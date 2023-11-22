@@ -1,3 +1,4 @@
+import _ from "lodash";
 import { IReactHookFormProps } from "./types";
 import { ErrorMessage } from "./errorMessage/ErrorMessage";
 import { Textarea as UtrechtTextarea } from "@utrecht/component-library-react/dist/css-module";
@@ -24,9 +25,9 @@ export const Textarea = ({
     <UtrechtTextarea
       {...register(name, { ...validation })}
       {...{ disabled, defaultValue }}
-      invalid={errors[name]}
+      invalid={!!errors[name]}
       aria-label={ariaLabel}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
   </>
 );
