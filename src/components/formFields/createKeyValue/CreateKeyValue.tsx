@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as styles from "./CreateKeyValue.module.css";
+import clsx from "clsx";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
 import {
@@ -12,7 +13,6 @@ import {
   Textbox,
   Button,
 } from "@utrecht/component-library-react/dist/css-module";
-import clsx from "clsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
@@ -55,7 +55,7 @@ export const CreateKeyValue = ({
         return (
           <>
             <KeyValueComponent handleChange={onChange} {...{ defaultValue, errors, disabled, copyValue }} />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
         );
       }}
