@@ -4,7 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.27:
+  - 2.2.27/2.2.28:
     - Updated dependencies to latest versions.
     - Updated Checkbox component to NLDS.
   - 2.2.26: Updated NotificationPopUp secondary button to have hover and href.
