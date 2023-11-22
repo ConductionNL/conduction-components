@@ -29,10 +29,10 @@ export const InputPassword: React.FC<IInputProps & IReactHookFormProps> = ({
         type="password"
         {...{ disabled, placeholder }}
         {...register(name, { ...validation })}
-        invalid={!!errors[name]}
+        invalid={errors[name]}
         aria-label={ariaLabel}
       />
-      {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+      {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
     </>
   );
 };
@@ -54,10 +54,10 @@ export const InputText: React.FC<IInputProps & IReactHookFormProps> = ({
       type="text"
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
-      invalid={!!errors[name]}
+      invalid={errors[name]}
       aria-label={ariaLabel}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -79,10 +79,10 @@ export const InputEmail: React.FC<IInputProps & IReactHookFormProps> = ({
       required={!!validation?.required}
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
-      invalid={!!errors[name]}
+      invalid={errors[name]}
       aria-label={ariaLabel}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -103,10 +103,10 @@ export const InputURL: React.FC<IInputProps & IReactHookFormProps> = ({
       type="url"
       {...{ defaultValue, disabled, placeholder, icon }}
       {...register(name, { ...validation })}
-      invalid={!!errors[name]}
+      invalid={errors[name]}
       aria-label={ariaLabel}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -126,11 +126,11 @@ export const InputNumber: React.FC<IInputProps & IReactHookFormProps> = ({
     <Textbox
       type="number"
       {...{ defaultValue, disabled, placeholder, icon }}
-      {...register(name, { ...{ validation }, valueAsNumber: true })}
-      invalid={!!errors[name]}
+      {...register(name, { ...validation, valueAsNumber: true })}
+      invalid={errors[name]}
       aria-label={ariaLabel}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
@@ -151,11 +151,11 @@ export const InputFloat: React.FC<IInputProps & IReactHookFormProps> = ({
       type="number"
       step=".01"
       {...{ disabled, placeholder, icon, defaultValue }}
-      {...register(name, { ...{ validation }, valueAsNumber: true })}
-      invalid={!!errors[name]}
+      {...register(name, { ...validation, valueAsNumber: true })}
+      invalid={errors[name]}
       aria-label={ariaLabel}
     />
-    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+    {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
   </>
 );
 
