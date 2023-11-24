@@ -10,8 +10,12 @@
   --conduction-download-card-border-color: var(--skeleton-color-grey-2);
   --conduction-download-card-border-radius: var(--skeleton-border-radius-md);
 
+  --conduction-download-card-padding-inline-end: 14px;
+  --conduction-download-card-padding-inline-start: 14px;
+  --conduction-download-card-padding-block-end: 14px;
+  --conduction-download-card-padding-block-start: 14px;
+
   --conduction-download-card-icon-gap: 8px;
-  --conduction-download-card-padding: 14px;
 }
 
 .container {
@@ -22,7 +26,10 @@
   border-style: var(--conduction-download-card-border-style);
   border-color: var(--conduction-download-card-border-color);
   border-radius: var(--conduction-download-card-border-radius);
-  padding: var(--conduction-download-card-padding);
+  padding-inline-start: var(--conduction-download-card-padding-inline-start);
+  padding-inline-end: var(--conduction-download-card-padding-inline-end);
+  padding-block-start: var(--conduction-download-card-padding-block-start);
+  padding-block-end: var(--conduction-download-card-padding-block-end);
 }
 
 .title {
