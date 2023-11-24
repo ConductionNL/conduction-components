@@ -22,7 +22,7 @@ interface DownloadCardProps {
   type: string;
   icon?: JSX.Element;
   layoutClassName?: string;
-  handleClick: (e?: any) => any;
+  handleClick: () => any;
 }
 
 export const DownloadCard = ({
