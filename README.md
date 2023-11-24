@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.32: Added more tokens to DownloadCard.
   - 2.2.31:
     - Added custom content to NotificationPopUp.
     - Refactored DownloadCard to NLDS.
