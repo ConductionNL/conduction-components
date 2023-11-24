@@ -8,7 +8,8 @@ import { faArrowRight, faClose } from "@fortawesome/free-solid-svg-icons";
 
 export interface NotificationPopUpProps {
   title: string;
-  description: string | JSX.Element;
+  description?: string | JSX.Element;
+  customContent?: JSX.Element;
   isVisible: boolean;
   hide: () => void;
   primaryButton: {
@@ -35,6 +36,7 @@ export const NotificationPopUp = ({
   primaryButton,
   secondaryButton,
   layoutClassName,
+  customContent,
 }: NotificationPopUpProps): JSX.Element | null => {
   const [animationVisible, setAnimationVisible] = React.useState<boolean>(true);
 
@@ -56,7 +58,8 @@ export const NotificationPopUp = ({
     >
       <Heading3>{title}</Heading3>
 
-      <Paragraph>{description}</Paragraph>
+      {description && <Paragraph>{description}</Paragraph>}
+      {customContent && customContent}
 
       <div className={styles.buttons}>
         {secondaryButton && (
