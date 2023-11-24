@@ -1,7 +1,8 @@
 import * as React from "react";
 import * as styles from "./DownloadCard.module.css";
-import { Heading3, Link } from "@utrecht/component-library-react/dist/css-module";
+import _ from "lodash";
 import clsx from "clsx";
+import { Heading3, Link } from "@utrecht/component-library-react/dist/css-module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDatabase,
@@ -14,7 +15,6 @@ import {
   faFileWord,
   faFileZipper,
 } from "@fortawesome/free-solid-svg-icons";
-import _ from "lodash";
 
 interface DownloadCardProps {
   label: string;
