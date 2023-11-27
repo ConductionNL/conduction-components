@@ -7,9 +7,12 @@ import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
 
+export type TSelectOption = { label: string; value: string };
+export type TGroupedSelectOption = { label: string; options: TSelectOption[] };
+
 interface ISelectProps {
   control: Control<FieldValues, any>;
-  options: { label: string; value: string }[];
+  options: TSelectOption[] | TGroupedSelectOption[];
   name: string;
   ariaLabel: string;
   id?: string;
