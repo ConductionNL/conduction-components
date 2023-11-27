@@ -4,7 +4,15 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.27: Updated Checkbox component to NLDS.
+  - 2.2.32: Added more tokens to DownloadCard.
+  - 2.2.31:
+    - Added custom content to NotificationPopUp.
+    - Refactored DownloadCard to NLDS.
+  - 2.2.30: Renamed checkbox.module.css.
+  - 2.2.29: Updated build script to reslove css errors.
+  - 2.2.27/2.2.28:
+    - Updated dependencies to latest versions.
+    - Updated Checkbox component to NLDS.
   - 2.2.26: Updated NotificationPopUp secondary button to have hover and href.
   - 2.2.25:
     - Added box-shadow to CardWrapper.

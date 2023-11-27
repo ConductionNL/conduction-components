@@ -1,18 +1,25 @@
 {
   "name": "@conduction/components",
-  "version": "2.2.27",
+  "version": "2.2.32",
   "description": "React (Gatsby) components used within the Conduction Skeleton Application (and its implementations)",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib/",
-    "build": "tsc",
+    "build": "npm-run-all build:**",
+    "build:tsc": "tsc",
+    "build:copyCSS": "copyfiles -u 1 src/**/*.css lib/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ConductionNL/conduction-components.git"
   },
-  "keywords": ["React", "Gatsby", "Conduction", "Components"],
+  "keywords": [
+    "React",
+    "Gatsby",
+    "Conduction",
+    "Components"
+  ],
   "author": "Conduction B.V.",
   "license": "ISC",
   "bugs": {
@@ -20,27 +27,29 @@
   },
   "homepage": "https://github.com/ConductionNL/conduction-components#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@utrecht/component-library-react": "1.0.0-alpha.394",
-    "clsx": "^1.1.1",
-    "gatsby": "^4.11.1",
+    "@utrecht/component-library-react": "2.0.0",
+    "clsx": "^2.0.0",
+    "gatsby": "^5.12.9",
     "react": "^18.2.0",
-    "react-datepicker": "^4.10.0",
-    "react-hook-form": "7.29.0",
+    "react-datepicker": "^4.23.0",
+    "react-hook-form": "7.48.2",
     "react-paginate": "^8.2.0",
-    "react-select": "5.3.2",
+    "react-select": "5.8.0",
     "react-tabs": "^6.0.2",
-    "react-tooltip": "^5.21.3"
+    "react-tooltip": "^5.23.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
-    "@types/react": "^18.2.0",
-    "@types/react-datepicker": "^4.8.0",
-    "@types/react-dom": "^18.2.0",
-    "rimraf": "^4.4.0",
-    "tsc-hooks": "^1.1.1",
-    "typescript": "^4.6.3"
+    "@types/node": "^20.9.3",
+    "@types/react": "^18.2.38",
+    "@types/react-datepicker": "^4.19.3",
+    "@types/react-dom": "^18.2.16",
+    "copyfiles": "^2.4.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.5",
+    "tsc-hooks": "^1.1.2",
+    "typescript": "^5.3.2"
   }
 }

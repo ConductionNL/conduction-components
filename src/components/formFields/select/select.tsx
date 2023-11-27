@@ -1,10 +1,10 @@
 import * as React from "react";
 import * as styles from "./select.module.css";
-import { Control, Controller, FieldValues } from "react-hook-form";
-import ReactSelect, { MenuPlacement, StylesConfig } from "react-select";
-import CreatableSelect from "react-select/creatable";
-import { IReactHookFormProps } from "../types";
 import clsx from "clsx";
+import CreatableSelect from "react-select/creatable";
+import ReactSelect, { MenuPlacement, StylesConfig } from "react-select";
+import { Control, Controller, FieldValues } from "react-hook-form";
+import { IReactHookFormProps } from "../types";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
 
 interface ISelectProps {
@@ -104,7 +104,7 @@ export const SelectMultiple = ({
               styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
             />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
         );
       }}
@@ -149,7 +149,7 @@ export const SelectCreate = ({
               menuPlacement={menuPlacement}
               styles={selectStyles}
             />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
         );
       }}
@@ -194,7 +194,7 @@ export const SelectSingle = ({
               styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
             />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name].message} />}
+            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
         );
       }}

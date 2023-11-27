@@ -1,16 +1,43 @@
 :root {
-  --conduction-download-card-border: 1px solid var(--skeleton-color-grey-2);
+  --conduction-download-card-title-color: #000000;
+  --conduction-download-card-title-font-size: 20px;
+  --conduction-download-card-title-font-weight: bold;
+  /* --conduction-download-card-title-font-family: ; */
+  --conduction-download-card-title-margin-inline-end: var(--skeleton-size-sm);
+
+  --conduction-download-card-border-width: 1px;
+  --conduction-download-card-border-style: solid;
+  --conduction-download-card-border-color: var(--skeleton-color-grey-2);
+  --conduction-download-card-border-radius: var(--skeleton-border-radius-md);
+
+  --conduction-download-card-padding-inline-end: 14px;
+  --conduction-download-card-padding-inline-start: 14px;
+  --conduction-download-card-padding-block-end: 14px;
+  --conduction-download-card-padding-block-start: 14px;
+
   --conduction-download-card-icon-gap: 8px;
-  --conduction-download-card-padding: 14px;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: var(--conduction-download-card-border);
-  border-radius: var(--skeleton-border-radius-md);
-  padding: var(--conduction-download-card-padding);
+  border-width: var(--conduction-download-card-border-width);
+  border-style: var(--conduction-download-card-border-style);
+  border-color: var(--conduction-download-card-border-color);
+  border-radius: var(--conduction-download-card-border-radius);
+  padding-inline-start: var(--conduction-download-card-padding-inline-start);
+  padding-inline-end: var(--conduction-download-card-padding-inline-end);
+  padding-block-start: var(--conduction-download-card-padding-block-start);
+  padding-block-end: var(--conduction-download-card-padding-block-end);
+}
+
+.title {
+  color: var(--conduction-download-card-title-color);
+  font-size: var(--conduction-download-card-title-font-size);
+  font-weight: var(--conduction-download-card-title-font-weight);
+  font-family: var(--conduction-download-card-title-font-family);
+  margin-inline-end: var(--conduction-download-card-title-margin-inline-end);
 }
 
 .content {
@@ -18,10 +45,10 @@
   align-items: center;
 }
 
-.content > *:not(:last-child) {
-  margin-inline-end: var(--skeleton-size-sm);
-}
-
 .icon {
   margin-inline-end: var(--conduction-download-card-icon-gap);
+}
+
+.link:hover {
+  cursor: pointer;
 }
