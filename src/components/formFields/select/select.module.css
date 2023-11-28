@@ -24,6 +24,10 @@
 
   --conduction-input-select-placeholder-font-family: "Noto Sans", Arial, sans-serif;
   --conduction-input-select-placeholder-color: #757575;
+
+  --conduction-input-select-group-font-size: 12px;
+  --conduction-input-select-group-text-color: grey;
+  --conduction-input-select-group-font-family: "Noto Sans", Arial, sans-serif;
 }
 
 .select > div {
@@ -55,4 +59,10 @@
   top: calc(var(--skeleton-size-2xs) * -1);
   border: var(--conduction-input-select-border-focus);
   border-radius: var(--conduction-input-select-border-radius);
+}
+
+.groupLabel {
+  font-size: var(--conduction-input-select-group-font-size);
+  color: var(--conduction-input-select-group-text-color);
+  font-family: var(--conduction-input-select-group-font-family);
 }

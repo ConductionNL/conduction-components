@@ -4,7 +4,10 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.33: Refactored DownloadCard.
+  - 2.2.34:
+    - Added select options grouping logic.
+  - 2.2.33:
+    - Refactored DownloadCard.
   - 2.2.32: Added more tokens to DownloadCard.
   - 2.2.31:
     - Added custom content to NotificationPopUp.
