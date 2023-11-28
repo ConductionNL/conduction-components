@@ -1,4 +1,5 @@
 :root {
+  /* --conduction-download-card-background-color: #ffffff; */
   --conduction-download-card-title-color: #000000;
   --conduction-download-card-title-font-size: 20px;
   --conduction-download-card-title-font-weight: bold;
@@ -19,13 +20,14 @@
 }
 
 .container {
+  background-color: var(--conduction-download-card-background-color, var(--conduction-card-wrapper-background-color));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-width: var(--conduction-download-card-border-width);
-  border-style: var(--conduction-download-card-border-style);
-  border-color: var(--conduction-download-card-border-color);
-  border-radius: var(--conduction-download-card-border-radius);
+  border-width: var(--conduction-download-card-border-width, var(--conduction-card-wrapper-border-width));
+  border-style: var(--conduction-download-card-border-style, var(--conduction-card-wrapper-border-style));
+  border-color: var(--conduction-download-card-border-color, var(--conduction-card-wrapper-border-color));
+  border-radius: var(--conduction-download-card-border-radius, --conduction-card-wrapper-border-radius);
   padding-inline-start: var(--conduction-download-card-padding-inline-start);
   padding-inline-end: var(--conduction-download-card-padding-inline-end);
   padding-block-start: var(--conduction-download-card-padding-block-start);
@@ -33,20 +35,27 @@
 }
 
 .title {
-  color: var(--conduction-download-card-title-color);
-  font-size: var(--conduction-download-card-title-font-size);
-  font-weight: var(--conduction-download-card-title-font-weight);
-  font-family: var(--conduction-download-card-title-font-family);
-  margin-inline-end: var(--conduction-download-card-title-margin-inline-end);
+  color: var(--conduction-download-card-title-color) !important;
+  font-size: var(--conduction-download-card-title-font-size) !important;
+  font-weight: var(--conduction-download-card-title-font-weight) !important;
+  font-family: var(--conduction-download-card-title-font-family) !important;
+  margin-inline-end: var(--conduction-download-card-title-margin-inline-end) !important;
+  word-break: break-word;
 }
 
 .content {
   display: flex;
   align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .icon {
   margin-inline-end: var(--conduction-download-card-icon-gap);
+}
+
+.link {
+  display: inherit;
 }
 
 .link:hover {
