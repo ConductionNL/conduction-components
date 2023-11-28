@@ -74,18 +74,17 @@ export const DownloadCard = ({
 
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
+      <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
       <div className={styles.content}>
-        <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
-
         <Heading3 className={styles.title}>{label}</Heading3>
 
         <div>
           ({_.toUpper(type)}
-          {size && `, ${size} kb`})
+          {size && `, ${size}kB`})
         </div>
       </div>
 
-      <Link className={styles.link} href="" onClick={(e) => onClick(e)}>
+      <Link className={styles.link} href="" onClick={(e: any) => onClick(e)}>
         <FontAwesomeIcon className={styles.icon} icon={faDownload} /> Download
       </Link>
     </div>

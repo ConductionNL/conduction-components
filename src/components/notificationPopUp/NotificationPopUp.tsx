@@ -8,7 +8,7 @@ import { faArrowRight, faClose } from "@fortawesome/free-solid-svg-icons";
 
 export interface NotificationPopUpProps {
   title: string;
-  description?: string | JSX.Element;
+  description?: string;
   customContent?: JSX.Element;
   isVisible: boolean;
   hide: () => void;
