@@ -2,7 +2,7 @@ import * as React from "react";
 import * as styles from "./select.module.css";
 import clsx from "clsx";
 import CreatableSelect from "react-select/creatable";
-import ReactSelect, { MenuPlacement, StylesConfig } from "react-select";
+import ReactSelect, { MenuPlacement, StylesConfig, GroupBase } from "react-select";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
@@ -106,6 +106,7 @@ export const SelectMultiple = ({
               menuPlacement={menuPlacement}
               styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
+              formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
@@ -151,6 +152,7 @@ export const SelectCreate = ({
               menuPortalTarget={document.body}
               menuPlacement={menuPlacement}
               styles={selectStyles}
+              formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
@@ -196,6 +198,7 @@ export const SelectSingle = ({
               menuPlacement={menuPlacement}
               styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
+              formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
@@ -203,4 +206,10 @@ export const SelectSingle = ({
       }}
     />
   );
+};
+
+const GroupLabel: React.FC<{ group: GroupBase<unknown> }> = ({ group }) => {
+  if (!group.label) return <></>;
+
+  return <span className={styles.groupLabel}>{group.label}</span>;
 };
