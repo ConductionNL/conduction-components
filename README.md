@@ -4,6 +4,8 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.35 & 2.2.36:
+    - Bugfix versions.
   - 2.2.34:
     - Added select options grouping logic.
   - 2.2.33:
