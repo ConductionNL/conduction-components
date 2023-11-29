@@ -20,6 +20,10 @@ interface DownloadCardProps {
   label: string;
   size: string;
   type: string;
+  labelTooltip?: {
+    id: string;
+    tooltip: string;
+  };
   icon?: JSX.Element;
   layoutClassName?: string;
   handleClick: () => any;
@@ -30,6 +34,7 @@ export const DownloadCard = ({
   label,
   size,
   type,
+  labelTooltip,
   layoutClassName,
   handleClick,
 }: DownloadCardProps): JSX.Element => {
@@ -76,7 +81,15 @@ export const DownloadCard = ({
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
       <div className={styles.content}>
-        <Heading3 className={styles.title}>{label}</Heading3>
+        <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
+
+        <Heading3
+          data-tooltip-id={labelTooltip && labelTooltip.id}
+          data-tooltip-content={labelTooltip && labelTooltip.tooltip}
+          className={styles.title}
+        >
+          {label}
+        </Heading3>
 
         <div>
           ({_.toUpper(type)}

@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.37: Updated DownloadCard to include tooltip and Removed opacity token from Tooltip the fix bug.
   - 2.2.35 & 2.2.36:
     - Bugfix versions.
   - 2.2.34:

@@ -12,7 +12,6 @@
   --conduction-tooltip-border-style: unset;
   --conduction-tooltip-border-radius: 0px;
 
-  --conduction-tooltip-opacity: 1;
   --conduction-tooltip-z-index: 9999;
 }
 
@@ -30,6 +29,5 @@
   border-style: var(--conduction-tooltip-border-style);
   border-radius: var(--conduction-tooltip-border-radius) !important;
 
-  opacity: var(--conduction-tooltip-opacity);
   z-index: var(--conduction-tooltip-z-index);
 }
