@@ -81,8 +81,6 @@ export const DownloadCard = ({
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
       <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
       <div className={styles.content}>
-        <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
-
         <Heading3
           data-tooltip-id={labelTooltip && labelTooltip.id}
           data-tooltip-content={labelTooltip && labelTooltip.tooltip}
