@@ -1,5 +1,5 @@
-import * as styles from "./checkbox.module.css";
-import { IReactHookFormProps } from "./../types";
+import * as styles from "./Checkbox.module.css";
+import { IReactHookFormProps } from "../types";
 
 export interface ICheckboxProps {
   label: string;
