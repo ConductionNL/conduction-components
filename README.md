@@ -4,6 +4,9 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.39:
+    - Updated PrimaryTopNav component to include tooltip and better dropdown.
+    - Updated Logo component to have navbar option.
   - 2.2.38: Updated DownloadCard to show only one icon.
   - 2.2.37: Updated DownloadCard to include tooltip and Removed opacity token from Tooltip the fix bug.
   - 2.2.35 & 2.2.36:
