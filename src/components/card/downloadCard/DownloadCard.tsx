@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Heading3, Link } from "@utrecht/component-library-react/dist/css-module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  IconDefinition,
   faDatabase,
   faDownload,
   faFileAudio,
@@ -24,7 +25,7 @@ interface DownloadCardProps {
     id: string;
     tooltip: string;
   };
-  icon?: JSX.Element;
+  icon?: IconDefinition;
   layoutClassName?: string;
   handleClick: () => any;
 }
@@ -79,7 +80,7 @@ export const DownloadCard = ({
 
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
-      <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
+      <div className={styles.icon}>{<FontAwesomeIcon icon={icon ?? getIconFromType(type)} />}</div>
       <div className={styles.content}>
         <Heading3
           data-tooltip-id={labelTooltip && labelTooltip.id}

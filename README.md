@@ -4,7 +4,9 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.40: Removed tooltip from PrimaryTopNav component and updated dropdown.
+  - 2.2.40:
+    - Updated DownloadCard to only accept fontawesome icons.
+    - Removed tooltip from PrimaryTopNav component and updated dropdown.
   - 2.2.39:
     - Updated PrimaryTopNav component to include tooltip and better dropdown.
     - Updated Logo component to have navbar option.
