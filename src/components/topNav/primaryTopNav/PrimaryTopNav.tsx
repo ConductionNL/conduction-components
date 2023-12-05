@@ -9,7 +9,6 @@ import { IconPrefix, IconName } from "@fortawesome/fontawesome-svg-core";
 interface ITopNavItemBase {
   label: string;
   icon?: JSX.Element;
-  showToolTip?: boolean;
   current?: boolean | ICurrentItemJSONFormat;
 }
 
@@ -58,12 +57,11 @@ export type ITopNavItem = ITopNavItemWithSubItems | ITopNavItemWithoutSubItems;
 
 export interface TopNavProps {
   items: ITopNavItem[];
-  tooltipId: string;
   mobileLogo?: JSX.Element;
   layoutClassName?: string;
 }
 
-export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName, tooltipId }: TopNavProps): JSX.Element => {
+export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProps): JSX.Element => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const [isMobile, setIsMobile] = React.useState<boolean>(window.innerWidth < 992);
 
@@ -112,17 +110,13 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName, tooltipId }:
 
               {subItems && (
                 <ul className={clsx(styles.dropdown, [subItems.length > 8 && styles.dropdownOverflow])}>
-                  {subItems.map(({ label, icon, current, handleClick, showToolTip }, idx) => (
+                  {subItems.map(({ label, icon, current, handleClick }, idx) => (
                     <li
                       key={idx}
                       className={clsx(styles.li, current && styles.current)}
                       onClick={() => handleSubItemClick(handleClick)}
                     >
-                      <Link
-                        data-tooltip-id={showToolTip === true ? tooltipId : ""}
-                        data-tooltip-content={showToolTip === true ? label : ""}
-                        className={clsx(styles.link, styles.label, current && styles.currentLink)}
-                      >
+                      <Link className={clsx(styles.link, styles.label, current && styles.currentLink)}>
                         {icon}
                         {label}
                       </Link>

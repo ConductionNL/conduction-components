@@ -157,6 +157,8 @@
   display: none;
   list-style-type: none;
   background-color: var(--conduction-primary-top-nav-dropdown-background-color, var(--conduction-primary-top-nav-background-color));
+  width: fit-content;
+  max-width: 200px;
 }
 
 .dropdownOverflow {
