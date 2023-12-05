@@ -103,13 +103,13 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProp
                   current && styles.currentLink,
                 )}
               >
-                {icon}
+                {icon && icon}
                 {label}{" "}
                 {subItems && isMobile && <FontAwesomeIcon className={styles.toggleIcon} icon={faChevronRight} />}
               </Link>
 
               {subItems && (
-                <ul className={styles.dropdown}>
+                <ul className={clsx(styles.dropdown, [subItems.length > 8 && styles.dropdownOverflow])}>
                   {subItems.map(({ label, icon, current, handleClick }, idx) => (
                     <li
                       key={idx}

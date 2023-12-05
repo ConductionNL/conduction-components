@@ -3,7 +3,7 @@ import * as styles from "./Logo.module.css";
 import clsx from "clsx";
 
 interface LogoProps {
-  variant?: "header" | "footer";
+  variant?: "header" | "footer" | "navbar";
   onClick?: () => any;
   layoutClassName?: string;
 }

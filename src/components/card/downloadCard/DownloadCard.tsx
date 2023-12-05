@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Heading3, Link } from "@utrecht/component-library-react/dist/css-module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  IconDefinition,
   faDatabase,
   faDownload,
   faFileAudio,
@@ -20,7 +21,11 @@ interface DownloadCardProps {
   label: string;
   size: string;
   type: string;
-  icon?: JSX.Element;
+  labelTooltip?: {
+    id: string;
+    tooltip: string;
+  };
+  icon?: IconDefinition;
   layoutClassName?: string;
   handleClick: () => any;
 }
@@ -30,6 +35,7 @@ export const DownloadCard = ({
   label,
   size,
   type,
+  labelTooltip,
   layoutClassName,
   handleClick,
 }: DownloadCardProps): JSX.Element => {
@@ -74,18 +80,23 @@ export const DownloadCard = ({
 
   return (
     <div className={clsx(styles.container, [layoutClassName && layoutClassName])}>
+      <div className={styles.icon}>{<FontAwesomeIcon icon={icon ?? getIconFromType(type)} />}</div>
       <div className={styles.content}>
-        <div className={styles.icon}>{icon ?? <FontAwesomeIcon icon={getIconFromType(type)} />}</div>
-
-        <Heading3 className={styles.title}>{label}</Heading3>
+        <Heading3
+          data-tooltip-id={labelTooltip && labelTooltip.id}
+          data-tooltip-content={labelTooltip && labelTooltip.tooltip}
+          className={styles.title}
+        >
+          {label}
+        </Heading3>
 
         <div>
           ({_.toUpper(type)}
-          {size && `, ${size} kb`})
+          {size && `, ${size}kB`})
         </div>
       </div>
 
-      <Link className={styles.link} href="" onClick={(e) => onClick(e)}>
+      <Link className={styles.link} href="" onClick={(e: any) => onClick(e)}>
         <FontAwesomeIcon className={styles.icon} icon={faDownload} /> Download
       </Link>
     </div>
