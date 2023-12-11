@@ -1,3 +1,7 @@
 .displaySwitchButtons {
   align-items: center;
 }
+
+.button[aria-pressed="false"]:hover {
+  cursor: pointer;
+}
