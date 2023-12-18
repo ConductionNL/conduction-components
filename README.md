@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.41: Updated displayswitch component to have pointer.
   - 2.2.40:
     - Updated DownloadCard to only accept fontawesome icons.
     - Removed tooltip from PrimaryTopNav component and updated dropdown.

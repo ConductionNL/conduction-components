@@ -35,6 +35,7 @@ const DisplaySwitch: React.FC<DisplaySwitchProps> = ({ layoutClassName, buttons 
             pressed={button.pressed}
             appearance={button.pressed ? "secondary-action-button" : "subtle-button"}
             onClick={button.handleClick}
+            className={styles.button}
           >
             {button.icon && <FontAwesomeIcon icon={[button.icon.prefix, button.icon.name]} />}
             <span>{button.label}</span>
