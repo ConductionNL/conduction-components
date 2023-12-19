@@ -4,6 +4,11 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.42:
+    - Updated PrimaryTopnav to have seperate dropdown tokens.
+    - Updated Pagination to include border-bottom.
+    - Updated Downloadcard to include icon color.
+    - Updated CardWrapper to include hover color.
   - 2.2.41: Updated displayswitch component to have pointer.
   - 2.2.40:
     - Updated DownloadCard to only accept fontawesome icons.
