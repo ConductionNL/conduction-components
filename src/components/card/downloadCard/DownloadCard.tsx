@@ -92,7 +92,7 @@ export const DownloadCard = ({
 
         <div>
           ({_.toUpper(type)}
-          {size && `, ${size}kB`})
+          {size && `, ${size}`})
         </div>
       </div>
 
