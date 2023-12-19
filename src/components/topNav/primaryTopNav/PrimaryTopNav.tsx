@@ -113,10 +113,10 @@ export const PrimaryTopNav = ({ items, mobileLogo, layoutClassName }: TopNavProp
                   {subItems.map(({ label, icon, current, handleClick }, idx) => (
                     <li
                       key={idx}
-                      className={clsx(styles.li, current && styles.current)}
+                      className={clsx(styles.li, current && styles.dropdownCurrent)}
                       onClick={() => handleSubItemClick(handleClick)}
                     >
-                      <Link className={clsx(styles.link, styles.label, current && styles.currentLink)}>
+                      <Link className={clsx(styles.link, styles.label, current && styles.dropdownCurrentLink)}>
                         {icon}
                         {label}
                       </Link>

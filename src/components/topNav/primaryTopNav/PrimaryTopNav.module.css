@@ -116,6 +116,23 @@
   fill: var(--conduction-primary-top-nav-current-color) !important;
 }
 
+.dropdownCurrent {
+  background-color: var(--conduction-primary-top-nav-dropdown-current-background-color, var(--conduction-primary-top-nav-current-background-color));
+  box-shadow: var(--conduction-primary-top-nav-dropdown-current-box-shadow, var(--conduction-primary-top-nav-current-box-shadow));
+}
+
+.dropdownCurrent:hover > .dropdownCurrentLink {
+  color: var(--conduction-primary-top-nav-dropdown-hover-color, var(--conduction-primary-top-nav-hover-color)) !important;
+}
+
+.dropdownCurrentLink {
+  color: var(--conduction-primary-top-nav-dropdown-current-color, var(--conduction-primary-top-nav-current-color)) !important;
+}
+
+.dropdownCurrentLink svg path {
+  fill: var(--conduction-primary-top-nav-dropdown-current-color, var(--conduction-primary-top-nav-current-color)) !important;
+}
+
 .mobileLink {
   margin-block-end: 18px;
 }
