@@ -64,9 +64,9 @@
   --conduction-pagination-current-page-border-width: unset;
   --conduction-pagination-current-page-border-style: unset;
   --conduction-pagination-current-page-border-color: unset;
-  /* --conduction-pagination-current-page-border-bottom-width: unset;
-  --conduction-pagination-current-page-border-bottom-style: unset;
-  --conduction-pagination-current-page-border-bottom-color: unset; */
+  /* --conduction-pagination-current-page-border-bottom-width: unset; */
+  /* --conduction-pagination-current-page-border-bottom-style: unset; */
+  /* --conduction-pagination-current-page-border-bottom-color: unset; */
 
   --conduction-pagination-page-hover-color: #4376fc;
   --conduction-pagination-page-hover-background-color: #ffffff;
@@ -75,9 +75,9 @@
   --conduction-pagination-page-hover-border-width: unset;
   --conduction-pagination-page-hover-border-style: unset;
   --conduction-pagination-page-hover-border-color: unset;
-  /* --conduction-pagination-page-hover-border-bottom-width: unset;
-  --conduction-pagination-page-hover-border-bottom-style: unset;
-  --conduction-pagination-page-hover-border-bottom-color: unset; */
+  /* --conduction-pagination-page-hover-border-bottom-width: unset; */
+  /* --conduction-pagination-page-hover-border-bottom-style: unset; */
+  /* --conduction-pagination-page-hover-border-bottom-color: unset; */
 }
 
 .container {
