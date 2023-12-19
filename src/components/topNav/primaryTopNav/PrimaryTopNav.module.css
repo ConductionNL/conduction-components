@@ -121,6 +121,10 @@
   box-shadow: var(--conduction-primary-top-nav-dropdown-current-box-shadow, var(--conduction-primary-top-nav-current-box-shadow));
 }
 
+.dropdownCurrent:hover {
+  box-shadow: var(--conduction-primary-top-nav-dropdown-current-box-shadow) !important;
+}
+
 .dropdownCurrent:hover > .dropdownCurrentLink {
   color: var(--conduction-primary-top-nav-dropdown-hover-color, var(--conduction-primary-top-nav-hover-color)) !important;
 }
