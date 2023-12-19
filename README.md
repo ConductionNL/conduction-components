@@ -7,7 +7,7 @@
   - 2.2.42:
     - Updated PrimaryTopNav to have seperate dropdown tokens.
     - Updated Pagination to include border-bottom.
-    - Updated Downloadcard to include icon color.
+    - Updated DownloadCard to include icon color.
     - Updated CardWrapper to include hover color.
   - 2.2.41: Updated displayswitch component to have pointer.
   - 2.2.40:
