@@ -110,6 +110,7 @@
 
 .currentLink {
   color: var(--conduction-primary-top-nav-current-color) !important;
+  font-weight: var(--conduction-primary-top-nav-current-font-weight);
 }
 
 .currentLink svg path {
@@ -127,10 +128,12 @@
 
 .dropdownCurrent:hover > .dropdownCurrentLink {
   color: var(--conduction-primary-top-nav-dropdown-hover-color, var(--conduction-primary-top-nav-hover-color)) !important;
+  font-weight: var(--conduction-primary-top-nav-dropdown-current-font-weight) !important;
 }
 
 .dropdownCurrentLink {
   color: var(--conduction-primary-top-nav-dropdown-current-color, var(--conduction-primary-top-nav-current-color)) !important;
+  font-weight: var(--conduction-primary-top-nav-dropdown-current-font-weight);
 }
 
 .dropdownCurrentLink svg path {
@@ -158,8 +161,9 @@
   fill: var(--conduction-primary-top-nav-color);
 }
 
-.primary .li:hover .link {
+.primary .li:hover > .link {
   color: var(--conduction-primary-top-nav-hover-color);
+  font-weight: var(--conduction-primary-top-nav-hover-font-weight);
 }
 
 .primary .li:hover svg path {
@@ -203,6 +207,7 @@
 
 .primary .dropdown .li:hover .link {
   color: var(--conduction-primary-top-nav-dropdown-hover-color, var(--conduction-primary-top-nav-hover-color));
+  font-weight: var(--conduction-primary-top-nav-dropdown-hover-font-weight);
 }
 
 .dropdown .li:hover {
