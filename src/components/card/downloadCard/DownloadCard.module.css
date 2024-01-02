@@ -52,6 +52,7 @@
 
 .icon {
   margin-inline-end: var(--conduction-download-card-icon-gap);
+  color: var(--conduction-download-card-icon-color);
 }
 
 .link {
