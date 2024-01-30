@@ -12,6 +12,7 @@ interface PaginationProps {
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
   ariaLabels: {
+    pagination: string;
     nextPage: string;
     previousPage: string;
     page: string;
@@ -27,6 +28,32 @@ export const Pagination: React.FC<PaginationProps> = ({
   layoutClassName,
 }) => {
   if (totalPages < 1) return <></>; // no pages available
+
+  const setAttributes = (): void => {
+    const setRoleToPresentation = (selector: string) => {
+      document.querySelectorAll(selector).forEach((element) => {
+        if (element.getAttribute("role") !== "list") element.setAttribute("role", "list");
+      });
+    };
+
+    setRoleToPresentation('ul[role*="navigation"][class*="Pagination"][aria-label="Pagination"]');
+  };
+
+  React.useEffect(() => {
+    setAttributes();
+  }, []);
+
+  React.useEffect(() => {
+    const setRoleToPresentation = (selector: string) => {
+      document.querySelectorAll(selector).forEach((element) => {
+        if (element.getAttribute("aria-label") !== ariaLabels.pagination) {
+          element.setAttribute("aria-label", ariaLabels.pagination);
+        }
+      });
+    };
+
+    setRoleToPresentation('ul[role*="list"][class*="Pagination"]');
+  }, [ariaLabels.pagination]);
 
   return (
     <ReactPaginate
