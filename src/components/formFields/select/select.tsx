@@ -62,6 +62,9 @@ const setAttributes = (): void => {
   const setRoleToPresentation = (selector: string, role: string) => {
     document.querySelectorAll(selector).forEach((element) => {
       if (element.getAttribute("role") !== "presentation") element.setAttribute("role", role);
+      element.removeAttribute("aria-relevant");
+      element.removeAttribute("aria-atomic");
+      element.removeAttribute("aria-live");
     });
   };
 
