@@ -14,7 +14,7 @@
   --conduction-tabs-tab-padding-inline-start: var(--skeleton-size-sm);
   --conduction-tabs-tab-padding-inline-end: var(--skeleton-size-sm);
   /* --conduction-tabs-tab-margin-inline-end: var(--skeleton-size-xs); */
-  --conduction-tabs-tab-font-size: var(--skeleton-font-size-sm: );
+  --conduction-tabs-tab-font-size: var(--skeleton-font-size-sm);
   --conduction-tabs-tab-font-weight: var(--skeleton-font-weight-normal);
   --conduction-tabs-tab-font-family: "Noto Sans", Arial, sans-serif;
   --conduction-tabs-tab-max-width: unset;
