@@ -7,6 +7,6 @@
   width: 100%;
   margin-inline: auto;
   box-sizing: border-box;
-  padding-inline: var(--conduction-container-padding-inline);
+  padding-inline: var(--conduction-container-padding-inline, unset);
   max-width: var(--conduction-container-max-width);
 }
