@@ -4,7 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.46: Fixed minor css parse error.
+  - 2.2.46 / 2.2.47: Fixed minor css parse error.
   - 2.2.45: Updated Pagination and select to ensure more WCAG compliancy.
   - 2.2.44: Updated PrimaryTopNav to allow font-weight.
   - 2.2.43: Updated DownloadCard to allow size as string.

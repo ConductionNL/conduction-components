@@ -149,7 +149,7 @@
   display: block;
   overflow: hidden;
   max-width: 100%;
-  white-space: wrap;
+  white-space: nowrap;
 }
 
 .primary .link:not(.currentLink) {
