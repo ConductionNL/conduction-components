@@ -6,6 +6,7 @@
   /* --conduction-card-header-hover-border-bottom-style: unset; */
   /* --conduction-card-header-hover-border-bottom-color: unset; */
   --conduction-card-header-title-color: #000000;
+  /* --conduction-card-header-title-hover-color: #000000; */
   --conduction-card-header-date-color: #000000;
   --conduction-card-header-date-font-size: 16px;
   --conduction-card-header-date-font-weight: 100;
@@ -26,6 +27,10 @@
 
 .title > * {
   color: var(--conduction-card-header-title-color) !important;
+}
+
+.title:hover > * {
+  color: var(--conduction-card-header-title-hover-color, var(--conduction-card-header-title-color)) !important;
 }
 
 .date {
