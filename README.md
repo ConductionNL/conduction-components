@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.49: Removed Jumbotron component.
   - 2.2.48: Updated CardHeader and package.json.
   - 2.2.46 / 2.2.47: Fixed minor css parse error.
   - 2.2.45: Updated Pagination and select to ensure more WCAG compliancy.

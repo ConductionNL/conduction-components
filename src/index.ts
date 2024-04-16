@@ -41,7 +41,6 @@ import { ToolTip } from "./components/toolTip/ToolTip";
 import { Pagination } from "./components/Pagination/Pagination";
 import { Tabs, TabList, Tab, TabPanel } from "./components/tabs/Tabs";
 import { HorizontalOverflowWrapper } from "./components/horizontalOverflowWrapper/HorizontalOverflowWrapper";
-import { Jumbotron } from "./components/jumbotron/Jumbotron";
 import DisplaySwitch from "./components/displaySwitch/DisplaySwitch";
 
 export {
@@ -84,6 +83,5 @@ export {
   Tab,
   TabPanel,
   HorizontalOverflowWrapper,
-  Jumbotron,
   DisplaySwitch
 };
