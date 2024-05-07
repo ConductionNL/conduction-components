@@ -77,17 +77,24 @@
   align-items: center;
   max-height: 80vh;
   overflow-y: scroll;
+  border-color: var(--conduction-primary-top-nav-list-border-color);
+  border-style: var(--conduction-primary-top-nav-list-border-style);
+  border-width: var(--conduction-primary-top-nav-list-border-width);
 }
 
 .li {
   list-style-type: none;
   display: block;
   position: relative;
+  transition: var(--conduction-primary-top-nav-item-transition);
   padding-inline-start: var(--conduction-primary-top-nav-item-padding);
   padding-inline-end: var(--conduction-primary-top-nav-item-padding);
   padding-block-start: var(--conduction-primary-top-nav-item-padding);
   padding-block-end: var(--conduction-primary-top-nav-item-padding);
   border-radius: var(--conduction-primary-top-nav-item-border-radius);
+  border-color: var(--conduction-primary-top-nav-item-border-color);
+  border-style: var(--conduction-primary-top-nav-item-border-style);
+  border-width: var(--conduction-primary-top-nav-item-border-width);
 }
 
 .li:hover {
