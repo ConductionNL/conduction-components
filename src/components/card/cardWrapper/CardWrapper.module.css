@@ -3,23 +3,26 @@
   /* --conduction-card-wrapper-border-width: unset; */
   /* --conduction-card-wrapper-border-style: unset; */
   /* --conduction-card-wrapper-border-color: unset; */
+  --conduction-card-wrapper-border-radius: 16px;
   /* --conduction-card-wrapper-border-bottom-width: unset; */
   /* --conduction-card-wrapper-border-bottom-style: unset; */
   /* --conduction-card-wrapper-border-bottom-color: unset; */
   /* --conduction-card-wrapper-box-shadow: unset; */
+  /* --conduction-card-wrapper-hover-background-color: unset; */
   /* --conduction-card-wrapper-hover-border-width: unset; */
   /* --conduction-card-wrapper-hover-border-style: unset; */
   /* --conduction-card-wrapper-hover-border-color: unset; */
+  /* --conduction-card-wrapper-hover-border-radius: 16px; */
   /* --conduction-card-wrapper-hover-border-bottom-width: unset; */
   /* --conduction-card-wrapper-hover-border-bottom-style: unset; */
   /* --conduction-card-wrapper-hover-border-bottom-color: unset; */
-  --conduction-card-wrapper-border-radius: 16px;
+  /* --conduction-card-wrapper-hover-box-shadow: unset; */
   --conduction-card-wrapper-color: #000000;
-  /* --conduction-card-wrapper-hover-background-color: unset; */
   --conduction-card-wrapper-padding-inline-end: 18px;
   --conduction-card-wrapper-padding-inline-start: 18px;
   --conduction-card-wrapper-padding-block-end: 18px;
   --conduction-card-wrapper-padding-block-start: 18px;
+  /* --conduction-card-wrapper-transition: unset; */
 }
 
 .container {
@@ -27,6 +30,8 @@
   color: var(--conduction-card-wrapper-color);
   position: relative;
   box-shadow: var(--conduction-card-wrapper-box-shadow);
+
+  transition: var(--conduction-card-wrapper-transition);
 
   border-radius: var(--conduction-card-wrapper-border-radius);
   border-width: var(--conduction-card-wrapper-border-width);
@@ -47,6 +52,9 @@
   color: var(--conduction-card-wrapper-hover-color, var(--conduction-card-wrapper-color));
   cursor: pointer;
 
+  box-shadow: var(--conduction-card-wrapper-hover-box-shadow, var(--conduction-card-wrapper-box-shadow));
+
+  border-radius: var(--conduction-card-wrapper-hover-border-radius, var(--conduction-card-wrapper-border-radius));
   border-width: var(--conduction-card-wrapper-hover-border-width, var(--conduction-card-wrapper-border-width));
   border-style: var(--conduction-card-wrapper-hover-border-style, var(--conduction-card-wrapper-border-style));
   border-color: var(--conduction-card-wrapper-hover-border-color, var(--conduction-card-wrapper-border-color));

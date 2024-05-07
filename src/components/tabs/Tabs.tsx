@@ -17,7 +17,7 @@ import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons
 
 // Tabs
 export const Tabs: ReactTabsFunctionComponent<TabsProps> = ({ children, ...otherProps }) => (
-  <RTabs className={styles.tabs} {...otherProps}>
+  <RTabs selectedIndex={0} className={styles.tabs} {...otherProps}>
     {children}
   </RTabs>
 );
@@ -102,7 +102,7 @@ TabList.tabsRole = "TabList";
 
 // Tab
 export const Tab: ReactTabsFunctionComponent<TabProps> = ({ children, ...otherProps }) => (
-  <RTab className={styles.tab} {...otherProps}>
+  <RTab tabIndex="0" className={styles.tab} {...otherProps}>
     {children}
   </RTab>
 );
