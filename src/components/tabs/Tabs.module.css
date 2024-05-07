@@ -167,6 +167,7 @@
   background-color: var(--conduction-tabs-tab-hover-background-color);
   color: var(--conduction-tabs-tab-hover-color);
   text-decoration: var(--conduction-tabs-tab-hover-text-decoration);
+  font-weight: var(--conduction-tabs-tab-hover-font-weight, var(--conduction-tabs-tab-font-weight));
 }
 
 .tabList {

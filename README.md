@@ -7,6 +7,7 @@
   - 2.2.50:
     - Added transition and box-shadow to CardWrapper.
     - Added font-style to CardHeader.
+    - Added tabindex and font-weight to Tab.
   - 2.2.49: Removed Jumbotron component.
   - 2.2.48: Updated CardHeader and package.json.
   - 2.2.46 / 2.2.47: Fixed minor css parse error.
