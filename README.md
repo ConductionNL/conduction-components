@@ -4,7 +4,9 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.50: Added transition and box-shadow to CardWrapper.
+  - 2.2.50:
+    - Added transition and box-shadow to CardWrapper.
+    - Added font-style to CardHeader.
   - 2.2.49: Removed Jumbotron component.
   - 2.2.48: Updated CardHeader and package.json.
   - 2.2.46 / 2.2.47: Fixed minor css parse error.
