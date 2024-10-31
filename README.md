@@ -4,6 +4,10 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.51:
+    - Added text-decoration tokens to CardHeader.
+    - Added label color tokens to checkbox.
+    - Added font-weight, gap, padding and hover box-shadow tokens to PrimaryTopNav.
   - 2.2.50:
     - Added transition and box-shadow to CardWrapper.
     - Added font-style to CardHeader.
