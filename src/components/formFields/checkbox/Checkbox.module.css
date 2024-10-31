@@ -103,6 +103,10 @@
   box-sizing: border-box;
 }
 
+.checkbox:hover + label {
+  color: var(--conduction-input-checkbox-label-hover-color, var(--conduction-input-checkbox-label-color, var(--utrecht-document-color)));
+
+}
 .checkbox:hover + label::before {
   content: " ";
   display: inline-block;

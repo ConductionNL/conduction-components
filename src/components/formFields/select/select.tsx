@@ -11,7 +11,7 @@ export type TSelectOption = { label: string; value: string };
 export type TGroupedSelectOption = { label: string; options: TSelectOption[] };
 
 interface ISelectProps {
-  control: Control<FieldValues, any>;
+  control: Control<any, any>;
   options: TSelectOption[] | TGroupedSelectOption[];
   name: string;
   ariaLabel: string;
