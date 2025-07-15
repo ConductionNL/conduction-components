@@ -4,8 +4,8 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.52:
-    - Added hover filter to Logo component.
+  - 2.2.53: Updated Pagination and PrimaryTopNav components to allow text-decorations and border-bottoms.
+  - 2.2.52: Added hover filter to Logo component.
   - 2.2.51:
     - Added text-decoration tokens to CardHeader.
     - Added label color tokens to checkbox.
