@@ -11,6 +11,7 @@
   /* --conduction-card-header-title-hover-color: #000000; */
   /* --conduction-card-header-title-hover-text-decoration: none; */
   /* --conduction-card-header-title-hover-text-underline-offset: 2px; */
+  /* --conduction-card-header-title-padding-block-end: 0px; */
 
   --conduction-card-header-date-color: #000000;
   --conduction-card-header-date-font-size: 16px;
@@ -35,6 +36,7 @@
   color: var(--conduction-card-header-title-color) !important;
   text-decoration: var(--conduction-card-header-title-text-decoration) !important;
   text-underline-offset: var(--conduction-card-header-title-text-underline-offset) !important;
+  padding-block-end: var(--conduction-card-header-title-padding-block-end) !important;
 }
 
 .title:hover > * {
