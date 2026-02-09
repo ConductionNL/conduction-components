@@ -56,6 +56,13 @@ const selectStyles: StylesConfig = {
     fontFamily: `var(--conduction-input-select-placeholder-font-family, var(--utrecht-form-input-placeholder-font-family, ${base.fontFamily}))`,
     color: `var(--conduction-input-select-placeholder-color, var(--utrecht-form-input-placeholder-color, ${base.color}) )`,
   }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    color: "#949494",
+    "&:hover": {
+      color: "#949494",
+    },
+  }),
 };
 
 const setAttributes = (): void => {
