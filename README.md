@@ -4,7 +4,9 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
-  - 2.2.55: Updated Logo to accept aria-label for accessibility.
+  - 2.2.55: 
+    - Updated Logo to accept aria-label for accessibility.
+    - Fixed bug in DisplaySwitch where layoutClassName is added even when empty
   - 2.2.54: Updated CardHeader to allow padding-block-end on title.
   - 2.2.53: Updated Pagination and PrimaryTopNav components to allow text-decorations and border-bottoms.
   - 2.2.52: Added hover filter to Logo component.
