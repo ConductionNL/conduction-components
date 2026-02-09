@@ -6,15 +6,18 @@ interface LogoProps {
   variant?: "header" | "footer" | "navbar";
   onClick?: () => any;
   layoutClassName?: string;
+  "aria-label"?: string;
 }
 
-export const Logo: React.FC<LogoProps> = ({ onClick, layoutClassName, variant = "header" }) => {
+export const Logo: React.FC<LogoProps> = ({ onClick, layoutClassName, variant = "header", "aria-label": ariaLabel = "logo" }) => {
   return (
     <div
       className={clsx(styles.container, styles[variant], [
         onClick && styles.clickable,
         layoutClassName && layoutClassName,
       ])}
+      role="img"
+      {...{ "aria-label": ariaLabel }}
       {...{ onClick }}
     />
   );
