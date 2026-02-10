@@ -56,6 +56,13 @@ const selectStyles: StylesConfig = {
     fontFamily: `var(--conduction-input-select-placeholder-font-family, var(--utrecht-form-input-placeholder-font-family, ${base.fontFamily}))`,
     color: `var(--conduction-input-select-placeholder-color, var(--utrecht-form-input-placeholder-color, ${base.color}) )`,
   }),
+  dropdownIndicator: (base) => ({
+    ...base,
+    color: "#949494",
+    "&:hover": {
+      color: "#949494",
+    },
+  }),
 };
 
 const setAttributes = (): void => {
@@ -68,9 +75,51 @@ const setAttributes = (): void => {
     });
   };
 
+  const updateIndicatorAttributes = (indicator: HTMLElement, isInteractive: boolean) => {
+    if (isInteractive) {
+      indicator.setAttribute("role", "button");
+      indicator.setAttribute("tabindex", "0");
+      indicator.setAttribute("aria-label", "Clear selection");
+    } else {
+      indicator.setAttribute("role", "presentation");
+      indicator.removeAttribute("tabindex");
+      indicator.removeAttribute("aria-label");
+    }
+  };
+
+  const setAriaLabelsForIndicators = () => {
+    document.querySelectorAll('[class*="control"]').forEach((control) => {
+      const indicatorsParent = control.querySelector('[class*="indicatorSeparator"]')?.parentElement;
+      if (!indicatorsParent) return;
+
+      const indicators = indicatorsParent.querySelectorAll('[class*="indicatorContainer"]');
+      const hasSelection = indicators.length === 2;
+
+      indicators.forEach((indicator, index) => {
+        const isClearButton = hasSelection && index === 0;
+        updateIndicatorAttributes(indicator as HTMLElement, isClearButton);
+      });
+    });
+  };
+
+  // Initial static setup
   setRoleToPresentation('[id*="live-region"]', "presentation");
   setRoleToPresentation('[class*="indicatorSeparator"]', "separator");
   setRoleToPresentation('[class*="a11yText"]', "presentation");
+
+  // Dynamic setup after render
+  setTimeout(() => {
+    setAriaLabelsForIndicators();
+
+    const observer = new MutationObserver(setAriaLabelsForIndicators);
+
+    document.querySelectorAll('[class*="control"]').forEach((control) => {
+      const indicatorsParent = control.querySelector('[class*="indicatorSeparator"]')?.parentElement;
+      if (indicatorsParent) {
+        observer.observe(indicatorsParent, { childList: true, subtree: false });
+      }
+    });
+  }, 100);
 };
 
 export const SelectMultiple = ({
