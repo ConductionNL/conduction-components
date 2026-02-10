@@ -73,12 +73,12 @@ export const Pagination: React.FC<PaginationProps> = ({
       previousAriaLabel={ariaLabels.previousPage}
       ariaLabelBuilder={(currentPage) => `${ariaLabels.page} ${currentPage}`}
       nextLabel={
-        <Button tabIndex={-1} className={styles.button}>
+        <Button tabIndex={-1} className={styles.button} aria-label={ariaLabels.nextPage}>
           <FontAwesomeIcon icon={faChevronRight} />
         </Button>
       }
       previousLabel={
-        <Button tabIndex={-1} className={styles.button}>
+        <Button tabIndex={-1} className={styles.button} aria-label={ariaLabels.previousPage}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </Button>
       }
