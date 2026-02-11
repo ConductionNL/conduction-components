@@ -7,6 +7,7 @@
   - 2.2.57: 
     - Fixed clear button on SelectSingle not being clickable with keyboard functions.
     - Fixed Logo not being focusable when being clickable.
+    - Fixed CardWrapper not being clickable with keyboard functions
   - 2.2.56: Fixed WCAG issue in Pagination by adding aria labels to buttons
   - 2.2.55: 
     - Updated Logo to accept aria-label for accessibility.
