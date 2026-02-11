@@ -2,7 +2,7 @@ import * as React from "react";
 import * as styles from "./select.module.css";
 import clsx from "clsx";
 import CreatableSelect from "react-select/creatable";
-import ReactSelect, { MenuPlacement, StylesConfig, GroupBase } from "react-select";
+import ReactSelect, { MenuPlacement, StylesConfig, GroupBase, components } from "react-select";
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { IReactHookFormProps } from "../types";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
@@ -120,6 +120,38 @@ const setAttributes = (): void => {
       }
     });
   }, 100);
+};
+
+// Custom ClearIndicator component that handles keyboard events for accessibility
+const ClearIndicator = (props: any) => {
+  const { clearValue, innerProps, children } = props;
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === " " || event.key === "Enter") {
+      event.preventDefault();
+      event.stopPropagation();
+      if (clearValue) {
+        clearValue();
+      }
+      if (innerProps?.onClick) {
+        innerProps.onClick(event);
+      }
+    } else if (innerProps?.onKeyDown) {
+      innerProps.onKeyDown(event);
+    }
+  };
+
+  return (
+    <components.ClearIndicator
+      {...props}
+      innerProps={{
+        ...innerProps,
+        onKeyDown: handleKeyDown,
+      }}
+    >
+      {children}
+    </components.ClearIndicator>
+  );
 };
 
 export const SelectMultiple = ({
@@ -251,6 +283,7 @@ export const SelectSingle = ({
               styles={selectStyles}
               placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
               formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
+              components={isClearable ? { ClearIndicator } : undefined}
             />
             {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
           </>
