@@ -22,6 +22,7 @@ interface ISelectProps {
   hideErrorMessage?: boolean;
   menuPlacement?: MenuPlacement;
   placeholder?: string;
+  clearIndicatorAttributes?: Record<string, string>;
 }
 
 const selectStyles: StylesConfig = {
@@ -65,9 +66,12 @@ const selectStyles: StylesConfig = {
   }),
 };
 
-const setAttributes = (): void => {
+const setAttributes = (
+  root: HTMLElement | Document = document,
+  clearIndicatorAttributes?: Record<string, string>,
+): void => {
   const setRoleToPresentation = (selector: string, role: string) => {
-    document.querySelectorAll(selector).forEach((element) => {
+    root.querySelectorAll(selector).forEach((element) => {
       if (element.getAttribute("role") !== "presentation") element.setAttribute("role", role);
       element.removeAttribute("aria-relevant");
       element.removeAttribute("aria-atomic");
@@ -80,6 +84,11 @@ const setAttributes = (): void => {
       indicator.setAttribute("role", "button");
       indicator.setAttribute("tabindex", "0");
       indicator.setAttribute("aria-label", "Clear selection");
+      if (clearIndicatorAttributes) {
+        Object.entries(clearIndicatorAttributes).forEach(([key, value]) => {
+          indicator.setAttribute(key, value);
+        });
+      }
     } else {
       indicator.setAttribute("role", "presentation");
       indicator.removeAttribute("tabindex");
@@ -88,7 +97,7 @@ const setAttributes = (): void => {
   };
 
   const setAriaLabelsForIndicators = () => {
-    document.querySelectorAll('[class*="control"]').forEach((control) => {
+    root.querySelectorAll('[class*="control"]').forEach((control) => {
       const indicatorsParent = control.querySelector('[class*="indicatorSeparator"]')?.parentElement;
       if (!indicatorsParent) return;
 
@@ -113,7 +122,7 @@ const setAttributes = (): void => {
 
     const observer = new MutationObserver(setAriaLabelsForIndicators);
 
-    document.querySelectorAll('[class*="control"]').forEach((control) => {
+    root.querySelectorAll('[class*="control"]').forEach((control) => {
       const indicatorsParent = control.querySelector('[class*="indicatorSeparator"]')?.parentElement;
       if (indicatorsParent) {
         observer.observe(indicatorsParent, { childList: true, subtree: false });
@@ -167,36 +176,43 @@ export const SelectMultiple = ({
   menuPlacement,
   placeholder,
   ariaLabel,
+  clearIndicatorAttributes,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
-    setAttributes();
+    if (containerRef.current) {
+      setAttributes(containerRef.current, clearIndicatorAttributes);
+    }
   }, []);
   return (
-    <Controller
-      {...{ control, name, defaultValue }}
-      rules={validation}
-      render={({ field: { onChange, value } }) => {
-        return (
-          <>
-            <ReactSelect
-              aria-label={ariaLabel}
-              inputId={id}
-              value={value ?? ""}
-              className={clsx(styles.select, errors[name] && styles.error)}
-              isMulti
-              isDisabled={disabled}
-              {...{ options, onChange, errors }}
-              menuPortalTarget={document.body}
-              menuPlacement={menuPlacement}
-              styles={selectStyles}
-              placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
-              formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
-            />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
-          </>
-        );
-      }}
-    />
+    <div ref={containerRef}>
+      <Controller
+        {...{ control, name, defaultValue }}
+        rules={validation}
+        render={({ field: { onChange, value } }) => {
+          return (
+            <>
+              <ReactSelect
+                aria-label={ariaLabel}
+                inputId={id}
+                value={value ?? ""}
+                className={clsx(styles.select, errors[name] && styles.error)}
+                isMulti
+                isDisabled={disabled}
+                {...{ options, onChange, errors }}
+                menuPortalTarget={document.body}
+                menuPlacement={menuPlacement}
+                styles={selectStyles}
+                placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
+                formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
+              />
+              {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+            </>
+          );
+        }}
+      />
+    </div>
   );
 };
 
@@ -213,36 +229,43 @@ export const SelectCreate = ({
   menuPlacement,
   placeholder,
   ariaLabel,
+  clearIndicatorAttributes,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
-    setAttributes();
+    if (containerRef.current) {
+      setAttributes(containerRef.current, clearIndicatorAttributes);
+    }
   }, []);
   return (
-    <Controller
-      {...{ control, name, defaultValue }}
-      rules={validation}
-      render={({ field: { onChange, value } }) => {
-        return (
-          <>
-            <CreatableSelect
-              aria-label={ariaLabel}
-              inputId={id}
-              value={value ?? ""}
-              placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
-              className={clsx(styles.select, errors[name] && styles.error)}
-              isMulti
-              isDisabled={disabled}
-              {...{ options, onChange, errors }}
-              menuPortalTarget={document.body}
-              menuPlacement={menuPlacement}
-              styles={selectStyles}
-              formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
-            />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
-          </>
-        );
-      }}
-    />
+    <div ref={containerRef}>
+      <Controller
+        {...{ control, name, defaultValue }}
+        rules={validation}
+        render={({ field: { onChange, value } }) => {
+          return (
+            <>
+              <CreatableSelect
+                aria-label={ariaLabel}
+                inputId={id}
+                value={value ?? ""}
+                placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
+                className={clsx(styles.select, errors[name] && styles.error)}
+                isMulti
+                isDisabled={disabled}
+                {...{ options, onChange, errors }}
+                menuPortalTarget={document.body}
+                menuPlacement={menuPlacement}
+                styles={selectStyles}
+                formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
+              />
+              {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+            </>
+          );
+        }}
+      />
+    </div>
   );
 };
 
@@ -260,36 +283,43 @@ export const SelectSingle = ({
   menuPlacement,
   placeholder,
   ariaLabel,
+  clearIndicatorAttributes,
 }: ISelectProps & IReactHookFormProps): JSX.Element => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
-    setAttributes();
+    if (containerRef.current) {
+      setAttributes(containerRef.current, clearIndicatorAttributes);
+    }
   }, []);
   return (
-    <Controller
-      {...{ control, name, defaultValue }}
-      rules={validation}
-      render={({ field: { onChange, value } }) => {
-        return (
-          <>
-            <ReactSelect
-              aria-label={ariaLabel}
-              inputId={id}
-              value={value ?? ""}
-              className={clsx(styles.select, errors[name] && styles.error)}
-              isDisabled={disabled}
-              {...{ options, onChange, errors, isClearable }}
-              menuPortalTarget={document.body}
-              menuPlacement={menuPlacement}
-              styles={selectStyles}
-              placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
-              formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
-              components={isClearable ? { ClearIndicator } : undefined}
-            />
-            {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
-          </>
-        );
-      }}
-    />
+    <div ref={containerRef}>
+      <Controller
+        {...{ control, name, defaultValue }}
+        rules={validation}
+        render={({ field: { onChange, value } }) => {
+          return (
+            <>
+              <ReactSelect
+                aria-label={ariaLabel}
+                inputId={id}
+                value={value ?? ""}
+                className={clsx(styles.select, errors[name] && styles.error)}
+                isDisabled={disabled}
+                {...{ options, onChange, errors, isClearable }}
+                menuPortalTarget={document.body}
+                menuPlacement={menuPlacement}
+                styles={selectStyles}
+                placeholder={disabled ? "Disabled..." : placeholder ?? "Select one or more options..."}
+                formatGroupLabel={(group) => <GroupLabel {...{ group }} />}
+                components={isClearable ? { ClearIndicator } : undefined}
+              />
+              {errors[name] && !hideErrorMessage && <ErrorMessage message={errors[name]?.message as string} />}
+            </>
+          );
+        }}
+      />
+    </div>
   );
 };
 
