@@ -72,10 +72,8 @@ const setAttributes = (
 ): void => {
   const setRoleToPresentation = (selector: string, role: string) => {
     root.querySelectorAll(selector).forEach((element) => {
-      if (element.getAttribute("role") !== "presentation") element.setAttribute("role", role);
-      element.removeAttribute("aria-relevant");
-      element.removeAttribute("aria-atomic");
-      element.removeAttribute("aria-live");
+      const currentRole = element.getAttribute("role");
+      if (currentRole !== "presentation" && currentRole !== "listbox") element.setAttribute("role", role);
     });
   };
 
@@ -112,9 +110,7 @@ const setAttributes = (
   };
 
   // Initial static setup
-  setRoleToPresentation('[id*="live-region"]', "presentation");
   setRoleToPresentation('[class*="indicatorSeparator"]', "separator");
-  setRoleToPresentation('[class*="a11yText"]', "presentation");
 
   // Dynamic setup after render
   setTimeout(() => {
