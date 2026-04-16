@@ -4,6 +4,9 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.58:
+    - Added feature to Select to configure clear button attributes
+    - Fixed pagination having nested interactive elements
   - 2.2.57: 
     - Fixed clear button on SelectSingle not being clickable with keyboard functions.
     - Fixed Logo not being focusable when being clickable.

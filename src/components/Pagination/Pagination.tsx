@@ -3,7 +3,7 @@ import * as styles from "./Pagination.module.css";
 import clsx from "clsx";
 
 import ReactPaginate from "react-paginate";
-import { Button } from "@utrecht/component-library-react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -73,14 +73,14 @@ export const Pagination: React.FC<PaginationProps> = ({
       previousAriaLabel={ariaLabels.previousPage}
       ariaLabelBuilder={(currentPage) => `${ariaLabels.page} ${currentPage}`}
       nextLabel={
-        <Button tabIndex={-1} className={styles.button} aria-label={ariaLabels.nextPage}>
+        <span className={clsx("utrecht-button", styles.button)} aria-hidden="true">
           <FontAwesomeIcon icon={faChevronRight} />
-        </Button>
+        </span>
       }
       previousLabel={
-        <Button tabIndex={-1} className={styles.button} aria-label={ariaLabels.previousPage}>
+        <span className={clsx("utrecht-button", styles.button)} aria-hidden="true">
           <FontAwesomeIcon icon={faChevronLeft} />
-        </Button>
+        </span>
       }
     />
   );
