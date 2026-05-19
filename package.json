@@ -49,7 +49,9 @@
     "cross-spawn": "^7.0.6",
     "express": "^4.22.2",
     "flatted": "^3.4.2",
-    "glob": "^10.5.0",
+    "rimraf": {
+      "glob": "^10.5.0"
+    },
     "immutable": "^4.0.0",
     "js-yaml": "^3.14.2",
     "lodash": "^4.18.1",
