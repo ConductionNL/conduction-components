@@ -25,10 +25,25 @@
   /* --conduction-primary-top-nav-dropdown-hover-color: #4376fc; */
   /* --conduction-primary-top-nav-dropdown-hover-background-color: #ffffff; */
   /* --conduction-primary-top-nav-dropdown-hover-box-shadow: inset 0 -4px black; */
+
+  /* --conduction-primary-top-nav-dropdown-item-border-bottom-width: 4px;
+  --conduction-primary-top-nav-dropdown-item-border-bottom-style: solid;
+  --conduction-primary-top-nav-dropdown-item-border-bottom-color: #4376fc; */
+
+  /* --conduction-primary-top-nav-container-padding-block-end: 18px; */
+  /* --conduction-primary-top-nav-container-padding-block-start: 18px; */
+  /* --conduction-primary-top-nav-container-padding-inline-end: 18px; */
+  /* --conduction-primary-top-nav-container-padding-inline-start: 18px; */
+
+  /* --conduction-primary-top-nav-list-gap: var(--skeleton-size-2x); */
 }
 
 .container {
   width: 100%;
+  padding-block-end: var(--conduction-primary-top-nav-container-padding-block-end);
+  padding-block-start: var(--conduction-primary-top-nav-container-padding-block-start);
+  padding-inline-end: var(--conduction-primary-top-nav-container-padding-inline-end);
+  padding-inline-start: var(--conduction-primary-top-nav-container-padding-inline-start);
 }
 
 .menuToggleContainer {
@@ -77,17 +92,25 @@
   align-items: center;
   max-height: 80vh;
   overflow-y: scroll;
+  border-color: var(--conduction-primary-top-nav-list-border-color);
+  border-style: var(--conduction-primary-top-nav-list-border-style);
+  border-width: var(--conduction-primary-top-nav-list-border-width);
+  gap: var(--conduction-primary-top-nav-list-gap);
 }
 
 .li {
   list-style-type: none;
   display: block;
   position: relative;
+  transition: var(--conduction-primary-top-nav-item-transition);
   padding-inline-start: var(--conduction-primary-top-nav-item-padding);
   padding-inline-end: var(--conduction-primary-top-nav-item-padding);
   padding-block-start: var(--conduction-primary-top-nav-item-padding);
   padding-block-end: var(--conduction-primary-top-nav-item-padding);
   border-radius: var(--conduction-primary-top-nav-item-border-radius);
+  border-color: var(--conduction-primary-top-nav-item-border-color);
+  border-style: var(--conduction-primary-top-nav-item-border-style);
+  border-width: var(--conduction-primary-top-nav-item-border-width);
 }
 
 .li:hover {
@@ -101,7 +124,7 @@
 }
 
 .current:hover {
-  box-shadow: var(--conduction-primary-top-nav-current-box-shadow);
+  box-shadow: var(--conduction-primary-top-nav-current-hover-box-shadow, var(--conduction-primary-top-nav-current-box-shadow));
 }
 
 .current:hover > .currentLink {
@@ -217,6 +240,10 @@
 
 .dropdown > li {
   padding-inline-start: 18px;
+  font-weight: var(--conduction-primary-top-nav-dropdown-font-weight);
+  border-bottom-width: var(--conduction-primary-top-nav-dropdown-item-border-bottom-width);
+  border-bottom-style: var(--conduction-primary-top-nav-dropdown-item-border-bottom-style);
+  border-bottom-color: var(--conduction-primary-top-nav-dropdown-item-border-bottom-color);
 }
 
 .toggleIcon {
@@ -243,6 +270,11 @@
 .li:hover .dropdown {
   display: block;
   z-index: 1;
+}
+
+:not(.dropdown) .li.current:hover {
+  box-shadow: var(--conduction-primary-top-nav-current-hover-box-shadow, var(--conduction-primary-top-nav-current-box-shadow));
+  font-weight: var(--conduction-primary-top-nav-current-hover-font-weight, var(--conduction-primary-top-nav-current-font-weight));
 }
 
 @media only screen and (min-width: 992px) {

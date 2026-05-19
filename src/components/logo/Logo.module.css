@@ -2,14 +2,17 @@
   --conduction-logo-header-inline-size: 220px;
   --conduction-logo-header-block-size: 40px;
   --conduction-logo-header-background-image: url("https://conduction.nl/wp-content/uploads/2021/07/cropped-conductionlogo-1.png");
+  /* --conduction-logo-header-hover-filter: brightness(1.1); */
 
   --conduction-logo-footer-inline-size: 330px;
   --conduction-logo-footer-block-size: 60px;
   --conduction-logo-footer-background-image: url("https://raw.githubusercontent.com/OpenCatalogi/web-app/df1e0533081d780c05b1d0b57ab327d97adcbdc6/pwa/src/assets/svgs/LogoConduction.svg");
+  /* --conduction-logo-footer-hover-filter: brightness(1.1); */
 
   --conduction-logo-navbar-inline-size: 150px;
   --conduction-logo-navbar-block-size: 40px;
   --conduction-logo-navbar-background-image: url("https://raw.githubusercontent.com/OpenCatalogi/web-app/df1e0533081d780c05b1d0b57ab327d97adcbdc6/pwa/src/assets/svgs/LogoConduction.svg");
+  /* --conduction-logo-navbar-hover-filter: brightness(1.1); */
 }
 
 .container {
@@ -23,17 +26,27 @@
   block-size: var(--conduction-logo-header-block-size);
   background-image: var(--conduction-logo-header-background-image);
 }
+.container.header:hover {
+  filter: var(--conduction-logo-header-hover-filter);
+}
 
 .container.footer {
   inline-size: var(--conduction-logo-footer-inline-size);
   block-size: var(--conduction-logo-footer-block-size);
   background-image: var(--conduction-logo-footer-background-image);
 }
+.container.footer:hover {
+  filter: var(--conduction-logo-footer-hover-filter);
+}
 
 .container.navbar {
   inline-size: var(--conduction-logo-navbar-inline-size);
   block-size: var(--conduction-logo-navbar-block-size);
   background-image: var(--conduction-logo-navbar-background-image);
+}
+
+.container.navbar:hover {
+  filter: var(--conduction-logo-navbar-hover-filter);
 }
 
 .container.clickable:hover {

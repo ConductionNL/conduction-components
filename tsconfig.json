@@ -14,5 +14,8 @@
   },
   "hooks": ["copy-files"],
   "include": ["src", "src/**/*.css"],
-  "exclude": ["**/__tests__/*"]
+  "exclude": [
+    "**/__tests__/*",
+    "./lib/**/*"
+  ]
 }

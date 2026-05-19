@@ -25,7 +25,7 @@ export declare type IDisplaySwitchButton = DisplaySwitchButtonProps;
 
 const DisplaySwitch: React.FC<DisplaySwitchProps> = ({ layoutClassName, buttons }) => {
   return (
-    <ButtonGroup className={clsx(styles.displaySwitchButtons, [layoutClassName] && layoutClassName)}>
+    <ButtonGroup className={clsx(styles.displaySwitchButtons, layoutClassName && layoutClassName)}>
       {buttons.map((button, idx: number) => {
         // TODO: Once the Rotterdam design system supports the "pressed" state,
         // remove the `appereance` switch, and use the same appearance for each button.

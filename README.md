@@ -4,6 +4,32 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.59: Added optional scrollMode prop to HorizontalOverflowWrapper with native and button scroll modes
+  - 2.2.58:
+    - Added feature to Select to configure clear button attributes
+    - Fixed pagination having nested interactive elements
+  - 2.2.57: 
+    - Fixed clear button on SelectSingle not being clickable with keyboard functions.
+    - Fixed Logo not being focusable when being clickable.
+    - Fixed CardWrapper not being clickable with keyboard functions
+  - 2.2.56: Fixed WCAG issue in Pagination by adding aria labels to buttons
+  - 2.2.55: 
+    - Updated Logo to accept aria-label for accessibility.
+    - Fixed bug in DisplaySwitch where layoutClassName is added even when empty.
+    - Fixed color of the Select dropdown icon to be WCAG-AA compliant.
+    - Added more WCAG roles and support to Select box.
+  - 2.2.54: Updated CardHeader to allow padding-block-end on title.
+  - 2.2.53: Updated Pagination and PrimaryTopNav components to allow text-decorations and border-bottoms.
+  - 2.2.52: Added hover filter to Logo component.
+  - 2.2.51:
+    - Added text-decoration tokens to CardHeader.
+    - Added label color tokens to checkbox.
+    - Added font-weight, gap, padding and hover box-shadow tokens to PrimaryTopNav.
+  - 2.2.50:
+    - Added transition and box-shadow to CardWrapper.
+    - Added font-style to CardHeader.
+    - Added tabindex and font-weight to Tab.
+    - Added border-color, border-style, border-width and transition to PrimaryTopNav.
   - 2.2.49: Removed Jumbotron component.
   - 2.2.48: Updated CardHeader and package.json.
   - 2.2.46 / 2.2.47: Fixed minor css parse error.

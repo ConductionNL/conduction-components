@@ -22,6 +22,8 @@
   /* --conduction-pagination-item-border-bottom-width: unset;
   --conduction-pagination-item-border-bottom-style: unset;
   --conduction-pagination-item-border-bottom-color: unset; */
+  /* --conduction-pagination-item-text-decoration: unset; */
+  /* --conduction-pagination-item-text-decoration-thickness: 0px; */
 
   /* --conduction-pagination-navigation-button-background-color: #4376fc; */
   /* --conduction-pagination-navigation-button-color: #ffffff; */
@@ -112,6 +114,7 @@
   font-weight: var(--conduction-pagination-current-page-font-weight);
   font-family: var(--conduction-pagination-item-font-family);
   text-decoration: var(--conduction-pagination-current-page-text-decoration);
+  text-decoration-thickness: var(--conduction-pagination-current-page-text-decoration-thickness);
 }
 
 .container > li:not(.previous):not(.next):not(.currentPage) > a {
@@ -131,6 +134,7 @@
   font-size: var(--conduction-pagination-item-font-size);
   font-weight: var(--conduction-pagination-item-font-weight);
   font-family: var(--conduction-pagination-item-font-family);
+  text-decoration: var(--conduction-pagination-item-text-decoration);
 }
 
 .button {

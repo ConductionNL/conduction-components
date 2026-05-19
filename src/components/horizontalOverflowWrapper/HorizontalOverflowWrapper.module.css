@@ -31,11 +31,15 @@
   left: 100%;
 }
 
-/* Hide scrollbar */
-.wrapper::-webkit-scrollbar {
+.wrapper.scrollbarVisible {
+  overflow-x: auto;
+}
+
+/* Hide scrollbar (buttons mode) */
+.wrapper:not(.scrollbarVisible)::-webkit-scrollbar {
   display: none;
 }
-.wrapper {
+.wrapper:not(.scrollbarVisible) {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

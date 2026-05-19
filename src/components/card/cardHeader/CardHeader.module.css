@@ -6,17 +6,24 @@
   /* --conduction-card-header-hover-border-bottom-style: unset; */
   /* --conduction-card-header-hover-border-bottom-color: unset; */
   --conduction-card-header-title-color: #000000;
+  /* --conduction-card-header-title-text-decoration: none; */
+  /* --conduction-card-header-title-text-underline-offset: 2px; */
   /* --conduction-card-header-title-hover-color: #000000; */
+  /* --conduction-card-header-title-hover-text-decoration: none; */
+  /* --conduction-card-header-title-hover-text-underline-offset: 2px; */
+  /* --conduction-card-header-title-padding-block-end: 0px; */
+
   --conduction-card-header-date-color: #000000;
   --conduction-card-header-date-font-size: 16px;
   --conduction-card-header-date-font-weight: 100;
+  /* --conduction-card-header-date-font-style: normal; */
   --conduction-card-header-date-margin-block-end: 8px;
 }
 
 .container {
   border-bottom-width: var(--conduction-card-header-border-bottom-width);
-  border-bottom-style: var(--conduction-card-header-border-bottom-style);
   border-bottom-color: var(--conduction-card-header-border-bottom-color);
+  border-bottom-style: var(--conduction-card-header-border-bottom-style);
 }
 
 .container:hover {
@@ -27,15 +34,21 @@
 
 .title > * {
   color: var(--conduction-card-header-title-color) !important;
+  text-decoration: var(--conduction-card-header-title-text-decoration) !important;
+  text-underline-offset: var(--conduction-card-header-title-text-underline-offset) !important;
+  padding-block-end: var(--conduction-card-header-title-padding-block-end) !important;
 }
 
 .title:hover > * {
   color: var(--conduction-card-header-title-hover-color, var(--conduction-card-header-title-color)) !important;
+  text-decoration: var(--conduction-card-header-title-hover-text-decoration, var(--conduction-card-header-title-text-decoration)) !important;
+  text-underline-offset: var(--conduction-card-header-title-hover-text-underline-offset, var(--conduction-card-header-title-text-underline-offset)) !important;
 }
 
 .date {
   color: var(--conduction-card-header-date-color);
   font-size: var(--conduction-card-header-date-font-size);
   font-weight: var(--conduction-card-header-date-font-weight);
+  font-style: var(--conduction-card-header-date-font-style);
   margin-block-end: var(--conduction-card-header-date-margin-block-end);
 }
