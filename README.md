@@ -4,6 +4,7 @@
 
 - **Version 2.2 (breaking changes from 2.1.x)**
 
+  - 2.2.59: Added optional scrollMode prop to HorizontalOverflowWrapper with native and button scroll modes
   - 2.2.58:
     - Added feature to Select to configure clear button attributes
     - Fixed pagination having nested interactive elements

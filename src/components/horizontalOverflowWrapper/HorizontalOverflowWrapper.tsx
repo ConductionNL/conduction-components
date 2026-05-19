@@ -11,9 +11,14 @@ interface HorizontalOverflowWrapperProps {
     scrollRightButton: string;
     scrollLeftButton: string;
   };
+  scrollMode?: "buttons" | "scrollbar";
 }
 
-export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps> = ({ children, ariaLabels }) => {
+export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps> = ({
+  children,
+  ariaLabels,
+  scrollMode = "buttons",
+}) => {
   const [canScrollRight, setCanScrollRight] = React.useState<boolean>(false);
   const [canScrollLeft, setCanScrollLeft] = React.useState<boolean>(false);
 
@@ -34,12 +39,14 @@ export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps>
   };
 
   React.useEffect(() => {
-    checkScrollDirections(); // initiate available scroll directions
+    if (scrollMode === "scrollbar") return;
+
+    checkScrollDirections();
 
     window.addEventListener("resize", checkScrollDirections);
 
     return () => window.removeEventListener("resize", checkScrollDirections);
-  }, []);
+  }, [scrollMode]);
 
   const checkScrollDirections = (): void => {
     if (!wrapperRef.current) return;
@@ -50,7 +57,7 @@ export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps>
 
   return (
     <div className={styles.container}>
-      {canScrollLeft && (
+      {scrollMode === "buttons" && canScrollLeft && (
         <Button
           className={clsx(styles.scrollButton)}
           onClick={scrollLeft}
@@ -61,7 +68,7 @@ export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps>
         </Button>
       )}
 
-      {canScrollRight && (
+      {scrollMode === "buttons" && canScrollRight && (
         <Button
           className={clsx(styles.scrollButton, styles.right)}
           onClick={scrollRight}
@@ -72,7 +79,11 @@ export const HorizontalOverflowWrapper: React.FC<HorizontalOverflowWrapperProps>
         </Button>
       )}
 
-      <div ref={wrapperRef} className={styles.wrapper} onScroll={checkScrollDirections}>
+      <div
+        ref={wrapperRef}
+        className={clsx(styles.wrapper, scrollMode === "scrollbar" && styles.scrollbarVisible)}
+        onScroll={scrollMode === "buttons" ? checkScrollDirections : undefined}
+      >
         {children}
       </div>
     </div>
