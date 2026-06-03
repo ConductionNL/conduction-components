@@ -1,0 +1,9 @@
+name: _npm-dryrun-test
+on:
+  workflow_dispatch: {}
+jobs:
+  publish:
+    uses: Conduction/.github/.forgejo/workflows/release-npm.yml@main
+    with:
+      dry-run: true
+    secrets: inherit
